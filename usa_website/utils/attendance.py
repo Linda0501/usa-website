@@ -24,9 +24,10 @@ except ImportError:
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
 #when testing, the pathway below won't work, doesn't really matter though
-CLIENT_SECRET_LOC = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/client_secret.json'
+HOME_DIR = os.path.dirname(os.path.abspath(__file__))
+CLIENT_SECRET_LOC = os.path.join(HOME_DIR, 'client_secret.json')
 APPLICATION_NAME = 'SusaClient'
-REDIRECT_URI = 'https://susa.berkeley.edu/attendance.html'
+REDIRECT_URI = 'http://127.0.0.1:8000/attendance.html'
 #You wouldn't steal a car would you? So please don't steal our credentials! Thanks!
 
 def get_credentials():
@@ -43,14 +44,15 @@ def get_credentials():
                                    'credentials.json')
     store = oauth2client.file.Storage(credential_path)
     credentials = store.get()
+#above this works
     if not credentials or credentials.invalid:
         flow = client.flow_from_clientsecrets(CLIENT_SECRET_LOC, SCOPES)
         flow.params['access_type'] = 'offline'
-        flow.params['approval_prompt'] = 'force'
+        #flow.params['approval_prompt'] = 'force'
         flow.params['redirect_uri'] = REDIRECT_URI
-        print(flow.params['access_type'])
         if flags:
             credentials = tools.run_flow(flow, store, flags)
+    print ('hello')
     return credentials
 
 @cached(cacheHeaders)
