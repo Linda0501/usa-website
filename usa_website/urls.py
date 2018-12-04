@@ -44,6 +44,7 @@ urlpatterns = [
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'index$', views.index, name = 'index'),
+    url(r'index_new$', views.index_new, name = 'index_new'),
     url(r'home$', views.home, name = 'home'),
     url(r'^$', views.home, name = 'home'),
     url(r'aboutus$', views.aboutus, name = 'aboutus'),
@@ -129,6 +130,7 @@ urlpatterns = [
     url(r'housingcrisis$', views.housingcrisis, name = "housingcrisis"),
     url(r'housingcrisis/$', views.housingcrisis, name = "housingcrisis"),
     url(r'housingcRincess$', views.housingcRincess, name = "housingcRincess"),
+    url(r'aDishwasher$', views.aDishwasher, name = "aDishwasher"),
     url(r'montyhall$', views.montyhall, name = "montyhall"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio")

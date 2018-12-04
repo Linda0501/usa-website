@@ -26,6 +26,11 @@ def home(request):
     context = Context({})
     return HttpResponse(html.render(context))
 
+def index_new(request):
+    html = get_template("index_new.html")
+    context = Context({})
+    return HttpResponse(html.render(context))
+
 def aboutus(request):
     html = get_template("aboutus.html")
     context = Context({})
@@ -112,7 +117,7 @@ def people(request):
     return HttpResponse(t.render(context))
 
 def courseMap(request):
-    t = get_template("course-map.html")
+    t = get_template("course-map-old.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
@@ -319,6 +324,11 @@ def susawebapp(request):
 #EASTEREGG
 def housingcRincess(request):
     t = get_template("housingcRincess.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def aDishwasher(request):
+    t = get_template("aDishwasher.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
