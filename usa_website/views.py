@@ -234,6 +234,10 @@ def website_tutorial_3(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def frontend_v_backend_ajax(request):
+    t = get_template("blog/education/frontend-v-backend-ajax.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
 
 #####################################
 ###### SPRING 2018 DC PROJECTS ######
