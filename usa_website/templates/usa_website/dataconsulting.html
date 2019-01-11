@@ -1,0 +1,228 @@
+
+{% extends "header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<!-- scroll button -->
+<script src="../../static/usa_website/js/scroll-down.js"></script>
+<!-- smooth scroll -->
+<!-- test to fix heights -->
+<script>
+$( document ).ready(function() {
+    var heights = $(".item-grid").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    $(".item-grid").height(maxHeight);
+});
+</script>
+<!-- end test-->
+    <div class="container">
+
+    </div>
+    <aside id="fh5co-hero" class="js-fullheight" >
+        <div class="flexslider " style="height:calc(100% - 80px) !important;">
+          <div class="background-overlay animated fadeInUp">
+            <div class="container">
+                <div class="col-md-12 text-center js-fullheight slider-text">
+                    <div class="slider-text-inner">
+                        <h2>Data Consulting Committee</h2>
+                        <br>
+                        <div>
+                            <center>
+                                <a href="#fh5co-blog-section">
+                                    <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
+                                </a>
+                            </center>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+            <ul class="slides" style="height:100%;">
+            <li style="background-image: url({% static 'usa_website/images/resistance.jpg' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/grad_students.jpg' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/uizard_team.jpg' %});"></li>
+            </ul>
+        </div>
+    </aside>
+
+    <div id="fh5co-blog-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center fh5co-heading">
+                    <h2>Data Consulting</h2>
+                    <p>In the Data Consulting committee, members have the opportunity to analyze real-life data, working with companies, nonprofits, and Berkeley-affiliated organizations to advise policy and make data-driven decisions. Students will learn a variety of machine learning techniques and advanced statistical methods, as well as a suite of visualization tools, all in a professional yet instructive setting.</p>
+                    <p>Each semester we work on a diverse slate of projects. From analyzing city traffic data to surveying Cal Undergraduates, our members become experienced data collectors, data mungers, data modelers, data visualizers, and data presenters. We bring skill sets from academia and the workforce to tackle any kind of challenge. More importantly, we come together as a team to learn from each other and collaborate together.</p>
+                </div>
+            </div>
+            <div class="row" style=" justify-content:center;">
+                  <h2> This Semester</h2>
+            </div>
+            <div class="row" style="justify-content:center;">
+              <p>
+                Projects will be announced as we begin our school year, please stay tuned and check back later!
+              </p>
+            </div>
+            <div class="row" style="justify-content:center;">
+                <br /> <br/>
+                  <h2>Past Projects</h2>
+            </div>
+            <div class="row" >
+                <div class="col-md-4 col-sm-4 ">
+                  <a href="{% url 'tutorfly' %}" class="item-grid">
+                    <div class="image" style="background-image: url({% static 'usa_website/images/blog/tutorfly.png' %})">
+                    </div>
+                      <div class="v-align">
+                          <div class="v-align-middle">
+                              <h3 class="title">Tutorfly</h3>
+                              <h5 class="date"><span>PM Zhongling Jiang</span></h5>
+                              <h5 class="date"><span>Spring 2018</span></h5>
+                          </div>
+                      </div>
+                  </a>
+                </div>
+                <div class="col-md-4 col-sm-4 ">
+                    <a href="{% url 'housingcrisis' %}" class="item-grid">
+                        <div class="image" style="background-image: url({% static 'usa_website/images/blog/data_good.png' %})">
+
+                        </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Data For Good - Housing Crisis - Data visualizations</h3>
+                                <h5 class="date"><span>PM Patrick Chao</span></h5>
+                                <h5 class="date"><span>Spring 2018</span></h5>
+                                {% comment %}<p>This team will be focusing on the <a href="https://ctsp.berkeley.edu/data-for-good-competition/">Data for Good competition</a>, by investigating the housing situation in California. Our project team will be competing in this project sponsored by Facebook, for social good efforts. We will create data visualizations describing the housing situation, such as heatmaps of salary, housing costs, and availability. An end term goal may be to create matching tools for citizens to input factors such as salary, and employer location, and suggest viable locations to look for housing.</p>{% endcomment %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'data_good' %}" class="item-grid">
+                      <div class="image" style="background-image: url({% static 'usa_website/images/housing_proj.jpg' %})">
+                      </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Data For Good - Housing Crisis - Proposal</h3>
+                                <h5 class="date"><span>PM Patrick Chao</span></h5>
+                                <h5 class="date"><span>Spring 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-sm-4 ">
+                <a href="{% url 'population_modeling' %}" class="item-grid">
+                    <div class="image" style="background-image: url({% static 'usa_website/images/blog/population_modeling_proj2.gif' %})">
+
+                    </div>
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">Population Modeling</h3>
+                            <h5 class="date"><span>PM Patrick Chao</span></h5>
+                            <h5 class="date"><span>Fall 2017</span></h5>
+                        </div>
+                    </div>
+                </a>
+              </div>
+                <div class="col-md-4">
+                    <div class="item-grid">
+                        <div class="image" style="background-image: url({% static 'usa_website/images/computer_brain_proj.jpg' %})">
+
+                        </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">UIzard - Automating UI Code</h3>
+                                <h5 class="date"><span>PM Noah Gundotra</span></h5>
+                                <h5 class="date"><span>Spring 2018</span></h5>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 ">
+                  <a href="{% url 'facial_emotion_recognition' %}" class="item-grid">
+                    <div class="image" style="background-image: url({% static 'usa_website/images/blog/facial_emotion_recognition.jpg' %})">
+                    </div>
+                      <div class="v-align">
+                          <div class="v-align-middle">
+                              <h3 class="title">Facial Emotion Recognition</h3>
+                              <h5 class="date"><span>PM Zhongling Jiang</span></h5>
+                              <h5 class="date"><span>Fall 2017</span></h5>
+                          </div>
+                      </div>
+                  </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 ">
+                  <a href="{% url 'food_insecurity' %}" class="item-grid">
+                    <div class="image" style="background-image: url({% static 'usa_website/images/food_insecurity_proj.jpg' %})">
+                    </div>
+                      <div class="v-align">
+                          <div class="v-align-middle">
+                              <h3 class="title">Food Insecurity</h3>
+                              <h5 class="date"><span>PM Biyonka Liang</span></h5>
+                              <h5 class="date"><span>Fall 2017</span></h5>
+                          </div>
+                      </div>
+                  </a>
+                </div>
+
+                <div class="col-md-4 col-sm-4">
+                    <div class="item-grid">
+                        <div class="image" style="background-image: url({% static 'usa_website/images/projects_electrical.jpg' %})">
+
+                        </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Electrical Power</h3>
+                                <h5 class="date"><span>Fall 2016</span></h5>
+                                {% comment %}<p>The electric grid underlying American energy production and usage is a highly complex system, with many dynamic parts and facets. In the Fall 2016 semester, SUSA was hired by the environmental policy start-up, Environmental Progress, to model the relationships between the productions of power plants of differing fuel types on the Californian grid over time, in the context to the imminent closure of the Diablo Canyon Power Plant, the last remaining nuclear power plant in California. We extrapolated from the production data of the grid to predict the environmental effects of such a closure, and even extended our analysis to gauge the health effects the plant's shutdown could have on surrounding populations.</p>{% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 ">
+                    <div class="item-grid">
+                        <div class="image" style="background-image: url({% static 'usa_website/images/projects_police.jpg' %})">
+
+                        </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Crime in Berkeley</h3>
+                                <h5 class="date"><span>Spring 2016</span></h5>
+                                {% comment %}<p>A common concern for Berkeley students is the relatively concerning amount of crime in surrounding areas. For the Spring 2016 semester, we plan to investigate crime rate in Berkeley and surrounding areas. We hope to create a basic predictive model that will help Berkeley students decide whether walking home is the best decision.</p>{% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 ">
+                    <div class="item-grid">
+                        <div class="image" style="background-image: url({% static 'usa_website/images/projects_fire.jpeg' %})">
+
+                        </div>
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Fires in San Francisco</h3>
+                                <h5 class="date"><span>Spring 2016</span></h5>
+                                {% comment %}<p>Residents of the Mission District of San Francisco have been expressing concern over an apparently increasing rate of fires happening in their neighborhood. For the Spring 2016 semester, we plan to analyze if there is indeed an increasing amount of fires happening in the Mission District, and if so, we will investigate why this trend is occurring.</p>{% endcomment %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--
+                <div class="col-md-12 text-center ">
+                    <a href="#" class="btn btn-primary with-arrow">View More Posts <i class="icon-arrow-right"></i></a>
+                </div>
+                -->
+            </div>
+        </div>
+    </div>
+  </div>
+
+    {% endblock %}

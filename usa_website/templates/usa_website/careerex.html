@@ -1,0 +1,57 @@
+
+{% extends "header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<!-- scroll button -->
+<script src="../../static/usa_website/js/scroll-down.js"></script>
+<!-- smooth scroll -->
+
+    <div class="container">
+
+    </div>
+    <aside id="fh5co-hero" class="js-fullheight" >
+        <div class="flexslider " style="height:calc(100% - 80px) !important;">
+          <div class="background-overlay animated fadeInUp">
+            <div class="container">
+                <div class="col-md-12 text-center js-fullheight slider-text">
+                    <div class="slider-text-inner">
+                        <h2>Career Exploration Committee</h2>
+                        <br>
+                        <div>
+                            <center>
+                                <a href="#fh5co-blog-section">
+                                    <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
+                                </a>
+                            </center>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+            <ul class="slides" style="height:100%;">
+            <li style="background-image: url({% static 'usa_website/images/adish_on_stump.jpg' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/confused_alex.jpg' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/jessica_huang_talk.jpg' %});"></li>
+            </ul>
+        </div>
+    </aside>
+
+    <div id="fh5co-blog-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center fh5co-heading">
+                    <h2>Career Exploration</h2>
+                    <p>The Career Exploration Committee is a great place to start for students who are just beginning their careers in Statistics! Members get access to exclusive weekly talks, statistical and professional workshops, and career info sessions, along with private office hours with experienced advisors and the continuous academic and social support SUSA offers. Students will also use Kaggle datasets to learn fundamentals of data and machine learning, successfully completing a collaborative Kaggle competition towards the end of the semester.</p>
+                </div>
+            </div>
+                <!--
+                <div class="col-md-12 text-center">
+                    <p><a href="#" class="btn btn-primary with-arrow">View More Posts <i class="icon-arrow-right"></i></a></p>
+                </div>
+                -->
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

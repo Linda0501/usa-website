@@ -24,9 +24,9 @@ SECRET_KEY = 'g6o*!49h66xlufne(c*7*$j$c3dy_(!*=4fp9dojt@y8ai16m_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['susa.berkeley.edu', 'susa-berkeley-edu.apphost.ocf.berkeley.edu', "127.0.0.1"]
+ALLOWED_HOSTS = ['susa.berkeley.edu', 'susa-berkeley-edu.apphost.ocf.berkeley.edu', 'susa-berkeley-edu.dev-apphost.ocf.berkeley.edu', "127.0.0.1"]
 
-
+#site.addsitedir(''/home/u/ug/ugradsa/usa-website/src/venv/lib/python3.4/site-packages')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
@@ -34,21 +34,29 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 #print(STATIC_ROOT)
 #STATIC_ROOT= ''
 STATIC_URL = '/static/'
-STATICFILES_DIR = (os.path.join(BASE_DIR, 'schedule_builder/static'),)
+STATICFILES_DIR = (os.path.join(BASE_DIR, 'usa_website/static'),)
 
 # Application definition
 
 INSTALLED_APPS = [
-    'schedule_builder.apps.ScheduleBuilderConfig',
+    #'schedule_builder.apps.ScheduleBuilderConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'usa_website.apps.UsaWebsiteConfig',
+    #'django.contrib.sites',
+    #'client_secret.json',
+    #'google-api-python-client',
+    #'google-auth',
+    #'google-auth-oauthlib',
+    #'google-auth-httplib2',
+    #'httplib2', #errors 502
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -63,7 +71,7 @@ ROOT_URLCONF = 'usa_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR + '/schedule_builder/templates/schedule_builder'],
+        'DIRS': [BASE_DIR + '/usa_website/templates/usa_website'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,4 +129,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-

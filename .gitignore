@@ -5,8 +5,10 @@ __pycache__/
 .nfs*
 
 static/*
-
 schedule_builder/migrations/*
+usa_website/migrations/*
+
+db.sqlite3
 
 
 # C extensions
@@ -96,3 +98,4 @@ ENV/
 .ropeproject
 
 .DS_Store
+credentials.json
