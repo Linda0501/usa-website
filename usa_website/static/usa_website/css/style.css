@@ -456,6 +456,9 @@ h3 {
   #fh5co-header .navbar-nav {
     display: none;
   }
+  .dropdown-menu{
+    background:black;
+  }
 }
 @media (min-width:760px) and (max-width:978px) {
   #fh5co-header .dropdown-item{
