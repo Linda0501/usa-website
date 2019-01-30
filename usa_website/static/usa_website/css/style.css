@@ -151,6 +151,7 @@ h3 {
   color:rgb(0,0,0) !important;
   border-radius:3px;
   margin-left: 10px;
+  margin: 38px -0px 0 0;
   padding:5px 10px 5px 10px !important;
 }
 
@@ -454,6 +455,9 @@ h3 {
 @media screen and (max-width: 768px) {
   #fh5co-header .navbar-nav {
     display: none;
+  }
+  .dropdown-menu{
+    background:black;
   }
 }
 @media (min-width:760px) and (max-width:978px) {
