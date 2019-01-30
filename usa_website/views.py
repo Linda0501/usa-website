@@ -206,13 +206,13 @@ def world_happiness(request):
     return HttpResponse(t.render(context))
 
 def yelp_review(request):
-    t = get_template("blog/rp/yelp-review-and-rating-analysis.html")
+    t = get_template("blog/yelp-review-and-rating-analysis.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
-#######################################
+#########################################
 ###### WEB DEV TUTORIAL BLOG POSTS ######
-#######################################
+#########################################
 
 def website_tutorial_0(request):
     t = get_template("blog/education/website-tutorial-0.html")
@@ -252,7 +252,6 @@ def facial_emotion_recognition(request):
     t = get_template("blog/dataconsulting/facial-emotion-recognition.html")
     context = Context({})
     return HttpResponse(t.render(context))
-
 
 def data_good(request):
     t = get_template("blog/dataconsulting/data-for-good-proposal.html")
@@ -304,7 +303,6 @@ def ml_classification(request):
     t = get_template("blog/education/MLclassification.html")
     context = Context({})
     return HttpResponse(t.render(context))
-
 
 ###################################
 ######### MISCELLANEOUS ###########
@@ -399,7 +397,6 @@ def housingcrisis(request):
     t = get_template("housingcrisis/index.html")
     context = Context({})
     return HttpResponse(t.render(context))
-
 
 def textboxio(request):
     t = get_template("textboxio/textboxio.js")
