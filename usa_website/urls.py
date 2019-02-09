@@ -94,7 +94,7 @@ urlpatterns = [
     url(r'education/website-tutorial-1$', views.website_tutorial_1, name="website_tutorial_1"),
     url(r'education/website-tutorial-2$', views.website_tutorial_2, name="website_tutorial_2"),
     url(r'education/website-tutorial-3$', views.website_tutorial_3, name="website_tutorial_3"),
-    url(r'frontend-v-backend-ajax$', views.frontend_v_backend_ajax, name="frontend-v-backend-ajax"),
+    url(r'anatomy-of-a-basic-fullstack$', views.anatomy_of_a_basic_fullstack, name="anatomy_of_a_basic_fullstack"),
     #Data Consulting
     url(r'dataconsulting/population-modeling$', views.population_modeling, name="population_modeling"),
     url(r'dataconsulting/tutorfly$', views.tutorfly, name="tutorfly"),
