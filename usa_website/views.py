@@ -234,8 +234,8 @@ def website_tutorial_3(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
-def frontend_v_backend_ajax(request):
-    t = get_template("blog/education/frontend-v-backend-ajax.html")
+def anatomy_of_a_basic_fullstack(request):
+    t = get_template("blog/education/anatomy-of-a-basic-fullstack.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
