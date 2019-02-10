@@ -206,7 +206,7 @@ def world_happiness(request):
     return HttpResponse(t.render(context))
 
 def yelp_review(request):
-    t = get_template("blog/yelp-review-and-rating-analysis.html")
+    t = get_template("blog/rp/yelp-review-and-rating-analysis.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
