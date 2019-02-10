@@ -24,7 +24,7 @@ except ImportError:
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
 #when testing, the pathway below won't work, doesn't really matter though
-CLIENT_SECRET_LOC = '/Users/Abhinav/documents/github/usa-website/usa_website/utils/client_secret.json'
+CLIENT_SECRET_LOC = '/home/u/ug/ugradsa/usa-website/src/usa_website/utils/client_secret.json'
 APPLICATION_NAME = 'SusaClient'
 REDIRECT_URI = 'https://127.0.0.1:8000/attendance'
 #You wouldn't steal a car would you? So please don't steal our credentials! Thanks!
