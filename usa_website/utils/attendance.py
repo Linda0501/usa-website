@@ -104,4 +104,4 @@ def GetAttendanceDetails(SID, values):
         print(final_values)
         print(new_range)
         print(new_result)
-        return(final_values)
+    return(final_values)
