@@ -26,6 +26,11 @@ def home(request):
     context = Context({})
     return HttpResponse(html.render(context))
 
+def index_new(request):
+    html = get_template("index_new.html")
+    context = Context({})
+    return HttpResponse(html.render(context))
+
 def aboutus(request):
     html = get_template("aboutus.html")
     context = Context({})
@@ -112,7 +117,7 @@ def people(request):
     return HttpResponse(t.render(context))
 
 def courseMap(request):
-    t = get_template("course-map.html")
+    t = get_template("course-map-old.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
@@ -205,9 +210,9 @@ def yelp_review(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
-#######################################
+#########################################
 ###### WEB DEV TUTORIAL BLOG POSTS ######
-#######################################
+#########################################
 
 def website_tutorial_0(request):
     t = get_template("blog/education/website-tutorial-0.html")
@@ -229,6 +234,10 @@ def website_tutorial_3(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def anatomy_of_a_basic_fullstack(request):
+    t = get_template("blog/education/anatomy-of-a-basic-fullstack.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
 
 #####################################
 ###### SPRING 2018 DC PROJECTS ######
@@ -243,7 +252,6 @@ def facial_emotion_recognition(request):
     t = get_template("blog/dataconsulting/facial-emotion-recognition.html")
     context = Context({})
     return HttpResponse(t.render(context))
-
 
 def data_good(request):
     t = get_template("blog/dataconsulting/data-for-good-proposal.html")
@@ -296,7 +304,6 @@ def ml_classification(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
-
 ###################################
 ######### MISCELLANEOUS ###########
 ###################################
@@ -319,6 +326,11 @@ def susawebapp(request):
 #EASTEREGG
 def housingcRincess(request):
     t = get_template("housingcRincess.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def aDishwasher(request):
+    t = get_template("aDishwasher.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
@@ -385,7 +397,6 @@ def housingcrisis(request):
     t = get_template("housingcrisis/index.html")
     context = Context({})
     return HttpResponse(t.render(context))
-
 
 def textboxio(request):
     t = get_template("textboxio/textboxio.js")
