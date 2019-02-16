@@ -24,9 +24,10 @@ except ImportError:
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
 #when testing, the pathway below won't work, doesn't really matter though
-CLIENT_SECRET_LOC = '/Users/Abhinav/documents/github/usa-website/usa_website/utils/client_secret.json'
+HOME_DIR = os.path.dirname(os.path.abspath(__file__))
+CLIENT_SECRET_LOC = os.path.join(HOME_DIR, 'client_secret.json')
 APPLICATION_NAME = 'SusaClient'
-REDIRECT_URI = 'https://127.0.0.1:8000/attendance'
+REDIRECT_URI = 'https://susa.berkeley.edu/attendance'
 #You wouldn't steal a car would you? So please don't steal our credentials! Thanks!
 
 def get_credentials():
