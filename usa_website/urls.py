@@ -1,5 +1,4 @@
 """usa_website URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
 Examples:
@@ -39,7 +38,6 @@ urlpatterns = [
         url('course-map', extraViews.courseMap, name="courseMap"),
         url('project', extraViews.project, name="project"),
     url(r'^schedule_builder/', include('schedule_builder.urls')),
-
 """
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -49,6 +47,7 @@ urlpatterns = [
     url(r'^$', views.home, name = 'home'),
     url(r'aboutus$', views.aboutus, name = 'aboutus'),
     url(r'calendar$', views.calendar, name = 'calendar'),
+    url(r'attendance', views.AttendanceView.as_view(), name = "attendance"),
     url(r'officehours$', views.officehours, name='officehours'),
     url(r'stat-133$', views.stat133, name = "stat133"),
     url(r'stat-134$', views.stat134, name = "stat134"),
