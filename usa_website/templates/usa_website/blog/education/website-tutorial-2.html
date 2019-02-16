@@ -126,14 +126,14 @@
     terms, <code>class</code> and <code>id</code>. Both of these tags are used to apply inline and external CSS efficiently to groups of code.
   </p>
   <p>
-    A <b>Class</b> is a unique block of code and can be created using <code>&lt;div class="container"&gt;text&lt;/div&gt;</code>. This creates a class called container and
-    all CSS applied to container will be applied to text (the code between the <code>&lt;div&gt;&lt;/div&gt;</code> tags). We will learn how to style this in the next
-    section. Classes should be used to group large blocks of texts that each require their own styles.
+    A <b>Class</b> is a non-unique descriptor and can be created using <code>&lt;div class="container"&gt;text&lt;/div&gt;</code>. This creates a class called container and
+    all CSS applied to container will be applied to its contents (the code between the <code>&lt;div&gt;&lt;/div&gt;</code> tags). Classes can be reused as much as you want to apply a specific set of styles to multiple blocks of code. Classes are a great way to reuse existing code and keep your CSS compact. We will learn how to style this in the next
+    section.
   </p>
   <p>
-    An <b>id</b>, in contrast, is not unique. ids can be reused as much as you want to apply a specific set of styles to multiple blocks of code. An id can be created using
+    An <b>id</b>, in contrast, is unique. An id can be created using
     <code>&lt;div id="container"&gt;text&lt;/div&gt;</code>. Like the aforementioned class, all CSS applied to container will be applied to whatever is inside the
-    <code>div</code> tags. ids are a great way to reuse existing code and keep your CSS compact.
+    <code>div</code> tags. Ids should be used to group large blocks of text or other content that each require their own styles. Ids also have some unique interactions with 'a' tags and javascript (especially libraries like JQuery) that classes can't have. For example, the navigation links at the top of this blog post link to ids. Clicking these links takes you directly to the section you want! However because classes aren't unique, we have no way to link to a specific spot on our webpage using them. 
   </p>
 
 <div id="Styling">
