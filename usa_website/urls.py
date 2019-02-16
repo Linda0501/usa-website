@@ -81,6 +81,8 @@ urlpatterns = [
     url(r'rp/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services$', views.ucb_ug_mental, name="ucb_ug_mental"),
     url(r'rp/world-happiness-report-eda$', views.world_happiness, name="world_happiness"),
     url(r'rp/yelp-review-and-rating-analysis$', views.yelp_review, name="yelp_review"),
+    #R+P Spring 2018
+    #R+P Fall 2018
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),

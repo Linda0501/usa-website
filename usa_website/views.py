@@ -694,6 +694,14 @@ def food_insecurity(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+#####################################
+###### SPRING 2018 Blog Posts ######
+#####################################
+
+#####################################
+###### Fall 2018 Blog Posts ######
+#####################################
+
 ###################################
 ########## CRASH COURSES ##########
 ###################################
@@ -885,4 +893,3 @@ def montyhall(request):
     t = get_template("montyhall.html")
     context = Context({})
     return HttpResponse(t.render(context))
-
