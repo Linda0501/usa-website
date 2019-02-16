@@ -16,8 +16,8 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "usa_website.settings")
 
 if os.path.dirname(os.path.abspath(__file__)) == '/home/u/ug/ugradsa/usa-website/src/usa_website':
-    activate_env=os.path.expanduser("~/usa-website/src/venv2/bin/activate_this.py")
-    site.addsitedir('~/usa-website/src/venv2/lib/python2.7/site-packages')
+    activate_env=os.path.expanduser("~/usa-website/src/venv/bin/activate_this.py")
+    site.addsitedir('~/usa-website/src/venv/lib/python2.7/site-packages')
     execfile(activate_env, dict(__file__=activate_env))
 elif os.path.isdir(os.path.abspath(os.path.join(os.pardir,'venv/Scripts'))):
     activate_env=os.path.expanduser("./venv/Scripts/activate_this.py")
