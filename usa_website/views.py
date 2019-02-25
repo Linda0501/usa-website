@@ -697,6 +697,10 @@ def food_insecurity(request):
 #####################################
 ###### SPRING 2018 Blog Posts ######
 #####################################
+def bart_ridership_data(request):
+    t = get_template("blog/rp/spring_2018/bart-ridership-data.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
 
 #####################################
 ###### Fall 2018 Blog Posts ######
