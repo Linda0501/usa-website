@@ -3,6 +3,10 @@
 {% load staticfiles %}
 
 <title>Capsim</title>
+<head>
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
 <h2>Capsim</h2>
 <h3>
     <span style="color: #D5518D" id="author">By </span>
@@ -93,9 +97,7 @@
     <p>
       The scores are then weighted according to which customer segment (high- or low-tech) the product is targeted towards, and the weighted scores are combined to form the product’s raw score. The scores can range from 1 to 100. Performance and size are two different characteristics, but the customer survey score combines the two characteristics to produce one component of the customer survey score. For instance, the low tech segment customer survey score can be calculated according to the following formula as defined by the guide:
     </p>
-    <p> # center justify
-      Weighted = 0.41 * Price + 0.29 * Age + 0.21 * Reliability + 0.09 * Performance
-    </p>
+    <p>$$ Weighted = 0.41 * Price + 0.29 * Age + 0.21 * Reliability + 0.09 * Performance $$</p>
     <p>
       where performance represents the score for both performance and size. In this case, we expect the maximum contribution of each score to the overall base score to be the following:
     </p>
@@ -108,7 +110,9 @@
     <p>
       According to the guide, the scores are then weighted once more according the product’s awareness and accessibility. If the product has 100% awareness and 100% accessibility, the product’s base survey score does not change at all. Otherwise, the product’s final score is calculated according to the following equation:
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/capsim/final.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      $$ Final = (\frac{Weighted}{10})^2 * (1 - \frac{1-awareness}{2}) * (1 - \frac{1-accessibility}{2}) $$
+    </p>
     <p>
       For instance, one product in the second year of the simulation had the following characteristics:
     </p>
@@ -144,7 +148,7 @@
     <p>
       Since this products’ characteristics for the above areas are either close to the ideal values or in the barely acceptable range, we can be fairly certain that this product will have the above scores. Intuitively, we know products with ideal or close to ideal values should have the maximum possible score. Similarly, products with values in the barely acceptable range should have the minimum possible score. However, we do not know the exact calculations of the performance and size score. Fortunately, we do know that this product had a final score of 33, so we can proceed to calculate that the base score using the above formulas:
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/capsim/weighted.png' %}" style="margin:auto"></img><br><br>
+    <p>$$ Weighted = 10 * \sqrt{Final \div (1 - \frac{1 - awareness}{2}) \div (1 - \frac{1 - accessibility}{2})} $$</p>
     <p>
       Finally, we derive the performance and size score by subtracting the price, age, and reliability scores from the weighted score. When we do the math, we find that the product should have a performance and size score of about 11.5 points.
     </p>
