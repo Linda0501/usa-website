@@ -82,6 +82,7 @@ urlpatterns = [
     url(r'rp/world-happiness-report-eda$', views.world_happiness, name="world_happiness"),
     url(r'rp/yelp-review-and-rating-analysis$', views.yelp_review, name="yelp_review"),
     #R+P Spring 2018
+    url(r'rp/bart-ridership-data$', views.bart_ridership_data, name="bart_ridership_data"),
     #R+P Fall 2018
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
