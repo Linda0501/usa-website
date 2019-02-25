@@ -702,6 +702,12 @@ def bart_ridership_data(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def capsim(request):
+	t = get_template("blog/rp/spring_2018/capsim.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+
 #####################################
 ###### Fall 2018 Blog Posts ######
 #####################################
