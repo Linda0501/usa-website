@@ -8,7 +8,6 @@
     <span style="color: #D5518D" id="author">By </span>
     <span style="color: #3E95D7" id="name">Warren Gu</span>
   </h3>
-  <br />
 
 <div class=Blog_Navigation>
   <ol>
@@ -61,20 +60,20 @@
     <p>
       In the simulation, there is an ideal value for each of the product characteristic. The customer compares the product characteristics to the ideal values and assigns a score ranging from 1 to 100. Products that have characteristics closer to the ideal values will have a higher customer survey score. For all characteristics except for performance and size, the ideal value does not change over time. For instance, below is a graph of several products’ performance vs. size in the fourth year of a simulation. Each point represents a product, and the color of the product indicates the product’s overall customer survey score.
     </p>
-    <img src="{ % static 'usa_website/images/blog/rp/spring_2018/capsim/round4.png' % }" style="margin:auto"></img>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/capsim/round4.png' %}" style="margin:auto"></img><br><br>
     <p>
       The plot shows points that are closer to the (6.8, 13.2) have a higher customer survey score since those points. However, performance and size are special because the ideal performance and size changes every year. Let us compare the graph for the second year of the simulation and the seventh year of the simulation.
     </p>
-    <img src="{ % static 'usa_website/images/blog/rp/spring_2018/capsim/round2.png' % }" style="margin:auto"></img><br>
-    <img src="{ % static 'usa_website/images/blog/rp/spring_2018/capsim/round7_low_1.png' % }" style="margin:auto"></img>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/capsim/round2.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/capsim/round7_low_1.png' %}" style="margin:auto"></img><br><br>
     <p>
       Comparing the two plots, we observe that the products in the first graph have a higher survey score when closer to the point (5.8, 14.2), whereas products in the second graph have a higher survey score when closer to the point (8.3, 11.7). As a general rule of thumb, customers expect products to have a higher performance and a smaller size as years pass.
     </p>
     <p>
       Also, there are two types of customers in Capsim Foundation, high- and low-tech. Each type of customer has its own ideal value.
     </p>
-    <img src="{ % static 'usa_website/images/blog/rp/spring_2018/capsim/round7_low_2.png' % }" style="margin:auto"></img><br>
-    <img src="{ % static 'usa_website/images/blog/rp/spring_2018/capsim/round7_high.png' % }" style="margin:auto"></img>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/capsim/round7_low_2.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/capsim/round7_high.png' %}" style="margin:auto"></img><br><br>
     <p>
       As we can see, high-tech customers demand a higher performance and smaller size than low-tech customers. In the same year, high-tech customers have an ideal value close to (12.3, 7.7) whereas the low-tech customers have an ideal value close to (8.3, 11.7). Additionally, each customer segment will value certain characteristics over others. For instance, the high-tech customers value performance and size while the low-tech customers value price.
     </p>
@@ -109,7 +108,7 @@
     <p>
       According to the guide, the scores are then weighted once more according the product’s awareness and accessibility. If the product has 100% awareness and 100% accessibility, the product’s base survey score does not change at all. Otherwise, the product’s final score is calculated according to the following equation:
     </p>
-    <img src="{ % static 'usa_website/images/blog/rp/spring_2018/capsim/final.png' % }" style="margin:auto"></img>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/capsim/final.png' %}" style="margin:auto"></img><br><br>
     <p>
       For instance, one product in the second year of the simulation had the following characteristics:
     </p>
@@ -145,7 +144,7 @@
     <p>
       Since this products’ characteristics for the above areas are either close to the ideal values or in the barely acceptable range, we can be fairly certain that this product will have the above scores. Intuitively, we know products with ideal or close to ideal values should have the maximum possible score. Similarly, products with values in the barely acceptable range should have the minimum possible score. However, we do not know the exact calculations of the performance and size score. Fortunately, we do know that this product had a final score of 33, so we can proceed to calculate that the base score using the above formulas:
     </p>
-    <img src="{ % static 'usa_website/images/blog/rp/spring_2018/capsim/weighted.png' % }" style="margin:auto"></img>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/capsim/weighted.png' %}" style="margin:auto"></img><br><br>
     <p>
       Finally, we derive the performance and size score by subtracting the price, age, and reliability scores from the weighted score. When we do the math, we find that the product should have a performance and size score of about 11.5 points.
     </p>
@@ -170,8 +169,7 @@
 
 <div id="Sources">
   <h3>Sources</h3>
-  <u>Capsim Team Member Guide</u>
-  <p>http://ww3.capsim.com/modules/GIA/files/2016F_0/0/Foundation/EN/PDF/2016_Foundation_Team_Member_Guide.pdf</p>
+  <a href="http://ww3.capsim.com/modules/GIA/files/2016F_0/0/Foundation/EN/PDF/2016_Foundation_Team_Member_Guide.pdf">Capsim Team Member Guide</a><br><br>
 </div>
 
 
