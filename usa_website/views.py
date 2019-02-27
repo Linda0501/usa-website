@@ -712,6 +712,11 @@ def capsim(request):
 ###### Fall 2018 Blog Posts ######
 #####################################
 
+def music_moods(request):
+    t = get_template("blog/rp/fall_2018/music-moods.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 ###################################
 ########## CRASH COURSES ##########
 ###################################

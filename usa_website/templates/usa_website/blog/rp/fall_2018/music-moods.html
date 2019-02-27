@@ -1,0 +1,110 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+      <head>
+        <meta charset="utf-8">
+        <title>SUSA - Have Sad Bois Taken Over the Radio?: An Empirical Study on the Moods in Music in the United States</title>
+      </head>
+      <body>
+        <script type="text/javascript">
+          if (window.hljs && document.readyState && document.readyState === "complete") {
+            window.setTimeout(function() {
+              hljs.initHighlighting();
+            }, 0);
+          }
+        </script>
+
+        <style type="text/css">
+          .main-container {
+            max-width: 940px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          code {
+            color: inherit;
+            background-color: rgba(0, 0, 0, 0.04);
+          }
+          img {
+            max-width:100%;
+            height: auto;
+          }
+          .tabbed-pane {
+            padding-top: 12px;
+          }
+          button.code-folding-btn:focus {
+            outline: none;
+          }
+       </style>
+
+       <div class="container-fluid main-container">
+         <!-- tabsets -->
+         <script>
+           $(document).ready(function () {
+             window.buildTabsets("TOC");
+           });
+         </script>
+
+       <div class="fluid-row" id="header">
+         <h3 class="title toc-ignore">Have Sad Bois Taken Over the Radio?</h3>
+         <h3 class="title toc-ignore">An Empirical Study on the Moods in Music in the United States</h3>
+         <h4><span style="color: #D5518D" id="author">By </span><span style="color: #3E95D7" id="name">Carlos Ortega</span></h4>
+       </div>
+       <br />
+         <p>Github: <a href="https://github.com/SoyCarloss/SUSA-Research-MusicMoods/blob/master/SUSA_Music_Moods.ipynb">https://github.com/SoyCarloss/SUSA-Research-MusicMoods/blob/master/SUSA_Music_Moods.ipynb</a>
+       <br />
+       <br />
+         <div id="introduction" class="section level4"><h4>Introduction</h4>
+           <p>It is often said that music is a reflection of the society at that time. Turning on the news on any given day often gives bleak news of a new epidemic, or a new study on the poor mental health of the public, or any other similarly gloomy subjects. At the same time, there has appeared to be a rise in sad music especially in the world of hip-hop. Giving fame to artists like Lil Uzi Vert, best known for “All My Friends are Dead” and Lil Peep who was known as a pioneer of emo rap. Both artists are known to be part of the emo hip-hop and rap subgenre. The sub-genre has been around since the 2000s but it is not until recently that is has started to become mainstream. I decided to look at the top charts in the United States over the decades to find out if the music in the U.S. has become increasingly emo.</p>
+       <br />
+       <br />
+         <div id="getting-the-data" class="section level4"><h4>Getting the Data</h4>
+           <p>I started working with a dataset curated by @walkerkq on GitHub (<a href="https://github.com/walkerkq/musiclyrics">https://github.com/walkerkq/musiclyrics</a>). The dataset has the song name, artist, rank, lyrics, and the year it was on the Billboard Top 100 Charts for all songs in the Billboard Top 100 Charts from 1965 to 2015. I used Pandas to read the csv file into a Python notebook. I added a column, ‘Query’ which I would use when working with Spotify’s API afterward.</p>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/01_getting-data_setup.png' %}" style="margin:auto"></img>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/02_getting-data_head-table.png' %}" style="margin:auto"></img>
+           <p>Then, I used Spotipy, a lightweight Python library to interact with the Spotify API, to find the valence and duration of each song through Spotify’s database. Of the original 5,100 song entries, I dropped the songs that did not contain the lyrics, the valence, or the duration. This resulted in 232 dropped songs or a total of 4,868 songs.</p>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/03_spotipy_setup.png' %}" style="margin:auto"></img>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/04_spotipy_head-table.png' %}" style="margin:auto"></img>
+       <br />
+       <br />
+         <div id="working-with-the-data" class="section level4"><h4>Working with the Data</h4>
+           <p>In an effort or lack thereof, to avoid trying to reinvent the wheel I decided to use Google’s Cloud Natural Language API to perform the sentiment analysis on all the lyrics. The Cloud Natural Language API comes with a couple of caveats. For one, the Cloud Natural Language API sentiment analysis tool currently only works with English, Spanish and Japanese. Additionally, because some songs in the dataset may have corrupted lyrics or no lyrics at all due to the way it was scraped, the API was not able to analyze these songs. Dropping these songs resulted in the final table only having 4073 songs. For the most part, each year had around the same number of songs, with some difference between 1965-2000 and 2000-2015.</p>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/05_work-data_setup.png' %}" style="margin:auto"></img>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/06_work-data_head-table.png' %}" style="margin:auto"></img>
+           <p>Once I had the sentiment value given by Google’s API, which is between -1 being negative and 1 being positive, I used RCharlie's gloom index formula, which is linked at the end of this post, to take into account lyrical density, or the number of words over the duration of the song, the sentiment analysis given by the Natural Cloud API, and the valence given by Spotify’s API.</p>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/07_gloom-index-eq.png' %}" style="margin:auto"></img>
+           <p>Source: <a href="https://www.rcharlie.com/post/fitter-happier/">https://www.rcharlie.com/post/fitter-happier/</a></p>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/08_gloom-index-normalize-data.png' %}" style="margin:auto"></img>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/09_gloom-index-normalize-data_head-table.png' %}" style="margin:auto"></img>
+       <br />
+       <br />
+         <div id="the-results" class="section level4"><h4>The Results</h4>
+           <p>The first visualization I made was a scatter plot of all the songs by year and their corresponding gloom index.</p>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/10_visual_scatter.png' %}" style="margin:auto"></img>
+           <p>As you can see, this does not show us much. However, once I made the box plot of all the songs by decade, it starts to look a bit more interesting.</p>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/11_visual_boxplot.png' %}"
+           style="margin:auto"></img>
+           <p>The averages of each decade, noted by the yellow line, appears to not change too much over this timespan. However, more current decades display a much wider range with minimums reaching as low as -5 while the high remains the same. As time goes on, the emotion displayed in popular music appears to be more polarizing because of its larger spread.</p>
+           <p>Finally, I made a line plot of all the years and the average gloom index per year to see a clearer picture of what is going on.</p>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/12_visual_lineplot.png' %}"
+           style="margin:auto"></img>
+           <p>As seen in the graph, on average songs overall have been getting sadder. With the lowest value occurring in 2015. For our final graph, we plotted these same points on a scatter plot and plotted a least squares polynomial fit line with a degree of 3 over it.</p>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/13_visual_least-squares-scatter.png' %}"
+           style="margin:auto"></img>
+       <br />
+       <br />
+         <div id="conclusion" class="section level4"><h4>Conclusion</h4>
+           <p>The overall trend appears to be that music, on average, is becoming sadder or more negative, but it still leans towards the positive end. There is no doubt that this is due to a multitude of factors such as, world events, the economy, and living conditions among other things, which would require analysis outside of my expertise. Although I cannot prove causality, I took the liberty of plotting the average gloom index value per year alongside some arbitrarily chosen key events in modern U.S. history.</p>
+           <img src="{% static 'usa_website/images/blog/rp/fall_2018/music-moods/14_conclusion_plot.png' %}"
+           style="margin:auto"></img>
+           <p>We do not know how impactful if at all, these events were in the mood of music at that time. However, the data does defend the idea that mainstream music has become sadder and more polarizing in emotion. Whether or not music like Lil Peep’s and Lil Uzi Vert continues to be the music of choice will be up to the public. Time will tell if the U.S. will go back to the positive music displayed in the 70s.</p>
+       <br />
+       <br />
+         <div id="credits" class="section level4"><h4>Credits</h4>
+           <p>I’d like to give credit to RCharlie. This project was largely inspired by him and his ‘fitteR happieR’ article (<a href="https://www.rcharlie.com/post/fitter-happier/">https://www.rcharlie.com/post/fitter-happier/</a>) where he set out to find which Radiohead album was the saddest.</p>
+           <p>I’d also like to thank Oscar Syu and the rest of the Research and Publications Committee at UC Berkeley’s Statistics Undergraduate Student Association for giving me the resources and support to complete this project.</p>
+       <br />
+      </body>
+</html>
+{% endblock %}
