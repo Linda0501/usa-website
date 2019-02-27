@@ -2,8 +2,8 @@
 {% block content %}
 {% load staticfiles %}
 
-<title> Basic Web Architecture (And an Intro to Requests)</title>
-<h2>Front End Vs. Backend </h2>
+<title>AVBO: Basic Web Architecture</title>
+<h2>AVBO: Basic Web Architecture</h2>
   <h3>
     <span style="color: #D5518D" id="author">By </span>
     <span style="color: #3E95D7" id="name">Abhinav Bhaskar</span>
@@ -14,16 +14,82 @@
 <div class=Blog_Navigation>
   <ol>
     <li><a href="#Purpose">Purpose</a></li>
-    <li><a href="#Web-Browsers">Web Browsers and Web Servers</a></li>
-    <li><a href="#Definitions">Some Basic Definitions (html, uri, http, request)</a></li>
-    <li><a href="#Requests">The Structure of a Request</a></li>
+    <li><a href="#Web-Browsers">Web Browsers, Front Ends and Backends</a></li>
+    <li><a href="#Definitions">Some Other Basic Definitions (DNS, uri, http, request)</a></li>
+    <li><a href="#Requests">The Structure of a Request (POST/GET/Ajax)</a></li>
+    <li><a href="#Encoding">(Optional) Text Encoding</a></li>
     <li><a href="#Responses">Responses</a></li>
     <li><a href="#Browser">Back to the Browser</a></li>
     <li><a href="#Databases">Adding Databases</a></li>
-    <li><a href="#node.js">Getting Complicated with node.js (two way connections)</a></li>
-    <li><a href="#Databases">Other stuff (cookies)</a></li>
+    <li><a href="#Other">Other Stuff (Cookies)</a></li>
+    <li><a href="#node.js">Getting Complicated with Node.js (Two Way Connections)</a></li>
+    <li><a href="#other2">More Advanced Stuff (docker/kubernetes)</a></li>
+//    <li><a href="#Http-requests">Http requests (POST and GET)</a></li>
+//    <li><a href="#Ajax">What is Ajax and why is it important?</a></li>
   </ol>
 </div>
 
-<li><a href="#Http-requests">Http requests (POST and GET)</a></li>
-<li><a href="#Ajax">What is Ajax and why is it important?</a></li>
+
+<div id="Purpose">
+  <h3>Purpose</h3>
+  <p>
+    Hello and welcome to our blog post on Basic Web Architecture! This will be the first of several entries in <b>AVBO</b>, a series I will be working on in the Spring 2018 semester. AVBO stands for 'A Very Brief Overview' and will consist of mostly short (though this one will be quite long) companion posts to lectures, workshops and walkthroughs that we will give in the web development committee this semester. As our projects become more complex and start to venture past just creating basic web pages, we need an efficient way to teach incoming members about concepts that we will be using as many of our members do not come in with a solid foundation in web development. Unfortunately, my time is also limited by classes and other commitments, so I will not be able to cover everything that I want to, but depending on the success of our lectures and blog posts, I may continue it into next year.
+  </p>
+  <p>
+    Throughout my interviews for incoming Web Development Committee members, I've come to realize that while many students come in with knowledge of some programming paradigms and software development concepts, no one that I've interviewed (Fall 2018 and Spring 2019) could accurately describe what happens when you type in a url into your browser. In my opinion, the process of fetching data from a server and displaying it in your browser is the most important thing to study when you first pick up full stack development. This simple process involves every element of a basic full stack and deals with very important concepts in web development. It also helps you to conceptualize how different parts of a front-end and backend work together via requests. I'll try not to get too immersed in the details and we'll save APIs for another time, but this should serve as a solid foundation in which to begin studying full stack web development.
+  </p>
+  <p>
+    Also if anyone in susa wants to help me create graphics for these posts, please let me know!
+  </p>
+</div>
+<div id="Web-Browsers">
+  <h3>Web Browsers, Front Ends and Backends</h3>
+  <p>
+    Before we jump into how these things work, we should probably go over and define what each of these terms means. To be extra thorough, we will also define both Client Side and Server Side as well. I should also note that this blog post will probably only hold up if you're looking at a client-server (so if you actually have a server) model as opposed to a serverless model.
+  </p>
+  <p>
+    A <b>Web Browser</b> is simply a software application that allows users to display web pages. They can handle a variety of protocols (which we will get into later) such as http/https/mailto/ftp and display files like pdfs. The first browsers ever made were Mosaic (1993), Netscape Navigator (1994) and Internet Explorer (1995) in the early days of the internet. These browsers have since been succeded by chrome, safari, opera and my personal favorite, firefox amongst many others. Just as a note, I've found that the <a href="https://blog.mozilla.org/press/mozilla-blog-directory/">Mozilla Blogs</a> contain some great information on how they've programmed their newest web browser "Quantum" and how it works. We will also be redirecting to Mozilla's blogs for further reading on topics presented in this article.
+  </p>
+  <p>
+    The <b>Front End</b> consists of everything the user sees when looking at a webpage. This typically includes Html/Css and Javascript.
+  </p>
+  <p>
+    <!--TODO:finish other blog post about anatomy of fullstack-->
+    The <b>Backend</b> consists of everything the user doesn't see. This usually includes the OS, Web Server, Database, and Scripting Language. To read about those, click <b>HEREERSERSERSER</b>.
+  </p>
+  <p>
+    When we say something is <b>Client Side</b> we mean that it happens in the web browser. For example, html and xml both render on the client side. This may seem analagous to front-end but it's not. The client side can also have scripting done in javascript.
+  </p>
+  <p>
+    Likewise, when we say something is <b>server side</b> we mean that it happens on the web server. For example, pulling data from a database is a server side process. This isn't limited to backend languages however. Certain scripting languages that are traditionally considered 'backend' such as PHP are server side languages but may be involved in rendering html on the front end. Thus, PHP could be considered a front end server side language if it is doing this.
+  </p>
+  <p>
+    To avoid any confusion about where something is being run I will try to be thorough when describing processes in both this and following blog posts by stating if something is considered front end or back end <i>and</i> client side or server side.
+  </p>
+</div>
+<div id="Definitions">
+  <h3>Some Other Basic Definitions (http, url, uri, request)</h3>
+  <p>
+    Let's get into some other definitions before we start. I promise we're almost done with the prepwork.
+  </p>
+  <ul>
+    <li>
+      <b>Http</b>, or HyperText Transfer Protocol is the main protocol used by the web. It describes the steps required for browsers and servers to take in order to transmit information to each other in order to display web pages. Http is a <i>stateless</i> protocol, meaning that once a server closes an http connection, it is not required to retain no knowledge of the http <i>status</i> or its enclosed information mainly to decrease the amount of resources the server has to expend. We'll talk more about how browsers and servers interact in the next section.
+    </li>
+    <li>
+      An Http <b>Status</b> just refers to a three digit code that refers to what happened to the information that was requested by either the server or the browser. Common http statuses include 200 (ok), 404 (file not found) and 502 (Bad Gateway). More generally, 1XX refers to an information response, 2XX refers to a successful response, 3XX refers to a redirection response, 4XX returns a client error response, and 5XX returns a server error response. You can read about all possible statuses <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">Here</a>.
+    </li>
+    <li>
+      <b>Https</b> refers to the Http where connections are required to be <i>encrypted</i> by TLS, or Transport Layer Security. It used to be encrypted by SSL, or Secure Socket Layer, before it was exposed to be vulnerable. If you want to learn more, just google the 'POODLE' attack.
+      </li>
+    <li>
+      A <b>url</b>, or uniform resource locator just contains the address to a resource on the web. The format for a url is as follows: <code>protocol://ip.address.of.server:portnumber/file-location-pathway?additional=identifier</code>. This might seem difficult to comprehend, but we will unpackage all the parts of a url in the next section.
+    </li>
+    <li>
+      A <b>uri</b> is the uniform resource identifier. This is different from a url in that "uris identify while urls locate". This may seem trivial but it means that URLs are a subset of URIs. They're not very important for the context of this post (though they are important in general!), but I included them because if you work on a project that requires a company's API, chances are that they will ask you for a return URI or something along those lines. Please refer to this <a href="https://stackoverflow.com/questions/176264/what-is-the-difference-between-a-uri-a-url-and-a-urn">Stack Overflow</a> post. Both Roger Pate and Stephen Ostermiller explain the concept and distiction between uris, urls, and urns better than I ever could.
+    </li>
+    <li></li>
+  </ul>
+
+</div>
+{% endblock %}

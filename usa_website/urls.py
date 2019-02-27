@@ -97,6 +97,7 @@ urlpatterns = [
     url(r'education/website-tutorial-2$', views.website_tutorial_2, name="website_tutorial_2"),
     url(r'education/website-tutorial-3$', views.website_tutorial_3, name="website_tutorial_3"),
     url(r'education/anatomy-of-a-basic-fullstack$', views.anatomy_of_a_basic_fullstack, name="anatomy_of_a_basic_fullstack"),
+    url(r'education/basic-web-architecture$', views.basic_web_architecture, name="basic_web_architecture"),
     #Data Consulting
     url(r'dataconsulting/population-modeling$', views.population_modeling, name="population_modeling"),
     url(r'dataconsulting/tutorfly$', views.tutorfly, name="tutorfly"),
