@@ -84,6 +84,7 @@ urlpatterns = [
     #R+P Spring 2018
     url(r'rp/bart-ridership-data$', views.bart_ridership_data, name="bart_ridership_data"),
     url(r'rp/capsim$', views.capsim, name="capsim"),
+    url(r'rp/college-vs-nba-success$', views.college_vs_nba_success, name="college_vs_nba_success"),
     #R+P Fall 2018
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),

@@ -707,6 +707,10 @@ def capsim(request):
 	context = Context({})
 	return HttpResponse(t.render(context))
 
+def college_vs_nba_success(request):
+	t = get_template("blog/rp/spring_2018/college-vs-nba-success.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
 
 #####################################
 ###### Fall 2018 Blog Posts ######
