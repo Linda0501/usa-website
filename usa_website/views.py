@@ -298,6 +298,11 @@ def music_moods(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def polls(request):
+    t = get_template("blog/rp/fall_2018/polls.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 ###################################
 ########## CRASH COURSES ##########
 ###################################

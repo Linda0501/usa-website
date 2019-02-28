@@ -88,6 +88,7 @@ urlpatterns = [
     url(r'rp/num-concept$', views.number_concept, name="number_concept"),
     #R+P Fall 2018
     url(r'rp/music-moods$', views.music_moods, name="music_moods"),
+    url(r'rp/polls$', views.polls, name="polls"),
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),

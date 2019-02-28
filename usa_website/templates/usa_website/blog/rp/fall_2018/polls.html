@@ -41,7 +41,8 @@
     <p>
        I gathered data from 29 elections from 8 different countries. For each of these elections, I catalogued the final election result, the results of the ten polls leading up to the election, and a number of characteristics about each party: its political position, its European affiliation, its size (large, medium, or small), its government status (government, opposition, or confidence and supply), and whether it grew or shrank from the previous election. Using the poll results and election results, I calculated a number of additional indicators for each party in each election: the standard deviation of the ten polls’ results, the absolute error (the difference between the average of the final ten polls and the election result), and the relative error (the absolute error divided by the result), as well as the absolute and relative error for the weighted poll average (calculated by subtracting the average of the first five of the ten polls from twice the average of the last five of the ten polls). I used these values and characteristics to produce my results and conclusions.
     </p>
-    <img src="../../../../static/usa_website/images/blog/polls/project countries data.png" alt="project countries data" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/projectCountriesData.png" alt="project countries data" style="margin:auto"/>
+    <br></br>
 </div>
 
 <br></br>
@@ -50,8 +51,8 @@
     <p>
       The first comparison I explored is between the accuracy of the regular average and the weighted average, using a box-and-whisker plot. where I plotted the absolute error and the absolute relative error.
     </p>
-    <img src="../../../../static/usa_website/images/blog/polls/box_re_1.png" alt="box_and_whisker_plot_1" style="margin:auto"/>
-    <img src="../../../../static/usa_website/images/blog/polls/box_re_2.png" alt="box_and_whisker_plot_2" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/box_re_1.png" alt="box_and_whisker_plot_1" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/box_re_2.png" alt="box_and_whisker_plot_2" style="margin:auto"/>
     <br></br>
     <p>
       The data indicates that using a weighted average as opposed to a regular average makes little difference in error. Comparing the means and medians shows that the weighted average produces a marginally lower median error, but as it is more positively skewed, it produces a marginally higher mean error:
@@ -88,9 +89,11 @@
       <br></br>
       Following the previous comparison, the first connection I explored is that between the polling error and the standard deviation of the ten polls. Because comparing standard deviation to relative error is inconsistent as standard deviation generally tends to increase with greater values, I did not plot the standard deviation against the absolute relative error; indeed, the Pearson correlation coefficient between the two is a mere 0.0408.
     </p>
-    <img src="../../../../static/usa_website/images/blog/polls/sd_e_scatter.png" alt="scatter_plot" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/sd_e_scatter.png" alt="scatter_plot" style="margin:auto"/>
+    <br></br>
     <p>
       There is a weak to moderate correlation between standard deviation and absolute error; the Pearson coefficient is 0.3858. This is unsurprising; a greater standard deviation of poll results may imply greater uncertainty over the true percentage and furthermore increases the range of individual errors from the final result, thus increasing the likelihood that the average polling error is greater.
+      <br></br>
     </p>
 </div>
 
@@ -99,25 +102,29 @@
     <p>
       Between the eight countries included in the dataset, there is variance in the average polling error. I took the absolute value of the mean absolute and mean relative errors for all elections in each country and compared them in a bar graph.
     </p>
-    <img src="../../../../static/usa_website/images/blog/polls/Bar01.png" alt="BarGraph01" style="margin:auto"/>
-    <img src="../../../../static/usa_website/images/blog/polls/Bar02.png" alt="BarGraph02" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/Bar01.png" alt="BarGraph01" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/Bar02.png" alt="BarGraph02" style="margin:auto"/>
+    <br></br>
     <p>
       In both the absolute and relative error plots, Iceland and the United Kingdom had the greatest mean polling error. There are plausible but different explanations for both. Iceland’s error can potentially be attributed to its exceptionally small population of 350 thousand, which can make it more difficult to gather a representative sample, similarly to the notable inaccuracy of local-level polls in other countries. As for the United Kingdom, it is possible that its first-past-the-post (FPTP) electoral system, which differentiates it from the rest of the countries in the dataset (which have proportional systems, or in the case of Ireland, single transferable vote), plays a factor. Because of the presence of tactical voting and phenomena such as the “spoiler effect”—whereby votes for minor parties are often considered “spoilers” in that they potentially take away votes from the top two finishers—which exist in FPTP but not in proportional systems, it is possible that many voters indicate to pollsters that they will vote for a certain party but change their minds on election day due to the strategic implications of their intended votes. In these ways, Iceland and the United Kingdom are unique from the other six countries in the dataset.
     <br></br>
       Using the five characteristics attributed to each party in each election, I then sorted the dataset and produced bar chart comparisons for the mean absolute and mean relative polling errors between categories of characteristics. A negative error means that polls underestimated the actual result, while a positive error means the opposite. The first of five characteristics I examined was the parties’ political positions, which I split up into six categories: left-wing, center-left, center, center-right, right-wing, and far-right (the presence of far-left parties in the dataset was ephemeral), based on the parties’ ideologies and general consensus on their political positions.
     </p>
-    <img src="../../../../static/usa_website/images/blog/polls/wingbar00.png" alt="WingBarGraph00" style="margin:auto"/>
-    <img src="../../../../static/usa_website/images/blog/polls/wingbar01.png" alt="WingBarGraph01" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/wingbar00.png" alt="WingBarGraph00" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/wingbar01.png" alt="WingBarGraph01" style="margin:auto"/>
+    <br></br>
     <p>
       The data suggests that more left-leaning parties are overestimated in polls, while more right-wing parties are underestimated, though curiously, the relatively significant underestimation shown for right-wing parties with the mean error evaporates with the mean relative error. While one might be inclined to simply draw the conclusion that the more left-wing a party is, the more it is overestimated in polls, a more specific ideological categorization provided by the parties’ European affiliation paints a slightly different image.
     </p>
-    <img src="../../../../static/usa_website/images/blog/polls/wingBar03.png" alt="WingBarGraph03" style="margin:auto"/>
-    <img src="../../../../static/usa_website/images/blog/polls/wingBar04.png" alt="WingBarGraph04" style="margin:auto"/>   
+    <img src="../../../../../static/usa_website/images/blog/polls/wingBar03.png" alt="WingBarGraph03" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/wingBar04.png" alt="WingBarGraph04" style="margin:auto"/>
+    <br></br>   
     <p>
       There are a number of conclusions to draw from this; I will first, however, summarize my European Parliament ideological categorizations to increase clarity.
     <br></br>
       I categorized each party in each election to the European Parliament group it sat in at the time of the respective election. If the party did not have any European Parliament seats or was not in a European Union member state, I categorized it with the European Parliament group that the other members of its European party sat with; for example, I categorized the Pirate Party of Iceland with G/EFA, as that is the group that the European Pirate Party is affiliated with and that the Pirate Party Germany’s MEP sits with.
     </p>
+    <br></br>
     <table style="width:100%">
       <tr>
         <th>European Parliament Group</th>
@@ -192,9 +199,11 @@
         <td>Eurosceptic</td>
       </tr>
     </table>
+    <br></br>
     <p>
       For five of the six categorizations, the two charts paint a roughly similar picture. In line with the results of the political position comparison, there is again an indication of polls overestimating left-leaning parties, but the added distinction provided by this comparison suggests a particularly strong polling bias toward green parties, compared to a more muted one toward socialist and social democratic parties.
     </p>  
+    <br></br>
 </div>
 
 
@@ -203,28 +212,33 @@
     <p>
       Despite the virtual non-existence of this concept in the United States, in many countries, particularly those with proportional representation, coalition governments are common if not the norm. In a coalition government, when no party has an absolute majority of seats, multiple parties join together to achieve a majority and form government together. There are also often cases where a coalition does not have a majority but achieves a working majority by forming a confidence and supply agreement with another party or parties. The parties providing confidence and supply are not part of the government, holding no cabinet positions, but agree to vote in favor of the government on motions of confidence and budget in order to prevent the government from failing. I compared the average polling error between parties in government, those in confidence and supply, and those in opposition in the term prior to the respective election. Curiously, parties in confidence and supply have a significantly greater (positive) error.
     </p>
-    <img src="../../../../static/usa_website/images/blog/polls/pt3Bar01.png" alt="pt3Bar01" style="margin:auto"/>
-    <img src="../../../../static/usa_website/images/blog/polls/pt3Bar02.png" alt="pt3Bar02" style="margin:auto"/>    
+    <img src="../../../../../static/usa_website/images/blog/polls/pt3Bar01.png" alt="pt3Bar01" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/pt3Bar02.png" alt="pt3Bar02" style="margin:auto"/>    
+    <br></br>
     <p>
       I compared average polling error between parties that grew compared to their previous election result and those that shrank.
     </p>
-    <img src="../../../../static/usa_website/images/blog/polls/pt3Bar03.png" alt="pt3Bar03" style="margin:auto"/>
-    <img src="../../../../static/usa_website/images/blog/polls/pt3Bar04.png" alt="pt3Bar04" style="margin:auto"/>    
+    <img src="../../../../../static/usa_website/images/blog/polls/pt3Bar03.png" alt="pt3Bar03" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/pt3Bar04.png" alt="pt3Bar04" style="margin:auto"/> 
+    <br></br>   
     <p>
       Parties that shrank seem to have a reasonably greater relative error. Because a shrinking party, due to its reduction in support, may be smaller than a larger party, there may be a connection with the comparison of average polling error based on party size. I arranged parties into three categories: “Small”, with a vote share of less than 10%; “Medium”, with a vote share of 10% to 20%, and “Large”, with a vote share of greater than 20%.
     </p>
-    <img src="../../../../static/usa_website/images/blog/polls/pt3Bar05.png" alt="pt3Bar05" style="margin:auto"/>
-    <img src="../../../../static/usa_website/images/blog/polls/pt3Bar06.png" alt="pt3Bar06" style="margin:auto"/>    
+    <img src="../../../../../static/usa_website/images/blog/polls/pt3Bar05.png" alt="pt3Bar05" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/pt3Bar06.png" alt="pt3Bar06" style="margin:auto"/>    
+    <br></br>
     <p>
       The average polling error of small parties is slightly greater in magnitude of that of medium parties, which is slightly greater in magnitude than that of large parties. Because the same absolute error is a greater relative error for a smaller party, this disparity is significantly magnified when comparing relative error. It is expected that small parties will have greater relative error than larger parties, but the scale of the disparity, as well as the fact that small parties also have greater absolute error, is surprising. It may be additionally useful, however, to make the same comparison with the absolute value taken of each error, as was done for the country comparison.
     </p>
-    <img src="../../../../static/usa_website/images/blog/polls/pt3Bar07.png" alt="pt3Bar07" style="margin:auto"/>
-    <img src="../../../../static/usa_website/images/blog/polls/pt3Bar08.png" alt="pt3Bar08" style="margin:auto"/>    
+    <img src="../../../../../static/usa_website/images/blog/polls/pt3Bar07.png" alt="pt3Bar07" style="margin:auto"/>
+    <img src="../../../../../static/usa_website/images/blog/polls/pt3Bar08.png" alt="pt3Bar08" style="margin:auto"/>  
+    <br></br>  
     <p>
       Indeed, this paints a different picture. While, as expected, the relative error increases with smaller parties, the opposite is the case with the absolute error; large parties have the greatest error, while small parties have the least. In the context of the polling process, this makes sense; polls' margins of error decrease for lower percentages.
     <br></br>
       Given the patterns found in the above comparisons, it is certainly possible that some characteristics are linked to each other, with potential relations between two categories causing patterns to be carried over. For example, a comparison of the median size of parties with each characteristic:
     </p>
+    <br></br>
     <table style="width:50%">
       <tr>
         <th>Political Position</th>
@@ -320,6 +334,7 @@
         <td>16.2%</td>
       </tr>
     </table>
+    <br></br>
 </div>
 
 <div id="Conclusions">
@@ -335,6 +350,7 @@
     <br></br>
       While the insights from this data shed light onto the inherent and implicit biases of polls, there is much more information that can hypothetically be gathered were the appropriate data to be gathered. It would be interesting to see surveys on voter psychology, allowing analysts to be more in tune with the mindset of the average voter, furthermore helping improve the accuracy of opinion polls.
     </p>
+    <br></br>
 </div>
 
 {% endblock %}
