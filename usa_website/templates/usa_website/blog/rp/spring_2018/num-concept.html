@@ -9,11 +9,19 @@
     <span style="color: #D5518D" id="author">By </span>
     <span style="color: #3E95D7" id="name">Andrew Chen</span>
   </h3>
-  
+
+<div class=Blog_Navigation>
+  <ol>
+    <li><a href="#Introduction">Introduction</a></li>
+    <li><a href="#Methodology">Methodology</a></li>
+    <li><a href="#Results">Results</a></li>
+    <li><a href="#DiscussionAndConclusion">Discussion and Conclusion</a></li>
+  </ol>
+</div>
+
 <div class=Introduction>
   <h2>Introduction </h2>
-  <p style="text-indent: 20px">The question of how we come to develop the number concept over years of training in
-  mathematics education has been hotly discussed and tested in various methods over the
+  <p style="text-indent: 20px; text-align: justify;">The question of how we come to develop the number concept over years of training in mathematics education has been hotly discussed and tested in various methods over the
   decades. The number concept refers to the ability of humans to associate quantities and
   magnitudes of concrete objects with abstract numbers, and the ability to perceive relationships
   and differences between numbers. Jean Piaget first popularized the idea of the “number
@@ -46,8 +54,15 @@
 
 <div class=Methodology>
   <h2>Methodology</h2>
+<<<<<<< HEAD
   <p style="text-indent: 20px">The data were collected from an online Qualtrics survey
   <a href="https://ucbpsych.qualtrics.com/jfe/form/SV_0cc37YgiYXUpx3f"> (https://ucbpsych.qualtrics.com/jfe/form/SV_0cc37YgiYXUpx3f)</a> that was designed by Rachel Jansen of the Computational Cognitive Science Lab at UC Berkeley. The survey randomly
+=======
+  <p>The data were collected from an online Qualtrics survey
+  <a href="https://ucbpsych.qualtrics.com/jfe/form/SV_0cc37YgiYXUpx3f">
+  (https://ucbpsych.qualtrics.com/jfe/form/SV_0cc37YgiYXUpx3f)</a> that was designed by Rachel
+  Jansen of the Computational Cognitive Science Lab at UC Berkeley. The survey randomly
+>>>>>>> 3d026fdf33284f7bcdfa87c73048c3cb47e69423
   chose 20 numbers from 2 to 30 that were divided into two groups of ten numbers each. (The
   division of numbers was designed so that each group has the same number of even/odd
   numbers, prime/composite numbers, etc. In future studies, one group would be used before
@@ -83,7 +98,14 @@
   INDCLUS does. In other words, it is a form of INDCLUS in which there is only one subject (n =
   1). To get around that issue, we ran a function named ADCLUS2 for the matrices of certain
   participants whose MDS plots seemed to have significant clusters (Used from Michael Lee’s
+<<<<<<< HEAD
   website: <a href = 'http://faculty.sites.uci.edu/mdlee/similarity-data/'>http://faculty.sites.uci.edu/mdlee/similarity-data/)</a>. We did this to determine whether these clusters from the MDS plots were consistent with the clusters generated from the
+=======
+  website:
+  <a href = 'http://faculty.sites.uci.edu/mdlee/similarity-data/'>http://faculty.sites.uci.edu/mdlee/similarity-data/)</a>.
+  We did this to determine whether
+  these clusters from the MDS plots were consistent with the clusters generated from the
+>>>>>>> 3d026fdf33284f7bcdfa87c73048c3cb47e69423
   ADCLUS algorithm.</p>
   <p style="text-indent: 20px">The ADCLUS2 function is a modification of ADCLUS that uses additive clustering
   combined with stochastic hill-climb to get a better result than ADCLUS. It takes in an NxN
@@ -93,12 +115,12 @@
   each cluster. The weights represent how significant each cluster is compared to the others. For
   example, if the cluster with the highest weights happens to contain even numbers, then we can
   speculate that the participant emphasized even/oddness more than other numerical features
-  when judging similarities between numbers.</p>  
+  when judging similarities between numbers.</p>
 </div>
 
 <div class=Results>
   <h2>Results</h2>
-  
+
   <div class=AvgResultsOf84Participants>
     <h3>1. Average Results of 84 Participants</h3>
     <p style="text-indent: 20px">We first ran MDS and ADCLUS2 on the average results of all 84 participants. We tested
@@ -106,8 +128,9 @@
     numbers. From the results, it seems like both algorithms recognize that most of the clusters are
     based off of magnitude. There are clusters of “small” numbers (below 10), “medium” numbers
     (between 10 and 20), and “large” numbers (over 20), as well as a cluster of even numbers.</p>
-  
+
     <p><u>MDS Analysis of Average Results</u></p>
+<<<<<<< HEAD
     <img src="../../../../../static/usa_website/images/blog/rp/spring_2018/numconcept/MDS-diagram-for-avg-meas.png" alt="MDS         Diagram for Average Measure"> <br> <br>
   
     <u>ADCLUS2 Analysis of Average Results</u> <br>
@@ -116,19 +139,32 @@
     ● 29, 20, 21, 25, 28, 27 (&gt;=20) <br>
     ● 14, 16, 9, 11, 20, 18, 21, 12, 17, 13, 10 (&gt;=10 &lt;=20) <br>
     ● 5, 9, 8, 7, 6, 4, 10 (&lt;10) <br> <br> <br> 
+=======
+    <img src="../../../../../static/usa_website/images/blog/rp/spring_2018/numconcept/MDS-diagram-for-avg-meas.png" alt="MDS         Diagram for Average Measure">
+
+    <p><u>ADCLUS2 Analysis of Average Results</u></p>
+    <p>4 Clusters:</p>
+    <ul>
+      <li>14,16,8,18,12,28,6,4 (even)</li>
+      <li>29,20,21,25,28,27 (>=20)</li>
+      <li>14,16,9,11,20,18,21,12,17,13,10 (>=10 <=20)</li>
+      <li>5,9,8,7,6,4,10 (<10) </li>
+    </ul>
+>>>>>>> 3d026fdf33284f7bcdfa87c73048c3cb47e69423
   </div>
-  
+
   <div class=CaseStudyResults>
     <h3>2. Case Study Results</h3>
     <p>These are the MDS and ADCLUS2 results for participants who seemed to have significant clusterings of numbers based on         their MDS plots.</p>
-    
+
     <div class=Participant5>
       <h4>(A) Participant 5</h4>
-      
+
       <p><u>MDS Analysis of 20 Numbers</u></p>
       <p><i>*The bolded weight and list of numbers belong to the cluster with the highest weight, meaning it</i></p>
       <img src="../../../../../static/usa_website/images/blog/rp/spring_2018/numconcept/MDS-meas-for-part5.png" alt="MDS Diagram       for Participant 5"> <br>
       <p><i>seemed to be the feature that the participant emphasized the most.</i></p>
+<<<<<<< HEAD
       
       <u>ADCLUS2 Analysis of 20 Numbers</u> <br>  
       <p>Weights = 24.2764   <b>56.5536</b>    35.9281     23.7502</p>
@@ -137,11 +173,24 @@
       ● 14, 21, 7, 12 <br>
       ● 5, 9, 11, 12, 13, 10 <br>
       
+=======
+
+      <p><u>ADCLUS2 Analysis of 20 Numbers</u></p>
+      <p>Weights = 24.2764  <b>56.5536</b>   35.9281   23.7502</p>
+      <ul>
+        <li>5,8,20,7,25,6</li>
+        <li><b>14,16,8,20,18,12,28,6,4,10 (even)</b></li>
+        <li>14,21,7,12</li>
+        <li>5,9,11,12,13,10</li>
+      </ul>
+
+>>>>>>> 3d026fdf33284f7bcdfa87c73048c3cb47e69423
       <p><u>MDS Analysis of Two Groups of 10 Numbers</u></p>
       <img src="../../../../../static/usa_website/images/blog/rp/spring_2018/numconcept/MDS-meas-for-part5-twogroups.png" alt=""       ="MDS Diagram for Participant 5 (Two Groups)">
 
       <u>ADCLUS2 Analysis of Group 1</u> <br>  
       <p>Weights = 61.8217   64.4453   <b>66.8217</b>   20.5881 </p>
+<<<<<<< HEAD
       ● 5, 11 <br>
       ● 14, 16, 8, 20, 18 <b>(even)</b> <br>
       ● <b>5, 20 (multiples of 5)</b> <br>
@@ -154,13 +203,32 @@
       ● 7, 12, 6 <br>
       ● <b>12, 28, 6, 4, 10 (even)</b> <br>
       
+=======
+      <ul>
+        <li>5,11</li>
+        <li>14,16,8,20,18 <b>(even)</b></li>
+        <li><b>5,20 (multiples of 5)</b></li>
+        <li>9,8,20,18,21</li>
+      </ul>
+
+      <p><u>ADCLUS2 Analysis of Group 2</u></p>
+      <p>Weights = 41.6386   29.1386   24.4404   <b>65.5946</b></p>
+      <ul>
+        <li>12,13</li>
+        <li>7,25,28,27</li>
+        <li>7,12,6</li>
+        <li><b>12,28,6,4,10 (even)</b></li>
+      </ul>
+
+>>>>>>> 3d026fdf33284f7bcdfa87c73048c3cb47e69423
       <p>Here, we see that the algorithms seem detect significant clusters for even numbers, for both the set of 20 numbers and        the two groups of 10 numbers.</p>
     </div>
-    
+
     <div class=Participant32>
       <h4>(B) Participant 32</h4>
-      
+
       <p><u>MDS Analysis of 20 Numbers</u></p>
+<<<<<<< HEAD
       <img src="../../../../../static/usa_website/images/blog/rp/spring_2018/numconcept/MDS-meas-for-part32.png" alt="MDS Diagram       for Participant 32"> <br>
       
       <p><u>ADCLUS2 Analysis of 20 Numbers</u></p>
@@ -171,17 +239,41 @@
       ● 16, 8, 25 <br>
       
       <p><i>*11 and 17 are not in any clusters. 
+=======
+      <img src="../../../../../static/usa_website/images/blog/rp/spring_2018/numconcept/MDS-meas-for-part32.png" alt="MDS Diagram       for Participant 32">
+
+      <p><u>ADCLUS2 Analysis of 20 Numbers</u></p>
+      <p>Weights = 29.8831   41.3112   32.0941   40.8001</p>
+      <ul>
+        <li>9,21,7,25,6,13,27</li>
+        <li>14,16,8,20,18,12,28,6,4,10 (even)</li>
+        <li>5,9,8,20,25,10</li>
+        <li>16,8,25</li>
+      </ul>
+
+      <p><i>*11 and 17 are not in any clusters.
+>>>>>>> 3d026fdf33284f7bcdfa87c73048c3cb47e69423
       As could be seen from the diagram, those numbers are distant from the rest.</i></p>
       <img src="../../../../../static/usa_website/images/blog/rp/spring_2018/numconcept/MDS-meas-for-part32-twogroups.png" alt=""       ="MDS Diagram for Participant 32 (Two Groups)"> <br>
 
       <p><u>MDS Analysis of Two Groups of 10 Numbers </u></p>
       <p><u>ADCLUS2 Analysis of Group 1</u></p>
       <p>Weights = 36.4607   37.2306   47.5376   <b>51.3812</b></p>
+<<<<<<< HEAD
       ● 9, 29, 21 <br>
       ● 9, 8, 20, 21 <br>
       ● 5, 9, 18 <br>
       ● <b>14, 16, 18, 20, 18 (even) <br>
       
+=======
+      <ul>
+        <li>9,29,21</li>
+        <li>9,8,20,21</li>
+        <li>5,9,18</li>
+        <li><b>14,16,18,20,18 (even)</b></li>
+      </ul>
+
+>>>>>>> 3d026fdf33284f7bcdfa87c73048c3cb47e69423
       <p><u>ADCLUS2 Analysis of Group 2</u></p>
       <p>Weights = 29.4314   34.0314   <b>46.2419 </b>  31.0314</p>
       ● 7, 25, 27, 10 <br>
@@ -189,11 +281,12 @@
       ● <b>12, 28, 6, 4, 10 (even)</b> <br>
       ● 25, 6, 13, 27 <br>
     </div>
-    
+
     <div class=Participant51>
       <h4>(C) Participant 51</h4>
-      
+
       <p><u>MDS Analysis of 20 Numbers</u></p>
+<<<<<<< HEAD
       <img src="../../../../../static/usa_website/images/blog/rp/spring_2018/numconcept/MDS-meas-for-part51.png" alt="MDS Diagram       for Participant 51"> <br>
       
       <p><u>ADCLUS2 Analysis of 20 Numbers</u></p>
@@ -221,17 +314,53 @@
       ● 12, 28, 6, 4, 10 <br>
       
       <p style="text-indent: 20px">Here, we see that overall for all 20 numbers, this participant’s data yielded a more significant cluster of prime numbers. When the numbers are broken apart into two groups, we see that in the first group, 5 and 11 don’t seem to form a cluster, but 7 and 13 from the second group form a heavily weighted cluster.</p>
+=======
+      <img src="../../../../../static/usa_website/images/blog/rp/spring_2018/numconcept/MDS-meas-for-part51.png" alt="MDS Diagram       for Participant 51">
+
+      <p><u>ADCLUS2 Analysis of 20 Numbers</u></p>
+      <p>Weights = 26.0371   26.2686   17.2405   <b>38.7405</b></p>
+      <ul>
+        <li>14,16,9,8,20,18,21,25,12,28,6,4,27,10</li>
+        <li>16,8,20,18,12,28,6,4,10</li>
+        <li>5,14,0,18,21,7,25,12,6,27</li>
+        <li><b>5,11,7,13 (prime)</b></li>
+      </ul>
+
+      <p><u>MDS Analysis of Two Groups of 10 Numbers</u></p>
+      <img src="../../../../../static/usa_website/images/blog/rp/spring_2018/numconcept/MDS-meas-for-part51-twogroups.png" alt=""       ="MDS Diagram for Participant 51 (Two Groups)">
+
+      <p><u>ADCLUS2 Analysis of Group 1</u></p>
+      <p>Weights = 12.9116   23.6286   <b>31.9450</b>   26.7850 </p>
+      <ul>
+      <li>9,8,11,18</li>
+      <li>16,9,8,20,18</li>
+      <li><b>14,16,8,20,18,21</b></li>
+      <li>14,9,18,21</li>
+      </ul>
+
+      <p><u>ADCLUS2 Analysis of Group 2</u></p>
+      <p>Weights = 26.5000   <b>74.9545 </b>  53.9545   26.5545</p>
+      <ul>
+        <li>25,12,28,6,4,27,10</li>
+        <li><b>7,13 (prime)</b></li>
+        <li>17,13</li>
+        <li>12,28,6,4,10</li>
+      </ul>
+
+      <p>Here, we see that overall for all 20 numbers, this participant’s data yielded a more significant cluster of prime             numbers. When the numbers are broken apart into two groups, we see that in the first group, 5 and 11 don’t seem to form a        cluster, but 7 and 13 from the second group form a heavily weighted cluster.</p>
+>>>>>>> 3d026fdf33284f7bcdfa87c73048c3cb47e69423
     </div>
-    
+
     <div class=Participant80>
       <h4>(D) Participant 80</h4>
-      
+
       <p><u>MDS Analysis of 20 Numbers</u></p>
       <img src="../../../../../static/usa_website/images/blog/rp/spring_2018/numconcept/MDS-meas-for-part80.png" alt="MDS Diagram       for Participant 80"> <br>
       <p><i>*We used seven clusters for the analysis of this participant’s data, because this participant’s results had more           features observed in the MDS plot.</i></p>
-      
+
       <p><u>ADCLUS2 Analysis of 20 Numbers</u></p>
       <p>Weights = 29.6526   48.1872   19.4657   <b>71.0419 </b>  58.3805   35.8621   59.4179</p>
+<<<<<<< HEAD
       ● 16, 8, 20, 12, 4 (multiples of 4) <br>
       ● 14, 16, 8, 20, 18, 12, 28, 6, 4, 10 (even numbers) <br>
       ● 14, 16, 18, 21, 7, 28, 10 <br>
@@ -250,6 +379,30 @@
       ● 14, 11, 18, 21 <br>
       ● 9, 18, 21 <br>
       
+=======
+      <ul>
+        <li>16,8,20,12,4 (multiples of 4)</li>
+        <li>14,16,8,20,18,12,28,6,4,10 (even numbers)</li>
+        <li>14,16,18,21,7,28,10</li>
+        <li><b>5,20,25,10 (multiples of 5)</b></li>
+        <li>9,18,27,21,12,6 (multiples of 3)</li>
+        <li>21,7,25,28</li>
+        <li>14,7,17 (numbers related to 7)</li>
+      </ul>
+
+      <p><u>MDS Analysis of Two Groups of 10 Numbers</u></p>
+      <img src="../../../../../static/usa_website/images/blog/rp/spring_2018/numconcept/MDS-meas-for-part80-twogroups.png" alt=""       ="MDS Diagram for Participant 80 (Two Groups)">
+
+      <p><u>ADCLUS2 Analysis of Group 1</u></p>
+      <p>Weights = <b>82.0266</b>   64.8810   23.4562   65.5412 </p>
+      <ul>
+        <li><b>5,20 (multiple of 5)</b></li>
+        <li>14,16,8,20,18 (even, multiples of 4)</li>
+        <li>14,11,18,21</li>
+        <li>9,18,21</li>
+      </ul>
+
+>>>>>>> 3d026fdf33284f7bcdfa87c73048c3cb47e69423
       <p><u>ADCLUS2 Analysis of Group 2</u></p>
       <p>Weights = 47.1127   <b>75.5277</b>   37.2448   38.5719 </p>
       ● 25, 28, 10 <br>
@@ -259,15 +412,21 @@
 
       <p style="text-indent: 20px">Here, we see that while the analysis of all 20 numbers yields many significant clusters, the analyses of the two groups of 10 numbers do not seem to yield as many clusters. Group 1 and the set of 20 numbers both contain a significant cluster of multiples of 5, but Group 2 does not. Also, both Group 1 and Group 2 contain clusters of even numbers, but Group 1’s most signficant cluster contains multiples of 5, while Group 2’s contains multiples of 7.</p>
     </div>
-    
+
   </div>
 </div>
 
 <div class=DiscussionAndConclusion>
   <h2>Discussion and Conclusion</h2>
+<<<<<<< HEAD
   <p style="text-indent: 20px">From our results, we can generally conclude that there was some consistency between the MDS and ADCLUS analyses of similariy data. Clusters that were apparent visually in the MDS plots were generally detected by the ADCLUS algorithm and given significant weights. Clusters that were apparent when analyzing all 20 numbers together were generally also detected when analyzing the two groups of 10 numbers. However, there were exceptions, such as the results of the data from Participant #80, in which clusters that were significant when aggregating the 20 numbers were lost when splitting the numbers apart into two groups. Nevertheless, the analyses from the 20 numbers were just frames of reference. The main point of the study was to examine whether there was consistency between the analyses of the two groups of numbers, based on the data of our control group. (Without any educational or cognitive interventions, there should be no difference in how participants judge the similarities between numbers of each group, so the clusters of the two groups should arguably be similar.) Regarding that aspect, the results were fairly positive; generally, the clusters significant in Group 1 also showed up in Group 2, although there were still exceptions. 
   <p style="text-indent: 20px">These issues of discrepancies between clustering analyses of different groups may have been alleviated if there were more numbers being compared in the study, but that would lead to an exorbitant number of comparisons between numbers that participants would have to make (with only 20 numbers, there were already 190 comparisons to be made). Nevertheless, the relatively small quantity of numbers we included in our study was a limitation to our analysis.</p>
   <p style="text-indent: 20px">However, we do believe the overall results are positive enough for us to use both MDS and ADCLUS to assist our analyses of future studies. We plan to design studies in which a group of participants rates similarities between a group of 10 numbers, undergoes a certain intervention pertaining to mathematics (such as a lesson, a problem-solving task, or an activity), and rates a different set of 10 numbers (with roughly the same numerical features as those of the first group). Our analyses from the data of these future studies hopefully shed light on how certain interventions affect how one perceives relationships between numbers.</p>
+=======
+  <p>From our results, we can generally conclude that there was some consistency between the MDS and ADCLUS analyses of similariy data. Clusters that were apparent visually in the MDS plots were generally detected by the ADCLUS algorithm and given significant weights. Clusters that were apparent when analyzing all 20 numbers together were generally also detected when analyzing the two groups of 10 numbers. However, there were exceptions, such as the results of the data from Participant #80, in which clusters that were significant when aggregating the 20 numbers were lost when splitting the numbers apart into two groups. Nevertheless, the analyses from the 20 numbers were just frames of reference. The main point of the study was to examine whether there was consistency between the analyses of the two groups of numbers, based on the data of our control group. (Without any educational or cognitive interventions, there should be no difference in how participants judge the similarities between numbers of each group, so the clusters of the two groups should arguably be similar.) Regarding that aspect, the results were fairly positive; generally, the clusters significant in Group 1 also showed up in Group 2, although there were still exceptions.
+  These issues of discrepancies between clustering analyses of different groups may have been alleviated if there were more numbers being compared in the study, but that would lead to an exorbitant number of comparisons between numbers that participants would have to make (with only 20 numbers, there were already 190 comparisons to be made). Nevertheless, the relatively small quantity of numbers we included in our study was a limitation to our analysis.
+  However, we do believe the overall results are positive enough for us to use both MDS and ADCLUS to assist our analyses of future studies. We plan to design studies in which a group of participants rates similarities between a group of 10 numbers, undergoes a certain intervention pertaining to mathematics (such as a lesson, a problem-solving task, or an activity), and rates a different set of 10 numbers (with roughly the same numerical features as those of the first group). Our analyses from the data of these future studies hopefully shed light on how certain interventions affect how one perceives relationships between numbers.</p>
+>>>>>>> 3d026fdf33284f7bcdfa87c73048c3cb47e69423
 </div>
 
 {% endblock %}
