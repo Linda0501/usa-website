@@ -87,6 +87,7 @@ urlpatterns = [
     url(r'rp/college-vs-nba-success$', views.college_vs_nba_success, name="college_vs_nba_success"),
     #R+P Fall 2018
     url(r'rp/music-moods$', views.music_moods, name="music_moods"),
+    url(r'rp/polls$', views.polls, name="polls"),
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),
