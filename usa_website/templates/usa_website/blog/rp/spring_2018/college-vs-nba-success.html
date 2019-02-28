@@ -3,8 +3,7 @@
 {% load staticfiles %}
 
 <title> An Analysis of College Statistics vs Draft and Actual NBA Success Across Different Eras</title>
-<h2>How To Build Your Own Personal Website </h2>
-  <h3> Part 0: An Introduction To Git!</h3>
+<h2>An Analysis of College Statistics vs Draft and Actual NBA Success Across Different Eras</h2>
   <h3>
     <span style="color: #D5518D" id="author">By </span>
     <span style="color: #3E95D7" id="name">Manan Khattar</span>
@@ -35,13 +34,13 @@
   <h3>Methodology</h3>
     <p>
       All of my data was scraped from basketball-reference.com and sports-reference.com/cbb using the BeautifulSoup package in Python and Rvest in R. To classify NBA eras, I first compiled a dataframe of NBA season averages of various statistical measures from the 1973-1974 season (the year the 3-point shot first started being tracked) upto the present day:
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table1.png' %}" alt="Methodology" style="margin:auto">
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table1.png' %}" alt="Methodology" style="margin:auto; ">
     <br></br>
     I then used the apcluster package in R that performs examplar-based affinity propogation, an algorithm that clusters data without being explicitly provided the number of clusters, unlike K-means clustering. Based on the data provided, the algorithm sorted NBA seasons into the following four clusters, to which I've added my own descriptions:
     <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table2.png' %}" alt="Methodology" style="margin:auto">
     <br></br>
     And produced the following heatmap:
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table3.png' %}" alt="Methodology" style="margin:auto">
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table3.png' %}" alt="Methodology" style="margin:auto; width:70%;">
     <br></br>
     It's interesting to note that most years placed in different eras were in chronological order, with the exception of the 1993, 1994, and 2011 seasons. This makes contextual sense, as 1993-1994 were the seasons with a shorter 3-point line and thus were quite similar to the modern run-and-gun offense, while the 2011-2012 season was a lockout-shortened and injury-ravaged season that had a very slow, defensive style of play, atypical for its era.
     <br></br>
@@ -57,16 +56,16 @@
   </p>
   <ul>
     <li><b>Era 1 (Dark Ages, Cocaine):</b></li>
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table4.png' %}" alt="Results & Analysis" style="margin:auto">
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table4.png' %}" alt="Results & Analysis" style="margin:auto; width:60%;">
   <br></br>
     <li><b>Era 2 (High Pace Era):</b></li>
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table5.png' %}" alt="Results & Analysis" style="margin:auto">
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table5.png' %}" alt="Results & Analysis" style="margin:auto; width:60%;">
   <br></br>
     <li><b>Era 3 (Athletic Revolution, Low Pace):</b></li>
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table6.png' %}" alt="Results & Analysis" style="margin:auto">
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table6.png' %}" alt="Results & Analysis" style="margin:auto; width:60%;">
   <br></br>
     <li><b>Era 4 (Offensive Evolution):</b></li>
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table7.png' %}" alt="Results & Analysis" style="margin:auto">
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table7.png' %}" alt="Results & Analysis" style="margin:auto; width:60%;">
   </ul>
   <br></br>
   <p><b>General Observations:</b></p>
@@ -83,16 +82,16 @@
   </p>
   <ul>
     <li><b>Era 1 (Dark Ages, Cocaine):</b></li>
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table8.png' %}" alt="Results & Analysis" style="margin:auto">
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table8.png' %}" alt="Results & Analysis" style="margin:auto; width:60%;">
   <br></br>
     <li><b>Era 2 (High Pace Era):</b></li>
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table9.png' %}" alt="Results & Analysis" style="margin:auto">
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table9.png' %}" alt="Results & Analysis" style="margin:auto; width:60%;">
   <br></br>
     <li><b>Era 3 (Athletic Revolution, Low Pace):</b></li>
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table10.png' %}" alt="Results & Analysis" style="margin:auto">
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table10.png' %}" alt="Results & Analysis" style="margin:auto; width:60%;">
   <br></br>
     <li><b>Era 4 (Offensive Evolution):</b></li>
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table11.png' %}" alt="Results & Analysis" style="margin:auto">
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table11.png' %}" alt="Results & Analysis" style="margin:auto; width:60%;">
   </ul>
   <br></br>
   <b>General Observations:</b>
@@ -104,10 +103,10 @@
   </ol>
   <br></br>
   <h4>College Winrate vs Years in College</h4>
-  <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table12.png' %}" alt="Results & Analysis" style="margin:auto">
+  <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table12.png' %}" alt="Results & Analysis" style="margin:auto; width:60%;">
   <br></br>
   <li><b>Era 4 (Offensive Evolution):</b></li>
-  <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table13.png' %}" alt="Results & Analysis" style="margin:auto">
+  <img src="{% static 'usa_website/images/blog/rp/spring_2018/college-vs-nba-success/table13.png' %}" alt="Results & Analysis" style="margin:auto; width:60%;">
   <br></br>
   <p>
     These two graphs summarize the data for the two custom metrics (college winrate and years in college) and their correlation to draft position and wins in the NBA. One can see that, with time, the weight for college winrates seem to have increased in the regression for draft position and winshares—that is, a better winrate in college correlates with a relatively better draft position and more wins in the NBA than it did in the past. However, apart from the weight for draft position in Era 3, none of these values have statistically significant p-values, showing that there is high degree of variance in the relationship between college winrate and each of the dependent parameters (draft position and winshares per 48 minutes in the NBA).
