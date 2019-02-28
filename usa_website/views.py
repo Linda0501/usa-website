@@ -284,6 +284,11 @@ def college_vs_nba_success(request):
 	context = Context({})
 	return HttpResponse(t.render(context))
 
+def number_concept(request):
+	t = get_template("blog/rp/spring_2018/num-concept.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
 #####################################
 ###### Fall 2018 Blog Posts ######
 #####################################
