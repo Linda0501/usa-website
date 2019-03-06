@@ -303,6 +303,11 @@ def polls(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def league_of_legends(request):
+    t = get_template("blog/rp/fall_2018/league_of_legends.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 ###################################
 ########## CRASH COURSES ##########
 ###################################
