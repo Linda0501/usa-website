@@ -5,11 +5,6 @@ from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from .models import Course, Blog
 from django.views.generic import TemplateView
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
-from .forms import PostForm, AttendanceForm
-from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
-#from .utils.attendance import GetFinalTable
-
-
 
 # Create your views here.
 def index(request):
@@ -268,6 +263,43 @@ def population_modeling(request):
 
 def food_insecurity(request):
     t = get_template("blog/dataconsulting/food-insecurity.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+#####################################
+###### SPRING 2018 Blog Posts ######
+#####################################
+def bart_ridership_data(request):
+    t = get_template("blog/rp/spring_2018/bart-ridership-data.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def capsim(request):
+    t = get_template("blog/rp/spring_2018/capsim.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def college_vs_nba_success(request):
+	t = get_template("blog/rp/spring_2018/college-vs-nba-success.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def number_concept(request):
+	t = get_template("blog/rp/spring_2018/num-concept.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+#####################################
+###### Fall 2018 Blog Posts ######
+#####################################
+
+def music_moods(request):
+    t = get_template("blog/rp/fall_2018/music-moods.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def polls(request):
+    t = get_template("blog/rp/fall_2018/polls.html")
     context = Context({})
     return HttpResponse(t.render(context))
 

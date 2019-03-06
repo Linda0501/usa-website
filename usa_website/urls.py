@@ -1,5 +1,4 @@
 """usa_website URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
 Examples:
@@ -39,7 +38,6 @@ urlpatterns = [
         url('course-map', extraViews.courseMap, name="courseMap"),
         url('project', extraViews.project, name="project"),
     url(r'^schedule_builder/', include('schedule_builder.urls')),
-
 """
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -83,6 +81,14 @@ urlpatterns = [
     url(r'rp/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services$', views.ucb_ug_mental, name="ucb_ug_mental"),
     url(r'rp/world-happiness-report-eda$', views.world_happiness, name="world_happiness"),
     url(r'rp/yelp-review-and-rating-analysis$', views.yelp_review, name="yelp_review"),
+    #R+P Spring 2018
+    url(r'rp/bart-ridership-data$', views.bart_ridership_data, name="bart_ridership_data"),
+    url(r'rp/capsim$', views.capsim, name="capsim"),
+    url(r'rp/college-vs-nba-success$', views.college_vs_nba_success, name="college_vs_nba_success"),
+    url(r'rp/num-concept$', views.number_concept, name="number_concept"),
+    #R+P Fall 2018
+    url(r'rp/music-moods$', views.music_moods, name="music_moods"),
+    url(r'rp/polls$', views.polls, name="polls"),
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),
