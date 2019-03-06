@@ -1,0 +1,101 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+
+<title>Classifying and Analyzing Playstyle in League of Legends</title>
+  <h3>Classifying and Analyzing Playstyle in League of Legends</h3>
+  <h3>
+    <span style="color: #D5518D" id="author">By </span>
+    <span style="color: #3E95D7" id="name">Stanley Hsu</span>
+  </h3>
+  <br />
+
+<div class=Blog_Navigation>
+  <ol>
+    <li><a href="#Introduction">Introduction</a></li>
+    <li><a href="#Background">Background</a></li>
+    <li><a href="#Methodology">Methodology</a></li>
+    <li><a href="#Results">Results</a></li>
+    <li><a href="#Discussion">Discussion</a></li>
+    <li><a href="#Conclusion">Conclusion</a></li>
+  </ol>
+</div>
+<br></br>
+
+<div id="Introduction">
+  <h3>Introduction</h3>
+    <p>
+      League of Legends is a popular competitive online video game where players team up and battle against a team of other players. Each player satisfies a unique role for their team and there are a variety of apps, videos, and websites dedicated to help one improve at his/her specific role. However, aside from paying for a coach, there is a significant lack of resources that provide personalized advice on how to improve. In this research paper, I will be looking at three values, namely <i>creep score</i> (abbreviated as <i>CS</i>), <i>gold gain</i> and <i>damage taken</i>, over the course of a match and use these values to classify and analyze an individual’s playstyle. In turn, this will give a means for personalized improvement through reflective insight.
+    </p>
+</div>
+
+<div id="Background">
+  <h3>Background</h3>
+    <p>
+      In League of Legends, victory is achieved by destroying the enemy nexus. The means to achieve this objective revolves around amassing gold and experience to power up one's champion. Gold, and subsequently experience, is gained primarily through three means: killing enemy minions (recorded as one’s <i>CS</i>), killing enemy champions, and killing neutral monsters. There are also gold gains associated with taking down towers that guard the enemy nexus, although for my calculations described later, gold gained from this source should average out. Since opponents are also attempting to gain gold and experience, another key value to observe is an individual’s <i>damage taken</i>, which is as its name would suggest.
+    </p>
+</div>
+
+<div id="Methodology">
+  <h3>Methodology</h3>
+    <p>
+      My analysis is based on the most recent 100 solo ranked matches played by an individual. In order to obtain this data, I made a series of calls to the official Riot Games API using a public Python wrapper called Riot Watcher. Due to the nature of the API returning large amounts of data that is not relevant to this paper along with hiding personally identifiable information behind various IDs, I had to make a series of calls that would match these IDs and filter data for desired variables. The following is skeleton code that explains how I did this:
+    </p>
+    <ol>
+    	<li>For a given player in game name, return the associated internal summoner ID</li>
+    	<li>For a given summoner ID, return the list of match IDs that correspond to solo ranked games along with the champion ID for each match</li>
+    	<li>For each match ID, return the match data (note: match data is huge and information such as <i>CS<</i>, <i>gold gain</i> and <i>damage taken</i> is stored behind participant ID and champion ID)</li>
+    	<li>For each match data set, find the given player by matching participant ID with champion ID from 2.</li>
+    	<li>For each match data set, return the relevant timeline data for the given player</li>
+    	<li>Combine and clean all of the relevant timeline data (I can attach the csv if needed)</li>
+    </ol>
+    <p>
+    	Regarding 6, timeline data refers to the per minute deltas, taken in ten minute intervals, for each of the three variables. For instance, “creepsPerMinDeltas_0-10” refers to the average creep score per minute for the first ten minutes of the game. Similarly, “goldPerMinDeltas_20-30” refers to the average total gold earned per minute during the twentieth minute to thirtieth minute of a match. From now on, <i>CS<</i>, <i>gold gain</i> and <i>damage taken</i> will refer to their corresponding per minute deltas. In addition, for ease of reference, the term <i>early game</i> will refer to the zero to ten minute interval, <i>mid game</i> to the ten to twenty minute interval, and <i>late game</i> to the twenty to thirty minute interval. 
+    </p>
+</div>
+
+<div id="Results">
+  <h3>Results</h3>
+    <p>
+    	Using my most recent 100 ranked matches, my code outputs the following raw plots for each combination of <i>CS<</i>, <i>gold gain</i> and <i>damage taken</i>, organized by time interval:
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2018/league_of_legends/results_raw_plots.png' %}" style="margin:auto">
+    <br></br>
+</div>
+
+<div id="Discussion">
+	<h3>Discussion</h3>
+	<p>
+		The first row of plots show <i>gold gain</i> plotted against <i>CS</i>. An initial look shows that across each time interval, <i>gold gain</i> seems to be increasing with <i>CS</i>, which makes sense since <i>CS</i> directly translates to increased <i>gold gain</i>. However, interesting results are found when considering the difference between total <i>gold gain</i> and <i>gold gained</i> from <i>CS</i> only. This difference, which is attributed to gold gained from kills and assists, encapsulates an aggressive playstyle since a higher difference indicates more gold gained from killing enemy champions. The following plots show this average difference (calculated by taking subtracting idle gold and gold earned from CS from <i>gold gain</i>) for each match, organized by time interval.
+	</p>
+	<img src="{% static 'usa_website/images/blog/rp/fall_2018/league_of_legends/gold_gain_cs_diffs.png' %}" style="margin:auto">
+    <br></br>
+    <p>
+    	Immediately we can see that across each time interval, I usually have a hefty average difference. For the first ten minutes, an average difference between 90 to 120 translates to an additional 900 to 1200 gold gain on top of gold gained from <i>CS</i>. Since the average kill is worth 300 gold, this is equivalent to around 3 to 4 kills during the first ten minutes of a match. In the following ten minutes, the graphs show an average difference of around 200, approximately 7 kills worth of gold, for a total of around 10 kills worth in the first twenty minutes of a match. When comparing this to the average amount expected for my primary role, namely around 10 kills worth of gold by the end of a match (which usually lasts around thirty minutes), we can see that this is a significant indicator of an early to mid game aggressive playstyle. The final row of graphs show a similar histogram to the <i>mid game</i> interval, despite having lower <i>CS</i> values in the scatter plot. This is difficult to analyze on its own since, regardless of an individual's playstyle, the <i>end game</i> is typically where the majority of kills occur. Nevertheless, the average difference within the first twenty minutes of a match can show indicators of aggressive or passive playstyles.
+    </p>
+    <p>
+    	The second row of raw plots show <i>damage taken</i> plotted against <i>CS</i>. Appending a least squares polynomial fit of degree one to each plot shows the following.
+    </p>
+	<img src="{% static 'usa_website/images/blog/rp/fall_2018/league_of_legends/damage_taken_cs_fitted.png' %}" style="margin:auto">
+    <br></br>
+    <p>
+    	Here we can see that for me, as the match continues, <i>CS</i> becomes more dangerous to obtain as higher <i>CS</i> usually results in higher <i>damage taken</i>. This should be true for most players since the late stage of a match is characterized by skirmishes and team fights rather than farming (increasing <i>CS</i>). In addition, the final row of graphs plotting <i>damage taken</i> against <i>gold gain</i> has significant variance with no obvious clustering. These two results seem to suggest that <i>damage taken</i> should be considered in isolation. One class of values that the Riot Games API returned involves the “difference versus the calculated lane opponent for a specified period”. So for <i>damage taken</i>, we can plot the difference in <i>damage taken</i> between me and my lane opponent in a histogram (a positive difference indicates higher damage taken, while a negative difference indicates lower damage taken).
+    </p>
+	<img src="{% static 'usa_website/images/blog/rp/fall_2018/league_of_legends/damage_taken_diff.png' %}" style="margin:auto">
+    <br></br>
+    <p>
+    	Now we can see that in the first ten minutes of a match, there is usually little difference with a somewhat equal distribution between higher and lower <i>damage taken</i>. This agrees with the previous indicator of an aggressive playstyle since a more passive player would be expected to have a negative average difference. The next two graphs show that I usually take more damage than my calculated lane opponent in the later stages of a match. This can be attributed to either participating in more kills or being punished for pushing ahead. Since the <i>gold gain</i> differences earlier suggest high kill counts, the former seems more likely. 
+	</p>
+</div>
+
+<div id="Conclusion">
+  <h3>Conclusion</h3>
+    <p>
+      The relationships between <i>CS, gold gain and damage taken</i> across many matches that an individual plays seem to be reflective of an individual’s playstyle. The difference between total <i>gold gain</i> and gold gained from <i>CS</i> can show how aggressive an individual is at each stage of the game. In addition, considering <i>damage taken</i> alongside gold gain or in isolation can give indicators at how much of an impact an individual makes in a match or how much they are punished for pushing ahead an advantage. Using this information, an individual is then able to better understand their playstyle and determine where to improve.
+    </p>
+</div>
+<br></br>
+
+
+{% endblock %}
