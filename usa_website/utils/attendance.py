@@ -2,9 +2,13 @@
 #Get authentication to use google API
 import httplib2
 import os
-from googleapiclient.discovery import build
+import pickle
 
-from apiclient import discovery
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+from googleapiclient import discovery
+
 import oauth2client
 from oauth2client import client
 from oauth2client import tools
@@ -23,11 +27,11 @@ except ImportError:
     flags = None
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
-#when testing, the pathway below won't work, doesn't really matter though
 HOME_DIR = os.path.dirname(os.path.abspath(__file__))
 CLIENT_SECRET_LOC = os.path.join(HOME_DIR, 'client_secret.json')
 APPLICATION_NAME = 'SusaClient'
-REDIRECT_URI = 'https://susa.berkeley.edu/attendance'
+REDIRECT_URI = 'http://127.0.0.1:8000/attendance'
+#REDIRECT_URI = 'https://susa.berkeley.edu/attendance'
 #You wouldn't steal a car would you? So please don't steal our credentials! Thanks!
 
 def get_credentials():
@@ -45,13 +49,16 @@ def get_credentials():
     store = oauth2client.file.Storage(credential_path)
     credentials = store.get()
     if not credentials or credentials.invalid:
-        flow = client.flow_from_clientsecrets(CLIENT_SECRET_LOC, SCOPES)
+        flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRET_LOC, SCOPES)
         flow.params['access_type'] = 'offline'
         flow.params['approval_prompt'] = 'force'
         flow.params['redirect_uri'] = REDIRECT_URI
         print(flow.params['access_type'])
+        print(flow)
         if flags:
-            credentials = tools.run_flow(flow, store, flags)
+            credentials = flow.run_local_server()
+        print(credentials)
+        print('storing credentials to' + credential_path)
     return credentials
 
 @cached(cacheHeaders)

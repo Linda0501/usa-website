@@ -5,6 +5,8 @@ from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from .models import Course, Blog
 from django.views.generic import TemplateView
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
+from .utils.attendance import get_credentials,GetAttendanceHeader,LookupSIDs, GetAttendanceDetails
+from .forms import AttendanceForm
 
 # Create your views here.
 def index(request):
