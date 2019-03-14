@@ -109,6 +109,10 @@
                         -->
                         <!-- Links  NOTE: Even though bootstrap 4 has a default caret, DON'T USE IT, it messes up the animation -->
                       <ul class="navbar-nav" style="margin-top:16px; margin-bottom:16px;">
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'attendance' %}" style="line-height:1.4 !important;" >Attendance</a>
+                        </li>
+<!--
                         <li class="nav-item dropdown">
                           <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown" style="line-height:1.4 !important;">
                             About  <span style="font-size: 12px">&#9660;</span>
@@ -116,6 +120,10 @@
                           <div class="dropdown-menu">
                             <a class="dropdown-item" href="{% url 'people' %}" style="line-height:1.4 !important;">People</a>
                           </div>
+                        </li>
+-->
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'calendar' %}" style="line-height:1.4 !important;" >Calendar</a>
                         </li>
                         <li class="nav-item dropdown">
                           <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown" style="line-height:1.4 !important;">
@@ -129,6 +137,7 @@
                             <a class="dropdown-item" href="{% url 'webdev' %}" style="line-height:1.4 !important;">Web Development</a>
                           </div>
                         </li>
+<!--
                         <li class="nav-item">
                           <a class="nav-link" href="{% url 'courseMap' %}" style="line-height:1.4 !important;" >Course Map</a>
                         </li>
@@ -140,6 +149,10 @@
                             <a class="dropdown-item" href="{% url 'attendance' %}" style="line-height:1.4 !important;">Attendance</a>
                             <a class="dropdown-item" href="{% url 'calendar' %}" style="line-height:1.4 !important;">Calendar</a>
                           </div>
+                        </li>
+-->
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'people' %}" style="line-height:1.4 !important;" >People</a>
                         </li>
 <!--                        <li style="margin-top:23px; margin-left:15px;">
                             <a class="apply-header"
