@@ -90,6 +90,7 @@ urlpatterns = [
     url(r'rp/music-moods$', views.music_moods, name="music_moods"),
     url(r'rp/polls$', views.polls, name="polls"),
     url(r'rp/league_of_legends$', views.league_of_legends, name='league_of_legends'),
+    url(r'rp/toxic_social_media$', views.toxic_social_media, name='toxic_social_media'),
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),
