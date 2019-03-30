@@ -108,7 +108,7 @@ urlpatterns = [
     url(r'dataconsulting/food-insecurity$', views.food_insecurity, name="food_insecurity"),
     url(r'dataconsulting/facial-emotion-recognition$', views.facial_emotion_recognition, name="facial_emotion_recognition"),
     url(r'dataconsulting/data-for-good-proposal$', views.data_good, name="data_good"),
-
+    url(r'dataconsulting/mtc-dc/demo-map$', views.mtc_demo, name="mtc_dc"),
     url(r'textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'yitz$', views.yitz, name = "yitz"),
     # url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post, name='view_blog_post'),

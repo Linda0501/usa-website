@@ -237,6 +237,15 @@ def anatomy_of_a_basic_fullstack(request):
     return HttpResponse(t.render(context))
 
 #####################################
+###### SPRING 2019 DC PROJECTS ######
+#####################################
+
+def mtc_demo(request):
+    t = get_template("blog/dataconsulting/mtc_dc/demo_map.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+#####################################
 ###### SPRING 2018 DC PROJECTS ######
 #####################################
 
