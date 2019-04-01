@@ -25,18 +25,14 @@ h3 {
   margin: 10px;
   font-size: 1.2em;
 }
-
 h3 {
   font-size: 1em;
 }
-
-
 p {
   font-size: 0.85em;
   margin: 10px;
   text-align: left;
 }*/
-
 /**
 * Create a position for the map
 * on the page */
@@ -46,7 +42,6 @@ p {
   bottom: 0;
   width: 100%;
 }
-
 /**
 * Set rules for how the map overlays
 * (info box and legend with iteration) will be displayed
@@ -61,14 +56,12 @@ p {
   overflow: auto;
   border-radius: 3px;
 }
-
 #features {
   top: 0;
   height: 100px;
   margin-top: 20px;
   width: 250px;
 }
-
 #legend {
   background-color: #fff;
     border-radius: 3px;
@@ -80,7 +73,6 @@ p {
     right: 10px;
     z-index: 1;
 }
-
 .legend-key {
   display: inline-block;
   border-radius: 20%;
@@ -89,7 +81,6 @@ p {
   margin-right: 5px;
 }
 */
-
 body { margin:0; padding:0; }
   #map { position:absolute; top:0; bottom:0; width:100%; }
   .map-overlay {
@@ -109,7 +100,6 @@ body { margin:0; padding:0; }
 
 
   <style>
-
 .map-overlay {
 font: 12px/20px 'Helvetica Neue', Calibri, Helvetica, sans-serif;
 position: absolute;
@@ -118,7 +108,7 @@ top: 0;
 left: 0;
 padding: 10px;
 }
- 
+
 .map-overlay .map-overlay-inner {
 background-color: #fff;
 box-shadow:0 1px 2px rgba(0, 0, 0, 0.20);
@@ -126,19 +116,19 @@ border-radius: 3px;
 padding: 10px;
 margin-bottom: 10px;
 }
- 
+
 .map-overlay h2 {
 line-height: 24px;
 display: block;
 margin: 0 0 10px;
 }
- 
+
 .map-overlay .legend .bar {
 height: 10px;
 width: 100%;
 background: linear-gradient(to right, hsl(0, 61%, 75%), hsl(0, 67%, 35%));
 }
- 
+
 .map-overlay input {
 background-color: transparent;
 display: inline-block;
@@ -154,7 +144,6 @@ cursor: ew-resize;
 
 
   <style>
-
   /**legend style from legend.html (old version without iteration)**/
 /*
   .legend {
@@ -168,11 +157,9 @@ cursor: ew-resize;
     right: 10px;
     z-index: 1;
 }
-
 .legend h4 {
     margin: 0 0 10px;
 }
-
 .legend div span {
     border-radius: 50%;
     display: inline-block;
@@ -180,7 +167,6 @@ cursor: ew-resize;
     margin-right: 5px;
     width: 10px;
 }*/
-
 /*CHECKBOX STYLE*/
   #menu {
     background: #fff;
@@ -193,7 +179,6 @@ cursor: ew-resize;
     border: 1px solid rgba(0,0,0,0.4);
     font-family: 'Open Sans', sans-serif;
   }
-
   #menu a {
     font-size: 13px;
     color: #404040;
@@ -205,26 +190,30 @@ cursor: ew-resize;
     border-bottom: 1px solid rgba(0,0,0,0.25);
     text-align: center;
   }
-
   #menu a:last-child {
     border: none;
   }
-
   #menu a:hover {
     background-color: #f8f8f8;
     color: #404040;
   }
-
   #menu a.active {
     background-color: #3887be;
     color: #ffffff;
   }
-
   #menu a.active:hover {
     background: #3074a4;
   }
+</style>
 
 
+<style type="text/css">
+/**Popup box style**/
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:3px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:3px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-i91a{color:#333333;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
 </style>
 
 <nav id="menu"></nav>
@@ -273,8 +262,6 @@ cursor: ew-resize;
     zoom: 10.2
   });
 
-  
-
   // var year = [
   //   '2015',
   //   '2020',
@@ -285,64 +272,53 @@ cursor: ew-resize;
   //   '2045',
   //   '2050'
   // ];
- 
+
   // function filterBy(year) {
-   
+
   // var filters = ['==', 'Year', year];
   // map.setFilter('earthquake-circles', filters);
   // map.setFilter('earthquake-labels', filters);
-   
+
   // // Set the label to the month
   // document.getElementById('month').textContent = months[month];
   // }
-
-
     map.on('load', function () {
 
-    
     //ADD SOURCES
     map.addSource('taz', {
       type: 'vector',
       url: 'mapbox://alexhyuan.42lq61be'
     });
-
     map.addSource('districts', {
       type: 'vector',
       url: 'mapbox://alexhyuan.0c9bfo3u'
     });
-
     map.addSource('counties', {
       type: 'vector',
       url: 'mapbox://alexhyuan.6oie6g6v'
     });
-
     map.addSource('historic15', {
       type: 'vector',
       url: 'mapbox://alexhyuan.dos3wlze'
     });
-
     map.addSource('building_age', {
       type: 'vector',
       url: 'mapbox://alexhyuan.79dhb4m4'
     });
 
-
-    
-
 // Basemap Layers of TAZ, District, and County with line style & built-in zoom functionality
     map.addLayer({
       'id': 'TAZ',
-      'type': 'line',
+      'type': 'fill',
       'paint': {
-        'line-color': '#d67044',
-        'line-width': 0.5
+        'fill-color': '#d67044',
+        'fill-opacity': .2,
+        'fill-outline-color': '#000000'
       },
-      'source': 'taz',
-        'source-layer': 'TAZ-84k33z'
-
+      'source': 'historic15',
+        'source-layer': 'Historic15-7pnomm'
       });
 
-    
     map.addLayer({
       'id': 'Districts',
       'type': 'line',
@@ -353,8 +329,6 @@ cursor: ew-resize;
       'source': 'districts',
       'source-layer': 'Districts1-5hf1ou'
     });
-
-
     // USES SEPARATE COLORS FOR HEATMAP
     map.addLayer({
       'id': 'Counties',
@@ -366,11 +340,9 @@ cursor: ew-resize;
       'source': 'counties',
       'source-layer': 'Counties_Reduced1-6ifc3n'
     });
-
     map.setLayerZoomRange('TAZ', 9.8, 22);
     map.setLayerZoomRange('Districts', 8.3, 9.79);
     map.setLayerZoomRange('Counties', 0, 8.3);
-
     //ADD DATA LAYERS (CREATED W STUDIO)
     map.addLayer({
         'id': 'Historic Buildings',
@@ -409,9 +381,7 @@ cursor: ew-resize;
             'fill-opacity': 0.5
         }
     });
-
     //USES GRADIENT OPACITY FOR HEATMAP, HARD TO MAKE LEGEND THOUGH
-
     map.addLayer({
         'id': 'Building Age',
         'source': 'building_age',
@@ -436,31 +406,50 @@ cursor: ew-resize;
       }
           });
 
+    map.on('click', 'TAZ', function (e) {
+      tazPop = e.features[0].properties.taz1454
+      objectPop = e.features[0].properties.objectid
+      districtPop = e.features[0].properties.district
+      countyPop = e.features[0].properties.county
+      acresPop = e.features[0].properties.gacres
+      areaPop = e.features[0].properties.Shape__Area
+      lengthPop = e.features[0].properties.Shape__Length
+      historicPop = e.features[0].properties.historic
+
+      var htmlString = '<table class="tg"><tr><th class="tg-0lax">TAZ ID</th><th class="tg-0lax">' + tazPop + '</th></tr><tr><td class="tg-0lax">Object ID</td><td class="tg-0lax">' + objectPop + '</td></tr><tr><td class="tg-0lax">District</td><td class="tg-0lax">' + districtPop + '</td></tr><tr><td class="tg-0lax">County</td><td class="tg-0lax">' + countyPop + '</td></tr><tr><td class="tg-0lax">Acres</td><td class="tg-0lax">' + acresPop + '</td>  </tr><tr><td class="tg-0lax">Area</td><td class="tg-0lax">' + areaPop + '</td></tr><tr><td class="tg-0lax">Length</td><td class="tg-0lax">' + lengthPop + '</td></tr><tr><td class="tg-0lax">Historic</td><td class="tg-0lax">' + historicPop + '</td></tr><table>'
+
+
+      new mapboxgl.Popup()
+      .setLngLat(e.lngLat)
+      .setHTML(htmlString)
+      .addTo(map);
+    });
+    map.on('mouseenter', 'TAZ', function () {
+      map.getCanvas().style.cursor = 'pointer';
+    });
+    map.on('mouseleave', 'TAZ', function () {
+      map.getCanvas().style.cursor = '';
+    });
 
 
     var layers = ['0','0.00007', '0.0009', '0.014','0.021', '0.027', '0.034', '0.041', '0.054'];
     // var colors = ['#0f0505', '#6a3434', '#b45050', '#a85757', '#c67b7b', '#d9abab', '#d3a1a1', '#c98787','#cea1a1'];
-
     for (i = 0; i < layers.length; i++) {
       var layer = layers[i];
       var item = document.createElement('div');
       var key = document.createElement('span');
       key.className = 'legend-key';
       key.style.backgroundColor = color;
-
       var value = document.createElement('span');
       value.innerHTML = layer;
       item.appendChild(key);
       item.appendChild(value);
     }
-
     });
-
     map.on('mousemove', function(e) {
       var states = map.queryRenderedFeatures(e.point, {
         layers: ['TAZ']
       });
-
       if (states.length > 0) {
         document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.historic;
       } else {
@@ -469,9 +458,8 @@ cursor: ew-resize;
     });
 
 
-    
 
-    
+    /**
     //CLICKABLE TAZ REGIONS
     map.on('click', 'TAZ', function (e) {
       new mapboxgl.Popup()
@@ -485,7 +473,6 @@ cursor: ew-resize;
     map.on('mouseleave', 'TAZ', function () {
       map.getCanvas().style.cursor = '';
     });
-
     //CLICKABLE DISTRICT REGIONS
     map.on('click', 'Districts', function (e) {
       new mapboxgl.Popup()
@@ -500,6 +487,7 @@ cursor: ew-resize;
       map.getCanvas().style.cursor = '';
     });
 
+
     //CLICKABLE COUNTY REGIONS
     map.on('click', 'Counties', function (e) {
       new mapboxgl.Popup()
@@ -513,75 +501,53 @@ cursor: ew-resize;
     map.on('mouseleave', 'Counties', function () {
       map.getCanvas().style.cursor = '';
     });
+    **/
 
-    
-//CHECKBOX LAYER CONTROL 
+//CHECKBOX LAYER CONTROL
     var toggleableLayerIds = [ 'Historic Buildings', 'Building Age'];
-
   for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];
-
     var link = document.createElement('a');
     link.href = '#';
     link.className = '';
     link.textContent = id;
-
     link.onclick = function (e) {
       var clickedLayer = this.textContent;
       e.preventDefault();
       e.stopPropagation();
-
       var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
-
       if (visibility === 'visible') {
         map.setLayoutProperty(clickedLayer, 'visibility', 'none');
         this.className = '';
       } else {
         this.className = 'active';
         map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-
       }
     };
-
     var layers = document.getElementById('menu');
     layers.appendChild(link);
   }
-
-
 // Search Box
     map.addControl(new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
-
       //limit results to USA
       //countries: 'us'
-
       countries: 'us',
-
       // further limit results to the geographic bounds of Bay Area
       //bbox: min Longitude , min Latitude , max Longitude , max Latitude
       bbox: [-123.544363, 36.884222, -121.181107, 38.948086]
     }));
-    
+
 //Cursor Style
     map.getCanvas().style.cursor = 'default';
-
     map.addControl(new mapboxgl.NavigationControl());
 
-    
 
-
-
-
-
-    
 // map.on('load', function() {
-
 //     map.addSource('taz', {
 //         'type': 'vector',
 //         'url': 'mapbox://alexhyuan.42lq61be'
 //     });
-
-
     // map.addLayer({
     //     'id': 'taz-areas',
     //     'source': 'taz',
@@ -608,7 +574,6 @@ cursor: ew-resize;
     //     }
     // });
 // });
-
 </script>
 
 </body>
