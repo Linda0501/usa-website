@@ -13,8 +13,11 @@
 
 <style>
   h1{
-    font-weight: 700;
+    font-weight: 50;
     font-size: 42px !important;
+  }
+  h3{
+    font-weight: 50 !important;
   }
   body{
     background-color: rgba(238,232,213,.5) !important;
@@ -63,15 +66,43 @@
       font-size: 15px !important;
     }
   }
-  @media screen and (max-width: 600px) and (min-width: 350px){
+  @media screen and (max-width: 600px) and (min-width: 400px){
     div.fh5co-team{
-      font-size:8px;
+      font-size:12px !important;
+    }
+    h1{
+      font-size:36px !important;
     }
     h3{
-      font-size: 8px !important;
+      font-size: 12px !important;
       font-weight:50 !important;
     }
-    .icon-comment-4{
+    .container p,b{
+      font-size: 12px !important;
+    }
+    .icon-comment{
+      font-size:12px;
+    }
+    .icon-envelope{
+      font-size:12px;
+      margin-right:10px;
+    }
+  }
+  @media screen and (max-width: 400px) and (min-width: 350px){
+    div.fh5co-team{
+      font-size:8px !important;
+    }
+    h1{
+      font-size:24px !important;
+    }
+    h3{
+      font-size: 10px !important;
+      font-weight:50 !important;
+    }
+    .container p,b{
+      font-size: 10px !important;
+    }
+    .icon-comment{
       font-size:10px;
     }
     .icon-envelope{
@@ -81,20 +112,33 @@
   }
   @media screen and (max-width: 350px){
     div.fh5co-team{
-      font-size:6px;
+      font-size:6px !important;
+    }
+    h1{
+      font-size:24px !important;
     }
     h3{
-      font-size: 6px !important;
+      font-size: 9px !important;
       font-weight:50 !important;
     }
-    .icon-comment-4{
+    .container p,b{
+      font-size: 10px !important;
+    }
+    .container.#slider-holder0, #slider-holder1, #slider-holder2, #slider-holder3, #slider-holder4{
+      font-size: 10px !important;
+    }
+    .icon-comment{
       font-size:10px;
     }
     .icon-envelope{
       font-size:10px;
       margin-right:10px;
     }
+    #icon-comment-0{
+      font-size: 10px;
+    }
   }
+
 
   .icon-comment:hover{
     cursor:pointer;
@@ -132,7 +176,7 @@
               <div class="row">
                   <div class="col text-center fh5co-heading">
                       <h1>Executive Team</h1>
-                      <p>The Statistics Undergraduate Student Association is led by a group of statistics enthusiasts who have great passion for promote the statistics major to all students in UC Berkeley. They come from different backgrounds and are interested in different areas within statistics. Click on the speech bubble to learn more about our execs!</p></i>
+                      <p>The Statistics Undergraduate Student Association is led by a group of statistics enthusiasts who have great passion for promote the statistics major to all students in UC Berkeley. They come from different backgrounds and are interested in different areas within statistics. Click on the speech bubble to learn more about our execs!</p>
                   </div>
                 </div>
                 <div class ="row">
@@ -185,7 +229,7 @@
               <div class="row slider closed align-self-center sliderid0 sliderid1 sliderid2"></div>
             </div>
           </div>
-
+          <br>
               <div class="row" >
                 <div class="col flex-fill"></div>
                 <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
