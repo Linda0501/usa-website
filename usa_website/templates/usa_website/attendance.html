@@ -20,11 +20,30 @@ table, th, td {
     padding: 15px;
     text-align: center;
 }
+p,b{
+  font-size: 16px;
+}
+footer p,b{
+  font-size: 12px;
+}
 button{
   background: #268BD2;
   color:white;
   padding: 3px 7px;
   border-radius: 30px;
+}
+/* Idk why IVP formatted it so weirdly, but some text appears white. The following is to change all text in the spreadsheet to black */
+.ritz.waffle.s2{
+  color:black;
+}
+
+@media screen and (max-width: 600px) {
+  .AttendanceContainer p,b,ul,li, i{
+    font-size: 8px;
+  }
+  .AttendanceContainer h2{
+    font-size: 16px;
+  }
 }
 </style>
 
@@ -41,9 +60,13 @@ button{
 
     </p>
 
-    <p style="font-size:16pt">Check your points below!<sup>*</s2wup></p>
-      <p>This took is currently unavailable, please check back later!</p>
-<!--
+    <p >Check your points below!<sup>*</s2wup></p>
+      <p>Our <b>IVP committee</b> is in charge of updating and keeping track of points. </p>
+      <b>All points are updated as of 3/19. Please contact us at contact@susa.berkeley.edu if you spot any inaccuracies.</b>
+    <br /><br />
+      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRrYs74IwG7Ihnd5obhSFMog4ovzdDrTEeyCKOCSxuatRDUbCqXJMcV3GM7a-s1gMzVAgUoH5slaGVu/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style="width:100%; height:500px; color:black;"></iframe>
+
+<!-- Taking out until we absolutely need to fix this, use the embedded sheet for now.
     <form method="POST">
       {% csrf_token %}
       {{ form }}
@@ -53,8 +76,8 @@ button{
   <h3 class = "summary">
     {{ text }}
   </h3>
--->
-<!-- Please see AttendanceView in views.py to understand what is going on here -->
+
+ Please see AttendanceView in views.py to understand what is going on here
 <div style="overflow-x:auto;">
   <table>
     <tr>
@@ -69,6 +92,7 @@ button{
       </tr>
     </table>
   </div>
+  -->
   <br>
   <i>  <sup>*</sup>Please Note that if you have not come to an event yet, we do not have your SID in our database and you will be unable to use this tool </i>
   <br></br>
@@ -76,7 +100,7 @@ button{
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-              <b style ="font-size:16pt;">Academic Events</b>
+              <b >Academic Events</b>
               <ul>
                 <li>Faculty Dinner - 5 points</li>
                 <li>5 Faculty Coffee Chats - 5 points each</li>
@@ -86,7 +110,7 @@ button{
               </ul>
             </div>
             <div class="col-md-4">
-              <b style ="font-size:16pt;">Social Events</b>
+              <b >Social Events</b>
               <ul>
                 <li>8+ Club-wide Socials - 10 points each</li>
                   <ul>
@@ -97,7 +121,7 @@ button{
               </ul>
             </div>
             <div class="col-md-4">
-              <b style ="font-size:16pt;">Other</b>
+              <b >Other</b>
               <ul>
                 <li>Committee Participation - 5 pts per two weeks</li>
                 <li>Tabling/Flyering - 5 points per hour</li>
@@ -108,4 +132,8 @@ button{
         </div>
 </div>
 </body>
+
+<!--
+{"web":{"client_id":"165095989395-7fkdr6dqglkcuielg0n1qs5mubh34k8e.apps.googleusercontent.com","project_id":"attendance-217704","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://www.googleapis.com/oauth2/v3/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"g20559YTnG-wmP5n--vNE3hH","redirect_uris":["http://127.0.0.1:8000/","http://localhost:8080/","http://susa.berkeley.edu/attendance.html","http://susa.berkeley.edu/attendance.py","http://susa.berkeley.edu/attendance","https://susa.berkeley.edu/attendance.html","https://susa.berkeley.edu/attendance", "http://127.0.0.1:8000/attendance","http://127.0.0.1:8000/attendance.html"],"javascript_origins":["http://susa.berkeley.edu","http://127.0.0.1:8000"]}}
+-->
 {% endblock %}

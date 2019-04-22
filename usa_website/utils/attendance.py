@@ -23,11 +23,10 @@ except ImportError:
     flags = None
 
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
-#when testing, the pathway below won't work, doesn't really matter though
 HOME_DIR = os.path.dirname(os.path.abspath(__file__))
 CLIENT_SECRET_LOC = os.path.join(HOME_DIR, 'client_secret.json')
 APPLICATION_NAME = 'SusaClient'
-REDIRECT_URI = 'https://susa.berkeley.edu/attendance'
+REDIRECT_URI = 'http://127.0.0.1:8000/attendance'
 #You wouldn't steal a car would you? So please don't steal our credentials! Thanks!
 
 def get_credentials():
@@ -49,7 +48,8 @@ def get_credentials():
         flow.params['access_type'] = 'offline'
         flow.params['approval_prompt'] = 'force'
         flow.params['redirect_uri'] = REDIRECT_URI
-        print(flow.params['access_type'])
+        print(flow)
+        print(CLIENT_SECRET_LOC)
         if flags:
             credentials = tools.run_flow(flow, store, flags)
     return credentials
@@ -59,7 +59,8 @@ def GetAttendanceHeader(SID):
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
     service = build('sheets', 'v4', http)
-    SPREADSHEET_ID = '1dnLK86wVXIvtJ5sOPUgPKkDRap6IG11q8ZqUXvixmAE'
+    #SPREADSHEET_ID = '1dnLK86wVXIvtJ5sOPUgPKkDRap6IG11q8ZqUXvixmAE'
+    SPREADSHEET_ID = '1GKam1J_GWbjy7_W221mbrdUmeDCtW6I5WshxMkvgAWQ'
     range='A1:O1'
     result = service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range=range).execute()
     values=result.get('values', [])

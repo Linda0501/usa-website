@@ -1,7 +1,29 @@
 {% extends "header.html" %}
 {% block content %}
 {% load staticfiles %}
-
+<!--TODO: Use jquery to resize windows-->
+<style>
+@media screen and (max-width: 600px) and (min-width:500px){
+  iframe{
+    width:500px;
+  }
+}
+@media screen and (max-width: 500px) and (min-width:400px){
+  iframe{
+    width:400px;
+  }
+}
+@media screen and (max-width: 400px) and (min-width:300px){
+  iframe{
+    width:300px;
+  }
+}
+@media screen and (max-width: 300px) and (min-width:200px){
+  iframe{
+    width:200px;
+  }
+}
+</style>
 <br>
 
 <center><p>See the SUSA office hours time table <a href="#officehours-table">below</a>.</p></center>
