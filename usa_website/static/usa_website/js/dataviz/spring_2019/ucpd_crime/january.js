@@ -8405,7 +8405,7 @@ var january = {
     "type": "Feature",
     "geometry": {
        "type": "Point",
-       "coordinates":  [ -122.183912,38.093816 ]
+       "coordinates":  [ -122.251700,37.867814 ]
     },
     "properties": {
     "Date":"2019-01-25",
