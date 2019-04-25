@@ -84,8 +84,15 @@ urlpatterns = [
     #R+P Spring 2018
     url(r'rp/bart-ridership-data$', views.bart_ridership_data, name="bart_ridership_data"),
     url(r'rp/capsim$', views.capsim, name="capsim"),
+    url(r'rp/college-vs-nba-success$', views.college_vs_nba_success, name="college_vs_nba_success"),
+    url(r'rp/num-concept$', views.number_concept, name="number_concept"),
     url(r'rp/SteinerTreeProblem$', views.steinerTreeProblem, name="steinerTreeProblem"),
+
     #R+P Fall 2018
+    url(r'rp/music-moods$', views.music_moods, name="music_moods"),
+    url(r'rp/polls$', views.polls, name="polls"),
+    url(r'rp/league_of_legends$', views.league_of_legends, name='league_of_legends'),
+
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),
