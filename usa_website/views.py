@@ -707,8 +707,18 @@ def capsim(request):
 	context = Context({})
 	return HttpResponse(t.render(context))
 
-def steinerTreeProblem(request):
+def SteinerTreeProblem(request):
 	t = get_template("blog/rp/spring_2018/SteinerTreeProblem.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def college_vs_nba_success(request):
+	t = get_template("blog/rp/spring_2018/college-vs-nba-success.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def number_concept(request):
+	t = get_template("blog/rp/spring_2018/num-concept.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
 
@@ -717,6 +727,20 @@ def steinerTreeProblem(request):
 #####################################
 ###### Fall 2018 Blog Posts ######
 #####################################
+def music_moods(request):
+	t = get_template("blog/rp/spring_2018/music-moods.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def polls(request):
+	t = get_template("blog/rp/spring_2018/polls.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def league_of_legends(request):
+	t = get_template("blog/rp/spring_2018/league_of_legends.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
 
 ###################################
 ########## CRASH COURSES ##########
