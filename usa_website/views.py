@@ -742,6 +742,11 @@ def league_of_legends(request):
 	context = Context({})
 	return HttpResponse(t.render(context))
 
+def toxic_social_media(request):
+    t = get_template("blog/rp/fall_2018/toxic_social_media.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 ###################################
 ########## CRASH COURSES ##########
 ###################################
@@ -931,5 +936,11 @@ class AttendanceView(TemplateView):
 #WEBDEV Fall 2018
 def montyhall(request):
     t = get_template("montyhall.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+#WEBDEV Spring 2019
+def ucpd_crime(request):
+    t = get_template("dataviz/spring_2019/ucpd_crime.html")
     context = Context({})
     return HttpResponse(t.render(context))
