@@ -120,7 +120,7 @@ urlpatterns = [
     url(r'aDishwasher$', views.aDishwasher, name = "aDishwasher"),
     url(r'montyhall$', views.montyhall, name = "montyhall"),
     # Web Dev - Data Viz Spring 2019??
-    url(r'dataviz/ucpd-crime$', views.ucpd_crime, name="ucpd_crime"),
+    url(r'webdev/ucpd-crime$', views.ucpd_crime, name="ucpd_crime"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio")
         #url('^', include('schedule_builder.urls')),
