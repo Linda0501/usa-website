@@ -510,3 +510,9 @@ def montyhall(request):
     t = get_template("montyhall.html")
     context = Context({})
     return HttpResponse(t.render(context))
+
+#WEBDEV Spring 2019
+def ucpd_crime(request):
+    t = get_template("dataviz/spring_2019/ucpd_crime.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
