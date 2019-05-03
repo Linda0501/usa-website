@@ -5,13 +5,8 @@ from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from .models import Course, Blog
 from django.views.generic import TemplateView
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
-<<<<<<< HEAD
-from .utils.attendance import get_credentials,GetAttendanceHeader,LookupSIDs, GetAttendanceDetails
-from .forms import AttendanceForm
-=======
 from .forms import PostForm, AttendanceForm
 from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
->>>>>>> 3185a73e97f969492ea2a64552b11763b77968b9
 
 # Create your views here.
 def index(request):
@@ -238,14 +233,11 @@ def website_tutorial_3(request):
 
 def anatomy_of_a_basic_fullstack(request):
     t = get_template("blog/education/anatomy-of-a-basic-fullstack.html")
-<<<<<<< HEAD
     context = Context({})
     return HttpResponse(t.render(context))
 
 def basic_web_architecture(request):
     t = get_template("blog/education/basic-web-architecture.html")
-=======
->>>>>>> 3185a73e97f969492ea2a64552b11763b77968b9
     context = Context({})
     return HttpResponse(t.render(context))
 
