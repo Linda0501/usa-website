@@ -42,7 +42,7 @@ body {
   color: #00171d;
   height: 100%;
   position: relative;
-  background-color: rgba(238,232,213,.5);
+  background-color: rgba(238,232,213,.3);
 }
 
 a {
@@ -1018,7 +1018,7 @@ h3 {
 }
 
 #fh5co-footer {
-  padding: 1.5em 0;
+  padding: 1em 0;
   float: left;
   width: 100%;
   position: relative;
@@ -1029,21 +1029,18 @@ h3 {
 }
 @media screen and (max-width: 768px) {
   #fh5co-footer {
-    padding: 1.5em 0;
+    padding: 1em 0;
   }
 }
 #fh5co-footer h2, #fh5co-footer h3, #fh5co-footer h4 {
   color: #fff;
 }
 #fh5co-footer h3 {
-  text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
 }
-#fh5co-footer [class*="col"] {
-  padding-bottom: 5px;
-}
+
 #fh5co-footer .btn {
   color: #fff;
 }

@@ -86,10 +86,13 @@ urlpatterns = [
     url(r'rp/capsim$', views.capsim, name="capsim"),
     url(r'rp/college-vs-nba-success$', views.college_vs_nba_success, name="college_vs_nba_success"),
     url(r'rp/num-concept$', views.number_concept, name="number_concept"),
+    url(r'rp/SteinerTreeProblem$', views.SteinerTreeProblem, name="SteinerTreeProblem"),
+
     #R+P Fall 2018
     url(r'rp/music-moods$', views.music_moods, name="music_moods"),
     url(r'rp/polls$', views.polls, name="polls"),
     url(r'rp/league_of_legends$', views.league_of_legends, name='league_of_legends'),
+    url(r'rp/toxic_social_media$', views.toxic_social_media, name='toxic_social_media'),
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),
@@ -119,6 +122,8 @@ urlpatterns = [
     url(r'housingcRincess$', views.housingcRincess, name = "housingcRincess"),
     url(r'aDishwasher$', views.aDishwasher, name = "aDishwasher"),
     url(r'montyhall$', views.montyhall, name = "montyhall"),
+    # Web Dev - Data Viz Spring 2019??
+    url(r'webdev/ucpd-crime$', views.ucpd_crime, name="ucpd_crime"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio")
         #url('^', include('schedule_builder.urls')),

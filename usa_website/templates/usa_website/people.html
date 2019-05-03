@@ -13,13 +13,18 @@
 
 <style>
   h1{
-    font-weight: 700;
+    font-weight: 50;
     font-size: 42px !important;
+  }
+  h3{
+    font-weight: 50 !important;
   }
   body{
     background-color: rgba(238,232,213,.5) !important;
   }
-
+  .icon-envelope{
+    margin-right:20px;
+  }
   .slider.closed {
       /* visible */
       height:0px;
@@ -55,20 +60,89 @@
 
   }
 
+
   @media screen and (max-width: 780px) and (min-width:601px) {
     h3{
       font-size: 15px !important;
     }
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 600px) and (min-width: 400px){
     div.fh5co-team{
-      font-size:10px;
+      font-size:12px !important;
+    }
+    h1{
+      font-size:36px !important;
+    }
+    h3{
+      font-size: 12px !important;
+      font-weight:50 !important;
+    }
+    .container p,b{
+      font-size: 12px !important;
+    }
+    .icon-comment{
+      font-size:12px;
+    }
+    .container#slider-holder0, #slider-holder1, #slider-holder2, #slider-holder3, #slider-holder4{
+      margin-top:30px;
+    }
+    .icon-envelope{
+      font-size:12px;
+      margin-right:10px;
+    }
+  }
+  @media screen and (max-width: 400px) and (min-width: 350px){
+    div.fh5co-team{
+      font-size:8px !important;
+    }
+    h1{
+      font-size:24px !important;
     }
     h3{
       font-size: 10px !important;
       font-weight:50 !important;
     }
+    .container p,b{
+      font-size: 10px !important;
+    }
+    .container#slider-holder0, #slider-holder1, #slider-holder2, #slider-holder3, #slider-holder4{
+      padding-top:10px;
+    }
+    .icon-comment{
+      font-size:10px;
+    }
+    .icon-envelope{
+      font-size:10px;
+      margin-right:10px;
+    }
   }
+  @media screen and (max-width: 350px){
+    div.fh5co-team{
+      font-size:6px !important;
+    }
+    h1{
+      font-size:24px !important;
+    }
+    h3{
+      font-size: 9px !important;
+      font-weight:50 !important;
+    }
+    .container p,b{
+      font-size: 10px !important;
+    }
+    .container#slider-holder0, #slider-holder1, #slider-holder2, #slider-holder3, #slider-holder4{
+      font-size: 10px !important;
+      padding-top:10px;
+    }
+    .icon-comment{
+      font-size:10px;
+    }
+    .icon-envelope{
+      font-size:10px;
+      margin-right:10px;
+    }
+  }
+
 
   .icon-comment:hover{
     cursor:pointer;
@@ -78,8 +152,8 @@
   }
 </style>
 
-  <div class="fh5co-team ">
-      <div class="container">
+
+      <div class="container" style="margin-top:5%;">
         <!--      <div class="row">
                   <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
                       <h2>Faculty Advisors</h2>
@@ -106,7 +180,7 @@
               <div class="row">
                   <div class="col text-center fh5co-heading">
                       <h1>Executive Team</h1>
-                      <p>The Statistics Undergraduate Student Association is led by a group of statistics enthusiasts who have great passion for promote the statistics major to all students in UC Berkeley. They come from different backgrounds and are interested in different areas within statistics. Click on the speech bubble to learn more about our execs!</p></i>
+                      <p>The Statistics Undergraduate Student Association is led by a group of statistics enthusiasts who have great passion for promote the statistics major to all students in UC Berkeley. They come from different backgrounds and are interested in different areas within statistics. Click on the speech bubble to learn more about our execs!</p>
                   </div>
                 </div>
                 <div class ="row">
@@ -120,7 +194,7 @@
                   <!--    <p>Adish’s interests lie in the realm of data, whether that be in its aggregation or in its analysis. He finds the quickly growing field of Data Science, the intersection of his two majors, especially fascinating. In his free time, Adish loves playing with his puppy and playing basketball!                           </p>-->
 
                       <ul class="fh5co-social">
-                          <li><a href="mailto:adish.jain@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:adish.jain@berkeley.edu" ><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment" id="icon-comment-0"></i></li>
                       </ul>
 
@@ -132,21 +206,21 @@
                       <h3>External Vice President</h3>
                     <!--   <p>A jack of all trades, Isaac enjoys finance, statistics, sports science, politics, and philosophy. He loves learning and is excited to work with a diverse group of students and projects in the External Affairs committee.</p>-->
                       <ul class="fh5co-social">
-                          <li><a href="mailto:ipariser@berkeley.edu"style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:ipariser@berkeley.edu"><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment" id="icon-comment-1"></i></li>
                       </ul>
 
                   </div>
 
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
-                      <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
+                      <img src="{% static 'usa_website/images/spring2019/hannah_kim.jpg' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Hannah Kim</h3>
                       <h3>Financial Vice President</h3>
                       <p>
                       <!--Hannah is a Business Administration and Statistics double major and is interested in the intersections of corporate strategy, finance, and technology. She is constantly looking for new opportunities to learn and grow in the realms of business and data science. Her other interests include music, swimming, and design! -->
                       </p>
                       <ul class="fh5co-social">
-                          <li><a href="mailto:hnnhkim@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:hnnhkim@berkeley.edu"><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment" id="icon-comment-2"></i></li>
                       </ul>
                   </div>
@@ -159,18 +233,18 @@
               <div class="row slider closed align-self-center sliderid0 sliderid1 sliderid2"></div>
             </div>
           </div>
-
+          <br>
               <div class="row" >
                 <div class="col flex-fill"></div>
                 <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
-                    <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
+                    <img src="{% static 'usa_website/images/spring2019/mindy.jpg' %}" alt="SUSA" style="width:100%; height:auto;">
                     <h3>Mindy Dai</h3>
                     <h3>Co-Internal Vice President</h3>
                     <p>
                       <!--Mindy is studying statistics with a specific interest in biostatistics. She is also interested in survey methodology, data visualization, and the intersection of public policy and statistics. In her free time, she enjoys reading, taking long walks, and sleeping way too much.-->
                     </p>
                     <ul class="fh5co-social">
-                        <li><a href="mailto:mdai2@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                        <li><a href="mailto:mdai2@berkeley.edu"><i class="icon-envelope"></i></a></li>
                         <li><i class="icon-comment"  id="icon-comment-3"></i></li>
                     </ul>
 
@@ -185,7 +259,7 @@
                     <!--Peter is interested in the intersection of statistics and computer science, extracting information and making decisions from seemingly unintelligible data. In his free time he enjoys playing the saxophone, pyrography, and watching Cal Football. #GoBears-->
                     </p>
                     <ul class="fh5co-social">
-                        <li><a href="mailto:p.w.wang@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                        <li><a href="mailto:p.w.wang@berkeley.edu"><i class="icon-envelope"></i></a></li>
                         <li><i class="icon-comment"  id="icon-comment-4"></i></li>
                     </ul>
                 </div>
@@ -210,56 +284,56 @@
               <div class="row">
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
                     <div class="width-restrict">
-                      <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
+                      <img src="{% static 'usa_website/images/spring2019/elliot_stahnke.jpg' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Elliot Stahnke</h3>
                       <h3>Data Consulting Director</h3>
                       <p>
                       <!--Elliot is a dessert lover with accompanying interests in mathematics, finance, and theoretical computer science. In his free time, he enjoys language learning, fencing, and finding new foods to satisfy his sweet tooth.-->
                       </p>
                       <ul class="fh5co-social">
-                          <li><a href="mailto:elliot.stahnke@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:elliot.stahnke@berkeley.edu"><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment"  id="icon-comment-5"></i></li>
                       </ul>
                     </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
                     <div class="width-restrict">
-                      <img src="{% static 'usa_website/images/people/junseo_square_new.png' %}" alt="junseo" style="width:100%; height:auto;">
+                      <img src="{% static 'usa_website/images/spring2019/junseo.jpg' %}" alt="junseo" style="width:100%; height:auto;">
                       <h3>Junseo Park</h3>
                       <h3>Data Consulting Director</h3>
                       <p>
                     <!--    Junseo is an avid data science enthusiast who loves exploring and visualizing fresh new datasets. He is on a lifelong quest to decide whether he prefers the beach or the mountains. -->
                       </p>
                       <ul class="fh5co-social">
-                          <li><a href="mailto:junseopark@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:junseopark@berkeley.edu"><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment"  id="icon-comment-6"></i></li>
                       </ul>
                     </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
                     <div class="width-restrict">
-                      <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
+                      <img src="{% static 'usa_website/images/spring2019/omkar.jpg' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Omkar Waingankar</h3>
                       <h3>Data Consulting Director</h3>
                       <p>
                       <!--Omkar is a second-year EECS major whose interests lie in web development and data analytics. He likes to fill up his free time with the people that matter most in his life, whether that means spending a Saturday cheering on our golden bears, road tripping to a music festival, or enjoying some of California’s natural splendor.-->
                       </p>
                       <ul class="fh5co-social">
-                          <li><a href="mailto:kana@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:omkar.waingankar@berkeley.edu"><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment"  id="icon-comment-7"></i></li>
                       </ul>
                     </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
                     <div class="width-restrict">
-                      <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
+                      <img src="{% static 'usa_website/images/spring2019/luke_dai.jpg' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Luke Dai</h3>
                       <h3>Data Consulting Director</h3>
                       <p>
                       <!--I am an undergraduate pursuing Computer Science and Statistics double major in the University of California, Berkeley. I have been very interested in Deep Learning and love to gain exposure to Machine Learning and Data Science opportunities-->
                       </p>
                       <ul class="fh5co-social">
-                          <li><a href="mailto:suhasr@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:luke.dai@berkeley.edu"><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment"  id="icon-comment-8"></i></li>
                       </ul>
                     </div>
@@ -277,39 +351,39 @@
 
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
                     <div class="width-restrict">
-                      <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="Oscar" style="width:100%; height:auto;">
+                      <img src="{% static 'usa_website/images/spring2019/shengyi.jpg' %}" alt="Shengyi" style="width:100%; height:auto;">
                       <h3>Shengyi "Echo" Wu</h3>
                       <h3>Research & Publications Director</h3>
                   <!--    Shengyi (Echo) Wu is a third year studying statistics and psychology majors. She's interested in the application of statistics and data science on psychological research especially mental health and developmental psychology. In her free time, she enjoys watching movies and trying different food. -->
 
                       <ul class="fh5co-social">
-                          <li><a href="mailto:oscar.syu@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:shengyiwu@berkeley.edu"><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment"  id="icon-comment-9"></i></li>
                       </ul>
                     </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
                     <div class="width-restrict">
-                      <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
+                      <img src="{% static 'usa_website/images/spring2019/yehchan.jpg' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Yehchan Yoo</h3>
                       <h3>Research & Publications Director</h3>
                   <!--    Yehchan is a declared statistics and an intended political economy major who is interested in blending statistics with humanities and social science topics. In his free time, he likes to listen to rock music, run on the treadmill, and watch Spongebob meme videos on YouTube. -->
                       <ul class="fh5co-social">
-                          <li><a href="mailto:rickyang@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:yehchanyoo@berkeley.edu"><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment"  id="icon-comment-10"></i></li>
                       </ul>
                     </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
                     <div class="width-restrict">
-                      <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
+                      <img src="{% static 'usa_website/images/spring2019/elliot_clark.jpg' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Elliot Clark</h3>
                       <h3>Career Exploration Director</h3>
                       <p>
                       <!--Elliot is a Molecular and Cellular Biology major who is interested in the applications of statistics in the healthcare industry. He enjoys playing basketball, wrestling, and searching for Berkeley's best restaurants in his free time.-->
                       </p>
                       <ul class="fh5co-social">
-                          <li><a href="mailto:paryanifahad@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:elliotclark@berkeley.edu"><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment"  id="icon-comment-12"></i></li>
                       </ul>
                     </div>
@@ -321,7 +395,7 @@
                       <h3>Education Director</h3>
                       <!--    <p>Patrick is an avid learner in math and machine learning. He hopes to conquer the world with non-applicable research one day and spend the world's wealth on infinite dogs and ice cream. He also enjoys long strolls by the water and watching sunsets.</p> -->
                       <ul class="fh5co-social">
-                        <li><a href="mailto:prc@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                        <li><a href="mailto:prc@berkeley.edu"><i class="icon-envelope"></i></a></li>
                         <li><i class="icon-comment"  id="icon-comment-13"></i></li>
                       </ul>
                     </div>
@@ -353,26 +427,26 @@
                 -->
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
                     <div class="width-restrict">
-                      <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="Andrew" style="width:100%; height:auto;">
+                      <img src="{% static 'usa_website/images/spring2019/andrew_rall.jpg' %}" alt="Andrew" style="width:100%; height:auto;">
                       <h3>Andrew Rall</h3>
                       <h3>Education Director</h3>
                     <!--  Andrew is a Junior studying statistics and computer science. His favorite language used to be R until he attained enlightenment and converted to Python. He enjoys sharing his path to enlightenment with others by striving to create a more collaborative and compassionate learning community at Berkeley through the Education Committee. -->
                       <ul class="fh5co-social">
-                          <li><a href="mailto:itownley@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:andrewr0498@berkeley.edu"><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment"  id="icon-comment-14"></i></li>
                       </ul>
                     </div>
                   </div>
                   <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
                     <div class="width-restrict">
-                      <img src="{% static 'usa_website/images/susafinallogosquare.png' %}" alt="SUSA" style="width:100%; height:auto;">
+                      <img src="{% static 'usa_website/images/spring2019/abhinav.jpg' %}" alt="SUSA" style="width:100%; height:auto;">
                       <h3>Abhinav Bhaskar</h3>
                       <h3>Web Development Director</h3>
                       <p>
                         <!--Abhinav is an Applied Math major with a passion for data visualizations and web applications. He was previously a SUSA data consultant for two semesters, but has since transitioned into the Web Dev committee to usher in a new Golden Age. When he is not redesigning the SUSA website, you can find him working on projects, teaching members the wonders of Avalon, or watching food videos on youtube.-->
                       </p>
                       <ul class="fh5co-social">
-                          <li><a href="mailto:abhaskar@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:abhaskar@berkeley.edu"><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment"  id="icon-comment-15"></i></li>
                       </ul>
                     </div>
@@ -385,7 +459,7 @@
                       <h3>Web Development Director</h3>
                   <!--    <p>Anthony is an aspiring computer scientist eager to apply data to produce new solutions. He continues to learn new technologies and the applicability of statistics and data to keep up with the rapid technological development. His other interests include basketball, chess, and climbing the Clash Royale ladder.</p> -->
                       <ul class="fh5co-social">
-                          <li><a href="mailto:anthonyhsyu@berkeley.edu" style="margin-right:20px;"><i class="icon-envelope"></i></a></li>
+                          <li><a href="mailto:anthonyhsyu@berkeley.edu"><i class="icon-envelope"></i></a></li>
                           <li><i class="icon-comment"  id="icon-comment-16"></i></li>
                       </ul>
                     </div>
@@ -404,7 +478,7 @@
 
               </div>
       </div>
-  </div>
+
 
 <script>
     var buttons = document.getElementsByClassName("icon-comment");
