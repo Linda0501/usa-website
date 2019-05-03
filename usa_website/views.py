@@ -389,6 +389,11 @@ def housingcrisis(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def sheepinav(request):
+    t = get_template("sheepinav.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 def textboxio(request):
     t = get_template("textboxio/textboxio.js")
     context = Context({})
