@@ -31,7 +31,10 @@ HOME_DIR = os.path.dirname(os.path.abspath(__file__))
 CLIENT_SECRET_LOC = os.path.join(HOME_DIR, 'client_secret.json')
 APPLICATION_NAME = 'SusaClient'
 REDIRECT_URI = 'http://127.0.0.1:8000/attendance'
+<<<<<<< HEAD
 #REDIRECT_URI = 'https://susa.berkeley.edu/attendance'
+=======
+>>>>>>> 3185a73e97f969492ea2a64552b11763b77968b9
 #You wouldn't steal a car would you? So please don't steal our credentials! Thanks!
 
 def get_credentials():
@@ -53,8 +56,13 @@ def get_credentials():
         flow.params['access_type'] = 'offline'
         flow.params['approval_prompt'] = 'force'
         flow.params['redirect_uri'] = REDIRECT_URI
+<<<<<<< HEAD
         print(flow.params['access_type'])
         print(flow)
+=======
+        print(flow)
+        print(CLIENT_SECRET_LOC)
+>>>>>>> 3185a73e97f969492ea2a64552b11763b77968b9
         if flags:
             credentials = flow.run_local_server()
         print(credentials)
@@ -66,7 +74,8 @@ def GetAttendanceHeader(SID):
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
     service = build('sheets', 'v4', http)
-    SPREADSHEET_ID = '1dnLK86wVXIvtJ5sOPUgPKkDRap6IG11q8ZqUXvixmAE'
+    #SPREADSHEET_ID = '1dnLK86wVXIvtJ5sOPUgPKkDRap6IG11q8ZqUXvixmAE'
+    SPREADSHEET_ID = '1GKam1J_GWbjy7_W221mbrdUmeDCtW6I5WshxMkvgAWQ'
     range='A1:O1'
     result = service.spreadsheets().values().get(spreadsheetId=SPREADSHEET_ID, range=range).execute()
     values=result.get('values', [])

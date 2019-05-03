@@ -30,6 +30,7 @@
                 </div>
           </div>
             <ul class="slides" style="height:100%;">
+            <li style="background-image: url({% static 'usa_website/images/avalon.jpg' %});"></li>
             <li style="background-image: url({% static 'usa_website/images/web_dev.jpg' %});"></li>
             </ul>
         </div>
@@ -44,15 +45,52 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="fh5co-heading">
+                    <h2>Check out our new Data Visualizations!</h2>
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'ucpd_crime' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Berkeley UCPD Crime Rates</h3>
+                                <h5 class="date"><span>Allison Xu, Rachel Li, Tiffany Lee</span></h5>
+                                <h5 class="date"><span>Spring 2019</span></h5>
+                            </div>
+                        </div>
                     </a>
                 </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'ucpd_crime' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Placeholder</h3>
+                                <h5 class="date"><span>Placeholder</span></h5>
+                                <h5 class="date"><span>Spring 2019</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <a href="{% url 'ucpd_crime' %}" class="item-grid">
+                        <div class="v-align">
+                            <div class="v-align-middle">
+                                <h3 class="title">Placeholder</h3>
+                                <h5 class="date"><span>Placeholder</span></h5>
+                                <h5 class="date"><span>Spring 2019</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
                 <!--
                 <div class="col-md-12 text-center">
                     <p><a href="#" class="btn btn-primary with-arrow">View More Posts <i class="icon-arrow-right"></i></a></p>
                 </div>
                 -->
-            </div>
-        </div>
-    </div>
+      </div>
 
     {% endblock %}

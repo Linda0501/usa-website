@@ -5,8 +5,13 @@ from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from .models import Course, Blog
 from django.views.generic import TemplateView
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
+<<<<<<< HEAD
 from .utils.attendance import get_credentials,GetAttendanceHeader,LookupSIDs, GetAttendanceDetails
 from .forms import AttendanceForm
+=======
+from .forms import PostForm, AttendanceForm
+from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
+>>>>>>> 3185a73e97f969492ea2a64552b11763b77968b9
 
 # Create your views here.
 def index(request):
@@ -233,11 +238,14 @@ def website_tutorial_3(request):
 
 def anatomy_of_a_basic_fullstack(request):
     t = get_template("blog/education/anatomy-of-a-basic-fullstack.html")
+<<<<<<< HEAD
     context = Context({})
     return HttpResponse(t.render(context))
 
 def basic_web_architecture(request):
     t = get_template("blog/education/basic-web-architecture.html")
+=======
+>>>>>>> 3185a73e97f969492ea2a64552b11763b77968b9
     context = Context({})
     return HttpResponse(t.render(context))
 
@@ -286,10 +294,45 @@ def capsim(request):
 	context = Context({})
 	return HttpResponse(t.render(context))
 
+def SteinerTreeProblem(request):
+	t = get_template("blog/rp/spring_2018/SteinerTreeProblem.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def college_vs_nba_success(request):
+	t = get_template("blog/rp/spring_2018/college-vs-nba-success.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def number_concept(request):
+	t = get_template("blog/rp/spring_2018/num-concept.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+
 
 #####################################
 ###### Fall 2018 Blog Posts ######
 #####################################
+def music_moods(request):
+	t = get_template("blog/rp/spring_2018/music-moods.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def polls(request):
+	t = get_template("blog/rp/spring_2018/polls.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def league_of_legends(request):
+	t = get_template("blog/rp/spring_2018/league_of_legends.html")
+	context = Context({})
+	return HttpResponse(t.render(context))
+
+def toxic_social_media(request):
+    t = get_template("blog/rp/fall_2018/toxic_social_media.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
 
 ###################################
 ########## CRASH COURSES ##########
@@ -353,65 +396,6 @@ def aDishwasher(request):
     t = get_template("aDishwasher.html")
     context = Context({})
     return HttpResponse(t.render(context))
-
-# def argentina(request):
-#     t = get_template("webapp/Argentina.csv")
-#     context = Context({})
-#     return HttpResponse(t.render(context))
-
-# def china(request):
-#     t = get_template("webapp/china.csv")
-#     context = Context({})
-#     return HttpResponse(t.render(context))
-
-
-# def guatemala(request):
-#     t = get_template("webapp/Guatemala.csv")
-#     context = Context({})
-#     return HttpResponse(t.render(context))
-
-
-# def nigeria(request):
-#     t = get_template("webapp/Nigeria.csv")
-#     context = Context({})
-#     return HttpResponse(t.render(context))
-
-
-# def sudan(request):
-#     t = get_template("webapp/Sudan.csv")
-#     context = Context({})
-#     return HttpResponse(t.render(context))
-
-
-# def unitedstates(request):
-#     t = get_template("webapp/unitedstates.csv")
-#     context = Context({})
-#     return HttpResponse(t.render(context))
-
-
-# def world(request):
-#     t = get_template("webapp/world.csv")
-#     context = Context({})
-#     return HttpResponse(t.render(context))
-
-
-# def benin(request):
-#     t = get_template("webapp/Benin.csv")
-#     context = Context({})
-#     return HttpResponse(t.render(context))
-
-
-# def tunisia(request):
-#     t = get_template("webapp/Tunisia.csv")
-#     context = Context({})
-#     return HttpResponse(t.render(context))
-
-
-
-# def user(request):
-#     t = get_template("webapp/user.csv")
-#     context = Context({})
-#     return HttpResponse(t.render(context))
 
 def housingcrisis(request):
     t = get_template("housingcrisis/index.html")
@@ -480,5 +464,11 @@ class AttendanceView(TemplateView):
 #WEBDEV Fall 2018
 def montyhall(request):
     t = get_template("montyhall.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+#WEBDEV Spring 2019
+def ucpd_crime(request):
+    t = get_template("dataviz/spring_2019/ucpd_crime.html")
     context = Context({})
     return HttpResponse(t.render(context))
