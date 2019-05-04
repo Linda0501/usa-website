@@ -128,6 +128,7 @@ urlpatterns = [
     url(r'housingcrisis/$', views.housingcrisis, name = "housingcrisis"),
     url(r'housingcRincess$', views.housingcRincess, name = "housingcRincess"),
     url(r'aDishwasher$', views.aDishwasher, name = "aDishwasher"),
+    url(r'sheepinav$', views.sheepinav, name = "sheepinav"),
     url(r'montyhall$', views.montyhall, name = "montyhall"),
     # Web Dev - Data Viz Spring 2019??
     url(r'webdev/ucpd-crime$', views.ucpd_crime, name="ucpd_crime"),
