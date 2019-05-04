@@ -144,6 +144,11 @@ def education(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
+def community(request):
+    t = get_template("community.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 def comingSoon(request):
     t = get_template("comingSoon.html")
     context = Context({})
@@ -151,6 +156,16 @@ def comingSoon(request):
 
 def yitz(request):
     t = get_template("yitz.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def hallofmemes(request):
+    t = get_template("hallofmemes.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def mtc_map(request):
+    t = get_template("mtc_map.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
@@ -162,6 +177,16 @@ def blog(request):
     #t = get_template("blog/blog.html")
     #context = Context({})
     #return HttpResponse(t.render(context))
+
+##################################
+###### NEWSLETTERS ###############
+##################################
+
+def march_2019(request):
+    t = get_template("newsletters/march_2019.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
 
 ##################################
 ###### FALL 2017 BLOG POSTS ######
@@ -233,6 +258,11 @@ def website_tutorial_3(request):
 
 def anatomy_of_a_basic_fullstack(request):
     t = get_template("blog/education/anatomy-of-a-basic-fullstack.html")
+    context = Context({})
+    return HttpResponse(t.render(context))
+
+def basic_web_architecture(request):
+    t = get_template("blog/education/basic-web-architecture.html")
     context = Context({})
     return HttpResponse(t.render(context))
 

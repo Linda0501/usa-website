@@ -70,8 +70,14 @@ urlpatterns = [
     url(r'webdev$', views.webdev, name="webdev"),
     url(r'careerex$', views.careerex, name="careerex"),
     url(r'research$', views.research, name="research"),
+    url(r'community$', views.community, name="community"),
     url(r'comingSoon$', views.comingSoon, name="comingSoon"),
     url(r'blog/$', views.blog, name="blog"),
+    #NEWSLETTERS
+    url(r'march_2019.html$', views.march_2019, name="march-2019"),
+    url(r'hallofmemes$', views.hallofmemes, name="hallofmemes"),
+    url(r'mtc_map$', views.mtc_map, name="mtc-map"),
+
     #Research and Publication
     url(r'rp/a-shallow-dive-into-time-series-analysis-of-local-restaurant-data-using-r$', views.shallow_dive, name="shallow_dive"),
     url(r'rp/a-spatial-investigation-into-heart-disease-mortality-rates-and-youth-tobacco-rates$', views.tobacco_heart_disease, name="tobacco_heart_disease"),
@@ -105,6 +111,7 @@ urlpatterns = [
     url(r'education/website-tutorial-2$', views.website_tutorial_2, name="website_tutorial_2"),
     url(r'education/website-tutorial-3$', views.website_tutorial_3, name="website_tutorial_3"),
     url(r'education/anatomy-of-a-basic-fullstack$', views.anatomy_of_a_basic_fullstack, name="anatomy_of_a_basic_fullstack"),
+    url(r'education/basic-web-architecture$', views.basic_web_architecture, name="basic_web_architecture"),
     #Data Consulting
     url(r'dataconsulting/population-modeling$', views.population_modeling, name="population_modeling"),
     url(r'dataconsulting/tutorfly$', views.tutorfly, name="tutorfly"),

@@ -2,9 +2,13 @@
 #Get authentication to use google API
 import httplib2
 import os
-from googleapiclient.discovery import build
+import pickle
 
-from apiclient import discovery
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+from googleapiclient import discovery
+
 import oauth2client
 from oauth2client import client
 from oauth2client import tools
@@ -44,14 +48,14 @@ def get_credentials():
     store = oauth2client.file.Storage(credential_path)
     credentials = store.get()
     if not credentials or credentials.invalid:
-        flow = client.flow_from_clientsecrets(CLIENT_SECRET_LOC, SCOPES)
+        flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRET_LOC, SCOPES)
         flow.params['access_type'] = 'offline'
         flow.params['approval_prompt'] = 'force'
         flow.params['redirect_uri'] = REDIRECT_URI
-        print(flow)
-        print(CLIENT_SECRET_LOC)
         if flags:
-            credentials = tools.run_flow(flow, store, flags)
+            credentials = flow.run_local_server()
+        print(credentials)
+        print('storing credentials to' + credential_path)
     return credentials
 
 @cached(cacheHeaders)
