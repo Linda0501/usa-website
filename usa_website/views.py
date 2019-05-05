@@ -435,47 +435,47 @@ def frisbee(request):
     return HttpResponse(t.render(context))
 
 def one(request):
-    t = get_template("ayumemes/1.html")
+    t = get_template("ayumemes/m1.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def two(request):
-    t = get_template("ayumemes/2.html")
+    t = get_template("ayumemes/m2.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def three(request):
-    t = get_template("ayumemes/3.html")
+    t = get_template("ayumemes/m3.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def four(request):
-    t = get_template("ayumemes/4.html")
+    t = get_template("ayumemes/m4.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def five(request):
-    t = get_template("ayumemes/5.html")
+    t = get_template("ayumemes/m5.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def six(request):
-    t = get_template("ayumemes/6.html")
+    t = get_template("ayumemes/m6.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def seven(request):
-    t = get_template("ayumemes/7.html")
+    t = get_template("ayumemes/m7.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def eight(request):
-    t = get_template("ayumemes/8.html")
+    t = get_template("ayumemes/m8.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
 def nine(request):
-    t = get_template("ayumemes/9.html")
+    t = get_template("ayumemes/m9.html")
     context = Context({})
     return HttpResponse(t.render(context))
 
