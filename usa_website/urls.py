@@ -112,7 +112,6 @@ urlpatterns = [
     url(r'education/website-tutorial-3$', views.website_tutorial_3, name="website_tutorial_3"),
     url(r'education/anatomy-of-a-basic-fullstack$', views.anatomy_of_a_basic_fullstack, name="anatomy_of_a_basic_fullstack"),
     url(r'education/basic-web-architecture$', views.basic_web_architecture, name="basic_web_architecture"),
-    url(r'education/frisbee$', views.frisbee, name="frisbee"),
     #Data Consulting
     url(r'dataconsulting/population-modeling$', views.population_modeling, name="population_modeling"),
     url(r'dataconsulting/tutorfly$', views.tutorfly, name="tutorfly"),
@@ -134,16 +133,6 @@ urlpatterns = [
     # Web Dev - Data Viz Spring 2019??
     url(r'webdev/ucpd-crime$', views.ucpd_crime, name="ucpd_crime"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
-    url(r'meme/m1', views.one, name = "one"),
-    url(r'meme/m2', views.two, name = "two"),
-    url(r'meme/m3', views.three, name = "three"),
-    url(r'meme/m4', views.four, name = "four"),
-    url(r'meme/m5', views.five, name = "five"),
-    url(r'meme/m6', views.six, name = "six"),
-    url(r'meme/m7', views.seven, name = "seven"),
-    url(r'meme/m8', views.eight, name = "eight"),
-    url(r'meme/m9', views.nine, name = "nine"),
-
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio")
         #url('^', include('schedule_builder.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
