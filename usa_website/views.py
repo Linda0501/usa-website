@@ -429,55 +429,6 @@ def textboxio(request):
     context = Context({})
     return HttpResponse(t.render(context))
 
-def frisbee(request):
-    t = get_template("blog/education/frisbee.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
-
-def one(request):
-    t = get_template("ayumemes/1.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
-
-def two(request):
-    t = get_template("ayumemes/2.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
-
-def three(request):
-    t = get_template("ayumemes/3.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
-
-def four(request):
-    t = get_template("ayumemes/4.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
-
-def five(request):
-    t = get_template("ayumemes/5.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
-
-def six(request):
-    t = get_template("ayumemes/6.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
-
-def seven(request):
-    t = get_template("ayumemes/7.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
-
-def eight(request):
-    t = get_template("ayumemes/8.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
-
-def nine(request):
-    t = get_template("ayumemes/9.html")
-    context = Context({})
-    return HttpResponse(t.render(context))
 
 def post_new(request):
     if request.method == "POST":
