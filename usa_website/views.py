@@ -332,17 +332,17 @@ def number_concept(request):
 ###### Fall 2018 Blog Posts ######
 #####################################
 def music_moods(request):
-	t = get_template("blog/rp/spring_2018/music-moods.html")
+	t = get_template("blog/rp/fall_2018/music-moods.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
 
 def polls(request):
-	t = get_template("blog/rp/spring_2018/polls.html")
+	t = get_template("blog/rp/fall_2018/polls.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
 
 def league_of_legends(request):
-	t = get_template("blog/rp/spring_2018/league_of_legends.html")
+	t = get_template("blog/rp/fall_2018/league_of_legends.html")
 	context = Context({})
 	return HttpResponse(t.render(context))
 
