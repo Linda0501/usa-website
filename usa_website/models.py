@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Course(models.Model):
@@ -14,10 +15,9 @@ class Blog(models.Model):
         return '%s' % self.title
 
 
-    @models.permalink
+    #@models.permalink
     def get_absolute_url(self):
-        return ('view_blog_post', None, { 'slug': self.slug })
+        return reverse('view_blog_post', None, { 'slug': self.slug })
 
     def get_first_paragraph(self):
         return self.body.split("\n")[0]
-
