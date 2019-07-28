@@ -75,7 +75,6 @@ urlpatterns = [
     url(r'blog/$', views.blog, name="blog"),
     #NEWSLETTERS
     url(r'march_2019.html$', views.march_2019, name="march-2019"),
-    url(r'hallofmemes$', views.hallofmemes, name="hallofmemes"),
     url(r'mtc_map$', views.mtc_map, name="mtc-map"),
 
     #Research and Publication
@@ -132,6 +131,7 @@ urlpatterns = [
     url(r'montyhall$', views.montyhall, name = "montyhall"),
     # Web Dev - Data Viz Spring 2019??
     url(r'webdev/ucpd-crime$', views.ucpd_crime, name="ucpd_crime"),
+    url(r'hallofmemes$', views.hallofmemes, name="hallofmemes"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio")
         #url('^', include('schedule_builder.urls')),

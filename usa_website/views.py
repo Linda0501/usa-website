@@ -20,153 +20,153 @@ def index(request):
 
 def home(request):
     html = get_template("index.html")
-    context = Context({})
+    context = {}
     return HttpResponse(html.render(context))
 
 def index_new(request):
     html = get_template("index_new.html")
-    context = Context({})
+    context = {}
     return HttpResponse(html.render(context))
 
 def aboutus(request):
     html = get_template("aboutus.html")
-    context = Context({})
+    context = {}
     return HttpResponse(html.render({}))
 
 def calendar(request):
     html = get_template("calendar.html")
-    context = Context({})
+    context = {}
     return HttpResponse(html.render({}))
 
 def officehours(request):
     html = get_template("officehours.html")
-    context = Context({})
+    context = {}
     return HttpResponse(html.render({}))
 
 def stat133(request):
     t = get_template("stat-133.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def stat134(request):
     t = get_template("stat-134.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def stat135(request):
     t = get_template("stat-135.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def stat150(request):
     t = get_template("stat-150.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def stat151a(request):
     t = get_template("stat-151a.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def stat151b(request):
     t = get_template("stat-151b.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def stat152(request):
     t = get_template("stat-152.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def stat153(request):
     t = get_template("stat-153.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def stat154(request):
     t = get_template("stat-154.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def stat155(request):
     t = get_template("stat-155.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def stat157(request):
     t = get_template("stat-157.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def stat158(request):
     t = get_template("stat-158.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def stat159(request):
     t = get_template("stat-159.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def people(request):
     t = get_template("people.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def courseMap(request):
     t = get_template("course-map.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 
 def webdev(request):
     t = get_template("webdev.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def careerex(request):
     t = get_template("careerex.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def research(request):
     t = get_template("research.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def dataconsulting(request):
     t = get_template("dataconsulting.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def education(request):
     t = get_template("education.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def community(request):
     t = get_template("community.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def comingSoon(request):
     t = get_template("comingSoon.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def yitz(request):
     t = get_template("yitz.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def hallofmemes(request):
     t = get_template("hallofmemes.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def mtc_map(request):
     t = get_template("mtc_map.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def blog(request):
@@ -184,7 +184,7 @@ def blog(request):
 
 def march_2019(request):
     t = get_template("newsletters/march_2019.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 
@@ -194,42 +194,42 @@ def march_2019(request):
 
 def shallow_dive(request):
     t = get_template("blog/rp/a-shallow-dive-into-time-series-analysis-of-local-restaurant-data-using-r.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def tobacco_heart_disease(request):
     t = get_template("blog/rp/a-spatial-investigation-into-heart-disease-mortality-rates-and-youth-tobacco-rates.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def alphago(request):
     t = get_template("blog/rp/an-introduction-to-go-alphago-and-quantifying-go-gameplay.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def rapnet(request):
     t = get_template("blog/rp/rapnet-machine-learning-for-hip-hop-artist-classification.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def evol_lyrics(request):
     t = get_template("blog/rp/the-evolution-of-lyrics.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def ucb_ug_mental(request):
     t = get_template("blog/rp/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def world_happiness(request):
     t = get_template("blog/rp/world-happiness-report-eda.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def yelp_review(request):
     t = get_template("blog/rp/yelp-review-and-rating-analysis.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 #########################################
@@ -238,32 +238,32 @@ def yelp_review(request):
 
 def website_tutorial_0(request):
     t = get_template("blog/education/website-tutorial-0.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def website_tutorial_1(request):
     t = get_template("blog/education/website-tutorial-1.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def website_tutorial_2(request):
     t = get_template("blog/education/website-tutorial-2.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def website_tutorial_3(request):
     t = get_template("blog/education/website-tutorial-3.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def anatomy_of_a_basic_fullstack(request):
     t = get_template("blog/education/anatomy-of-a-basic-fullstack.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def basic_web_architecture(request):
     t = get_template("blog/education/basic-web-architecture.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 #####################################
@@ -272,17 +272,17 @@ def basic_web_architecture(request):
 
 def tutorfly(request):
     t = get_template("blog/dataconsulting/tutorfly.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def facial_emotion_recognition(request):
     t = get_template("blog/dataconsulting/facial-emotion-recognition.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def data_good(request):
     t = get_template("blog/dataconsulting/data-for-good-proposal.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 #####################################
@@ -290,12 +290,12 @@ def data_good(request):
 #####################################
 def population_modeling(request):
     t = get_template("blog/dataconsulting/population-modeling.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def food_insecurity(request):
     t = get_template("blog/dataconsulting/food-insecurity.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 #####################################
@@ -303,27 +303,27 @@ def food_insecurity(request):
 #####################################
 def bart_ridership_data(request):
     t = get_template("blog/rp/spring_2018/bart-ridership-data.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def capsim(request):
 	t = get_template("blog/rp/spring_2018/capsim.html")
-	context = Context({})
+	context = {}
 	return HttpResponse(t.render(context))
 
 def SteinerTreeProblem(request):
 	t = get_template("blog/rp/spring_2018/SteinerTreeProblem.html")
-	context = Context({})
+	context = {}
 	return HttpResponse(t.render(context))
 
 def college_vs_nba_success(request):
 	t = get_template("blog/rp/spring_2018/college-vs-nba-success.html")
-	context = Context({})
+	context = {}
 	return HttpResponse(t.render(context))
 
 def number_concept(request):
 	t = get_template("blog/rp/spring_2018/num-concept.html")
-	context = Context({})
+	context = {}
 	return HttpResponse(t.render(context))
 
 
@@ -333,22 +333,22 @@ def number_concept(request):
 #####################################
 def music_moods(request):
 	t = get_template("blog/rp/fall_2018/music-moods.html")
-	context = Context({})
+	context = {}
 	return HttpResponse(t.render(context))
 
 def polls(request):
 	t = get_template("blog/rp/fall_2018/polls.html")
-	context = Context({})
+	context = {}
 	return HttpResponse(t.render(context))
 
 def league_of_legends(request):
 	t = get_template("blog/rp/fall_2018/league_of_legends.html")
-	context = Context({})
+	context = {}
 	return HttpResponse(t.render(context))
 
 def toxic_social_media(request):
     t = get_template("blog/rp/fall_2018/toxic_social_media.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 ###################################
@@ -356,32 +356,32 @@ def toxic_social_media(request):
 ###################################
 def r0(request):
     t = get_template("blog/education/r0.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def r1(request):
     t = get_template("blog/education/r1.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def r2(request):
     t = get_template("blog/education/r2.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def p0(request):
     t = get_template("blog/education/p0.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def bias_variance(request):
     t = get_template("blog/education/bias-variance-decision-trees-ensemble-learning.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def ml_classification(request):
     t = get_template("blog/education/MLclassification.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 ###################################
@@ -400,33 +400,33 @@ def view_author(request, author):
 
 def susawebapp(request):
     t = get_template("webapp/index.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 #EASTEREGG
 def housingcRincess(request):
     t = get_template("housingcRincess.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def aDishwasher(request):
     t = get_template("aDishwasher.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def housingcrisis(request):
     t = get_template("housingcrisis/index.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def sheepinav(request):
     t = get_template("sheepinav.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 def textboxio(request):
     t = get_template("textboxio/textboxio.js")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 
@@ -486,11 +486,11 @@ class AttendanceView(TemplateView):
 #WEBDEV Fall 2018
 def montyhall(request):
     t = get_template("montyhall.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
 
 #WEBDEV Spring 2019
 def ucpd_crime(request):
     t = get_template("dataviz/spring_2019/ucpd_crime.html")
-    context = Context({})
+    context = {}
     return HttpResponse(t.render(context))
