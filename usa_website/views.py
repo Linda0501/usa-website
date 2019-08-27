@@ -385,6 +385,35 @@ def ml_classification(request):
     return HttpResponse(t.render(context))
 
 ###################################
+######### INTERVIEWS ###########
+###################################
+
+def lily_bhattacharjee_interview(request):
+    t = get_template("interviews/spring_2019/lily-bhattacharjee-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def megan_zu_interview(request):
+    t = get_template("interviews/spring_2019/megan-zu-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def rachel_li_interview(request):
+    t = get_template("interviews/spring_2019/rachel-li-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def irene_wang_interview(request):
+    t = get_template("interviews/spring_2019/irene-wang-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def joyce_zheng_interview(request):
+    t = get_template("interviews/spring_2019/joyce-zheng-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+###################################
 ######### MISCELLANEOUS ###########
 ###################################
 

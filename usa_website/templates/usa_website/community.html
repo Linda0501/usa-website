@@ -2,6 +2,60 @@
 {% block content %}
 {% load staticfiles %}
 <style>
+/* carousel */
+.carousel {
+  padding: 20px;
+  perspective: 800px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carousel > * {
+  flex: 0 0 auto;
+}
+.carousel figure {
+  margin: 0;
+  width: 40%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.carousel figure img {
+  width: 100%;
+  height:auto;
+  box-sizing: border-box;
+  padding: 0 0px;
+  cursor:pointer;
+}
+.carousel figure img:not(:first-of-type) {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.carousel nav {
+  display: flex;
+  justify-content: center;
+  margin: 0px 0 0;
+}
+.carousel nav button {
+  flex: 0 0 auto;
+  margin: 0 15px;
+  cursor: pointer;
+  color: #333;
+  background: none;
+  border: 1px solid;
+  border-radius:5px;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  z-index:10;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+/* Newsletters */
 /* Style the Image Used to Trigger the Modal */
 .newsletterImg {
  border-radius: 5px;
@@ -97,8 +151,38 @@ body{
 </head>
 <div class = "community-container">
   <h1 style="text-align:center;">Community</h1>
-  <p style="text-align:center;">
+  <p style="text-align:center; font-size:18px;">
     SUSA would like to formally introduce our Community page! We hope that this addition to our site will give you a feel of what we do outside of our committees, and help you get to know our members a little better!
+
+    <!--Member Interviews-->
+    <div class="row" style="justify-content:center">
+      <h2>Meet Our Members!</h2><br>
+    </div>
+    <div class="row" style="justify-content:center;">
+      <div class="container">
+        <div class="carousel" data-gap="20" style="margin:0px;width:100%;">
+          <figure>
+            <img src="{% static 'usa_website/images/interviews/spring_2019/megan_zu_carousel.jpeg' %}" alt="megan_zu">
+            <img src="{% static 'usa_website/images/interviews/spring_2019/rachel_li_carousel.jpeg' %}" alt="rachel_li">
+            <img src="{% static 'usa_website/images/interviews/spring_2019/lily_bhattacharjee_carousel.jpeg' %}" alt="lily_bhattacharjee">
+            <img src="{% static 'usa_website/images/interviews/spring_2019/irene_wang_carousel.jpeg' %}" alt="irene_wang">
+            <img src="{% static 'usa_website/images/interviews/spring_2019/joyce_zheng_carousel.jpeg' %}" alt="joyce_zheng">
+            <img src="{% static 'usa_website/images/interviews/spring_2019/megan_zu_carousel.jpeg' %}" alt="megan_zu">
+            <img src="{% static 'usa_website/images/interviews/spring_2019/rachel_li_carousel.jpeg' %}" alt="rachel_li">
+            <img src="{% static 'usa_website/images/interviews/spring_2019/lily_bhattacharjee_carousel.jpeg' %}" alt="lily_bhattacharjee">
+            <img src="{% static 'usa_website/images/interviews/spring_2019/irene_wang_carousel.jpeg' %}" alt="irene_wang">
+            <img src="{% static 'usa_website/images/interviews/spring_2019/joyce_zheng_carousel.jpeg' %}" alt="joyce_zheng">
+          </figure>
+
+          <nav>
+            <button class="nav prev"><</button>
+            <button class="nav next">></button>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+    <!--Newsletters-->
   <div class="row" style="justify-content:center">
     <h2>Check out our past newsletters!</h2><br>
   </div>
@@ -120,6 +204,86 @@ body{
 
 
 <script>
+//carousel
+window.addEventListener('load', () => {
+    let carousels = document.querySelectorAll('.carousel');
+    var redirects = new Array();
+    redirects[0]="{% url 'megan_zu_interview' %}";
+    redirects[1]="{% url 'rachel_li_interview' %}";
+    redirects[2]="{% url 'lily_bhattacharjee_interview' %}";
+    redirects[3]="{% url 'irene_wang_interview' %}";
+    redirects[4]="{% url 'joyce_zheng_interview' %}";
+    redirects[5]="{% url 'megan_zu_interview' %}";
+    redirects[6]="{% url 'rachel_li_interview' %}";
+    redirects[7]="{% url 'lily_bhattacharjee_interview' %}";
+    redirects[8]="{% url 'irene_wang_interview' %}";
+    redirects[9]="{% url 'joyce_zheng_interview' %}";
+    console.log(redirects[1]);
+    carousel(carousels[0], redirects);
+});
+
+function carousel(root, redirects) {
+    var figure = root.querySelector('figure'),
+        nav = root.querySelector('nav'),
+        images = figure.children,
+        n = images.length,
+        gap = root.dataset.gap || 0,
+        bfc = 'bfc' in root.dataset,
+        theta =  2 * Math.PI / n,
+        currImage = 0;
+        linkCounter = 0;
+
+    setupCarousel(n, parseFloat(getComputedStyle(images[0]).width),redirects);
+    window.addEventListener('resize', () => {
+        setupCarousel(n, parseFloat(getComputedStyle(images[0]).width),redirects)
+    });
+
+    setupNavigation();
+
+    function setupCarousel(n, s, redirects) {
+        let apothem = s / (2 * Math.tan(Math.PI / n));
+
+        figure.style.transformOrigin = `50% 50% ${- apothem}px`;
+
+        for (let i = 0; i < n; i++){
+            images[i].style.padding = `${gap}px`;
+            images[i].addEventListener('click',function(){
+              console.log(redirects[i]);
+              window.location.href=redirects[i];
+            });
+        }
+        for (i = 1; i < n; i++) {
+            images[i].style.transformOrigin = `50% 50% ${- apothem}px`;
+            images[i].style.transform = `rotateY(${i * theta}rad)`;
+        }
+        if (bfc)
+            for (i = 0; i < n; i++)
+                 images[i].style.backfaceVisibility = 'hidden';
+        rotateCarousel(currImage);
+    }
+
+    function setupNavigation() {
+        nav.addEventListener('click', onClick, true);
+        function onClick(e) {
+            e.stopPropagation();
+            let t = e.target;
+            if (t.tagName.toUpperCase() != 'BUTTON')
+                return;
+            if (t.classList.contains('next')) {
+                currImage++;
+            }
+            else {
+                currImage--;
+            }
+            rotateCarousel(currImage);
+        }
+    }
+
+    function rotateCarousel(imageIndex) {
+        figure.style.transform = `rotateY(${imageIndex * -theta}rad)`;
+    }
+}
+
 //create an array and populate it with images of newsletters
 let createImages = function(){
   let newsletters = new Array();
