@@ -3,6 +3,11 @@
     src: url("../fonts/Proxima-Nova.ttf");
 }
 
+@font-face {
+    font-family: 'Avenir Next';
+    src: url("../fonts/AvenirNext-Medium.ttf");
+}
+
 /*
 @font-face {
     font-family: 'Britannic Bold';
