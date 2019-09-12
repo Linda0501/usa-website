@@ -59,70 +59,113 @@ $( document ).ready(function() {
                 </div>
             </div>
             <div class="row" style=" justify-content:center;">
-                  <h2> This Semester</h2>
+                  <h2>This Semester</h2>
             </div>
-            <!--TODO: 2 ROWS OF 2 ???-->
             <div class="row" >
-                <div class="col-md-6 col-sm-6">
-                  <div class="item-grid">
-                    <div class="image" style="background-image: url({% static 'usa_website/images/dataconsulting/metropolitan_f18.jpg' %})">
+                <div class="col-md-4 col-sm-4">
+                  <a href="{% url 'trace_data' %}" class="item-grid">
+                    <div class="image" style="background-image: url({% static 'usa_website/images/dataconsulting/tracedata_f19.png' %})">
                     </div>
                     <div class="v-align">
                         <div class="v-align-middle">
-                            <h3 class="title">Metropolitan Transportation Commission</h3>
-                            <h5 class="date"><span>PM Junseo Park</span></h5>
-                            <h5 class="date"><span>Spring 2018, Fall 2019</span></h5>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <div class="item-grid">
-                    <div class="image" style="background-image: url({% static 'usa_website/images/dataconsulting/tacobell_f18.png' %})">
-                    </div>
-                    <div class="v-align">
-                        <div class="v-align-middle">
-                            <h3 class="title">Taco Bell</h3>
-                            <h5 class="date"><span>PM Elliot Stahnke</span></h5>
-                            <h5 class="date"><span>Spring 2018, Fall 2019</span></h5>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row" >
-                <div class="col-md-6 col-sm-6 ">
-                  <div class="item-grid">
-                    <div class="image" style="background-image: url({% static 'usa_website/images/dataconsulting/express_scripts_s19.jpg' %})">
-                    </div>
-                    <div class="v-align">
-                        <div class="v-align-middle">
-                            <h3 class="title">Express Scripts</h3>
-                            <h5 class="date"><span>PM Omkar Waingankar</span></h5>
-                            <h5 class="date"><span>Fall 2019</span></h5>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6 ">
-                  <div class="item-grid">
-                    <div class="image" style="background-image: url({% static 'usa_website/images/dataconsulting/minted_s19.png' %})">
-                    </div>
-                    <div class="v-align">
-                        <div class="v-align-middle">
-                            <h3 class="title">Minted Photo Detection</h3>
+                            <h3 class="title">Trace Data</h3>
                             <h5 class="date"><span>PM Luke Dai</span></h5>
                             <h5 class="date"><span>Fall 2019</span></h5>
                         </div>
-                    </div>
+                      </div>
+                    </a>
                   </div>
+                <div class="col-md-4 col-sm-4">
+                  <a href="{% url 'data_secrets' %}" class="item-grid">
+                    <div class="image" style="background-image: url({% static 'usa_website/images/dataconsulting/hive_f19.png' %})">
+                    </div>
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">Data Secrets (The Hive)</h3>
+                            <h5 class="date"><span>PM Lucas Bandarkar</span></h5>
+                            <h5 class="date"><span>Fall 2019</span></h5>
+                        </div>
+                    </div>
+                  </a>
                 </div>
+                <div class="col-md-4 col-sm-4">
+                  <a href="{% url 'grandmark' %}" class="item-grid">
+                    <div class="image" style="background-image: url({% static 'usa_website/images/dataconsulting/grandmark_f19.png' %})">
+                    </div>
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">Grandmark International</h3>
+                            <h5 class="date"><span>PM Ethan Ho</span></h5>
+                            <h5 class="date"><span>Fall 2019</span></h5>
+                        </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div class="row" >
+
               </div>
             <div class="row" style="justify-content:center;">
                 <br /> <br/>
                   <h2>Past Projects</h2>
             </div>
             <div class="row" >
+
+              <div class="col-md-4 col-sm-4">
+                <div class="item-grid">
+                  <div class="image" style="background-image: url({% static 'usa_website/images/dataconsulting/tacobell_f18.png' %})">
+                  </div>
+                  <div class="v-align">
+                      <div class="v-align-middle">
+                          <h3 class="title">Taco Bell</h3>
+                          <h5 class="date"><span>PM Elliot Stahnke</span></h5>
+                          <h5 class="date"><span>Fall 2018, Spring 2019</span></h5>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 ">
+                <div class="item-grid">
+                  <div class="image" style="background-image: url({% static 'usa_website/images/dataconsulting/express_scripts_s19.jpg' %})">
+                  </div>
+                  <div class="v-align">
+                      <div class="v-align-middle">
+                          <h3 class="title">Express Scripts</h3>
+                          <h5 class="date"><span>PM Omkar Waingankar</span></h5>
+                          <h5 class="date"><span>Spring 2019</span></h5>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 ">
+                <div class="item-grid">
+                  <div class="image" style="background-image: url({% static 'usa_website/images/dataconsulting/minted_s19.png' %})">
+                  </div>
+                  <div class="v-align">
+                      <div class="v-align-middle">
+                          <h3 class="title">Minted Photo Detection</h3>
+                          <h5 class="date"><span>PM Luke Dai</span></h5>
+                          <h5 class="date"><span>Spring 2019</span></h5>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row" >
+              <div class="col-md-4 col-sm-4">
+                <div class="item-grid">
+                  <div class="image" style="background-image: url({% static 'usa_website/images/dataconsulting/mtc_f18.png' %})">
+                  </div>
+                  <div class="v-align">
+                      <div class="v-align-middle">
+                          <h3 class="title">Metropolitan Transportation Commission</h3>
+                          <h5 class="date"><span>PM Junseo Park</span></h5>
+                          <h5 class="date"><span>Fall 2018, Spring 2019</span></h5>
+                      </div>
+                  </div>
+                </div>
+              </div>
                 <div class="col-md-4 col-sm-4 ">
                   <a href="{% url 'tutorfly' %}" class="item-grid">
                     <div class="image" style="background-image: url({% static 'usa_website/images/blog/tutorfly.png' %})">
@@ -151,21 +194,21 @@ $( document ).ready(function() {
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 col-sm-4">
-                    <a href="{% url 'data_good' %}" class="item-grid">
-                      <div class="image" style="background-image: url({% static 'usa_website/images/housing_proj.jpg' %})">
-                      </div>
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">Data For Good - Housing Crisis - Proposal</h3>
-                                <h5 class="date"><span>PM Patrick Chao</span></h5>
-                                <h5 class="date"><span>Spring 2018</span></h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
             </div>
             <div class="row">
+              <div class="col-md-4 col-sm-4">
+                  <a href="{% url 'data_good' %}" class="item-grid">
+                    <div class="image" style="background-image: url({% static 'usa_website/images/housing_proj.jpg' %})">
+                    </div>
+                      <div class="v-align">
+                          <div class="v-align-middle">
+                              <h3 class="title">Data For Good - Housing Crisis - Proposal</h3>
+                              <h5 class="date"><span>PM Patrick Chao</span></h5>
+                              <h5 class="date"><span>Spring 2018</span></h5>
+                          </div>
+                      </div>
+                  </a>
+              </div>
               <div class="col-md-4 col-sm-4 ">
                 <a href="{% url 'population_modeling' %}" class="item-grid">
                     <div class="image" style="background-image: url({% static 'usa_website/images/blog/population_modeling_proj2.gif' %})">
@@ -195,21 +238,21 @@ $( document ).ready(function() {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 ">
-                  <a href="{% url 'facial_emotion_recognition' %}" class="item-grid">
-                    <div class="image" style="background-image: url({% static 'usa_website/images/blog/facial_emotion_recognition.jpg' %})">
-                    </div>
-                      <div class="v-align">
-                          <div class="v-align-middle">
-                              <h3 class="title">Facial Emotion Recognition</h3>
-                              <h5 class="date"><span>PM Zhongling Jiang</span></h5>
-                              <h5 class="date"><span>Fall 2017</span></h5>
-                          </div>
-                      </div>
-                  </a>
-                </div>
             </div>
             <div class="row">
+              <div class="col-md-4 col-sm-4 ">
+                <a href="{% url 'facial_emotion_recognition' %}" class="item-grid">
+                  <div class="image" style="background-image: url({% static 'usa_website/images/blog/facial_emotion_recognition.jpg' %})">
+                  </div>
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">Facial Emotion Recognition</h3>
+                            <h5 class="date"><span>PM Zhongling Jiang</span></h5>
+                            <h5 class="date"><span>Fall 2017</span></h5>
+                        </div>
+                    </div>
+                </a>
+              </div>
                 <div class="col-md-4 col-sm-4 ">
                   <a href="{% url 'food_insecurity' %}" class="item-grid">
                     <div class="image" style="background-image: url({% static 'usa_website/images/food_insecurity_proj.jpg' %})">
@@ -238,22 +281,22 @@ $( document ).ready(function() {
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 ">
-                    <div class="item-grid">
-                        <div class="image" style="background-image: url({% static 'usa_website/images/projects_police.jpg' %})">
-
-                        </div>
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">Crime in Berkeley</h3>
-                                <h5 class="date"><span>Spring 2016</span></h5>
-                                {% comment %}<p>A common concern for Berkeley students is the relatively concerning amount of crime in surrounding areas. For the Spring 2016 semester, we plan to investigate crime rate in Berkeley and surrounding areas. We hope to create a basic predictive model that will help Berkeley students decide whether walking home is the best decision.</p>{% endcomment %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="row">
+              <div class="col-md-4 col-sm-4 ">
+                  <div class="item-grid">
+                      <div class="image" style="background-image: url({% static 'usa_website/images/projects_police.jpg' %})">
+
+                      </div>
+                      <div class="v-align">
+                          <div class="v-align-middle">
+                              <h3 class="title">Crime in Berkeley</h3>
+                              <h5 class="date"><span>Spring 2016</span></h5>
+                              {% comment %}<p>A common concern for Berkeley students is the relatively concerning amount of crime in surrounding areas. For the Spring 2016 semester, we plan to investigate crime rate in Berkeley and surrounding areas. We hope to create a basic predictive model that will help Berkeley students decide whether walking home is the best decision.</p>{% endcomment %}
+                          </div>
+                      </div>
+                  </div>
+              </div>
                 <div class="col-md-4 col-sm-4 ">
                     <div class="item-grid">
                         <div class="image" style="background-image: url({% static 'usa_website/images/projects_fire.jpeg' %})">
