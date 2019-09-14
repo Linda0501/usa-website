@@ -7,6 +7,15 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url("../fonts/pm/Proxima-Nova.ttf") format('truetype');
+    src: url("../fonts/pm/ProximaNova-Black.woff") format('woff');
+    src: url("../fonts/pm/pmsemibold.eot");
+}
+
+
 /* =======================================================
 *
 * 	Template Style

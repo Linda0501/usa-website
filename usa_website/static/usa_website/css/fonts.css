@@ -1,6 +1,9 @@
 @font-face {
     font-family: 'Proxima Nova';
-    src: url("../fonts/Proxima-Nova.ttf");
+    src: url("../fonts/pm/Proxima-Nova.ttf") format('truetype');
+    src: url("../fonts/pm/ProximaNova-Black.woff") format('woff');
+    src: url("../fonts/pm/pmsemibold.eot");
+
 }
 
 @font-face {
