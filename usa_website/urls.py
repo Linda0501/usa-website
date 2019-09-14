@@ -112,6 +112,9 @@ urlpatterns = [
     url(r'education/anatomy-of-a-basic-fullstack$', views.anatomy_of_a_basic_fullstack, name="anatomy_of_a_basic_fullstack"),
     url(r'education/basic-web-architecture$', views.basic_web_architecture, name="basic_web_architecture"),
     #Data Consulting
+    url(r'dataconsulting/trace-data$', views.trace_data, name="trace_data"),
+    url(r'dataconsulting/data-secrets$', views.data_secrets, name="data_secrets"),
+    url(r'dataconsulting/grandmark$', views.grandmark, name="grandmark"),
     url(r'dataconsulting/population-modeling$', views.population_modeling, name="population_modeling"),
     url(r'dataconsulting/tutorfly$', views.tutorfly, name="tutorfly"),
     url(r'dataconsulting/food-insecurity$', views.food_insecurity, name="food_insecurity"),

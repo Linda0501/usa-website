@@ -267,6 +267,25 @@ def basic_web_architecture(request):
     return HttpResponse(t.render(context))
 
 #####################################
+###### FALL 2019 DC PROJECTS ######
+#####################################
+
+def trace_data(request):
+    t = get_template("blog/dataconsulting/trace-data.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def data_secrets(request):
+    t = get_template("blog/dataconsulting/data-secrets.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def grandmark(request):
+    t = get_template("blog/dataconsulting/grandmark.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+#####################################
 ###### SPRING 2018 DC PROJECTS ######
 #####################################
 
