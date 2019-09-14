@@ -1,0 +1,536 @@
+
+{% extends "header.html" %}
+{% block content %}
+{% load staticfiles %}
+<!--JAVASCRIPT AT END OF FILE, HAS TO LOAD LAST-->
+<!--I'm aware this style of coding the page isn't ideal but I'm really rushed on time in general in this committee. I'll redo it if i get time -->
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/style.css' %}" >
+
+</head>
+
+<style>
+  h1{
+    font-weight: 700;
+    font-size: 42px !important;
+  }
+  h3{
+    font-weight: 600 !important;
+  }
+  body{
+    background-color: #ffffff !important;
+  }
+  .icon-envelope{
+    margin-right:20px;
+  }
+  .slider.closed {
+      /* visible */
+      height:0px;
+      margin:0 20% 0 20%;
+      -webkit-transition:height, 0.5s linear;
+     -moz-transition: height, 0.5s linear;
+     -ms-transition: height, 0.5s linear;
+     -o-transition: height, 0.5s linear;
+     transition: height, 0.5s linear;
+}
+ .slider.opened {
+     height:200px;
+     margin:0 20% 0 20%;
+     -webkit-transition:height, 0.5s linear;
+     -moz-transition: height, 0.5s linear;
+     -ms-transition: height, 0.5s linear;
+     -o-transition: height, 0.5s linear;
+     transition: height, 0.5s linear;
+     overflow-y: auto;
+ }
+  #slider-holder0, #slider-holder1, #slider-holder2, #slider-holder3, #slider-holder4{
+    overflow:hidden;
+    text-align: center;
+    height:100%;
+    width:100%;
+
+  }
+  #slider-holder2{
+    overflow:hidden;
+    text-align: center;
+    height:100%;
+    width:100%;
+
+  }
+
+
+  @media screen and (max-width: 780px) and (min-width:601px) {
+    h3{
+      font-size: 15px !important;
+    }
+  }
+  @media screen and (max-width: 600px) and (min-width: 400px){
+    div.fh5co-team{
+      font-size:12px !important;
+    }
+    h1{
+      font-size:36px !important;
+    }
+    h3{
+      font-size: 12px !important;
+      font-weight:50 !important;
+    }
+    .container p,b{
+      font-size: 12px !important;
+    }
+    .icon-comment{
+      font-size:12px;
+    }
+    .container#slider-holder0, #slider-holder1, #slider-holder2, #slider-holder3, #slider-holder4{
+      margin-top:30px;
+    }
+    .icon-envelope{
+      font-size:12px;
+      margin-right:10px;
+    }
+  }
+  @media screen and (max-width: 400px) and (min-width: 350px){
+    div.fh5co-team{
+      font-size:8px !important;
+    }
+    h1{
+      font-size:24px !important;
+    }
+    h3{
+      font-size: 10px !important;
+      font-weight:50 !important;
+    }
+    .container p,b{
+      font-size: 10px !important;
+    }
+    .container#slider-holder0, #slider-holder1, #slider-holder2, #slider-holder3, #slider-holder4{
+      padding-top:10px;
+    }
+    .icon-comment{
+      font-size:10px;
+    }
+    .icon-envelope{
+      font-size:10px;
+      margin-right:10px;
+    }
+  }
+  @media screen and (max-width: 350px){
+    div.fh5co-team{
+      font-size:6px !important;
+    }
+    h1{
+      font-size:24px !important;
+    }
+    h3{
+      font-size: 9px !important;
+      font-weight:50 !important;
+    }
+    .container p,b{
+      font-size: 10px !important;
+    }
+    .container#slider-holder0, #slider-holder1, #slider-holder2, #slider-holder3, #slider-holder4{
+      font-size: 10px !important;
+      padding-top:10px;
+    }
+    .icon-comment{
+      font-size:10px;
+    }
+    .icon-envelope{
+      font-size:10px;
+      margin-right:10px;
+    }
+  }
+
+
+  .icon-comment:hover{
+    cursor:pointer;
+  }
+   li{
+    cursor:default;
+  }
+</style>
+
+
+      <div class="container" style="margin-top:5%;">
+        <!--      <div class="row">
+                  <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+                      <h2>Faculty Advisors</h2>
+                      <p>Renowned Statistics Professors at the UC Berkeley Statistics Deparment act as faculty advisors to support and give our officers advice.</p>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class=" col-md-4 col-sm-offset-4 fh5co-staff text-center">
+                      <img src="{% static 'usa_website/images/a_g.png' %}" alt="Free HTML5 Bootstrap Template" style="width:100%;height:auto;">
+                      <h3>Adityanand Guntuboyina</h3>
+                      <h3>Evans 323</h3>
+                      <p>Assistant Professor Adityanand Guntuboyina received his Ph.D in statistics and has worked at Berkeley since 2012 after finishing his post-doc at the University of Pennsylvania. He is currently working on statistical problems involving convexity typfied by the estimation of convex sets and functions from various types of noisy measurements. </p>
+
+                      <ul class="fh5co-social">
+                          <li><a href="mailto:aditya@stat.berkeley.edu"><i class="icon-envelope"></i></a></li>
+                      </ul>
+
+                  </div>
+              </div>
+              <br>
+              <hr>
+              <br>
+        -->
+              <div class="row">
+                  <div class="col text-center fh5co-heading">
+                      <h1>Executive Team</h1>
+                      <p>The Student Association for Applied Statistics is led by a group of statistics enthusiasts who have great passion for promote the statistics major to all students in UC Berkeley. They come from different backgrounds and are interested in different areas within statistics. Click on the speech bubble to learn more about our execs!</p>
+                  </div>
+                </div>
+                <div class ="row">
+
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/caro.jpg' %}" alt="Caroline" style="width:100%; height:auto;">
+                      <h3>Caroline Chen</h3>
+                      <h3>President</h3>
+                      <ul class="fh5co-social">
+                          <li><a href="mailto:carolinejchen@berkeley.edu" ><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment" id="icon-comment-0"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/justin.jpg' %}" alt="Justin" style="width:100%; height:auto;">
+                      <h3>Justin Le</h3>
+                      <h3>Co-Internal Vice President</h3>
+                      <ul class="fh5co-social">
+                          <li><a href="mailto:justinle@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment"  id="icon-comment-1"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/irene.jpg' %}" alt="SAAS" style="width:100%; height:auto;">
+                      <h3>Irene Wang</h3>
+                      <h3>Co-Internal Vice President</h3>
+                      <ul class="fh5co-social">
+                          <li><a href="mailto:irenerwang@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment"  id="icon-comment-2"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/andre.jpg' %}" alt="Andre" style="width:100%; height:auto;">
+                      <h3>Andre Sha</h3>
+                      <h3>External Vice President</h3>
+                      <ul class="fh5co-social">
+                          <li><a href="mailto:andrenguyensha@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment" id="icon-comment-3"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+
+              </div>
+              <br>
+
+
+              <div class="row">
+                <div class id ="slider-holder1">
+
+                  <div class="row slider closed align-self-center sliderid0 sliderid1 sliderid2 sliderid3"></div>
+
+                </div>
+              </div>
+              <br>
+              <hr>
+              <br>
+              <div class="row">
+                  <div class="col text-center fh5co-heading">
+                      <h1>Director Team</h1>
+                      <p>The Director team heads SAAS's various committees.
+                        Click on the speech bubble to learn more about our directors!</p>
+                  </div>
+                </div>
+              <div class="row">
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/lucas.jpg' %}" alt="Lucas" style="width:100%; height:auto;">
+                      <h3>Lucas Bandarkar</h3>
+                      <h3>Data Consulting Director</h3>
+                      <ul class="fh5co-social">
+                          <li><a href="mailto:lucasbandarkar@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment"  id="icon-comment-4"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/luke.jpg' %}" alt="Luke" style="width:100%; height:auto;">
+                      <h3>Luke Dai</h3>
+                      <h3>Data Consulting Director</h3>
+                      <ul class="fh5co-social">
+                          <li><a href="mailto:luke.dai@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment"  id="icon-comment-5"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/ethan.jpg' %}" alt="Ethan" style="width:100%; height:auto;">
+                      <h3>Ethan Ho</h3>
+                      <h3>Data Consulting Director</h3>
+                      <ul class="fh5co-social">
+                          <li><a href="mailto:ethanho@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment"  id="icon-comment-6"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/nickan.jpg' %}" alt="Nickan" style="width:100%; height:auto;">
+                      <h3>Nickan Fayyazi</h3>
+                      <h3>Research & Publications Director</h3>
+                      <p>
+                      <!--I am an undergraduate pursuing Computer Science and Statistics double major in the University of California, Berkeley. I have been very interested in Deep Learning and love to gain exposure to Machine Learning and Data Science opportunities-->
+                      </p>
+                      <ul class="fh5co-social">
+                          <li><a href="mailto:nickan@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment"  id="icon-comment-7"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class id ="slider-holder2">
+
+                  <div class="row slider closed align-self-center sliderid4 sliderid5 sliderid6 sliderid7"></div>
+
+                </div>
+              </div>
+              <br>
+              <div class="row" style="justify-content:space-between;">
+
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/chaitali.jpg' %}" alt="Chaitali" style="width:100%; height:auto;">
+                      <h3>Chaitali Mandavia</h3>
+                      <h3>Research & Publications Director</h3>
+                        <ul class="fh5co-social">
+                          <li><a href="mailto:chaitalihm@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment"  id="icon-comment-8"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/nicole.jpg' %}" alt="Nicole" style="width:100%; height:auto;">
+                      <h3>Nicole Zhu</h3>
+                      <h3>Research & Publications Director</h3>
+                        <ul class="fh5co-social">
+                          <li><a href="mailto:n.zhu5646@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment"  id="icon-comment-9"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/prince.jpg' %}" alt="Prince" style="width:100%; height:auto;">
+                      <h3>Prince Wang</h3>
+                      <h3>Career Exploration Director</h3>
+                      <ul class="fh5co-social">
+                          <li><a href="mailto:princewang0201@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment"  id="icon-comment-10"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0; ">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/andrew.jpg' %}" alt="Andrew" style="width:100; height:auto;">
+                      <h3>Andrew Rall</h3>
+                      <h3>Education Director</h3>
+                      <ul class="fh5co-social">
+                        <li><a href="mailto:andrewr0498@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                        <li><i class="icon-comment"  id="icon-comment-11"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class id ="slider-holder3">
+
+                  <div class="row slider closed align-self-center sliderid8 sliderid9 sliderid10 sliderid11"></div>
+
+                </div>
+              </div>
+              <br>
+
+              <div class="row" style="justify-content:space-between;">
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/rachel.JPG' %}" alt="Rachel" style="width:100%; height:auto;">
+                      <h3>Rachel Li</h3>
+                      <h3>Web Development Director</h3>
+                    <ul class="fh5co-social">
+                          <li><a href="mailto:rachelrli@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment"  id="icon-comment-12"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/megan.jpg' %}" alt="Megan" style="width:100%; height:auto;">
+                      <h3>Megan Zhu</h3>
+                      <h3>Web Development Director</h3>
+                      <ul class="fh5co-social">
+                          <li><a href="mailto:meganzhu@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment"  id="icon-comment-13"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col fh5co-staff text-center" style="flex-basis:25%;flex-grow:0;">
+                    <div class="width-restrict">
+                      <img src="{% static 'usa_website/images/people/fall2019/anthony.jpg' %}" alt="Anthony" style="width:100%; height:auto;">
+                      <h3>Anthony Yu</h3>
+                      <h3>Head Advisor</h3>
+                        <ul class="fh5co-social">
+                          <li><a href="mailto:anthonyhsyu@berkeley.edu"><i class="icon-envelope"></i></a></li>
+                          <li><i class="icon-comment"  id="icon-comment-14"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class id ="slider-holder4">
+
+                  <div class="row slider closed align-self-center sliderid12 sliderid13 sliderid14 sliderid15"></div>
+
+                </div>
+              </div>
+              <br>
+              <div class="row">
+
+
+              </div>
+      </div>
+
+
+<script>
+    var buttons = document.getElementsByClassName("icon-comment");
+    let descriptions = ["Caroline is currently a 3rd year double majoring in statistics and data science. She is specifically interested in how technology can impact business decisions, and is constantly looking for ways to get involved in this intersection. This is her 4th semester in SAAS, and she is excited to give back to the family that she found in her freshman year." ,
+    "Justin is studying economics and statistics with an eye towards becoming an actuary. He is also interested in learning new ways to draw straight lines. In his free time, he likes to explore lesser known parts of campus as well as talking to his stuffed animals. ",
+    "Irene is a third year statistics and economics double major. She is interested in understanding how people’s lives are shaped by the business decisions that companies make, and how we can effectively use data-driven business models to improve people’s living standards. She is very excited to bring club members closer together in this academic year.",
+    "Andre is a third year statistics and economics major. This is his 5th semester in SAAS. He enjoys working with startups to develop business development strategies. He thinks ggplot is very useful. His quirks include collecting raw denim, binge watching Saturday Night Live, and hoarding Chipotle napkins.",
+    "Lucas is a junior studying Statistics and Data Science. This will be his third year in the club and spent last year working on the Taco Bell project. Lucas is particularly interested in linear modelling and NLP. Outside of statistics, Lucas is a passionate member of Cal Cycling and the Cal Club Tennis team.",
+    "Luke is a junior Computer Science and Statistics double major. He is passionate about deep learning and all he knows how to do is plugging and chugging python code from Stack Overflow and Medium (Why reprogram the wheel when someone wrote it already? :) ). Other than eating, drinking and sleeping neural nets, he enjoys spending time discovering new things about the world and playing board games with anyone!",
+    "Ethan is a junior majoring in Data Science and Industrial Engineering. He is an aspiring Data Scientist particularly interested in the medical machine learning field. Outside of SAAS, Ethan is interning part-time at doc.ai as well as being a coach for the Cal Club Soccer Team.",
+    "Nickan is a junior studying Engineering Mathematics and Statistics. Outside of SAAS, he is a legislative intern for Berkeley City Councilmember Kate Harrison and Chief of Staff for ASUC Senator Media Sina. In his free time, he enjoys skiing, photography, watching soccer and skiing, and playing the piano, violin, and trumpet.",
+<<<<<<< HEAD
+    "Chaitali",
+    "Nicole is a third year Computer Science and Statistics major. Outside of SAAS, she is also involved with an organization that brings STEM after-school programs to local schools and works with Berkeley’s Human Rights Center in applying data science to social good initiatives. When she’s not trying to achieve her lifetime goal of finally finding a seat in Moffit, she likes to cook, draw, and play volleyball.",
+    "Prince is majoring in statistics and computer science. He is also interested in playing against people on NBA2K and Mario Kart. In his free time, Prince chases after kiwibots around the campus to compensate the workout time he lost due to his upper-division Statistics courses.",
+=======
+    "Chaitali is a sophomore studying Statistics/Data Science and Economics. Apart from SAAS, she has also started her own non-profit catered toward providing education to needy children in developing countries. She enjoys painting, dancing and solving sudoku puzzles!",
+    "Nicole is a third year computer science and statistics major.",
+    "Prince",
+>>>>>>> 198da1badc395b1769bfab960eca53cf20a821d4
+    "Andrew is a Senior studying statistics and computer science. His favorite language used to be R until he attained enlightenment and converted to Python. He enjoys sharing his path to enlightenment with others by striving to create a more collaborative and compassionate learning community at Berkeley through the Education Committee.",
+    "Rachel is a second year studying Statistics and Computer Science with an interest in using technology for social or environmental impact. When she’s not showing up to every SAAS event (points queen!), you can find her at the Blue & Gold Yearbook office. Rachel also loves bullet journaling, taking photos for her food account, editing vlogs, and playing board games like Avalon <3",
+    "Megan is a second year computer science and economics major. This will be her second year in the club and second semester on the web development team. She likes learning about how data science and statistics can impact the social sciences and change traditional research methods. In her free time, Megan likes to eat, sleep and binge watch criminal minds for the 17th time.",
+    "Anthony is an aspiring computer scientist eager to apply data to produce new solutions. He continues to learn new technologies and the applicability of statistics and data to keep up with the rapid technological development. His other interests include basketball, chess, and climbing the Clash Royale ladder."]
+
+  for (let i = 0; i < buttons.length; i ++) {
+      buttons[i].addEventListener("click", function() {
+        dispBio(this, i, descriptions);
+      }, false);
+  }
+  //let toggle = document.getElementById('toggle');
+  let slider = document.querySelector('.slider');
+  let container = document.getElementById('slider-holder');
+  let lastbuttonclose = 0;
+  //toggle.addEventListener('click', dispBio, false);
+  function dispBio(button, i, descriptions){
+    let sliders = document.getElementsByClassName("sliderid" +i)[0];
+        if (lastbuttonclose == 0){
+          addDescrip(button, i);
+          console.log(sliders);
+          lastbuttonclose = document.getElementById('icon-comment-' + i);
+          sliders.classList.remove('closed');
+          sliders.classList.add('opened');
+          console.log(lastbuttonclose);
+        } else{
+          if (document.getElementById('icon-comment-' + i ) == lastbuttonclose) {
+              if (sliders.classList.contains('opened')) {
+                sliders.classList.remove('opened');
+                sliders.classList.add('closed');
+                setTimeout(function (){deleteDescrip(i,sliders)}, 480);
+                lastbuttonclose = document.getElementById("icon-comment-" + i);
+                console.log(lastbuttonclose);
+              } else if (sliders.classList.contains('closed')){
+                addDescrip(button, i);
+                sliders.classList.remove('closed');
+                sliders.classList.add('opened');
+                lastbuttonclose = document.getElementById("icon-comment-" + i);
+              }
+          } else {
+              if (sliders.classList.contains('opened')) {
+                sliders.classList.remove('opened');
+                sliders.classList.add('closed');
+                setTimeout(function (){deleteDescrip(i,sliders)}, 480);
+                setTimeout(function (){addDescrip(button,i)}, 800);
+                setTimeout(function (){ sliders.classList.remove('closed')},800);
+                setTimeout(function (){sliders.classList.add('opened')}, 800);
+                lastbuttonclose = document.getElementById("icon-comment-" + i);
+              } else {
+                console.log("yes");
+                addDescrip(button, i);
+                sliders.classList.remove('closed');
+                sliders.classList.add('opened');
+                lastbuttonclose = document.getElementById("icon-comment-" + i);
+          }
+        }
+      }
+    }
+
+    function addDescrip(button, i){
+
+      let pElem = document.createElement('p');
+      pElem.className = "description align-self-center";
+      pElem.innerHTML = descriptions[i];
+      pElem.style= "padding: 10px; border-bottom:1px solid gray; border-top:1px solid gray; background-color:rgba(0, 204, 204,.05);";
+      console.log(i);
+      console.log('sliderid'+i);
+      document.querySelector(".sliderid" + i).appendChild(pElem);
+    }
+    function deleteDescrip(i,sliders){
+      elem = document.getElementsByClassName("description");
+      console.log(sliders);
+      elements = sliders.getElementsByClassName("description")[0];
+      while(sliders.firstChild){
+        //elements[0].parentNode.removeChild(elements[0]);
+        sliders.removeChild(sliders.firstChild);
+      }
+    }
+
+
+    $( document ).ready(function() {
+        var heights = $("width-restrict").map(function() {
+            return $(this).width();
+        }).get(),
+        maxHeight = Math.max.apply(null, heights);
+        $("width-restrict").width(maxHeight);
+    });
+    $( document ).ready(function() {
+        var heights = $("fh5co-staff").map(function() {
+            return $(this).height();
+        }).get(),
+        maxHeight = Math.max.apply(null, heights);
+        $("fh5co-staff").height(maxHeight);
+    });
+
+</script>
+
+    {% endblock %}
