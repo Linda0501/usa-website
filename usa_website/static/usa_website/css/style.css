@@ -20,8 +20,6 @@
     src: url("../fonts/AvenirNext-Medium.ttf");
 }
 
-
-
 /* =======================================================
 *
 * 	Template Style
@@ -106,7 +104,7 @@ h3 {
 .infosession-text {
   vertical-align: middle;
   text-align: center;
-  font-family: "Britannic Bold", serif;
+  font-family: "Avenir Next", serif;
   font-size: 24px;
 }
 
