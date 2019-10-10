@@ -8,12 +8,18 @@
   font-style: normal;
 }
 
+/*
 @font-face {
     font-family: 'Proxima Nova';
     src: url("../fonts/pm/Proxima-Nova.ttf") format('truetype');
     src: url("../fonts/pm/ProximaNova-Black.woff") format('woff');
     src: url("../fonts/pm/pmsemibold.eot");
+}*/
+@font-face {
+    font-family: 'Avenir Next';
+    src: url("../fonts/AvenirNext-Medium.ttf");
 }
+
 
 
 /* =======================================================
@@ -42,7 +48,7 @@ html {
   }
 
 body {
-  font-family: "Proxima Nova";
+  font-family: "Avenir Next";
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
@@ -71,7 +77,7 @@ p {
 
 h1, h2, h3, h4, h5, h6, figure {
   color: #000;
-  font-family: "Proxima Nova";
+  font-family: "Avenir Next";
   font-weight: 700;
   margin: 0 0 30px 0;
   /*text-transform: uppercase;*/
