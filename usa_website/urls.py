@@ -101,6 +101,7 @@ urlpatterns = [
     url(r'rp/schooling$', views.schooling, name='schooling'),
 
     #R+P Spring 2019
+    url(r'rp/predicting_horse_races$', views.predicting_horse_races, name='predicting_horse_races'),
     url(r'rp/DIJA$', views.DIJA, name='DIJA'),
     url(r'rp/women-in-government$', views.women_in_government, name="women-in-government"),
     url(r'rp/winning-the-mlb-world-series$', views.winning, name="winning-the-mlb-world-series"),
