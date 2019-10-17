@@ -286,6 +286,29 @@ def grandmark(request):
     return HttpResponse(t.render(context))
 
 #####################################
+###### SPRING 2019 DC PROJECTS ######
+#####################################
+
+def express_scripts(request):
+    t = get_template("blog/dataconsulting/express-scripts.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def minted(request):
+    t = get_template("blog/dataconsulting/minted.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+#####################################
+###### FALL 2018 DC PROJECTS ########
+#####################################
+
+def taco_bell(request):
+    t = get_template("blog/dataconsulting/taco-bell.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+#####################################
 ###### SPRING 2018 DC PROJECTS ######
 #####################################
 
@@ -374,6 +397,10 @@ def schooling(request):
     t = get_template("blog/rp/fall_2018/schooling.html")
     context = {}
     return HttpResponse(t.render(context))
+
+###################################
+### SPRING 2019 BLOG POSTS ########
+###################################
 
 ###################################
 ########## CRASH COURSES ##########
@@ -545,5 +572,10 @@ def montyhall(request):
 #WEBDEV Spring 2019
 def ucpd_crime(request):
     t = get_template("dataviz/spring_2019/ucpd_crime.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def members(request):
+    t = get_template("members.html")
     context = {}
     return HttpResponse(t.render(context))
