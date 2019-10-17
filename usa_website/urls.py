@@ -99,21 +99,14 @@ urlpatterns = [
     url(r'rp/league_of_legends$', views.league_of_legends, name='league_of_legends'),
     url(r'rp/toxic_social_media$', views.toxic_social_media, name='toxic_social_media'),
     url(r'rp/schooling$', views.schooling, name='schooling'),
-<<<<<<< HEAD
-    
-=======
 
     #R+P Spring 2019
     url(r'rp/DIJA$', views.DIJA, name='DIJA'),
     url(r'rp/women-in-government$', views.women_in_government, name="women-in-government"),
     url(r'rp/winning-the-mlb-world-series$', views.winning, name="winning-the-mlb-world-series"),
     url(r'rp/machinelearning_and_finance$', views.polls, name="machinelearning_and_finance"),
-<<<<<<< HEAD
-
-=======
- 
->>>>>>> 1882ef4057c03e3d163bdc4dcc759b355944a6c7
->>>>>>> 139c2fab131cf9689a922a7f3268724bc56d0090
+    url(r'rp/identifying_art_styles$', views.identifying_art_styles, name='identifying_art_styles'),
+  
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),
