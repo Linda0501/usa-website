@@ -101,8 +101,9 @@ urlpatterns = [
     url(r'rp/DIJA$', views.DIJA, name='DIJA'),
 
     #R+P Spring 2019
-    url(r'rp/machinelearning_and_finance$', views.polls, name="machinelearning_and_finance")
-
+    url(r'rp/winning-the-mlb-world-series$', views.winning-the-mlb-world-series, name="winning-the-mlb-world-series"),
+    url(r'rp/machinelearning_and_finance$', views.polls, name="machinelearning_and_finance"),
+  
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),

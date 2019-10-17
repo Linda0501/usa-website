@@ -402,6 +402,10 @@ def DIJA(request):
 ###################################
 ### SPRING 2019 BLOG POSTS ########
 ###################################
+def toxic_social_media(request):
+    t = get_template("blog/rp/spring_2019/winning-the-mlb-world-series.html")
+    context = {}
+    return HttpResponse(t.render(context))
 
 def machinelearning_and_finance(request):
     t = get_template("blog/rp/spring_2019/machinelearning_and_finance.html")
