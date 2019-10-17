@@ -396,7 +396,10 @@ def toxic_social_media(request):
 ###################################
 ### SPRING 2019 BLOG POSTS ########
 ###################################
-
+def women_in_government(request):
+    t = get_template("blog/rp/spring_2019/women-in-government.html")
+    context = {}
+    return HttpResponse(t.render(context))
 ###################################
 ########## CRASH COURSES ##########
 ###################################
