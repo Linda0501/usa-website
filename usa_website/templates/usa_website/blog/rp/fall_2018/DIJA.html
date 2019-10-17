@@ -1,0 +1,152 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+
+
+<title>Changes in Analyst Stock Ratings Affected DJIA 30 Stocks Daily Performance from 2013 to 2017</title>
+<head>
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<h1>Changes in Analyst Stock Ratings Affected DJIA 30 Stocks Daily Performance from 2013 to 2017</h1>
+<h3>
+    <span style="color: #D5518D" id="author">By </span>
+    <span style="color: #3E95D7" id="name">Jamarcus Liu</span>
+  </h3>
+
+<div class=Blog_Navigation>
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Background</a></li>
+    <li><a href="#Section2">Preparation</a></li>
+    <li><a href="#Section3">Analysis</a></li>
+    <li><a href="#Section4">Conclusion</a></li>
+    <li><a href="#Section5">References</a></li>
+  </ol>
+</div>
+<br>
+
+<div id="Section1">
+  <h3>Background</h3>
+  <h4>Introduction</h4>
+    <p>
+      Equity analysts are professionals hired by investment banks and independent research firms to produce holistic reports on a dozen companies within their coverage. They research public financial statements, listen in on conference calls, and communicate with company management and customers in order to reach an opinion on the value and volatility of a covered security (Brownlee, 2018). However, although a complete analyst report can vary from 20 to 50 pages in length, most investors do not have time to read a report in its entirety. Analysts ratings, especially their changes, thus become the sexy sound bites that get repeated in the financial media.
+    </p>
+    <!-- This is how you add an image! style="margin:auto" centers the image. -->
+    <img src="{% static 'usa_website/images/blog/rp/fall_2018/DIJAimages/Picture1-2.png' %}" style="margin:auto"></img>
+    <p>
+      (The graph on the right comes from a sample report published by Argus Research)
+    </p>
+    <p>
+      Nevertheless, analysts ratings and reports are not without their critics. Despite the prestige of large financial institutions and the expertise of equity analysts, people voice doubts towards the practice of categorizing a stock by a vaguely defined recommendation level, such as a “moderate sell” or an “overweight.” Also, there have long been doubts about the impartiality of reports due to the conflict of interests across different service lines within bulge bracket investments banks (Ranganathan & Yang, 2015). Although stricter regulations have been implemented by the SEC to separate their job from the rest of the firm after the dotcom meltdown in 2003, researchers have shown that banks are more likely to issue and are less accurate about buy than sell recommendations (Barber et al., 2005). Therefore, it is natural to ask, in this day, how much of an effect a change in analyst ratings would have on stock prices and trading volume in the market.
+    </p>
+
+    <h4>Motivation</h4>
+    <p>
+      I was inspired both my experience at a proprietary trading firm and a research project done by Professor Anastassia Fedyk at the Haas School of Business. During my internship, I saw how day traders capitalize on information such as company news and analyst upgrades and downgrades. Interestingly, they viewed such information as a sign for high trading volume of the stock and potential market overreaction but not necessarily an indicator for price movement. I was told by senior traders on the desk that investors and traders are very aware of the possible bias behind every report and would think of its recommendation very critically. Therefore, I framed my study in a similar way to Prof. Fedyk’s where she looked into financial news and how they translate into prices and trading volume in the market.
+    </p>
+
+    <h4>Language</h4>
+    <p>
+      In this study, I used Excel for data cleaning, Python libraries including NumPy, SciPy, Pandas, and the Berkeley data science module for analysis, and Seaborn and Matplotlib for visualizations.
+    </p>
+
+    <br><br>
+</div>
+
+<div id="Section2">
+  <h3>Preparation</h3>
+
+  <h4>Data Choice and Collection</h4>
+    <p>
+      The first step of the project is to gather datasets on a manageable amount of stocks over a five-year period. This study uses two sets of data, one including price information on every individual stock (Finaeon, access provided through Berkeley library) and another with all changes in analyst recommendations from Yahoo Finance. Due to the idiosyncratic differences, an ideal study would somehow include a more comprehensive list of stocks. However, considering all aspects of data limitation, I ended up focusing on 26 of 30 stocks in DJIA from 2013 to 2017, ten years after the SEC measure came into effect. These are some of the most heavily traded stocks, and any information on them is most likely to trigger a reaction in the market. Also, they are heavily researched and covered by analysts from all banks and institutions, thus creating a higher number of data points to study and run analyses on.
+    </p>
+
+    <h4>Data Cleaning and Augmentation </h4>
+    <p>
+      After gathering the data, I then aimed to find descriptive measures of daily trading activities and to represent changes in analyst recommendations. Since all datasets are all downloaded from databases, very little cleaning was needed and I spent the most time on augmenting the data I gathered.
+    </p>
+    <p>
+      There are two core underlying assumptions I made for my analyses. I first assumed that analysts upgrades and downgrades are usually digested by the market within a trading day and that people rarely make trading or investment decisions based on rating changes few days ago. As a result, the influences, if any, on future trading days would not be otherwise captured by this study. (Similar analyses with stock performance measuring a two-day period were done, but it did not show as meaningful result as measuring daily performance) Also, it would have been possible to study and measure the effect on intraday time frames, e.g. the change in stock volatility within an hour of the issuance of the analyst report, if it had not been for the lack of more granular stock data and time information on the exact time in a day where the analyst report was issued.
+    </p>
+    <p>
+      Stock performance is defined as six descriptive metrics of stocks including range, volume, daily return, and their benchmarked counterparts, normalized range, normalized volume, daily excess return (hereafter collectively referred to as stock performance or dependent variables for convenience).
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2018/DIJAimages/Picture3.png' %}" style="margin:auto"></img>
+    <p>Benchmarked metrics are included to eliminate market-caused fluctuations in volume, range, and returns, such as different weekdays and macroeconomic news. I used data for SPY as a proxy for the market data in my calculation.</p>
+    <p>Daily total return is calculated as the day-to-day difference of close prices of a certain stock, adjusted for stock splits and dividends. Such a measurement ensures continuity and includes trading activities during pre-market and after-hours where most reports are released.  </p>
+    <p>My second assumption is that people trade on changes in information, but not the information in its absolute scale. This assumption is made not only because changes in ratings, not the ratings per se, make the headlines, but also because different institutions adopt different rating schema. For instance, an “outperform” by one firm would mean a “moderate buy” by another, making it impossible to compare sensibly with one another. </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2018/DIJAimages/Picture4.png' %}" style="margin:auto"></img>
+
+    <p> As such, changes in analyst ratings are codified as following: Only upgrades are coded as 1 and downgrades as -1, other levels of stock recommendations -- reiterated, initiated, resumed -- are coded as 0 since none represents a change in stock ratings. Absolute indicator is the absolute value of daily indicator, and days with either upgrades or downgrades are coded as 1 to represent days with changes.</p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2018/DIJAimages/Picture5.png' %}" style="margin:auto"></img>
+
+    <p>In the case of multiple changes in rating issued on the same day, I only keep one upgrade/downgrade since it is very unlikely, though not impossible, for a stock to receive both an upgrade and a downgrade on the same day. </p>
+    <p>With all cleaning and augmentation completed, I then join the two datasets into single spreadsheet for every one of the 26 stocks, each imported as a csv file and uploaded to Berkeley datahub for analysis.</p>
+
+    <br><br>
+</div>
+
+<div id="Section3">
+  <h3>Analysis</h3>
+  <h4>Hypothesis</h4>
+    <p>
+      Null Hypothesis: A change in analyst stock rating will not have statistically significant effect on the range, volume, return and their benchmarked values of that stock given a 5% p-value cutoff. Any deviation is due to random chance.
+    </p>
+    <p>Alternative Hypothesis: A change (upgrade or downgrade) in analyst stock rating will increase the range, volume, normalized range, and normalized volume of the stock on the day of the report due to increased attention; by contrast, total return and excess return of that stock is likely to move in the same direction as such a change, that is to increase when received an upgrade and to decrease when received a downgrade.</p>
+    <h4>Analysis 1: A/B Testing</h4>
+    <p>
+      The first half of my analysis focused on showing qualitatively that change in analyst ratings will have an effect on the range, volume, and returns of the stock on the same day when the report is published. Statistically, my goal is to use A/B testing to prove stock performances on days with upgrade or downgrade come from a different distribution from those without. Similar to the approach of many studies in Data 8, I created a total of 1000 bootstrap samples of indicators (non-absolute and absolute) of 1259 rows (trading days) of data and calculated the test statistics as the difference in the mean performance between the days with and without a change in stock rating. Specifically, I use the absolute indicator to find the difference in average range, volume, normalized range, and normalized volume and indicator to find the difference in daily and daily excess return. Therefore, for a single stock, there are six simulated distributions with one on each metric and six corresponding observed statistics with six p-values.
+    </p>
+    <p>I first ran my analysis on the stock data for Apple, Inc. (NASDAQ: AAPL) as a proof of concept. Using a 5% p-value cutoff, effects on five out of six metrics for performance show statistical significance. </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2018/DIJAimages/Picture6.png' %}" style="margin:auto"></img>
+    <p>After that, I went on applying the same process to other stocks in DJIA 30 and calculating the proportion of stocks showing statistical significance on each metric given a 5% p-value cutoff.</p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2018/DIJAimages/Picture7.png' %}" style="margin:auto"></img>
+    <p>These graphs and the table below display the values or distributions of p-values for every stock and every metric. We see that, for every dependent variable (metric),  the majority of stocks in the study exhibit statistically significant effects after receiving changes in analyst ratings. It also shows that changes in analyst ratings are more likely to trigger a statistically significant response in stock volume and returns than in price range. </p>
+    <p>However, there are two additional observations to be made for the table. First, in every column, whereas most p-values are close to 0, some values are surprisingly large. For instance, the p-value for the excess return of UnitedHealth Group (NYSE: UNH) is close to 1. After double checking the result, I believe this is caused by the disproportionality of data points in the two categories. On average, the number of days with a change in analysts ratings and the number without have a ratio of 1 to 40, and therefore a few outliers in the treatment group will significantly affect the result for AB testing. </p>
+    <p>Second, in every row, the tickers showing a higher p-value on a one metric tend also to have higher p-values on some other ones.</p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2018/DIJAimages/Picture8.png' %}" style="margin:auto"></img>
+    <p>As you can see, some stocks respond well to changes in analysts ratings while others are more immune to such changes and are probably more sensitive to other factors. The pattern sheds lights on the different characteristics of stocks, which many retail investors or day traders usually strive to understand through years of experience and active market participation. This study shows, however, that we can familiarize themselves with a stock simply by acquiring past stock data and applying statistical methods to analyze the market effect of a signal. In this way, we are able to quantify our judgments and to evaluate the quality of a signal, in this case, a change in analysts rating, on a stock-by-stock basis. </p>
+
+
+  <h4>Analysis 2: Linear Regression</h4>
+    <p>
+      The second half of the analysis quantitatively measures the correlation between changes of analysts ratings and stock performance on that day. Similarly to the previous step, I regressed range, normalized range, volume, and normalized volume on the absolute indicator while regressing daily return and daily excess return on the indicator. The results can be seen in the table and the graphs below.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2018/DIJAimages/Picture9.png' %}" style="margin:auto"></img>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2018/DIJAimages/Picture10.png' %}" style="margin:auto"></img>
+    <p>We see that on average there is a positive yet rather weak correlation between changes in stock ratings and stock performance on that day.</p>
+    <p>One possible explanation is the existence of many extraneous variables affecting a stock traded in an open market, such as major news, quarterly earnings reports, and factors related to the economy, the industry, or the fundamentals of the firm. Although it is difficult to analyze all those factors here due to the scope of this study, it is very likely that a multiple regression on both analysts rating changes and those other factors would give a cleaner and more conclusive result. Similarly, if more granular data is available, i.e. those with time in a day when a report is published, we can look at market reaction within the 24 hours of the exact time of report publishment.</p>
+    <br><br>
+</div>
+
+<div id="Section4">
+  <h3>Conclusion</h3>
+    <p>
+      In this study, I used stock data and analyst ratings from 2013 to 2017 to show both qualitatively and quantitatively how the change in analyst stock ratings had an effect on the daily stock performance. I started off calculating six metrics: range, volume, returns, and their benchmarked values, based on the original dataset and data on SPY as measures of stock performance. Then, I ran a two-step analysis, involving A/B testing and simple linear regression, to show that a change in analyst ratings have a statistically significant impact on daily stock performance for the majority of stocks in the sample, despite there being only a weak positive correlation between the two. It is consistent with my observation during the internship that investors and traders see upgrades and downgrades as signs for increased attention on the stock, but not as a guarantee of a price movement due to the abundance of information, doubts on the bias behind the reports, and ever-decreasing information edge an analyst has on the stock his covers.
+    </p>
+    <p>
+      As a takeaway from this study, we learned that it is possible to estimate the responsiveness of a stock to certain signals by relatively simple statistical techniques, and thus make informed decisions as an investor. We shall also understand that since a stock is a liquid financial product traded in the market, no one type of signal alone wields enough explanatory power for its price movement, trading volume, or returns. Further research can be done with more granular price and ratings data and information on extraneous factors, such as news, earnings report, and macroeconomic/industrial/fundamental factors to more precisely quantify the effect of changes in analysts ratings.
+    </p>
+        <br><br>
+</div>
+
+
+<div id="Section5">
+  <h3>References</h3>
+    <p>
+      AAPL Analyst Opinion | Analyst Estimates | Apple Inc. Stock. (2018, November 10). Retrieved November 10, 2018, from https://finance.yahoo.com/quote/AAPL/analysis?p=AAPL
+    </p>
+    <p>
+      Barber, B. M., Lehavy, R., Mcnichols, M. F., & Trueman, B. (2001). Prophets and Losses: Reassessing the Returns to Analysts Stock Recommendations. Financial Analysts Journal,59(2), 88-96. doi:10.2139/ssrn.269119
+    </p>
+    <p>Barber, B. M., Lehavy, R., & Trueman, B. (2005). Comparing the Stock Recommendation Performance of Investment Banks and Independent Research Firms. SSRN Electronic Journal. doi:10.2139/ssrn.572301</p>
+    <p>Brownlee, A. P. (2018, March 2). Understanding analyst ratings. Retrieved November 30, 2018, from https://www.investopedia.com/financial-edge/0512/understanding-analyst-ratings.aspx</p>
+    <p>Finaeon Global Financial Data. Retrieved November 10, 2018, from https://www.globalfinancialdata.com/GFDPlatform/</p>
+    <p>Ranganathan, R., & Yang, W. (2015). Not All Ratings are Created Equal:How Analyst Heterogeneity Influences Firms’ Strategic Investment. Academy of Management Proceedings,2015(1). doi:10.5465/ambpp.2015.15627abstract</p>
+
+    <br><br>
+</div>
+
+{% endblock %}
