@@ -396,6 +396,10 @@ def toxic_social_media(request):
 ###################################
 ### SPRING 2019 BLOG POSTS ########
 ###################################
+def predicting-horse-races(request):
+    t = get_template("blog/rp/spring_2019/predicting_horse_races.html")
+    context = {}
+    return HttpResponse(t.render(context))
 
 ###################################
 ########## CRASH COURSES ##########

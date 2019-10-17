@@ -100,6 +100,7 @@ urlpatterns = [
     url(r'rp/toxic_social_media$', views.toxic_social_media, name='toxic_social_media'),
 
     #R+P Spring 2019
+    url(r'rp/predicting_horse_races$', views.predicting_horse_races, name='predicting_horse_races'),
 
 
     #Education
