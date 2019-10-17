@@ -105,9 +105,9 @@ urlpatterns = [
     url(r'rp/DIJA$', views.DIJA, name='DIJA'),
     url(r'rp/women-in-government$', views.women_in_government, name="women-in-government"),
     url(r'rp/winning-the-mlb-world-series$', views.winning, name="winning-the-mlb-world-series"),
-    url(r'rp/machinelearning_and_finance$', views.polls, name="machinelearning_and_finance"),
+    url(r'rp/machinelearning_and_finance$', views.machinelearning_and_finance, name="machinelearning_and_finance"),
     url(r'rp/identifying_art_styles$', views.identifying_art_styles, name='identifying_art_styles'),
-  
+
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),
