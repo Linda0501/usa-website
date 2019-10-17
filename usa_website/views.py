@@ -421,6 +421,11 @@ def machinelearning_and_finance(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def identifying_art_styles(request):
+    t = get_template("blog/rp/spring_2019/identifying-art-styles.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ########## CRASH COURSES ##########
 ###################################
