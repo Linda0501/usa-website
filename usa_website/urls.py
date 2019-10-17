@@ -142,6 +142,7 @@ urlpatterns = [
     # Web Dev - Data Viz Spring 2019??
     url(r'webdev/ucpd-crime$', views.ucpd_crime, name="ucpd_crime"),
     url(r'hallofmemes$', views.hallofmemes, name="hallofmemes"),
+    url(r'rp-fakenews$', views.fakenews, name = "fake_news_rp")
     #Interviews
     url(r'interviews/spring_2019/lily-bhattacharjee-interview$', views.lily_bhattacharjee_interview, name="lily_bhattacharjee_interview"),
     url(r'interviews/spring_2019/megan-zu-interview$', views.megan_zu_interview, name="megan_zu_interview"),
@@ -151,6 +152,8 @@ urlpatterns = [
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'members', views.members, name = "members")
+
+
         #url('^', include('schedule_builder.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()

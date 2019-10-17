@@ -574,3 +574,10 @@ def members(request):
     t = get_template("members.html")
     context = {}
     return HttpResponse(t.render(context))
+
+
+def fakenews(request):
+    t = get_template("blog/rp/spring_2019/political_bias_in_mainstream_news_media.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
