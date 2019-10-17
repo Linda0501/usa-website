@@ -24,15 +24,14 @@ SECRET_KEY = 'g6o*!49h66xlufne(c*7*$j$c3dy_(!*=4fp9dojt@y8ai16m_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['saas.berkeley.edu', 'saas-berkeley-edu.apphost.ocf.berkeley.edu', 'saas-berkeley-edu.dev-apphost.ocf.berkeley.edu', "127.0.0.1"]
+ALLOWED_HOSTS = ['saas.berkeley.edu', 'saas-berkeley-edu.apphost.ocf.berkeley.edu',
+'saas-berkeley-edu.dev-apphost.ocf.berkeley.edu', "127.0.0.1"]
 
 #site.addsitedir(''/home/u/ug/ugradsa/usa-website/src/venv/lib/python3.4/site-packages')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-#print(STATIC_ROOT)
-#STATIC_ROOT= ''
 STATIC_URL = '/static/'
 STATICFILES_DIR = (os.path.join(BASE_DIR, 'usa_website/static'),)
 

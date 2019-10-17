@@ -1,0 +1,28 @@
+
+{% extends "blog/dataconsulting/dc_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<style>
+	figure img {
+		display: block;
+		margin: 0 auto;
+		width: 50%;
+		text-align: center;
+	}
+	figcaption {
+		text-align: center;
+	}
+</style>
+<div class="container-fluid" >
+	<h3 class="title toc-ignore">Minted</h3>
+	<h4><span style="color: #D5518D" id="author">PM:</span><span style="color: #3E95D7" id="name"> Luke Dai</span></h4>
+  <p>
+  <ul>
+		<li>Developed image recognition algorithms to predict number of photos on a card</li>
+		<li>Increased accuracy by combining CNN with various algorithms like Canny and YOLO</li>
+		<li>Trained an autoencoder using generated images from data augmentation</li>
+	</ul>
+  </p>
+</div>
+{% endblock %}

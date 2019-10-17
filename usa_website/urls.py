@@ -98,6 +98,10 @@ urlpatterns = [
     url(r'rp/polls$', views.polls, name="polls"),
     url(r'rp/league_of_legends$', views.league_of_legends, name='league_of_legends'),
     url(r'rp/toxic_social_media$', views.toxic_social_media, name='toxic_social_media'),
+
+    #R+P Spring 2019
+
+
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),
@@ -120,6 +124,9 @@ urlpatterns = [
     url(r'dataconsulting/food-insecurity$', views.food_insecurity, name="food_insecurity"),
     url(r'dataconsulting/facial-emotion-recognition$', views.facial_emotion_recognition, name="facial_emotion_recognition"),
     url(r'dataconsulting/data-for-good-proposal$', views.data_good, name="data_good"),
+    url(r'dataconsulting/taco-bell$', views.taco_bell, name="taco_bell"),
+    url(r'dataconsulting/express-scripts$', views.express_scripts, name="express_scripts"),
+    url(r'dataconsulting/minted$', views.minted, name="minted"),
 
     url(r'textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'yitz$', views.yitz, name = "yitz"),
@@ -142,7 +149,8 @@ urlpatterns = [
     url(r'interviews/spring_2019/irene-wang-interview$', views.irene_wang_interview, name="irene_wang_interview"),
     url(r'interviews/spring_2019/joyce-zheng-interview$', views.joyce_zheng_interview, name="joyce_zheng_interview"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
-    url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio")
+    url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio"),
+    url(r'members', views.members, name = "members")
         #url('^', include('schedule_builder.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()
