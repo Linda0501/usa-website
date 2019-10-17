@@ -101,6 +101,7 @@ urlpatterns = [
 
     #R+P Spring 2019
 
+    url(r'rp/identifying_art_styles$', views.identifying_art_styles, name='identifying_art_styles'),
 
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),

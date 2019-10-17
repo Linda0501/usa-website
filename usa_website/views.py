@@ -397,6 +397,11 @@ def toxic_social_media(request):
 ### SPRING 2019 BLOG POSTS ########
 ###################################
 
+def identifying_art_styles(request):
+    t = get_template("blog/rp/spring_2019/identifying-art-styles.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ########## CRASH COURSES ##########
 ###################################
