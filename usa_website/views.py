@@ -407,7 +407,7 @@ def women_in_government(request):
     context = {}
     return HttpResponse(t.render(context))
 
-def toxic_social_media(request):
+def winning(request):
     t = get_template("blog/rp/spring_2019/winning-the-mlb-world-series.html")
     context = {}
     return HttpResponse(t.render(context))
