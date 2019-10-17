@@ -98,10 +98,13 @@ urlpatterns = [
     url(r'rp/polls$', views.polls, name="polls"),
     url(r'rp/league_of_legends$', views.league_of_legends, name='league_of_legends'),
     url(r'rp/toxic_social_media$', views.toxic_social_media, name='toxic_social_media'),
+    url(r'rp/DIJA$', views.DIJA, name='DIJA'),
 
     #R+P Spring 2019
-    url(r'rp/women-in-government$', views.women_in_government, name="women-in-government")
-
+    url(r'rp/women-in-government$', views.women_in_government, name="women-in-government"),
+    url(r'rp/winning-the-mlb-world-series$', views.winning-the-mlb-world-series, name="winning-the-mlb-world-series"),
+    url(r'rp/machinelearning_and_finance$', views.polls, name="machinelearning_and_finance"),
+ 
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),

@@ -393,6 +393,12 @@ def toxic_social_media(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def DIJA(request):
+    t = get_template("blog/rp/fall_2018/DIJA.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+
 ###################################
 ### SPRING 2019 BLOG POSTS ########
 ###################################
@@ -400,6 +406,17 @@ def women_in_government(request):
     t = get_template("blog/rp/spring_2019/women-in-government.html")
     context = {}
     return HttpResponse(t.render(context))
+
+def toxic_social_media(request):
+    t = get_template("blog/rp/spring_2019/winning-the-mlb-world-series.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def machinelearning_and_finance(request):
+    t = get_template("blog/rp/spring_2019/machinelearning_and_finance.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ########## CRASH COURSES ##########
 ###################################
