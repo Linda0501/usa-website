@@ -98,6 +98,7 @@ urlpatterns = [
     url(r'rp/polls$', views.polls, name="polls"),
     url(r'rp/league_of_legends$', views.league_of_legends, name='league_of_legends'),
     url(r'rp/toxic_social_media$', views.toxic_social_media, name='toxic_social_media'),
+    url(r'rp/DIJA$', views.DIJA, name='DIJA'),
 
     #R+P Spring 2019
 

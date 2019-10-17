@@ -393,6 +393,12 @@ def toxic_social_media(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def DIJA(request):
+    t = get_template("blog/rp/fall_2018/DIJA.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+
 ###################################
 ### SPRING 2019 BLOG POSTS ########
 ###################################
