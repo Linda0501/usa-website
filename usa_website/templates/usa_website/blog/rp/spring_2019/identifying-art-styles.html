@@ -1,0 +1,351 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title>Identifying Art Styles</title>
+<head>
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<h1>Identifying Art Styles</h1>
+<h3>
+    <span style="color: #D5518D" id="author">By </span>
+    <span style="color: #3E95D7" id="name">Nicole Zhu</span>
+  </h3>
+
+<div class=Blog_Navigation>
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Introduction</a></li>
+    <li><a href="#Section2">Approach</a></li>
+    <li><a href="#Section3">Data Analysis</a></li>
+    <li><a href="#Section4">Conclusion</a></li>
+    <li><a href="#Section5">Sources</a></li>
+  </ol>
+</div>
+<br>
+
+<div id="Section1">
+  <h3>Introduction</h3>
+    <p>
+      The evolution of art over time has resulted in the rise of various different
+      art styles. Classifying art styles thus requires an evaluation of components
+      such as color, texture, and subject matter. In my project, I hoped to create
+      a convolutional neural network (CNN) model to try to classify Cubism, Impressionism,
+      and High Renaissance paintings as I felt this could best capture the relationships
+      between patterns in the images compared to other types of machine learning.
+    </p>
+    <p>
+      In many cases, style is only identified post-creation of a work by art historians
+      and other experts in the field. This makes style a fluid and highly subjective
+      classifier of painting aesthetics as style may not always be defined by a
+      painting’s features, but instead by the context in which a painting was created
+      (ex: art movement associated with its creator). The clearest example of this
+      can be seen in contemporary realism pieces where pieces may share stylistic
+      motifs, mediums and motivations as other art periods, yet still remain defined
+      by their time period (1970s) and inclination for representationalism.
+    </p>
+    <p>
+      However, while style encompasses a whole lot more than just surface-level
+      aesthetics, it would naïve to deny that pieces from the same style do not
+      share a lot of visual elements - and it is from this assumption that I based
+      my research project off of. To combat personal subjectivity in style classification,
+      I used the WikiArt classification for paintings as it was also the data source
+      from which I gathered images.
+    </p>
+    <p>
+      Out of a long-time interest in art and a motivation to try learning how to
+      train and test a CNN, I thus chose several art styles I felt were visually
+      distinctive enough to train a lightweight, but efficient neural network.
+    </p>
+    <!-- This is how you add an image! style="margin:auto" centers the image. -->
+
+</div>
+
+<div id="Section2">
+  <h3>Approach</h3>
+    <p>
+      In addition to the styles I eventually settled upon, I did consider Pop Art
+      and Pointillism. I ultimately deferred from choosing Pop Art as the high variety
+      across mediums made it difficult to gather images from the style that were
+      only paintings. Choosing paintings only would also ignore a major tenet of
+      the style which was to create pieces that drew attention to mass production
+      and rendering through piece medium. With regards to Pointillism, the distinctive
+      visual factor that differentiated it from other styles was the use of small
+      strokes of pure color to build up a larger, more colorful image, and I worried
+      that the standardization of image size and eventual reduction in image dimensions
+      would compress the images in a way that would lose that vital information.
+      Consequently, I chose to continue with Cubism, Impressionism and High Renaissance
+      paintings only. Some examples of each style below:
+    </p>
+    <div style="text-align:center">
+      <figure style="display:inline-block">
+        <br>
+        <img src="{% static 'usa_website/images/blog/rp/spring_2019/identifying-art-styles/picasso-nude-with-towel.png' %}"></img>
+        <figcaption style="text-align:center">
+            Pablo Picasso,
+            <div style="font-style:italic">Nude with Towel</div>
+        </figcaption>
+      </figure>
+      <figure style="display:inline-block">
+        <img src="{% static 'usa_website/images/blog/rp/spring_2019/identifying-art-styles/picasso-house-in-garden.png' %}"></img>
+        <figcaption style="text-align:center">
+            Pablo Picasso,
+            <div style="font-style:italic">House in Garden</div>
+        </figcaption>
+      </figure>
+    </div>
+    <br>
+    <p>
+      Due to the flat 2D characteristics of the style and the focus on geometric
+      planes and solid colors, Cubism proves to be a unique style compared to the
+      other two styles that focused more on accurately depicting the world.
+    </p>
+    <div style="text-align:center">
+      <figure style="display:inline-block">
+        <br>
+        <img src="{% static 'usa_website/images/blog/rp/spring_2019/identifying-art-styles/boudin-trouville-black-rocks.png' %}" style="margin:auto"></img>
+        <figcaption style="text-align:center">
+            Eugene Boudin,
+            <div style="font-style:italic">Trouville, Black Rocks</div>
+        </figcaption>
+      </figure>
+      <figure style="display:inline-block">
+        <img src="{% static 'usa_website/images/blog/rp/spring_2019/identifying-art-styles/morisot-study-the-waters-edge.png' %}" style="margin:auto"></img>
+        <figcaption style="text-align:center">
+            Berthe Morisot,
+            <div style="font-style:italic">Study, The Water's Edge</div>
+        </figcaption>
+      </figure>
+    </div>
+    <br>
+    <p>
+      Impressionistic works tend to have more details regarding light and color
+      – where the painter chooses to depict life through human perception rather
+      than realism. Landscapes are a staple of impressionistic painters.
+    </p>
+    <div style="text-align:center">
+      <figure style="display:inline-block">
+        <br>
+        <img src="{% static 'usa_website/images/blog/rp/spring_2019/identifying-art-styles/mantegna-the-agony-in-the-garden.png' %}" style="margin:auto"></img>
+        <figcaption style="text-align:center">
+            Andrea Mantegna,
+            <div style="font-style:italic">The Agony in the Garden</div>
+        </figcaption>
+      </figure>
+      <figure style="display:inline-block">
+        <img src="{% static 'usa_website/images/blog/rp/spring_2019/identifying-art-styles/congeliano-sacred-conversation.png' %}" style="margin:auto"></img>
+        <figcaption style="text-align:center">
+            Cima de Congeliano,
+            <div style="font-style:italic">Sacred Conversation</div>
+        </figcaption>
+      </figure>
+    </div>
+    <br>
+    <p>
+      High Renaissance paintings focused on refining and depicting lifelike figures
+      – often interweaved with themes of nature, religion and history.
+    </p>
+    <p>
+      Similar to other studies conducted into the intersection of machine learning
+      and art, I chose to obtain images from the WikiArt website through an API
+      query of the first 300 images that belonged in their dataset for each style.
+      I then filtered out any images of sketches and sculptures – in short, images
+      that weren’t paintings. After this process, I ultimately was able to gather
+      almost 800 images in my dataset that spanned the three different styles.
+    </p>
+    <p>
+      While this was a rather small data set to work off of, I chose to expand my
+      data set using the images I had by augmenting my data through image orientation.
+      By flipping and rotating my images, I was able to effectively double my data
+      set. I also standardized the image size to be 224x224 pixels. To do this,
+      I scaled images down and cropped from the center (including as much of the
+      original image as possible) to make sure all the images would be the same size.
+      Finally, I encoded the labels of the images (cubism vs. impressionism vs.
+      high renaissance) in a vector through one hot encoding.
+    </p>
+    <p>
+      With my complete, labelled data set, I split the images and their labels into
+      three different sets: a training set, validation set and test set.
+    </p>
+    <h3 style="text-align:center;">Images in Data Set</h3>
+    <table width="80%" style="border: 1px solid black;" align="center">
+      <tr>
+        <th></th>
+        <th style="font-style:italic;">Number of Images</th>
+      </tr>
+      <tr>
+        <th style="font-style:italic;">Training Set</th>
+        <th style="border: 1px solid black; background-color: #eee;">940</th>
+      </tr>
+      <tr>
+        <th style="font-style:italic;">Validation Set</th>
+        <th style="border: 1px solid black;">236</th>
+      </tr>
+      <tr>
+        <th style="font-style:italic;">Test Set</th>
+        <th style="border: 1px solid black; background-color: #eee;">204</th>
+      </tr>
+    </table>
+    <p>
+      To implement my model, I used Tensorflow’s Keras API to create three different
+      types of layers: convolutional layers, max pooling layers and a fully connected
+      layer. Convolutional layers will scan the image in its matrix input form and
+      try to extract features. Max pooling layers can reduce the computational power
+      required by reducing the dimensions of the convolutional layer output and
+      also extracting more dominant features. This allows the model to focus more
+      on frequent and strong features present in the image while also reducing
+      the focus on noise. The fully connected layer will take in the result passed
+      in from previous layers and try to classify the image.
+    </p>
+    <p>
+      I used four sets of alternating convolutional layers and max pooling layers
+      – with batch normalization in between – before finally flattening and adding
+      two fully connected layers with dropout. In previous iterations of the model,
+      I included more sets of alternating convolutional and max pooling layers
+      without dropout – however, I quickly realized my model was prone to overfitting
+      to the small training set I had. To address this, I reduced the number of
+      sets I had to four in order to make the network architecture simpler. I also
+      combined this with the usage of batch normalization and dropout to try to
+      reduce the amount of overfitting.
+    </p>
+    <p>
+      Batch normalization would help normalize values passed between layers, allowing
+      layers to learn a little more independently of each other by introducing
+      slight noise. Dropout is another approach used for regularization as the model
+      will probabilistically ignore certain values temporarily. While this will
+      lead to some data loss between layers, again, it will introduce some noise
+      which will help against overfitting and force layers to work more independently
+      in creating a more robust model.
+    </p>
+</div>
+
+<div id="Section3">
+  <h3>Data Analysis</h3>
+      <img src="{% static 'usa_website/images/blog/rp/spring_2019/identifying-art-styles/data-chart.png' %}" style="margin:auto"></img>
+    <p>
+      Testing my model on my testing data set, it performed with an accuracy of
+      about 62% which seemed in line (if not a little bit lower) than previous
+      studies done with this subject. We can further break down the different
+      styles in the chart above. Cubism is represented as Class 0, Impressionism
+      is represented as Class 1, and High Renaissance is represented as Class 2.
+    </p>
+    <p>
+      As expected, Cubism seemed to perform the best with a precision of 78% with
+      a recall of 48%. However, this also suggests that the true positive to predicted
+      test results ratio to be rather low despite having a high true positive to
+      actual test results ratio - which might suggest that the model is rather
+      strict about classifying an image under the label Cubism (in turn missing
+      many images that are, in fact, Cubist). On the other hand, High Renaissance
+      has a precision of 43% compared to its recall of 77% which might suggest that
+      the model is too generous in classifying an image as High Renaissance.
+      Impressionism seems the most balanced with a precision of 66% and recall of
+      68%.
+    </p>
+    <p>
+      By itself, the results didn’t seem too concerning as they came a little lower
+      than similar studies, which I expected because I was using a far simpler model.
+      However, upon looking at my training and validation data, I realized that
+      my model was still over-fitting.
+    </p>
+    <br>
+    <div style="text-align:center">
+      <figure style="display:inline-block">
+        <img src="{% static '/usa_website/images/blog/rp/spring_2019/identifying-art-styles/training-and-validation-accuracy.png' %}" style="margin:auto"></img>
+      </figure>
+      <br>
+      <figure style="display:inline-block">
+        <img src="{% static 'usa_website/images/blog/rp/spring_2019/identifying-art-styles/training-and-validation-loss.png' %}" style="margin:auto"></img>
+      </figure>
+    </div>
+    <br>
+    <p>
+      As seen in the graphs above, my training set is able to achieve high accuracy
+      and low loss yet the model is unable to accomplish the same with the test
+      set – which suggests that the model is overfitting to the training data.
+      This is further reinforced by the test set accuracy of 62% and loss of 1.78
+      compared to a training set accuracy of almost 100% and loss of almost zero.
+      While the model performs well on a training set, it overfits to the noise
+      and specific images of that set – leading to a reduced accuracy later on
+      when we try to apply it to our testing set, which it has never seen before.
+    </p>
+</div>
+
+<div id="Section4">
+  <h3>Conclusion</h3>
+    <p>
+      Overall, despite the failings of my model, I think this was a really good
+      starting point for building a model to classify different art styles. Though
+      the accuracy of the model faltered when it came to the test set, it did do
+      markedly better than had we tried to randomly classify an image. As per
+      expectations, distinctive styles (i.e. Cubism) will more likely be accurately
+      classified compared to less distinctive ones (i.e. High Renaissance).
+    </p>
+    <p>
+      Building upon the work I have done so far, I would like to address this issue
+      of overfitting by utilizing some of the techniques below:
+    </p>
+    <ul>
+      <li>
+        <div style="font-style:italic;display:inline;">Adding more images to the data set:</div>
+        Having a wider variety of images and
+        artists within the data set will allow for a more flexible and thus robust
+        model to be trained.</li>
+      <li><div style="font-style:italic;display:inline;">Adjusted learning rate:</div> The accuracy
+        and loss when testing validation set often had large variations in values,
+        which might be helped by lowering the learning rate</li>
+      <li> <div style="font-style:italic;display:inline;">Bagging:</div>
+        By varying our input data sets through image alteration
+        (ex: mirroring, flipping…etc.) and averaging the results of the model,
+        we can try to decrease the variance and smooth out predictions.</li>
+    </ul>
+    <p>
+      Taking a step back to examine the general implications of such a model, I
+      think this is also really interesting to consider the implications it has
+      for pattern analysis and recognition in general when it comes to machine learning.
+      While convolutional neural networks have been used for object recognition
+      in images, stylistic classification is very different as different objects
+      can be rendered in differing ways dependent on their styles. Thus, I believe
+      style classification would require an emphasis on looking at lower level
+      descriptors (ex: edge textures, color distribution…etc.) rather than higher
+      level features such as objects. I think it would be really interesting to
+      eschew the Keras API and build a model myself so that I would have more
+      control over the process. This way, I would also have the opportunity to
+      apply some of the more specific processes that delve into specific descriptors
+      and features outlined in other papers.
+    </p>
+</div>
+
+<div id="Section5">
+  <h3>Sources</h3>
+    <p>
+      Lecoutre, Adrian, Benjamin Negrevergne, and Florian Yger. "Recognizing Art
+      Style Automatically in Painting with Deep Learning." Edited by Yung-Kyun
+      Noh and Min-Ling Zhang. Proceedings of Machine Learning Research, 2017.
+    </p>
+    <p>
+      Bar, Yaniv, Noga Levy, and Lior Wolf. "Classification of Artistic Styles
+      Using Binarized Features Derived from a Deep Neural Network." Computer Vision
+      - ECCV 2014 Workshops Lecture Notes in Computer Science, 2015, 71-84.
+      doi:10.1007/978-3-319-16178-5_5.
+    </p>
+    <p>
+      Karayev, Sergey, Aaron Hertzmann, Matthew Trentacoste, Helen Han, Holger
+      Winnemoeller, Aseem Agarwala, and Trevor Darrell. "Recognizing Image Style."
+      Proceedings of the British Machine Vision Conference 2014, 2014. doi:10.5244/c.28.122.
+    </p>
+    <p>
+      Blessing, Alexander & Wen, Kai. (2019). Using Machine Learning for
+      Identification of Art Paintings.
+    </p>
+    <p>
+      "Visual Art Encyclopedia." Www.wikiart.org. Accessed May 01, 2019.
+      https://www.wikiart.org/.
+    </p>
+    <p>
+      "Keras  |  TensorFlow Core  |  TensorFlow." TensorFlow. Accessed May 01, 2019.
+      https://www.tensorflow.org/guide/keras.
+    </p>
+</div>
+
+{% endblock %}

@@ -406,6 +406,11 @@ def DIJA(request):
 ###################################
 ### SPRING 2019 BLOG POSTS ########
 ###################################
+def predicting_horse_races(request):
+    t = get_template("blog/rp/spring_2019/predicting_horse_races.html")
+    context = {}
+    return HttpResponse(t.render(context))
+  
 def women_in_government(request):
     t = get_template("blog/rp/spring_2019/women-in-government.html")
     context = {}
@@ -418,6 +423,11 @@ def winning(request):
 
 def machinelearning_and_finance(request):
     t = get_template("blog/rp/spring_2019/machinelearning_and_finance.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def identifying_art_styles(request):
+    t = get_template("blog/rp/spring_2019/identifying-art-styles.html")
     context = {}
     return HttpResponse(t.render(context))
 
