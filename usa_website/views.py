@@ -370,6 +370,11 @@ def toxic_social_media(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def schooling(request):
+    t = get_template("blog/rp/fall_2018/schooling.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ########## CRASH COURSES ##########
 ###################################
