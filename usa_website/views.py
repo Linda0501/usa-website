@@ -406,6 +406,11 @@ def DIJA(request):
 ###################################
 ### SPRING 2019 BLOG POSTS ########
 ###################################
+def predicting_horse_races(request):
+    t = get_template("blog/rp/spring_2019/predicting_horse_races.html")
+    context = {}
+    return HttpResponse(t.render(context))
+  
 def women_in_government(request):
     t = get_template("blog/rp/spring_2019/women-in-government.html")
     context = {}
@@ -603,3 +608,10 @@ def members(request):
     t = get_template("members.html")
     context = {}
     return HttpResponse(t.render(context))
+
+
+def fakenews(request):
+    t = get_template("blog/rp/spring_2019/political_bias_in_mainstream_news_media.html")
+    context = {}
+    return HttpResponse(t.render(context))
+

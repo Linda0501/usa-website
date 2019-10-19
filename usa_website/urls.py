@@ -101,10 +101,11 @@ urlpatterns = [
     url(r'rp/schooling$', views.schooling, name='schooling'),
 
     #R+P Spring 2019
+    url(r'rp/predicting_horse_races$', views.predicting_horse_races, name='predicting_horse_races'),
     url(r'rp/DIJA$', views.DIJA, name='DIJA'),
     url(r'rp/women-in-government$', views.women_in_government, name="women-in-government"),
     url(r'rp/winning-the-mlb-world-series$', views.winning, name="winning-the-mlb-world-series"),
-    url(r'rp/machinelearning_and_finance$', views.polls, name="machinelearning_and_finance"),
+    url(r'rp/machinelearning_and_finance$', views.machinelearning_and_finance, name="machinelearning_and_finance"),
     url(r'rp/identifying_art_styles$', views.identifying_art_styles, name='identifying_art_styles'),
   
     #Education
@@ -147,6 +148,7 @@ urlpatterns = [
     # Web Dev - Data Viz Spring 2019??
     url(r'webdev/ucpd-crime$', views.ucpd_crime, name="ucpd_crime"),
     url(r'hallofmemes$', views.hallofmemes, name="hallofmemes"),
+    url(r'rp-fakenews$', views.fakenews, name = "fake_news_rp"),
     #Interviews
     url(r'interviews/spring_2019/lily-bhattacharjee-interview$', views.lily_bhattacharjee_interview, name="lily_bhattacharjee_interview"),
     url(r'interviews/spring_2019/megan-zu-interview$', views.megan_zu_interview, name="megan_zu_interview"),
@@ -156,6 +158,8 @@ urlpatterns = [
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'members', views.members, name = "members")
+
+
         #url('^', include('schedule_builder.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()
