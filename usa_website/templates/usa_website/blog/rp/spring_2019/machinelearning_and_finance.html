@@ -57,23 +57,68 @@
 <div id="Section3">
   <h3>Visualizations</h3>
     <!-- This is how you add an image! style="margin:auto" centers the image. -->
-    <img src="{% static 'usa_website/images/blog/rp/spring_2019/machinelearning_and_finance/Figure1.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/machinelearning_and_finance/Ordinary Least Squares Regression(One Variable).png' %}" style="margin:auto"></img><br><br>
     <p>
       This graph correlates cash flow with 5 Year Return. As one can see, most of data is concentrated at a cash flow of 0, with a fairly even spread up and down for their 5 year return. From this graph and the 0.01 R^2 term, one can determine there exists no correlation between cash flow and 5 Year Return.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/machinelearning_and_finance/Ordinary Least Squares Regression(Multivariate).png' %}" style="margin:auto"></img><br><br>
+    <p>
+      This graph correlates all company financials with 5 Year Return. As one can see, most of data is concentrated at company financial values of 0 and a predicted 5 Year Return rate around 75%. The rest of the model extends out inconclusively. Furthermore, the negative R^2 value suggests not only no legitimate correlation exists, but that in fact a straight line would predict 5 Year Return better than the model.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/machinelearning_and_finance/Ridge Regression(One Variable).png' %}" style="margin:auto"></img><br><br>
+    <p>
+      This graph correlates Cost of Revenue with 5 Year Return. As one can see, most of data is concentrated at a cash flow of 0, with a fairly even spread up and down for their 5 year return. From this graph and the 0.03 R^2 term, one can determine there exists no correlation between cash flow and 5 Year Return.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/machinelearning_and_finance/Ridge Regression (Multivariate).png' %}" style="margin:auto"></img><br><br>
+    <p>
+      This graph is virtually identical to the multivariate least squares regression model. Therefore the same conclusion of no correlation can be drawn from this model too.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/machinelearning_and_finance/Lasso Regression (One Variable).png' %}" style="margin:auto"></img><br><br>
+    <p>
+      This model appears to be overfitting to our data. Again, from this graph and our negative R^2 value, we can determine that no correlation exists.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/machinelearning_and_finance/Lasso Regression (Multivariate).png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Again, identical model and no correlation.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/machinelearning_and_finance/Multi-task Lasso Regression (One Variable).png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Most of the data in this graph is concentrated at a Cost of Revenue of 0 and a Predicted 5 Year Return of 80%, with the rest of the model extending downwards inconclusively.  The R^2 value is positive, but still very close to 0, suggesting no correlation.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/machinelearning_and_finance/Multi-task Lasso Regression (Multivariate).png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Again, no correlation.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/machinelearning_and_finance/Decision Tree Regression (One Variable).png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Here, we also see signs of overfitting to the model, with an even more negative R^2 value, suggesting a highly inaccurate model.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/machinelearning_and_finance/Decision Tree Regression (Multivariate).png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Similarly, we see an overfitted and a largely ineffective model.
     </p>
 </div>
 
 <div id="Section4">
-  <h3>Section 4</h3>
+  <h3>Conclusion</h3>
     <p>
-      Section 4 text here
+	     Unfortunately, from this analysis, we see that we were not able to determine a strong correlations for any of our analyses. In many occasions the    predictions made from our model would have been more accurate if he model had been a flat line. Nonetheless, I would still deem this a valuable experience in learning how to apply simple machine learning algorithms to complex datasets, helping me take my first steps into the world of financial analytics.
     </p>
 </div>
 
 <div id="Section5">
-  <h3>Section 5</h3>
+  <h3>Citation</h3>
     <p>
-      Section 5 text here
+      Gawlik, Dominik. “New York Stock Exchange.” Kaggle, 22 Feb. 2017, <a href="www.kaggle.com/dgawlik/nyse">www.kaggle.com/dgawlik/nyse</a>.
+    </p>
+    <p>
+      Nugent, Cam. “S&P 500 Stock Data.” Kaggle, 10 Feb. 2018, <a href="www.kaggle.com/camnugent/sandp500">www.kaggle.com/camnugent/sandp500</a>.
+    </p>
+    <p>
+       “1.1. Generalized Linear Models¶.” Scikit, <a href="scikit-learn.org/stable/modules/linear_model">scikit-learn.org/stable/modules/linear_model.html</a>.
+    </p>
+    <p>
+      “1.10. Decision Trees¶.” Scikit, <a href="scikit-learn.org/stable/modules/tree">scikit-learn.org/stable/modules/tree.html</a>.
     </p>
 </div>
 
