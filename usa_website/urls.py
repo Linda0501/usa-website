@@ -107,7 +107,7 @@ urlpatterns = [
     url(r'rp/winning-the-mlb-world-series$', views.winning, name="winning-the-mlb-world-series"),
     url(r'rp/machinelearning_and_finance$', views.machinelearning_and_finance, name="machinelearning_and_finance"),
     url(r'rp/identifying_art_styles$', views.identifying_art_styles, name='identifying_art_styles'),
-  
+
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),
@@ -133,6 +133,8 @@ urlpatterns = [
     url(r'dataconsulting/taco-bell$', views.taco_bell, name="taco_bell"),
     url(r'dataconsulting/express-scripts$', views.express_scripts, name="express_scripts"),
     url(r'dataconsulting/minted$', views.minted, name="minted"),
+    url(r'dataconsulting/uizard$', views.uizard, name="uizard"),
+    url(r'dataconsulting/mtc$', views.mtc, name="mtc"),
 
     url(r'textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'yitz$', views.yitz, name = "yitz"),

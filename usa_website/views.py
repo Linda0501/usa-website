@@ -327,6 +327,16 @@ def data_good(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def uizard(request):
+    t = get_template("blog/dataconsulting/uizard.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def mtc(request):
+    t = get_template("blog/dataconsulting/mtc.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 #####################################
 ####### FALL 2017 DC PROJECTS #######
 #####################################
@@ -410,7 +420,7 @@ def predicting_horse_races(request):
     t = get_template("blog/rp/spring_2019/predicting_horse_races.html")
     context = {}
     return HttpResponse(t.render(context))
-  
+
 def women_in_government(request):
     t = get_template("blog/rp/spring_2019/women-in-government.html")
     context = {}
@@ -614,4 +624,3 @@ def fakenews(request):
     t = get_template("blog/rp/spring_2019/political_bias_in_mainstream_news_media.html")
     context = {}
     return HttpResponse(t.render(context))
-
