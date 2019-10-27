@@ -160,6 +160,8 @@ body{
   /* Just in case there are inline attributes */
   width: 100% !important;
   height: auto !important;
+  /*added*/
+
 }
 
 
@@ -307,9 +309,17 @@ function carousel(root, redirects) {
             images[i].style.transformOrigin = `50% 50% ${- apothem}px`;
             images[i].style.transform = `rotateY(${i * theta}rad)`;
         }
-        if (bfc)
-            for (i = 0; i < n; i++)
-                 images[i].style.backfaceVisibility = 'hidden';
+        if (bfc) {
+            for (i = 0; i < n; i++) {
+                 //images[i].style.backfaceVisibility = 'hidden';
+                 if (i < 3 ) {
+                 images[i].style.zIndex = "1";
+               } else {
+                  images[i].style.zIndex = "-1";
+               }
+            }
+          }
+                 
         rotateCarousel(currImage);
     }
 
