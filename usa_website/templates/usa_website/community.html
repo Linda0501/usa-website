@@ -145,6 +145,55 @@ body{
    width: 100%;
  }
 }
+
+#photos {
+   /* Prevent vertical gaps */
+   line-height: 0;
+   -webkit-column-count: 5;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    5;
+   -moz-column-gap:      0px;
+   column-count:         5;
+   column-gap:           0px;
+}
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+  /*added*/
+
+}
+
+
+@media (max-width: 1200px) {
+  #photos {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (max-width: 1000px) {
+  #photos {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
 </style>
 <head>
   <title>Community</title>
@@ -153,7 +202,8 @@ body{
 <div class = "community-container">
   <h1 style="text-align:center;">Community</h1>
   <p style="text-align:center; font-size:18px;">
-    SAAS would like to formally introduce our Community page! We hope that this addition to our site will give you a feel of what we do outside of our committees, and help you get to know our members a little better!
+    SAAS would like to formally introduce our Community page! We hope that this
+    addition to our site will give you a feel of what we do outside of our committees, and help you get to know our members a little better!
 
     <!--Member Interviews-->
     <div class="row" style="justify-content:center">
@@ -189,6 +239,7 @@ body{
   </div>
   <!-- Trigger the Modal -->
   <div class="image-container row" id="image-container" style="justify-content:center"></div>
+
   <!-- The Modal -->
   <div id="myModalNewsletter" class="modal" style="z-index:1000;">
 
@@ -202,7 +253,9 @@ body{
    <div id="caption"></div>
   </div>
 </div>
-
+<!--
+<section id="photos"></section>
+-->
 
 <script>
 //carousel
@@ -257,9 +310,17 @@ function carousel(root, redirects) {
             images[i].style.transformOrigin = `50% 50% ${- apothem}px`;
             images[i].style.transform = `rotateY(${i * theta}rad)`;
         }
-        if (bfc)
-            for (i = 0; i < n; i++)
-                 images[i].style.backfaceVisibility = 'hidden';
+        if (bfc) {
+            for (i = 0; i < n; i++) {
+                 //images[i].style.backfaceVisibility = 'hidden';
+                 if (i < 3 ) {
+                 images[i].style.zIndex = "1";
+               } else {
+                  images[i].style.zIndex = "-1";
+               }
+            }
+          }
+                 
         rotateCarousel(currImage);
     }
 
@@ -344,5 +405,16 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+function getRandomSize(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+var allImages = "";
+for (var i = 0; i < 25; i++) {
+  var width = getRandomSize(200, 400);
+  var height =  getRandomSize(200, 400);
+  allImages += '<img src="https://placekitten.com/'+width+'/'+height+'" alt="pretty kitty">';
+}
+$('#photos').append(allImages);
 </script>
 {% endblock %}
