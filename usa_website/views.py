@@ -6,7 +6,7 @@ from .models import Course, Blog
 from django.views.generic import TemplateView
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
 from .forms import PostForm, AttendanceForm
-from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
+# from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
 
 # Create your views here.
 def index(request):
@@ -400,6 +400,11 @@ def league_of_legends(request):
 
 def toxic_social_media(request):
     t = get_template("blog/rp/fall_2018/toxic_social_media.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def meaning_of_probabilities_in_social_sciences(request):
+    t = get_template("blog/rp/fall_2018/meaning-of-probabilities-in-social-sciences.html")
     context = {}
     return HttpResponse(t.render(context))
 
