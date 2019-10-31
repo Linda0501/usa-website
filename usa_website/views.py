@@ -446,6 +446,11 @@ def identifying_art_styles(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def eurovision(request):
+    t = get_template("blog/rp/spring_2019/the_musical_chairs_of_eurovision.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ########## CRASH COURSES ##########
 ###################################
