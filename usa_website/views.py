@@ -378,6 +378,10 @@ def number_concept(request):
 	context = {}
 	return HttpResponse(t.render(context))
 
+def suicide(request):
+    t = get_template("blog/rp/spring_2018/suicide.html")
+    context = {}
+    return HttpResponse(t.render(context))
 
 
 #####################################
