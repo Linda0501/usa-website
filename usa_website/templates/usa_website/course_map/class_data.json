@@ -4,91 +4,49 @@
 		"chart_pref_x": 0.5,
 		"chart_pref_y": 0.0,
 		"color": "#E57373",
-		"name": "core"
+		"name": "prereqs"
 	}, {
 		"id": 2,
 		"chart_pref_x": 1.0,
 		"chart_pref_y": -0.2,
 		"color": "#FFF176",
-		"name": "hardware"
+		"name": "core"
 	}, {
 		"id": 3,
 		"chart_pref_x": 0.5,
 		"chart_pref_y": 0.0,
 		"color": "#90CAF9",
-		"name": "software"
+		"name": "machine_learning"
 	}, {
 		"id": 4,
 		"chart_pref_x": 0.8,
 		"chart_pref_y": 0.0,
 		"color": "#80CBC4",
-		"name": "theory"
+		"name": "data_science"
 	}, {
 		"id": 5,
 		"chart_pref_x": 0.0,
 		"chart_pref_y": 0.0,
 		"color": "#CE93D8",
-		"name": "applications"
+		"name": "probability"
 	}, {
 		"id": 6,
 		"chart_pref_x": 0.5,
 		"chart_pref_y": 0.0,
 		"color": "#E57373",
-		"name": "core"
+		"name": "exploration"
 	}, {
 		"id": 7,
 		"chart_pref_x": 0.8,
 		"chart_pref_y": 0.0,
 		"color": "#FFF176",
-		"name": "circuits"
-	}, {
-		"id": 8,
-		"chart_pref_x": 1.0,
-		"chart_pref_y": 0.0,
-		"color": "#90CAF9",
-		"name": "devices"
-	}, {
-		"id": 9,
-		"chart_pref_x": 0.6,
-		"chart_pref_y": 0.0,
-		"color": "#80CBC4",
-		"name": "optics"
-	}, {
-		"id": 10,
-		"chart_pref_x": 0.5,
-		"chart_pref_y": 0.0,
-		"color": "#CE93D8",
-		"name": "bioelectronics"
-	}, {
-		"id": 11,
-		"chart_pref_x": 0.5,
-		"chart_pref_y": 0.0,
-		"color": "#9FA8DA",
-		"name": "power"
-	}, {
-		"id": 12,
-		"chart_pref_x": 0.3,
-		"chart_pref_y": 0.0,
-		"color": "#80DEEA",
-		"name": "signals"
-	}, {
-		"id": 13,
-		"chart_pref_x": 0.0,
-		"chart_pref_y": 0.0,
-		"color": "#FFCC80",
-		"name": "robotics"
-	}, {
-		"id": 14,
-		"chart_pref_x": 0.5,
-		"chart_pref_y": 0.0,
-		"color": "#E0E0E0",
-		"name": "required"
+		"name": "lab"
 	}],
 	"cs_courses": [{
 		"id": 74,
 		"department_id": 2,
-		"name": "61A",
-		"link": "/coursesurveys/course/CS/61A",
+		"name": "Math 1A",
+		"link": "/class_pages/template",
 		"prereqs": [],
 		"type_id": 1,
 		"bias_x": 0,
@@ -99,8 +57,8 @@
 	}, {
 		"id": 75,
 		"department_id": 2,
-		"name": "61B",
-		"link": "/coursesurveys/course/CS/61B",
+		"name": "Math 1B",
+		"link": "/class_pages/template",
 		"prereqs": [{
 			"id": 1,
 			"course_id": 75,
@@ -116,18 +74,13 @@
 	}, {
 		"id": 76,
 		"department_id": 2,
-		"name": "61C",
-		"link": "/coursesurveys/course/CS/61C",
+		"name": "Math 53",
+		"link": "/class_pages/template",
 		"prereqs": [{
 			"id": 2,
 			"course_id": 76,
-			"prereq_id": 74,
-			"is_recommended": false
-		}, {
-			"id": 60,
-			"course_id": 76,
 			"prereq_id": 75,
-			"is_recommended": true
+			"is_recommended": false
 		}],
 		"type_id": 1,
 		"bias_x": 50,
@@ -138,9 +91,14 @@
 	}, {
 		"id": 77,
 		"department_id": 2,
-		"name": "70",
-		"link": "/coursesurveys/course/CS/70",
-		"prereqs": [],
+		"name": "Math 54",
+		"link": "/class_pages/template",
+		"prereqs": [{
+			"id": 2,
+			"course_id": 77,
+			"prereq_id": 75,
+			"is_recommended": false
+		}],
 		"type_id": 1,
 		"bias_x": 0,
 		"bias_y": 0,
@@ -150,8 +108,8 @@
 	}, {
 		"id": 2,
 		"department_id": 2,
-		"name": "152",
-		"link": "/coursesurveys/course/CS/152",
+		"name": "Stat 134",
+		"link": "/class_pages/template",
 		"prereqs": [{
 			"id": 4,
 			"course_id": 2,
@@ -167,8 +125,8 @@
 	}, {
 		"id": 3,
 		"department_id": 2,
-		"name": "160",
-		"link": "/coursesurveys/course/CS/160",
+		"name": "Stat 133",
+		"link": "/class_pages/template",
 		"prereqs": [{
 			"id": 5,
 			"course_id": 3,
@@ -184,8 +142,8 @@
 	}, {
 		"id": 287,
 		"department_id": 2,
-		"name": "161",
-		"link": "/coursesurveys/course/CS/161",
+		"name": "Stat 135",
+		"link": "/class_pages/template",
 		"prereqs": [{
 			"id": 6,
 			"course_id": 287,
