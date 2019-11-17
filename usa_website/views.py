@@ -455,6 +455,10 @@ def eurovision(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def personality(request):
+    t = get_template("blog/rp/spring_2019/personality.html")
+    context = {}
+    return HttpResponse(t.render(context))
 ###################################
 ########## CRASH COURSES ##########
 ###################################

@@ -110,6 +110,7 @@ urlpatterns = [
     url(r'rp/machinelearning_and_finance$', views.machinelearning_and_finance, name="machinelearning_and_finance"),
     url(r'rp/identifying_art_styles$', views.identifying_art_styles, name='identifying_art_styles'),
     url(r'rp/eurovision$', views.eurovision, name='eurovision'),
+    url(r'rp/personality$', views.personality, name='personality'),
 
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
