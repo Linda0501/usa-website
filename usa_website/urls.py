@@ -161,6 +161,7 @@ urlpatterns = [
     url(r'interviews/spring_2019/rachel-li-interview$', views.rachel_li_interview, name="rachel_li_interview"),
     url(r'interviews/spring_2019/irene-wang-interview$', views.irene_wang_interview, name="irene_wang_interview"),
     url(r'interviews/spring_2019/joyce-zheng-interview$', views.joyce_zheng_interview, name="joyce_zheng_interview"),
+    url(r'interviews/spring_2019/calvin-chen-interview$', views.calvin_chen_interview, name="calvin_chen_interview"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'members', views.members, name = "members")

@@ -521,6 +521,11 @@ def joyce_zheng_interview(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def calvin_chen_interview(request):
+    t = get_template("interviews/spring_2019/calvin-chen-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ######### MISCELLANEOUS ###########
 ###################################
