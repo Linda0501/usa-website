@@ -149,6 +149,11 @@ def community(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def community_new(request):
+    t = get_template("community-new.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 def comingSoon(request):
     t = get_template("comingSoon.html")
     context = {}
