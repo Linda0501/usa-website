@@ -6,7 +6,11 @@ from .models import Course, Blog
 from django.views.generic import TemplateView
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
 from .forms import PostForm, AttendanceForm
+<<<<<<< HEAD
 from .utils.attendance import *
+=======
+# from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
+>>>>>>> origin
 
 # Create your views here.
 def index(request):
@@ -146,6 +150,11 @@ def education(request):
 
 def community(request):
     t = get_template("community.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def community_new(request):
+    t = get_template("community-new.html")
     context = {}
     return HttpResponse(t.render(context))
 
@@ -327,6 +336,16 @@ def data_good(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def uizard(request):
+    t = get_template("blog/dataconsulting/uizard.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def mtc(request):
+    t = get_template("blog/dataconsulting/mtc.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 #####################################
 ####### FALL 2017 DC PROJECTS #######
 #####################################
@@ -368,6 +387,10 @@ def number_concept(request):
 	context = {}
 	return HttpResponse(t.render(context))
 
+def suicide(request):
+    t = get_template("blog/rp/spring_2018/suicide.html")
+    context = {}
+    return HttpResponse(t.render(context))
 
 
 #####################################
@@ -393,6 +416,21 @@ def toxic_social_media(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def meaning_of_probabilities_in_social_sciences(request):
+    t = get_template("blog/rp/fall_2018/meaning-of-probabilities-in-social-sciences.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def schooling(request):
+    t = get_template("blog/rp/fall_2018/schooling.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def DIJA(request):
+    t = get_template("blog/rp/fall_2018/DIJA.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ### SPRING 2019 BLOG POSTS ########
 ###################################
@@ -401,6 +439,35 @@ def predicting_horse_races(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def women_in_government(request):
+    t = get_template("blog/rp/spring_2019/women-in-government.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def winning(request):
+    t = get_template("blog/rp/spring_2019/winning-the-mlb-world-series.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def machinelearning_and_finance(request):
+    t = get_template("blog/rp/spring_2019/machinelearning_and_finance.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def identifying_art_styles(request):
+    t = get_template("blog/rp/spring_2019/identifying-art-styles.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def eurovision(request):
+    t = get_template("blog/rp/spring_2019/the_musical_chairs_of_eurovision.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def personality(request):
+    t = get_template("blog/rp/spring_2019/personality.html")
+    context = {}
+    return HttpResponse(t.render(context))
 ###################################
 ########## CRASH COURSES ##########
 ###################################
@@ -443,8 +510,8 @@ def lily_bhattacharjee_interview(request):
     context = {}
     return HttpResponse(t.render(context))
 
-def megan_zu_interview(request):
-    t = get_template("interviews/spring_2019/megan-zu-interview.html")
+def megan_zhu_interview(request):
+    t = get_template("interviews/spring_2019/megan-zhu-interview.html")
     context = {}
     return HttpResponse(t.render(context))
 
@@ -460,6 +527,21 @@ def irene_wang_interview(request):
 
 def joyce_zheng_interview(request):
     t = get_template("interviews/spring_2019/joyce-zheng-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def calvin_chen_interview(request):
+    t = get_template("interviews/spring_2019/calvin-chen-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def oscar_syu_interview(request):
+    t = get_template("interviews/spring_2019/oscar-syu-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def zoe_liu_interview(request):
+    t = get_template("interviews/spring_2019/zoe-liu-interview.html")
     context = {}
     return HttpResponse(t.render(context))
 
@@ -582,5 +664,11 @@ def ucpd_crime(request):
 
 def members(request):
     t = get_template("members.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+
+def fakenews(request):
+    t = get_template("blog/rp/spring_2019/political_bias_in_mainstream_news_media.html")
     context = {}
     return HttpResponse(t.render(context))
