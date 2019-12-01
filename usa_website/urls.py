@@ -71,6 +71,7 @@ urlpatterns = [
     url(r'careerex$', views.careerex, name="careerex"),
     url(r'research$', views.research, name="research"),
     url(r'community$', views.community, name="community"),
+    url(r'community-new$', views.community_new, name="community_new"),
     url(r'comingSoon$', views.comingSoon, name="comingSoon"),
     url(r'blog/$', views.blog, name="blog"),
     #NEWSLETTERS
@@ -92,6 +93,7 @@ urlpatterns = [
     url(r'rp/college-vs-nba-success$', views.college_vs_nba_success, name="college_vs_nba_success"),
     url(r'rp/num-concept$', views.number_concept, name="number_concept"),
     url(r'rp/SteinerTreeProblem$', views.SteinerTreeProblem, name="SteinerTreeProblem"),
+    url(r'rp/suicide$', views.suicide, name="suicide"),
 
     #R+P Fall 2018
     url(r'rp/music-moods$', views.music_moods, name="music_moods"),
@@ -108,6 +110,8 @@ urlpatterns = [
     url(r'rp/winning-the-mlb-world-series$', views.winning, name="winning-the-mlb-world-series"),
     url(r'rp/machinelearning_and_finance$', views.machinelearning_and_finance, name="machinelearning_and_finance"),
     url(r'rp/identifying_art_styles$', views.identifying_art_styles, name='identifying_art_styles'),
+    url(r'rp/eurovision$', views.eurovision, name='eurovision'),
+    url(r'rp/personality$', views.personality, name='personality'),
 
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
@@ -154,10 +158,13 @@ urlpatterns = [
     url(r'rp-fakenews$', views.fakenews, name = "fake_news_rp"),
     #Interviews
     url(r'interviews/spring_2019/lily-bhattacharjee-interview$', views.lily_bhattacharjee_interview, name="lily_bhattacharjee_interview"),
-    url(r'interviews/spring_2019/megan-zu-interview$', views.megan_zu_interview, name="megan_zu_interview"),
+    url(r'interviews/spring_2019/megan-zhu-interview$', views.megan_zhu_interview, name="megan_zhu_interview"),
     url(r'interviews/spring_2019/rachel-li-interview$', views.rachel_li_interview, name="rachel_li_interview"),
     url(r'interviews/spring_2019/irene-wang-interview$', views.irene_wang_interview, name="irene_wang_interview"),
     url(r'interviews/spring_2019/joyce-zheng-interview$', views.joyce_zheng_interview, name="joyce_zheng_interview"),
+    url(r'interviews/spring_2019/calvin-chen-interview$', views.calvin_chen_interview, name="calvin_chen_interview"),
+    url(r'interviews/spring_2019/oscar-syu-interview$', views.oscar_syu_interview, name="oscar_syu_interview"),
+    url(r'interviews/spring_2019/zoe-liu-interview$', views.zoe_liu_interview, name="zoe_liu_interview"),
     url(r'convert_csv.py', views.convert_csv, name = "convert_csv"),
     url(r'yitz/textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'members', views.members, name = "members")

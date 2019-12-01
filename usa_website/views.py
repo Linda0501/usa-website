@@ -149,6 +149,11 @@ def community(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def community_new(request):
+    t = get_template("community-new.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 def comingSoon(request):
     t = get_template("comingSoon.html")
     context = {}
@@ -378,6 +383,10 @@ def number_concept(request):
 	context = {}
 	return HttpResponse(t.render(context))
 
+def suicide(request):
+    t = get_template("blog/rp/spring_2018/suicide.html")
+    context = {}
+    return HttpResponse(t.render(context))
 
 
 #####################################
@@ -446,6 +455,15 @@ def identifying_art_styles(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def eurovision(request):
+    t = get_template("blog/rp/spring_2019/the_musical_chairs_of_eurovision.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def personality(request):
+    t = get_template("blog/rp/spring_2019/personality.html")
+    context = {}
+    return HttpResponse(t.render(context))
 ###################################
 ########## CRASH COURSES ##########
 ###################################
@@ -488,8 +506,8 @@ def lily_bhattacharjee_interview(request):
     context = {}
     return HttpResponse(t.render(context))
 
-def megan_zu_interview(request):
-    t = get_template("interviews/spring_2019/megan-zu-interview.html")
+def megan_zhu_interview(request):
+    t = get_template("interviews/spring_2019/megan-zhu-interview.html")
     context = {}
     return HttpResponse(t.render(context))
 
@@ -505,6 +523,21 @@ def irene_wang_interview(request):
 
 def joyce_zheng_interview(request):
     t = get_template("interviews/spring_2019/joyce-zheng-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def calvin_chen_interview(request):
+    t = get_template("interviews/spring_2019/calvin-chen-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def oscar_syu_interview(request):
+    t = get_template("interviews/spring_2019/oscar-syu-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def zoe_liu_interview(request):
+    t = get_template("interviews/spring_2019/zoe-liu-interview.html")
     context = {}
     return HttpResponse(t.render(context))
 
