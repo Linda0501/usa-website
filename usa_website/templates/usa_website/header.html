@@ -165,33 +165,36 @@
         <div class="row_socials">
           <div class="col_socials">
           </div>
-
+    
           <div class="row_socials">
             <div class="col_socials">
               <a href="https://www.facebook.com/saasberkeley/">
-                <img src="{% static 'usa_website/images/social_media/facebook-32px.png' %}" alt="fb">
+                <i class="fab fa-facebook-square fa-3x"></i>
               </a>
             </div>
             <div class="col_socials">
               <a href="https://github.com/SUSA-org">
-                <img src="{% static 'usa_website/images/social_media/github-32px.png' %}" alt="git"
-                  style="height:32px;">
+                <i class="fab fa-github fa-3x"></i>
               </a>
             </div>
             <div class="col_socials">
               <a href="https://www.linkedin.com/company/saasberkeley/">
-                <img src="{% static 'usa_website/images/social_media/linkedin-32px.png' %}" alt="linkedin"
-                  style="height:32px; ">
+                <i class="fab fa-linkedin fa-3x"></i>
+              </a>
+            </div>
+            <div class="col_socials">
+              <a href="mailto:contact@saas.berkeley.edu">
+                <i class="fab fas fa-at fa-3x"></i>
               </a>
             </div>
           </div>
-
+    
           <div class="col_socials">
-
+    
           </div>
         </div>
-        <p style="font-size:18px; margin-top:5px;">Contact us at <a
-            href="mailto:contact@saas.berkeley.edu">contact@saas.berkeley.edu</a></p>
+        <!-- <p style="font-size:18px; margin-top:5px;">Contact us at <a
+            href="mailto:contact@saas.berkeley.edu">contact@saas.berkeley.edu</a></p> -->
         <p>Copyright © 2019 SAAS. All rights reserved. Design by SAAS's Web Development Committee currently headed by
           Rachel Li and Megan Zhu.</p>
         <p>We are a student group acting independently of the University of California. <span> We take full
@@ -201,13 +204,14 @@
             style="border: 0;" />
         </a>
       </div>
-
-  </div>
-  </footer>
-
-
+    
+      </div>
+    </footer>
 
 
+
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/f0bca21505.js" crossorigin="anonymous"></script>
   <!-- jQuery -->
   <script src="{% static 'usa_website/js/jquery.min.js' %}"></script>
   <!-- jQuery Easing -->
@@ -250,3 +254,10 @@
 </body>
 
 </html>
+
+<style>
+  .fab {
+    color: white;
+    margin-bottom: 25px;
+  }
+</style>
