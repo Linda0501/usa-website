@@ -8,4 +8,4 @@ class PostForm(forms.ModelForm):
         fields = ('title', 'body',)
 
 class AttendanceForm(forms.Form):
-    post = forms.CharField(max_length=12, label="Berkeley SID")
+    post = forms.CharField(max_length=12, label="")

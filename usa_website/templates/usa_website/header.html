@@ -2,126 +2,118 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    {% load staticfiles %}
-    <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Student Association for Applied Statistics</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="SAAS is here to provide Berkeley undergraduates interested in Statistics with resources and a statistics-driven community" />
-    <meta name="keywords" content="statistics, data science, berkeley, SAAS, undergraduate" />
-    <meta name="author" content="Abhinav Bhaskar, Anthony Yu" />
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+{% load staticfiles %}
 
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content=""/>
-    <meta property="og:image" content=""/>
-    <meta property="og:url" content=""/>
-    <meta property="og:site_name" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Student Association for Applied Statistics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="SAAS is here to provide Berkeley undergraduates interested in Statistics with resources and a statistics-driven community" />
+  <meta name="keywords" content="statistics, data science, berkeley, SAAS, undergraduate" />
+  <meta name="author" content="Abhinav Bhaskar, Anthony Yu" />
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" href="{% static 'usa_website/images/favicon/favicon.ico' %}">
-    <script src="{% static 'usa_website/js/jquery-3.1.1.min.js' %}"></script>
-    <script src="{% static 'usa_website/js/owl.carousel.min.js' %}"></script>
-    <!-- Animate.css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/animate.css' %}" />
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/icomoon.css' %}" />
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/bootstrap.css' %}" />
+  <!-- Facebook and Twitter integration -->
+  <meta property="og:title" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:site_name" content="" />
+  <meta property="og:description" content="" />
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:url" content="" />
+  <meta name="twitter:card" content="" />
 
-    <!-- Flexslider  -->
-    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/flexslider.css' %}" />
-    <!-- Theme style  -->
-    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/style.css' %}" />
-    <!-- Custom font style -->
-    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/fonts.css' %}" />
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="shortcut icon" href="{% static 'usa_website/images/favicon/favicon.ico' %}">
+  <script src="{% static 'usa_website/js/jquery-3.1.1.min.js' %}"></script>
+  <script src="{% static 'usa_website/js/owl.carousel.min.js' %}"></script>
+  <!-- Animate.css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/animate.css' %}" />
+  <!-- Icomoon Icon Fonts-->
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/icomoon.css' %}" />
+  <!-- Bootstrap  -->
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/bootstrap.css' %}" />
 
-    <!-- Modernizr JS -->
-    <script src="{% static 'usa_website/js/modernizr-2.6.2.min.js' %}"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
+  <!-- Flexslider  -->
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/flexslider.css' %}" />
+  <!-- Theme style  -->
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/style.css' %}" />
+  <!-- Custom font style -->
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/fonts.css' %}" />
+
+  <!-- Modernizr JS -->
+  <script src="{% static 'usa_website/js/modernizr-2.6.2.min.js' %}"></script>
+  <!-- FOR IE9 below -->
+  <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
     <![endif]-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
-    <script src="{% static 'usa_website/js/list_courses.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
+  <script src="{% static 'usa_website/js/list_courses.js' %}"></script>
 
-    <!-- scroll button -->
-    <script src="{% static 'usa_website/js/scroll-down.js' %}"></script>
-    <!-- smooth scroll -->
+  <!-- scroll button -->
+  <script src="{% static 'usa_website/js/scroll-down.js' %}"></script>
+  <!-- smooth scroll -->
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
-    </head>
-    <body>
+</head>
 
-
-    <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+<body>
 
 
+  <div id="fb-root"></div>
+  <script>(function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
-    <div id="fh5co-page">
+
+
+  <div id="fh5co-page">
     <header id="fh5co-header" role="banner">
-        <div class="container">
-            <div class="header-inner">
-                <!--<h1><a href="{% url 'home' %}">SAAS</a></h1>-->
+      <div class="container">
+        <div class="header-inner">
+          <!--<h1><a href="{% url 'home' %}">SAAS</a></h1>-->
 
-                <!--
+          <!--
                 <div class="fb-share-button fb_iframe_widget" data-href="https://saas.berkeley.edu/" data-layout="button_count" data-size="small" data-mobile-iframe="true" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsaas.berkeley.edu%2F&amp;src=sdkpreparse">Share</a></div>
                 -->
                 <nav class="navbar navbar-expand-sm" role="navigation">
                     <div class="container-fluid" id="nav-container" style="justify-content:end;">
                       <a href="/" style="height:80px; width:auto; display:inline-block; margin-right:auto;">
-                        <img src="/static/usa_website/images/susafinallogowhite.png" style="height:120px;vertical-align:middle;margin-top:-10px; " id="susaa"></img>
+                        <img src="/static/usa_website/images/logos/logo_white.png" style="height:120px;vertical-align:middle;margin-top:-10px; " id="susaa"></img>
                       </a>
-                        <!--
-                        <div class="collapse navbar-collapse" id="header-bar">
-                        -->
                         <!-- Links  NOTE: Even though bootstrap 4 has a default caret, DON'T USE IT, it messes up the animation -->
                       <ul class="navbar-nav" style="margin-top:16px; margin-bottom:16px;">
                         <li class="nav-item">
                           <a class="nav-link" href="{% url 'attendance' %}" style="line-height:1.4 !important;" >Attendance</a>
                         </li>
-<!--
-                        <li class="nav-item dropdown">
-                          <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown" style="line-height:1.4 !important;">
-                            About  <span style="font-size: 12px">&#9660;</span>
-                          </a>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{% url 'people' %}" style="line-height:1.4 !important;">People</a>
-                          </div>
-                        </li>
--->
                         <li class="nav-item">
                           <a class="nav-link" href="{% url 'calendar' %}" style="line-height:1.4 !important;" >Calendar</a>
                         </li>
@@ -141,69 +133,21 @@
                           <a class="nav-link" href="{% url 'community' %}" style="line-height:1.4 !important;" >Community</a>
                         </li>
 <!--
+                        KEEP THIS: COURSE MAP
                         <li class="nav-item">
                           <a class="nav-link" href="{% url 'courseMap' %}" style="line-height:1.4 !important;" >Course Map</a>
                         </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown" style="line-height:1.4 !important;">
-                            Events <span style="font-size: 12px">&#9660;</span>
-                          </a>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{% url 'attendance' %}" style="line-height:1.4 !important;">Attendance</a>
-                            <a class="dropdown-item" href="{% url 'calendar' %}" style="line-height:1.4 !important;">Calendar</a>
-                          </div>
-                        </li>
-
 -->
-
                         <li class="nav-item">
                           <a class="nav-link" href="{% url 'people' %}" style="line-height:1.4 !important;" >People</a>
                         </li>
-<!--
+
+<!--                    KEEP THIS: APPLICATION LINK
                         <li style="margin-top:23px; margin-left:15px;">
                             <a class="apply-header"
                            href="http://tinyurl.com/saasfa19app" target="_blank">Apply</a>
                         </li>
-                                           </ul>
-                    </div>
-                  </nav>
 -->
-
-                        <!--<ul>
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                  <li><a href="{% url 'people' %}">About Us</a></li>
-                                  <li><a href="{% url 'people' %}">People</a></li>
-                                  <li><a href="{% url 'people' %}">Social Media</a></li>
-                                </ul>
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Committees<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{% url 'dataconsulting' %}">Data Consulting</a></li>
-                                    <li><a href="{% url 'webdev' %}">Web Development</a></li>
-                                    <li><a href="{% url 'research' %}">Research and Publication</a></li>
-                                    <li><a href="{% url 'education' %}">Education</a></li>
-                                    <li><a href="{% url 'careerex' %}">Career Exploration</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="course-map">Course Map</a></li>
-                            <li class="dropdown">
-                              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="attendance">Attendance</a></li>
-                                    <li><a href="calendar">Calendar</a></li>
-                                </ul>
-                            </li>-->
-
-                            <!-- OLD APPLY BUTTON:
-                            <li ><a class="apply-header"
-                               href="tinyurl.com/saasfa19app" target="_blank">Apply</a>
-                            </li>
-                          -->
-                            <!--
-
-                        </ul>
-                    </div>
-                </nav>-->
             </div>
         </div>
     </header>
@@ -217,67 +161,72 @@
     {% endblock %}
 
     <footer id="fh5co-footer" role="contentinfo">
-            <div class=" fh5co-copyright text-center">
-              <div class="row_socials">
-                <div class="col_socials">
-                </div>
+      <div class=" fh5co-copyright text-center">
+        <div class="row_socials">
+          <div class="col_socials">
+          </div>
 
-                <div class="row_socials">
-                  <div class="col_socials">
-                    <a href="https://www.facebook.com/saasberkeley/">
-                      <img src="{% static 'usa_website/images/social_media/facebook-32px.png' %}" alt="fb">
-                    </a>
-                  </div>
-                  <div class="col_socials">
-                    <a href="https://github.com/SUSA-org">
-                      <img src="{% static 'usa_website/images/social_media/github-32px.png' %}" alt="git" style="height:32px;">
-                    </a>
-                  </div>
-                  <div class="col_socials">
-                    <a href="https://www.linkedin.com/company/saasberkeley/">
-                      <img src="{% static 'usa_website/images/social_media/linkedin-32px.png' %}" alt="linkedin" style="height:32px; ">
-                    </a>
-                  </div>
-                </div>
-
-                <div class="col_socials">
-
-                </div>
-              </div>
-                <p style="font-size:18px; margin-top:5px;">Contact us at <a href="mailto:contact@saas.berkeley.edu">contact@saas.berkeley.edu</a></p>
-                <p>Copyright © 2019 SAAS. All rights reserved. Design by SAAS's Web Development Committee currently headed by Rachel Li and Megan Zhu.</p>
-                <p>We are a student group acting independently of the University of California. <span> We take full responsibility for our organization and this web site. </span></p>
-              <a href="https://www.ocf.berkeley.edu">
-              <img src="https://www.ocf.berkeley.edu/hosting-logos/ocfbadge_mini8darkglow.png"
-                      alt="Hosted by the OCF" style="border: 0;" />
+          <div class="row_socials">
+            <div class="col_socials">
+              <a href="https://www.facebook.com/saasberkeley/">
+                <img src="{% static 'usa_website/images/social_media/facebook-32px.png' %}" alt="fb">
               </a>
             </div>
+            <div class="col_socials">
+              <a href="https://github.com/SUSA-org">
+                <img src="{% static 'usa_website/images/social_media/github-32px.png' %}" alt="git"
+                  style="height:32px;">
+              </a>
+            </div>
+            <div class="col_socials">
+              <a href="https://www.linkedin.com/company/saasberkeley/">
+                <img src="{% static 'usa_website/images/social_media/linkedin-32px.png' %}" alt="linkedin"
+                  style="height:32px; ">
+              </a>
+            </div>
+          </div>
 
+          <div class="col_socials">
+
+          </div>
         </div>
-    </footer>
+        <p style="font-size:18px; margin-top:5px;">Contact us at <a
+            href="mailto:contact@saas.berkeley.edu">contact@saas.berkeley.edu</a></p>
+        <p>Copyright © 2019 SAAS. All rights reserved. Design by SAAS's Web Development Committee currently headed by
+          Rachel Li and Megan Zhu.</p>
+        <p>We are a student group acting independently of the University of California. <span> We take full
+            responsibility for our organization and this web site. </span></p>
+        <a href="https://www.ocf.berkeley.edu">
+          <img src="https://www.ocf.berkeley.edu/hosting-logos/ocfbadge_mini8darkglow.png" alt="Hosted by the OCF"
+            style="border: 0;" />
+        </a>
+      </div>
+
+  </div>
+  </footer>
 
 
 
 
-    <!-- jQuery -->
-    <script src="{% static 'usa_website/js/jquery.min.js' %}"></script>
-    <!-- jQuery Easing -->
-    <script src="{% static 'usa_website/js/jquery.easing.1.3.js' %}"></script>
-    <!-- Bootstrap -->
-    <script src="{% static 'usa_website/js/bootstrap.min.js' %}"></script>
+  <!-- jQuery -->
+  <script src="{% static 'usa_website/js/jquery.min.js' %}"></script>
+  <!-- jQuery Easing -->
+  <script src="{% static 'usa_website/js/jquery.easing.1.3.js' %}"></script>
+  <!-- Bootstrap -->
+  <script src="{% static 'usa_website/js/bootstrap.min.js' %}"></script>
 
-    <!-- Waypoints -->
-    <script src="{% static 'usa_website/js/jquery.waypoints.min.js' %}"></script>
-    <!-- Flexslider -->
-    <script src="{% static 'usa_website/js/jquery.flexslider-min.js' %}"></script>
-    <!-- Stellar -->
-    <script src="{% static 'usa_website/js/jquery.stellar.min.js' %}"></script>
-    <script src="{% static 'usa_website/js/owl.carousel.min.js' %}"></script>
-    <!-- MAIN JS -->
-    <script src="{% static 'usa_website/js/main.js' %}"></script>
+  <!-- Waypoints -->
+  <script src="{% static 'usa_website/js/jquery.waypoints.min.js' %}"></script>
+  <!-- Flexslider -->
+  <script src="{% static 'usa_website/js/jquery.flexslider-min.js' %}"></script>
+  <!-- Stellar -->
+  <script src="{% static 'usa_website/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'usa_website/js/owl.carousel.min.js' %}"></script>
+  <!-- MAIN JS -->
+  <script src="{% static 'usa_website/js/main.js' %}"></script>
 
-    <script>
-    $(document).ready(function() {
+  <script>
+    $(document).ready(function () {
       var viewportWidth = $(window).width();
       if (viewportWidth > 753) {
         $(".navbar").addClass("navbar-expand-sm");
@@ -288,15 +237,16 @@
       }
     });
     $(window).resize(function () {
-        var viewportWidth = $(window).width();
-        if (viewportWidth > 753) {
-          $(".navbar").addClass("navbar-expand-sm");
-          $("#nav-container").css('justify-content', 'end');
-        } else {
-          $(".navbar").removeClass("navbar-expand-sm");
-          $("#nav-container").css('justify-content', 'start');
-        }
+      var viewportWidth = $(window).width();
+      if (viewportWidth > 753) {
+        $(".navbar").addClass("navbar-expand-sm");
+        $("#nav-container").css('justify-content', 'end');
+      } else {
+        $(".navbar").removeClass("navbar-expand-sm");
+        $("#nav-container").css('justify-content', 'start');
+      }
     });
-    </script>
-    </body>
+  </script>
+</body>
+
 </html>

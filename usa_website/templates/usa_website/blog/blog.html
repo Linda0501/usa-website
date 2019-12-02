@@ -3,6 +3,7 @@
 {% block content %}
 {% load staticfiles %}
 
+<!-- I DON'T WE USE THIS FILE -->
 
 <script>
 
@@ -22,7 +23,7 @@ $( document ).ready(function() {
 <aside id="fh5co-hero" class="js-fullheight">
     <div class="flexslider js-fullheight">
         <ul class="slides">
-            <li style="background-image: url({% static 'usa_website/images/research.jpg' %});">
+            <li style="background-image: url({% static 'usa_website/images/rp/research.jpg' %});">
                 <div class="overlay-gradient"></div>
                 <div class="container">
                     <div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
@@ -49,7 +50,7 @@ $( document ).ready(function() {
             <div class="row">
                 <div class="col-md-6 col-sm-6">
                     <a href="{% url 'alphago' %}" class="item-grid">
-                        <div class="image" style="background-image: url({% static 'usa_website/images/go.jpg' %})">
+                        <div class="image" style="background-image: url({% static 'usa_website/images/blog/blog_page/go.jpg' %})">
 
                         </div>
                         <div class="v-align">
@@ -64,7 +65,7 @@ $( document ).ready(function() {
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <a href="{% url 'rapnet' %}" class="item-grid">
-                        <div class="image" style="background-image: url({% static 'usa_website/images/microphone.jpg' %})">
+                        <div class="image" style="background-image: url({% static 'usa_website/images/blog/microphone.jpg' %})">
 
                         </div>
                         <div class="v-align">
