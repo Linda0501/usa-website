@@ -6,7 +6,11 @@ from .models import Course, Blog
 from django.views.generic import TemplateView
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
 from .forms import PostForm, AttendanceForm
+
+from .utils.attendance import *
+
 # from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
+
 
 # Create your views here.
 def index(request):
@@ -110,6 +114,11 @@ def stat159(request):
 
 def people(request):
     t = get_template("people.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def people_new(request):
+    t = get_template("people-2.html")
     context = {}
     return HttpResponse(t.render(context))
 
@@ -624,20 +633,27 @@ class AttendanceView(TemplateView):
                 args = {'form': form, 'text': text}
                 return render(request, self.template_name, args)
             else:
-                text = "Points Summary for SID - " + form.cleaned_data['post'] +":"
-                values = LookupSIDs()
-                head_list = GetAttendanceHeader(SID)
-                det_list = GetAttendanceDetails(SID, values)
-                if det_list == 1:
-                    text = "Your SID does not appear in our records, please check if you have made an error or email us at 'contact@susa.berkeley'."
+                #text = "Points Summary for SID - " + form.cleaned_data['post'] +": "
+                text = form.cleaned_data['post']
+                #values = LookupSIDs()
+                #head_list = GetAttendanceHeader(SID)
+                #det_list = GetAttendanceDetails(SID, values)
+                exists = check_sid_exits(SID);
+                if exists:
+                    points = get_points(SID)
+                    events_lst = get_events(SID)
+                    args = {'form': form, 'text': text, 'points': points, 'events_lst': events_lst}
+                    return render(request, self.template_name, args)
+                else:
+                    text = "Your SID does not appear in our records, please check if you have made an error or email " \
+                           "us at 'contact@susa.berkeley'. "
                     form = AttendanceForm()
                     args = {'form': form, 'text': text}
                     return render(request, self.template_name, args)
-                form = AttendanceForm()
         else:
             text = "Error: Please Submit A Valid SID"
 
-        args = {'form': form, 'text': text, 'head_list': head_list, 'det_list': det_list}
+        args = {'form': form, 'text': text}
         return render(request, self.template_name, args)
 
 #WEBDEV Fall 2018
