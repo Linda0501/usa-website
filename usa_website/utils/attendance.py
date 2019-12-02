@@ -34,8 +34,8 @@ def get_events(sid):  # assume valid sid
     sid_points = sheet.row_values(sid_row)[2:-1]
     for i in range(len(events_name)):
         if sid_points[i] != '':
-            if events_name[i] == "Donutbot":
-                attended_events.append(events_name[i] + "*" + sid_points[i])
+            if events_name[i] == "Donutbot" and int(sid_points[i]) > 1:
+                attended_events.append(sid_points[i] + " " + events_name[i] + "s")
             else:
                 attended_events.append(events_name[i])
 

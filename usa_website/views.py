@@ -633,7 +633,8 @@ class AttendanceView(TemplateView):
                 args = {'form': form, 'text': text}
                 return render(request, self.template_name, args)
             else:
-                text = "Points Summary for SID - " + form.cleaned_data['post'] +":"
+                #text = "Points Summary for SID - " + form.cleaned_data['post'] +": "
+                text = form.cleaned_data['post']
                 #values = LookupSIDs()
                 #head_list = GetAttendanceHeader(SID)
                 #det_list = GetAttendanceDetails(SID, values)
