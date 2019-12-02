@@ -63,7 +63,7 @@ button{
 <body>
 <div class = "AttendanceContainer">
     <h1 style="text-align:center;">Attendance</h1>
-
+    <!--
     <h2>The Point System</h2>
     <p>
       Throughout the semester, there will be lots of points available to all SAAS members.
@@ -79,7 +79,7 @@ button{
       In addition to these events, your committee director will be allotted 5 "Committee Participation"
       points per two weeks. Be sure to remind your committee director to distribute these points!
 
-    </p>
+    </p>-->
     <p>
       SAAS members can get points by going to events/activities. There is no points
       threshold or requirement at the end of the semester. Instead, points will be
@@ -92,14 +92,14 @@ button{
       let members check how many points they have!
       </p>
 
-    <!-- THIS IS SPREADSHEET
+    <!--
     <p class="check">Check your points below!<sup>*</sup></p>
       <p>Our <b>IVP committee</b> is in charge of updating and keeping track of points. </p>
       <b>All points are updated as of 5/2. Please contact us at contact@saas.berkeley.edu if you spot any inaccuracies.</b>
     <br /><br />
       <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRrYs74IwG7Ihnd5obhSFMog4ovzdDrTEeyCKOCSxuatRDUbCqXJMcV3GM7a-s1gMzVAgUoH5slaGVu/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style="width:100%; height:500px; color:black;"></iframe>
 -->
-
+<!-- Taking out until we absolutely need to fix this, use the embedded sheet for now.
     <form method="POST">
       {% csrf_token %}
       {{ form }}
@@ -125,8 +125,8 @@ button{
       </tr>
     </table>
   </div>
-
-
+  -->
+  <!--
   <br>
   <i>  <sup>*</sup>Please Note that if you have not come to an event yet, we do not have your SID in our database and you will be unable to use this tool </i>
   <br></br>
@@ -173,5 +173,17 @@ button{
 
 <!--
 {"web":{"client_id":"165095989395-7fkdr6dqglkcuielg0n1qs5mubh34k8e.apps.googleusercontent.com","project_id":"attendance-217704","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://www.googleapis.com/oauth2/v3/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"g20559YTnG-wmP5n--vNE3hH","redirect_uris":["http://127.0.0.1:8000/","http://localhost:8080/","http://saas.berkeley.edu/attendance.html","http://saas.berkeley.edu/attendance.py","http://saas.berkeley.edu/attendance","https://saas.berkeley.edu/attendance.html","https://saas.berkeley.edu/attendance", "http://127.0.0.1:8000/attendance","http://127.0.0.1:8000/attendance.html"],"javascript_origins":["http://saas.berkeley.edu","http://127.0.0.1:8000"]}}
+
+
+
+
+{"web":{
+  "client_id":"677234108232-tbf78l4ukso0nqjdql3shqfkpk8pmu70.apps.googleusercontent.com",
+  "project_id":"attendance-256904","auth_uri":"https://accounts.google.com/o/oauth2/auth",
+  "token_uri":"https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+  "client_secret":"_keEAP_HLMA215ajqK2kk1mO","redirect_uris":["https://saas.berkeley.edu"],
+  "javascript_origins":["https://saas.berkeley.edu"]}}
+
 -->
 {% endblock %}
