@@ -117,6 +117,11 @@ def people(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def people_new(request):
+    t = get_template("people-2.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 def courseMap(request):
     t = get_template("course-map.html")
     context = {}

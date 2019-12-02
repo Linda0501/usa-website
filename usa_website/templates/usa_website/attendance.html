@@ -92,28 +92,15 @@ button{
 <div class = "AttendanceContainer">
     <h1 style="text-align:center;">Attendance</h1>
 
-    <h2>The Point System</h2>
-    <p>
-      Throughout the semester, there will be lots of points available to all SAAS members.
-      The threshold to reach by the end of the semester will be 50 points -
-      this will be taken into consideration when we consider returning member applications
-      at the end of the semester. If you do not reach 50 points, you will not be eligible
-      to join a committee next semester. The goal to reach by the end of the semester will be 80
-      points - this is what we feel an active member of the organization would naturally reach.
-      There will likely be other events and opportunities to earn extra points throughout the
-      semester, but the minimum threshold will not change. Members can earn points by coming to
-      SAAS related activities and events ranging from workshops held by our Education committee
-      to tech talks hosted by our EVP committee and socials held by our IVP committee.
-      In addition to these events, your committee director will be allotted 5 "Committee Participation"
-      points per two weeks. Be sure to remind your committee director to distribute these points!
 
-    </p>
+    <h2>The Point System</h2>
+
     <p>
-      SAAS members can get points by going to events/activities. There is no points
-      threshold or requirement at the end of the semester. Instead, points will be
-      considered in the reapplication process for next semester. If you have any
-      questions or concerns, contact Justin Le or Irene Wang.
+      SAAS members can get points by going to events/activities. Each event is worth
+      1 point. There is no points threshold or requirement at the end of the semester.
+      Instead, points will be considered in the reapplication process for next semester.
     </p>
+
 
 
 
@@ -151,6 +138,42 @@ button{
             </div>
           </div>
         </div>
+
+
+   <h2>Check your points below!*</h2>
+      <b>Our <b>IVP committee</b> is in charge of updating and keeping track of points. </b>
+      <b>All points are updated as of 11/29. Please contact us at contact@saas.berkeley.edu
+        if you spot any inaccuracies.</b><br><br>
+
+  <form method="POST">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit" style="display:inline;">Submit</button>
+    </form>
+    <br>
+  <h3 class = "summary">
+    {{ text }}
+  </h3>
+
+ <!--Please see AttendanceView in views.py to understand what is going on here-->
+<div style="overflow-x:auto;">
+    <p>Total points:{{ points }}</p>
+  <table>
+      <tr>
+        {% for l in events_lst %}
+        <td>{{l}}</td>
+        {% endfor %}
+      </tr>
+    </table>
+  </div>
+
+
+  <br>
+  <i>  <sup>*</sup>Please note that if you have not come to an event yet OR have not told
+    IVP your SID, we do not have your SID in our database and you will be unable
+    to use this tool. </i>
+  <br></br>
+
 
 </div>
 
@@ -198,6 +221,7 @@ button{
 
 </body>
 
+
 <!--
 {"web":{"client_id":"165095989395-7fkdr6dqglkcuielg0n1qs5mubh34k8e.apps.googleusercontent.com","project_id":"attendance-217704","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://www.googleapis.com/oauth2/v3/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"g20559YTnG-wmP5n--vNE3hH","redirect_uris":["http://127.0.0.1:8000/","http://localhost:8080/","http://saas.berkeley.edu/attendance.html","http://saas.berkeley.edu/attendance.py","http://saas.berkeley.edu/attendance","https://saas.berkeley.edu/attendance.html","https://saas.berkeley.edu/attendance", "http://127.0.0.1:8000/attendance","http://127.0.0.1:8000/attendance.html"],"javascript_origins":["http://saas.berkeley.edu","http://127.0.0.1:8000"]}}
 -->
@@ -211,5 +235,6 @@ button{
 -->
 
 <!-- Taking out until we absolutely need to fix this, use the embedded sheet for now.-->
+
 
 {% endblock %}
