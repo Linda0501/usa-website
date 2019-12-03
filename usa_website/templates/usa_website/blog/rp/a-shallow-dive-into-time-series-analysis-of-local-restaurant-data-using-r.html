@@ -65,28 +65,31 @@ $(document).ready(function () {
 <div class="fluid-row" id="header">
 
 
-
-<h3 class="title toc-ignore">A Shallow Dive into Time Series: Analysis of Local Restaurant Data Using R</h3>
-<h4><span style="color: #D5518D" id="author">By </span><span style="color: #3E95D7" id="name">Kenna Schoeler</span></h4>
-
+<link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+<h1 class="title toc-ignore">A Shallow Dive into Time Series: Analysis of Local Restaurant Data Using R</h1>
+<h2>
+	<img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+	<span style="color: gray" id="author">By </span>
+	<span style="color: gray" id="name">Kenna Schoeler</span>
+	<span style="color: gray" id="date">- Nov 2, 2017</span>
+</h2>
 </div>
-
-
+<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/fall_2017/time-series/titlePic.jpg' %}" style="margin:auto"></img><br><br>
 <br />
 <div id="introduction-and-motivation" class="section level4">
-<h4>Introduction and Motivation:</h4>
+<h3>Introduction and Motivation:</h3>
 <p>The purpose of this article is to highlight time series analysis in R. It is motivated by personal curiousity, and a desire to suggest that small businesses can gain from employing open source statistical computing software. Currently, few restaurants use R or any other readily available statistical software to analyze their data. Instead many use subscriptions to services that may preform basic analysis such as averaging and then display that information in basic, though visually appealing visualizations. It is worth proposing that there can be deeper and more meaningful conclusions made about the health of a small business when we take data into our own hands and begin to explore it on our own. This article will provide a transparent how-to example for anyone (with or without a statistics background) interested in jumping straight in.</p>
 <br />
 </div>
 <div id="background" class="section level4">
-<h4>Background:</h4>
+<h3>Background:</h3>
 <p>According to the department of statistics at Stockholm University the beginnings of time series analysis date back to the 1920s and 1930s when George Yule, J. Walker, Karl Pearson, and others worked to develop and greatly influence auto regressive modelling. Later in the 1970s, the book: “Time Series Analysis” by G.E.P. Box and G.M. Jenkins was published and within it, the authors gave a more completed method for time series modelling than had otherwise been published before. Many different techniques for this type of analysis have since developed, including the ARCH and GARCH procedures for parametarization of non constant variance, however my focus here will exclude such methods.</p>
 <p>A time series can be understood as a set of data that is recorded at regular intervals, and a couple good examples are the height measurement of tidal waves or the values recorded at the close of the stock market. There is plenty to know about time series, and I do not hope to cover even a fraction of the available information, but rather provide a taste for this type of analysis.</p>
 <p>Let’s start with the restaurant’s data for seated covers. Consider the number of covers a restaurant serves to be the number of meals. The difference between an entree and a meal is very similar to the difference between a entree and a cover. One cover includes everything that accompanies an entree. Suppose a guest orders two glasses of white wine, a salad to start, an entree of salmon, and a piece of chocolate cake for dessert. Everything the guest ordered is counted as part of one cover. The cover includes all extras ordered along with one entree. The number of seated covers a restaurant experiences is a good measure of its popularity because it is representative of how many guests were received by the restaurant.</p>
 <br />
 </div>
 <div id="r-code-examples" class="section level4">
-<h4>R Code Examples:</h4>
+<h3>R Code Examples:</h3>
 <p>Throughout this article I will provide the code used to arrive at any of my plots and charts.</p>
 <p>In the following code I read in the data from a csv file using the <code>read.csv()</code> function. I took data from the restaurant and put it in a tabular format to prepare it for this analysis. Depending on the format of your data you may need clean it up to be sure that it is in a format where each point in time has a corresponding entry.</p>
 <p>Here is an example portion of the data:</p>
@@ -266,14 +269,14 @@ plot(sc_ts_forecast, ylab = &quot;Seated Covers Index&quot;)</code></pre>
 <br>
 </div>
 <div id="results" class="section level4">
-<h4>Results:</h4>
+<h3>Results:</h3>
 <p>Given the forecast data, we see that there will potentially be a spike in business during the early months of 2018, and it seems that 2019 will enjoy a nice increase in expected number of guests. There appears to be an overall upward trend suggestive of steady growth over the next several years.</p>
 <p>Given the ratings data, we can see from the barchart visualizations that Friday is one of the best rated days of the week closely followed by Saturday. Sunday however seems to be the least favorite day among patrons and is consistently given poor reviews in all four areas.</p>
 <p>Lastly, we see in the final plot for recommendations a confirmation of the findings from the earlier barcharts. Sunday is the day that receives the least number of “yes” recommendations while Friday receives the most. The day most likely to receive a “No Response” is Friday. There are only a small number of “no” recommendations for Friday and Saturday whereas the other days of the week do not have data for “no” recommendations.</p>
 <br>
 </div>
 <div id="discussion" class="section level4">
-<h4>Discussion:</h4>
+<h3>Discussion:</h3>
 <p>These time series forecast plots are useful visualizations that provide a deeper look into business projections otherwise gone unseen and provide information that a simple averaging or listing of data cannot necessarily show without extra manipulation. It is up to the R user to determine what is of importance and why. Your analysis depends on the data you have, and what you are interested in knowing.</p>
 <p>Though this all might seem a little complex, there are a few general steps to follow when attempting a time series analysis:</p>
 <ul>
@@ -285,7 +288,7 @@ plot(sc_ts_forecast, ylab = &quot;Seated Covers Index&quot;)</code></pre>
 <br>
 </div>
 <div id="conclusions" class="section level4">
-<h4>Conclusions:</h4>
+<h3>Conclusions:</h3>
 <p>Time series forecasting is an interesting way to delve into the analysis of univariate data, and often we don’t have much more to go off of except the passing of time. It is good to begin to understand how to use the many different methods for such investigation into a dataset, and hopefully this overview has piqued the reader’s interest in further study.</p>
 <p><strong>For the restaurant:</strong> The data suggests that there is growth to look forward to, and the restaurant may be popular enough in coming years to think about either moving to a larger building or possibly opening up a second location if other factors outside of this analysis confirmed. There seems to be something amiss on Sundays, and it would benefit business to investigate the problem. Perhaps have a very brief survey or comment card handed out to guests on that day to better understand the issue. It could be any number of problems, and fixing the problems guests experience on Sundays would prevent both negative reviews and word of mouth from affecting the futher success of the business.</p>
 <p><strong>For the reader:</strong> Time series analysis is a complicated subject when you are just beginning so keep in mind that the more familiar you become with the underlying concepts of time series forecasting the better your intuition will be for making accurate predictions. This was a quick survey of some of the things you can do in R to begin an analysis of a time dependant sequence of data, and by no means did I truly scratch the surface.</p>
@@ -293,7 +296,7 @@ plot(sc_ts_forecast, ylab = &quot;Seated Covers Index&quot;)</code></pre>
 <br>
 </div>
 <div id="references" class="section level4">
-<h4>References:</h4>
+<h3>References:</h3>
 <ul>
 <li><a href="https://align-alytics.com/seasonal-decomposition-of-time-series-by-loessan-experiment/" class="uri">https://align-alytics.com/seasonal-decomposition-of-time-series-by-loessan-experiment/</a></li>
 <li><a href="https://www.jstor.org/stable/2669408?seq=1#page_scan_tab_contents" class="uri">https://www.jstor.org/stable/2669408?seq=1#page_scan_tab_contents</a> Introduction portion of: Time Series and Forecasting: Brief History and Future Research Ruey S. Tsay Journal of the American Statistical Association Vol. 95, No. 450 (Jun., 2000), pp. 638</li>
