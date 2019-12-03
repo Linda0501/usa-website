@@ -107,7 +107,7 @@
                 <nav class="navbar navbar-expand-sm" role="navigation">
                     <div class="container-fluid" id="nav-container" style="justify-content:end;">
                       <a href="/" style="height:80px; width:auto; display:inline-block; margin-right:auto;">
-                        <img src="/static/usa_website/images/susafinallogowhite.png" style="height:120px;vertical-align:middle;margin-top:-10px; " id="susaa"></img>
+                        <img src="/static/usa_website/images/logos/logo_white.png" style="height:120px;vertical-align:middle;margin-top:-10px; " id="susaa"></img>
                       </a>
                         <!-- Links  NOTE: Even though bootstrap 4 has a default caret, DON'T USE IT, it messes up the animation -->
                       <ul class="navbar-nav" style="margin-top:16px; margin-bottom:16px;">
@@ -162,52 +162,105 @@
 
     <footer id="fh5co-footer" role="contentinfo">
       <div class=" fh5co-copyright text-center">
-        <div class="row_socials">
+        <div class="socials-container">
           <div class="col_socials">
           </div>
-
-          <div class="row_socials">
+    
+          <div class="row_socials logo-row">
             <div class="col_socials">
               <a href="https://www.facebook.com/saasberkeley/">
-                <img src="{% static 'usa_website/images/social_media/facebook-32px.png' %}" alt="fb">
+                <i class="fab fa-facebook-square fa-3x"></i>
               </a>
             </div>
             <div class="col_socials">
               <a href="https://github.com/SUSA-org">
-                <img src="{% static 'usa_website/images/social_media/github-32px.png' %}" alt="git"
-                  style="height:32px;">
+                <i class="fab fa-github fa-3x"></i>
               </a>
             </div>
             <div class="col_socials">
               <a href="https://www.linkedin.com/company/saasberkeley/">
-                <img src="{% static 'usa_website/images/social_media/linkedin-32px.png' %}" alt="linkedin"
-                  style="height:32px; ">
+                <i class="fab fa-linkedin fa-3x"></i>
+              </a>
+            </div>
+            <div class="col_socials">
+              <a href="mailto:contact@saas.berkeley.edu">
+                <i class="fab fas fa-at fa-3x"></i>
               </a>
             </div>
           </div>
-
+    
           <div class="col_socials">
-
+    
           </div>
         </div>
-        <p style="font-size:18px; margin-top:5px;">Contact us at <a
-            href="mailto:contact@saas.berkeley.edu">contact@saas.berkeley.edu</a></p>
-        <p>Copyright © 2019 SAAS. All rights reserved. Design by SAAS's Web Development Committee currently headed by
-          Rachel Li and Megan Zhu.</p>
-        <p>We are a student group acting independently of the University of California. <span> We take full
-            responsibility for our organization and this web site. </span></p>
-        <a href="https://www.ocf.berkeley.edu">
-          <img src="https://www.ocf.berkeley.edu/hosting-logos/ocfbadge_mini8darkglow.png" alt="Hosted by the OCF"
-            style="border: 0;" />
-        </a>
+
+        <div class="footer-info container grid-lg">
+          <div class="columns">
+            <div class="column col-6 col-md-6 col-sm-6 col-ml-auto">
+              <ul class="footer-urls">
+                <div class="columns">
+                  <div class="column col-4">
+                    <li class="footer-url">
+                      <a href="/" class="url">Home</a>
+                    </li>
+                    <li class="footer-url">
+                      <a href="/people" class="url">People</a>
+                    </li>
+                    <li class="footer-url">
+                      <a href="/community" class="url">Community</a>
+                    </li>
+                  </div>
+                  <div class="column col-4">
+                    <li class="footer-url">
+                      <a href="/attendance" class="url">Attendance</a>
+                    </li>
+                    <li class="footer-url">
+                      <a href="/calendar" class="url">Calendar</a>
+                    </li>
+                    <li class="footer-url">
+                      <a href="/blog" class="url">Blog</a>
+                    </li>
+                  </div>
+                  <div class="column col-4">
+                    <li class="footer-url">
+                      <a href="#" class="url">Course Map</a>
+                    </li>
+                    <li class="footer-url">
+                      <a href="/research" class="url">Research</a>
+                    </li>
+                    <li class="footer-url">
+                      <a href="#" class="url">Coming Soon</a>
+                    </li>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <div class="column col-6 col-md-6 col-sm-6 col-ml-auto">
+              <a href="/" style="height:40px; width:auto; display:inline-block; margin-right:auto;">
+                <img src="/static/usa_website/images/logos/logo_white.png" style="height:120px;vertical-align:middle;margin-top:-30px;margin-right: 10px;" id="susaa">
+              </a>
+              <a href="https://www.ocf.berkeley.edu">
+                <img src="https://www.ocf.berkeley.edu/hosting-logos/ocfbadge_mini8darkglow.png" alt="Hosted by the OCF" style="margin-top: -40px;">
+              </a>
+              <p class="light-text">Copyright © 2019 SAAS. All rights reserved. Design by SAAS's Web Development Committee currently headed by
+                Rachel Li and Megan Zhu.</p>
+            </div>
+          </div>
+          <p class="light-text">We are a student group acting independently of the University of California. <span> We take full
+              responsibility for our organization and this web site. </span></p>
+        </div>
+        <!-- <p style="font-size:18px; margin-top:5px;">Contact us at <a
+            href="mailto:contact@saas.berkeley.edu">contact@saas.berkeley.edu</a></p> -->
+        
       </div>
-
-  </div>
-  </footer>
-
-
+    
+      </div>
+    </footer>
 
 
+
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/f0bca21505.js" crossorigin="anonymous"></script>
   <!-- jQuery -->
   <script src="{% static 'usa_website/js/jquery.min.js' %}"></script>
   <!-- jQuery Easing -->
@@ -250,3 +303,34 @@
 </body>
 
 </html>
+
+<style>
+  .fab {
+    color: white;
+    margin-bottom: 25px;
+  }
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.6rem;
+    margin-right: -0.6rem;
+  }
+  .logo-row {
+    margin-top: -0.6rem;
+  }
+  .footer-urls {
+    font-size: 15px;
+    text-align: left;
+  }
+  .socials-container {
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    text-align: center;
+    /* border-bottom: 1px solid rgba(255,255,255,0.3); */
+  }
+  .light-text {
+    opacity: 0.5;
+    margin-bottom: 0;
+  }
+</style>

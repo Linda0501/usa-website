@@ -1136,7 +1136,7 @@ h3 {
   list-style: none;
 }
 #fh5co-footer ul li a {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 1);
   text-decoration: none !important;
 }
 #fh5co-footer ul li a:hover {

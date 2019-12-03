@@ -6,7 +6,11 @@ from .models import Course, Blog
 from django.views.generic import TemplateView
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
 from .forms import PostForm, AttendanceForm
+
+from .utils.attendance import *
+
 # from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
+
 
 # Create your views here.
 def index(request):
@@ -113,6 +117,11 @@ def people(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def people_new(request):
+    t = get_template("people-2.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 def courseMap(request):
     t = get_template("course-map.html")
     context = {}
@@ -146,6 +155,11 @@ def education(request):
 
 def community(request):
     t = get_template("community.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def community_new(request):
+    t = get_template("community-new.html")
     context = {}
     return HttpResponse(t.render(context))
 
@@ -455,6 +469,10 @@ def eurovision(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def personality(request):
+    t = get_template("blog/rp/spring_2019/personality.html")
+    context = {}
+    return HttpResponse(t.render(context))
 ###################################
 ########## CRASH COURSES ##########
 ###################################
@@ -497,8 +515,8 @@ def lily_bhattacharjee_interview(request):
     context = {}
     return HttpResponse(t.render(context))
 
-def megan_zu_interview(request):
-    t = get_template("interviews/spring_2019/megan-zu-interview.html")
+def megan_zhu_interview(request):
+    t = get_template("interviews/spring_2019/megan-zhu-interview.html")
     context = {}
     return HttpResponse(t.render(context))
 
@@ -514,6 +532,21 @@ def irene_wang_interview(request):
 
 def joyce_zheng_interview(request):
     t = get_template("interviews/spring_2019/joyce-zheng-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def calvin_chen_interview(request):
+    t = get_template("interviews/spring_2019/calvin-chen-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def oscar_syu_interview(request):
+    t = get_template("interviews/spring_2019/oscar-syu-interview.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def zoe_liu_interview(request):
+    t = get_template("interviews/spring_2019/zoe-liu-interview.html")
     context = {}
     return HttpResponse(t.render(context))
 
@@ -600,20 +633,27 @@ class AttendanceView(TemplateView):
                 args = {'form': form, 'text': text}
                 return render(request, self.template_name, args)
             else:
-                text = "Points Summary for SID - " + form.cleaned_data['post'] +":"
-                values = LookupSIDs()
-                head_list = GetAttendanceHeader(SID)
-                det_list = GetAttendanceDetails(SID, values)
-                if det_list == 1:
-                    text = "Your SID does not appear in our records, please check if you have made an error or email us at 'contact@susa.berkeley'."
+                #text = "Points Summary for SID - " + form.cleaned_data['post'] +": "
+                text = form.cleaned_data['post']
+                #values = LookupSIDs()
+                #head_list = GetAttendanceHeader(SID)
+                #det_list = GetAttendanceDetails(SID, values)
+                exists = check_sid_exits(SID);
+                if exists:
+                    points = get_points(SID)
+                    events_lst = get_events(SID)
+                    args = {'form': form, 'text': text, 'points': points, 'events_lst': events_lst}
+                    return render(request, self.template_name, args)
+                else:
+                    text = "Your SID does not appear in our records, please check if you have made an error or email " \
+                           "us at 'contact@susa.berkeley'. "
                     form = AttendanceForm()
                     args = {'form': form, 'text': text}
                     return render(request, self.template_name, args)
-                form = AttendanceForm()
         else:
             text = "Error: Please Submit A Valid SID"
 
-        args = {'form': form, 'text': text, 'head_list': head_list, 'det_list': det_list}
+        args = {'form': form, 'text': text}
         return render(request, self.template_name, args)
 
 #WEBDEV Fall 2018
