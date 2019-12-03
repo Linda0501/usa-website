@@ -12,7 +12,7 @@ data = sheet.get_all_records()
 sid_col = sheet.find("ID").col
 
 
-def check_sid_exits(sid):  # check in views.py if sid exits
+def check_sid_exits(sid):  # check in views.py if student id exits
     sid_lst = sheet.col_values(sid_col)
     for i in sid_lst:
         if i == sid:
