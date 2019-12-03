@@ -23,3 +23,7 @@
     src: url("../fonts/Britannic.ttf");
 }
 */
+@font-face {
+    font-family: 'Tiempos';
+    src: url("../fonts/TiemposText-Regular.ttf");
+}

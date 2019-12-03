@@ -3,24 +3,22 @@
 {% load staticfiles %}
 
 <title> Speech Patterns and Personality </title>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
 <h1>Relationship between the Big Five personality traits and speech patterns</h1>
 
-<h3>
-    <span style="color: #D5518D" id="author">By </span>
-    <span style="color: #3E95D7" id="name">Zoe Liu</span>
+<h2>
+    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+    <span style="color: gray" id="author">By </span>
+    <span style="color: gray" id="name">Zoe Liu</span>
+    <span style="color: gray" id="date">- Apr 27, 2019</span>
   </h3>
-
-<div class=Blog_Navigation>
-  <ol>
-    <li><a href="#Introduction">Introduction</a></li>
-    <li><a href="#Methodology">Methodology</a></li>
-    <li><a href="#Results">Results</a></li>
-    <li><a href="#Conclusion">Conclusion</a></li> <br>
-  </ol>
-</div>
-
+<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/spring_2019/personality/titlePic.png' %}" style="margin:auto"></img><br><br>
 <div id=Introduction>
-  <h2>Introduction </h2>
+  <h3>Introduction </h3>
   <p>
       It has long been theorized that writing and speech is reflective of personality, since they are so core to one’s being. Initial research involved stream-of-consciousness writing, which resulted in only a minor correlation between language and personality. However, it was later hypothesized that self-narratives, a retelling of the way one’s personality is shaped by experience, will correlate more strongly with personality because self narratives involve more reflection on identity, and more likely to reveal personality traits. My research focuses on the relationship between personality traits, as defined by the Big Five personality traits of openness, conscientiousness, extraversion, agreeableness, and neuroticism, and speech patterns. 
   </p>
@@ -30,7 +28,7 @@
 </div>
 
 <div id=Methodology>
-  <h2>Methodology</h2>
+  <h3>Methodology</h3>
   <p>
     I gathered audio samples of roughly 5 minutes in length from 27 college-aged participants using a voice-to-text transcription app called Otter . The participants also took a 30-question Big Five personality test . The audio samples were drawn by asking participants pre-made questions  about their opinions on various topics and various aspects of their lives. For instance, one question asks “How are your midterms and classes going, and how are you doing in general?” These questions were not designed to be probing in nature, and were instead designed to maximize the length of answers (people tend to have a lot to say about midterms). Participants’ responses to the interview questions and personality tests were kept anonymous with random ID numbers, and no names were kept in the audio transcription. Participants were thoroughly briefed on the conditions of their participation and thoroughly debriefed after they were done. Participants were also given the choice of redacting their data at the end of their participation, though none chose to do so.
   </p>
@@ -40,7 +38,7 @@
 </div>
 
 <div id=Results>
-  <h2>Results</h2>
+  <h3>Results</h3>
     <h3>Neurotic tendencies vs speech patterns:</h3>
     <img src="{% static 'usa_website/images/blog/rp/spring_2019/personality/zoe1.png' %}" style="margin:auto">
     <p>
@@ -87,7 +85,7 @@
 </div>
 
 <div id=Conclusion>
-  <h2>Conclusion</h2>
+  <h3>Conclusion</h3>
   <p>
     Overall, it was difficult to attribute most speech patterns and word choices to any personality trait, mostly because the sample size was so small. Many of my findings contradicted the credible findings of many researchers. In particular, the lack of correlation between neuroticism and first person pronouns and filler words is most likely attributed to low sample size, since it has been shown multiple times that the two are moderately correlated.
   </p>
