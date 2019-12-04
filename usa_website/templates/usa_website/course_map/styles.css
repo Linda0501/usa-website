@@ -1,0 +1,12 @@
+body {
+	text-align: center;
+}
+
+div.note {
+	font-style:italic;
+}
+
+div.map {
+	text-align: center;
+	display: inline-block;
+}
