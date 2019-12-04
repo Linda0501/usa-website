@@ -13,16 +13,23 @@
 	}
 </style>
 
+<link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
 <div class="container-fluid">
-	<h3>World Happiness Report EDA</h3>
-	<h4><span style="color: #D5518D" id="author">By </span><span style="color: #3E95D7" id="name">Sydney Yang</span></h4>
+	<h1>World Happiness Report EDA</h1>
+	<h2>
+		<img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+		<span style="color: gray" id="author">By </span>
+		<span style="color: gray" id="name">Sydney Yang</span>
+		<span style="color: gray" id="date">- Nov 2, 2017</span>
+	</h2>
+	<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/fall_2017/happiness/titlePic.jpg' %}" style="margin:auto"></img><br><br>
 	<br>
-	<h4>Introduction</h4>
+	<h3>Introduction</h3>
 	<p>In a recent conversation with my parents, I pondered why exactly some countries are considered “happier.” It’s common knowledge that Scandinavia and some other parts of Western Europe consist of model countries, but most of us in the US - myself included - have never been, and I can only imagine things are wildly different there. It’s hard to compare and contrast all of the parts that comprise a country’s whole. Tax rates, government, advances in technology, weather, and other variables can play into how happy a country’s citizens are on average. Furthermore, what exactly “happiness” entails is rather ambiguous, so it can also be difficult to define happiness for our purposes.</p>
 	<p>In recent years, happiness has become the strongest indicator of a country’s social progress. That’s why the <i>World Happiness Report</i> was first published in 2012 for the UN High Level Meeting on well-being. In 2017, another edition was published with more recent information.</p>
 
 	<br>
-	<h4>How does one measure happiness, you ask?</h4>
+	<h3>How does one measure happiness, you ask?</h3>
 	<p>That’s a good question. Some members of my committee and I were skeptical too. The report uses six key variables to measure happiness differences: “income, healthy life expectancy, having someone to count on in times of trouble, generosity, freedom and trust, with the latter measured by the absence of corruption in business and government.”</p>
 	<p>This data comes from the Gallup World Poll’s survey scores, which adopted the “Cantril’s Ladder of Life Scale” as an assessment for well-being. It asks of respondents:</p>
 	<p><i>Please imagine a ladder with steps numbered from zero at the bottom to 10 at the top. The top of the ladder represents the best possible life for you and the bottom of the ladder represents the worst possible life for you. On which step of the ladder would you say you personally feel you stand at this time? (ladder-present) On which step do you think you will stand about five years from now? (ladder-future) </i></p>
@@ -69,7 +76,7 @@
 	</div>
 
 	<br>
-	<h4>Correlation</h4>
+	<h3>Correlation</h3>
 
 	<p>Which of the six variables most affect a country’s “happiness”? This is the question I sought out to answer—is it a country’s government or economy that makes its citizens the most happy?</p>
 
@@ -123,7 +130,7 @@
 	<p>Something I found especially interesting in this heatmap is that generosity and GDP per capita are negatively correlated. This isn’t monumentally surprising, but I was kind of disappointed to see that wealthier nations tend to be less generous regardless. </p>
 
 	<br>
-	<h4>Conclusion</h4>
+	<h3>Conclusion</h3>
 	<p>To wrap things up, this was an exploratory data analysis into why some countries are considered “happier” than others. We found that GDP per capita is the most important factor, which would make sense because money allows countries to afford luxuries along with basic resources. Despite all this, however, there are many, many more things that affect a country’s happiness and I doubt there are models sophisticated enough to accurately measure this.</p>
 
 	<p>The data I used is from <a href="http://worldhappiness.report/">here</a>, and I used Pandas, Matplotlib, and Seaborn for data analysis. </p>

@@ -2,22 +2,17 @@
 {% block content %}
 {% load staticfiles %}
 
-<html>
-	<style>
-	body {
-		background-color: #f6f3e9
-	}
-</style>
-</html>
 
+<link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
 <title>Understanding Toxic Social Media with Deep Learning</title>
 <h1>Understanding Toxic Social Media with Deep Learning</h1>
-<h3>
-	<span style="color: #D5518D" id="author">By </span>
-	<span style="color: #3E95D7" id="name">Gautam Mittal, Adnaan Sachidanandan</span>
+<h2>
+	<img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+	<span style="color: gray" id="author">By </span>
+	<span style="color: gray" id="name">Gautam Mittal, Adnaan Sachidanandan</span>
+	<span style="color: gray" id="date">- Nov 26, 2018</span>
 </h3>
-
-
+<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/fall_2018/toxic_social_media/titlePic.jpg' %}" style="margin:auto"></img><br><br>
 <div>
 	<p>
 		The proliferation of online discourse over the past decade has enabled widespread accessibility of information and ideas, with billions of users actively using social networking platforms such as Reddit, YouTube, and Facebook. However, the popularity of Internet-based discussions has also come with greater anonymity in these conversations. In some of these online discussions, toxic environments emerge. Exploring the interactions that cause these toxic environments to develop is important in order to eliminate this problem. In addition, understanding the toxic “composition” of an environment, such as the relative frequencies of obscenities, insults, threats, and comments propagating identity hate, can also provide insight towards how to fight these issues. Although Internet censorship and systems that control freedom of speech are contentious issues, our research aims to investigate trends and characteristics about these toxic conversations using deep neural networks.

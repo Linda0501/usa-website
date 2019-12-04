@@ -12,17 +12,23 @@
 	}
 </style>
 
+<link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
 <div class="container-fluid">
-	<h3>RapNet: Machine Learning for Hip-Hop Artist Classification</h3>
-	<h4><span style="color: #D5518D" id="author">By </span><span style="color: #3E95D7" id="name">Alex Chan</span></h4>
-
-	<h4>Introduction</h4>
+	<h1>RapNet: Machine Learning for Hip-Hop Artist Classification</h1>
+	<h2>
+		<img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+		<span style="color: gray" id="author">By </span>
+		<span style="color: gray" id="name">Alex Chan</span>
+		<span style="color: gray" id="date">- Nov 2, 2017</span>
+	</h2>
+	<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/fall_2017/hiphop/titlePic.jpg' %}" style="margin:auto"></img><br><br>
+	<h3>Introduction</h3>
 	<p>Musical artists distinguish themselves in many ways, defining their own styles and genres to appeal to an audience. One of the ways artists accomplish this is through lyrics. Lyrics act as a medium for the artist to convey a message – whether it be a story, call to action, or anything in between. The goal of this paper is to develop a classifier to distinguish between lyrics of different artists, specifically in the hip-hop genre.</p>
 	<p>I found this problem particularly interesting because I was curious how well a machine learning classifier could do on the lyrics of authors within the same genre. Generally, these algorithms perform very well in genre classification, and I wanted to see if the same could be said about distinguishing between artists.</p>
 
 	<br>
 
-	<h4>Methodology</h4>
+	<h3>Methodology</h3>
 	<u>Data Collection</u>
 	<p>The data analyzed in this project is song lyrics. Lyrics were retrieved using the Genius API to get the URLs to the lyrics of songs by an artist. Then, using the BeautifulSoup library, the data was parsed from the HTML of the page containing the lyrics. All song lyrics from the entire discography of each artist were collected and saved for use in our model.</p>
 	<u>Preprocessing</u>
@@ -144,12 +150,12 @@
 
 	<br>
 
-	<h4>Results</h4>
+	<h3>Results</h3>
 	<p>The training and test data consists of song lyrics by the artists Kendrick Lamar, Logic, and Tyler the Creator. The model was trained on 80% of the data, and then tested on the remaining 20% of the data. Grid search was used to tune the hyperparameters of the model (layer size, learning rate, batch size). Once the optimal hyperparameters were found, 5 fold cross validation was used to determine the success of our model. Our model achieves an 88.5% accuracy on the test set and a cross validation accuracy of 83.7%.</p>
 
 	<br>
 
-	<h4>Analysis</h4>
+	<h3>Analysis</h3>
 	<p>An accuracy of 88.5% shows that our model does pretty well at predicting the artists for each song lyric into the three classes. The table below shows the most frequent words sung by each artist with stop words, common words that don’t contribute to the success of the model, removed.</p>
 
 	<center>
@@ -226,7 +232,7 @@
 
 	<br>
 
-	<h4>Conclusion</h4>
+	<h3>Conclusion</h3>
 
 	<p>These results can hopefully provide a further step towards solving harder classification problems. While genre classification has had generally great success, classification of artists with semantically similar themes proves to be a harder problem to solve. The evaluated model wirjs well on artists with different themes; it was successfully able to distinguish between Logic and Tyler the Creator songs. However, the model fell short at predicting Kendrick Lamar songs, whose themes range across variety of different topics. Further studies include classifying more artists, and determining methods to make models even better at distinguishing between artists with similar themes, such as rhyme scheme and repeated phrases. </p>
 
