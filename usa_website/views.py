@@ -6,7 +6,7 @@ from .models import Course, Blog
 from django.views.generic import TemplateView
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
 from .forms import PostForm, AttendanceForm
-from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
+# from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
 
 # Create your views here.
 def index(request):
@@ -327,6 +327,16 @@ def data_good(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def uizard(request):
+    t = get_template("blog/dataconsulting/uizard.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def mtc(request):
+    t = get_template("blog/dataconsulting/mtc.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 #####################################
 ####### FALL 2017 DC PROJECTS #######
 #####################################
@@ -368,6 +378,10 @@ def number_concept(request):
 	context = {}
 	return HttpResponse(t.render(context))
 
+def suicide(request):
+    t = get_template("blog/rp/spring_2018/suicide.html")
+    context = {}
+    return HttpResponse(t.render(context))
 
 
 #####################################
@@ -393,6 +407,11 @@ def toxic_social_media(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def meaning_of_probabilities_in_social_sciences(request):
+    t = get_template("blog/rp/fall_2018/meaning-of-probabilities-in-social-sciences.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 def schooling(request):
     t = get_template("blog/rp/fall_2018/schooling.html")
     context = {}
@@ -410,7 +429,7 @@ def predicting_horse_races(request):
     t = get_template("blog/rp/spring_2019/predicting_horse_races.html")
     context = {}
     return HttpResponse(t.render(context))
-  
+
 def women_in_government(request):
     t = get_template("blog/rp/spring_2019/women-in-government.html")
     context = {}
@@ -431,6 +450,15 @@ def identifying_art_styles(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def eurovision(request):
+    t = get_template("blog/rp/spring_2019/the_musical_chairs_of_eurovision.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def personality(request):
+    t = get_template("blog/rp/spring_2019/personality.html")
+    context = {}
+    return HttpResponse(t.render(context))
 ###################################
 ########## CRASH COURSES ##########
 ###################################
@@ -614,4 +642,3 @@ def fakenews(request):
     t = get_template("blog/rp/spring_2019/political_bias_in_mainstream_news_media.html")
     context = {}
     return HttpResponse(t.render(context))
-

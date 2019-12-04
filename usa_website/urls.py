@@ -92,6 +92,7 @@ urlpatterns = [
     url(r'rp/college-vs-nba-success$', views.college_vs_nba_success, name="college_vs_nba_success"),
     url(r'rp/num-concept$', views.number_concept, name="number_concept"),
     url(r'rp/SteinerTreeProblem$', views.SteinerTreeProblem, name="SteinerTreeProblem"),
+    url(r'rp/suicide$', views.suicide, name="suicide"),
 
     #R+P Fall 2018
     url(r'rp/music-moods$', views.music_moods, name="music_moods"),
@@ -99,6 +100,7 @@ urlpatterns = [
     url(r'rp/league_of_legends$', views.league_of_legends, name='league_of_legends'),
     url(r'rp/toxic_social_media$', views.toxic_social_media, name='toxic_social_media'),
     url(r'rp/schooling$', views.schooling, name='schooling'),
+    url(r'rp/meaning-of-probabilities-in-social-sciences$', views.meaning_of_probabilities_in_social_sciences, name="meaning_of_probabilities_in_social_sciences"),
 
     #R+P Spring 2019
     url(r'rp/predicting_horse_races$', views.predicting_horse_races, name='predicting_horse_races'),
@@ -107,7 +109,9 @@ urlpatterns = [
     url(r'rp/winning-the-mlb-world-series$', views.winning, name="winning-the-mlb-world-series"),
     url(r'rp/machinelearning_and_finance$', views.machinelearning_and_finance, name="machinelearning_and_finance"),
     url(r'rp/identifying_art_styles$', views.identifying_art_styles, name='identifying_art_styles'),
-  
+    url(r'rp/eurovision$', views.eurovision, name='eurovision'),
+    url(r'rp/personality$', views.personality, name='personality'),
+
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),
@@ -133,6 +137,8 @@ urlpatterns = [
     url(r'dataconsulting/taco-bell$', views.taco_bell, name="taco_bell"),
     url(r'dataconsulting/express-scripts$', views.express_scripts, name="express_scripts"),
     url(r'dataconsulting/minted$', views.minted, name="minted"),
+    url(r'dataconsulting/uizard$', views.uizard, name="uizard"),
+    url(r'dataconsulting/mtc$', views.mtc, name="mtc"),
 
     url(r'textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     url(r'yitz$', views.yitz, name = "yitz"),
