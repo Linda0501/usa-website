@@ -1,0 +1,28 @@
+.fab {
+color: white;
+margin-bottom: 25px;
+}
+.columns {
+display: flex;
+flex-wrap: wrap;
+margin-left: -0.6rem;
+margin-right: -0.6rem;
+}
+.logo-row {
+margin-top: -0.6rem;
+}
+.footer-urls {
+font-size: 15px;
+text-align: left;
+}
+.socials-container {
+margin-left: 20%;
+margin-right: 20%;
+display: flex;
+text-align: center;
+/* border-bottom: 1px solid rgba(255,255,255,0.3); */
+}
+.light-text {
+opacity: 0.5;
+margin-bottom: 0;
+}
