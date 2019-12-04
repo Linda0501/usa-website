@@ -2,6 +2,9 @@
 color: white;
 margin-bottom: 25px;
 }
+.fab:hover {
+color: grey;
+}
 .columns {
 display: flex;
 flex-wrap: wrap;
