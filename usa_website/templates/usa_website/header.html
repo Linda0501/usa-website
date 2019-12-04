@@ -45,6 +45,8 @@
   <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/style.css' %}" />
   <!-- Custom font style -->
   <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/fonts.css' %}" />
+  <!-- CSS for Footer -->
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/footer.css' %}" />
 
   <!-- Modernizr JS -->
   <script src="{% static 'usa_website/js/modernizr-2.6.2.min.js' %}"></script>
@@ -199,7 +201,7 @@
             <div class="column col-6 col-md-6 col-sm-6 col-ml-auto">
               <ul class="footer-urls">
                 <div class="columns">
-                  <div class="column col-4">
+                  <div class="column col-5">
                     <li class="footer-url">
                       <a href="/" class="url">Home</a>
                     </li>
@@ -210,7 +212,7 @@
                       <a href="/community" class="url">Community</a>
                     </li>
                   </div>
-                  <div class="column col-4">
+                  <div class="column col-5">
                     <li class="footer-url">
                       <a href="/attendance" class="url">Attendance</a>
                     </li>
@@ -218,10 +220,10 @@
                       <a href="/calendar" class="url">Calendar</a>
                     </li>
                     <li class="footer-url">
-                      <a href="/blog" class="url">Blog</a>
+                      <a href="javascript:alert('this function is coming soon!')" class="url">Course Map</a>
                     </li>
                   </div>
-                  <div class="column col-4">
+                  <!-- <div class="column col-4">
                     <li class="footer-url">
                       <a href="#" class="url">Course Map</a>
                     </li>
@@ -231,7 +233,7 @@
                     <li class="footer-url">
                       <a href="#" class="url">Coming Soon</a>
                     </li>
-                  </div>
+                  </div> -->
                 </div>
               </ul>
             </div>
@@ -303,34 +305,3 @@
 </body>
 
 </html>
-
-<style>
-  .fab {
-    color: white;
-    margin-bottom: 25px;
-  }
-  .columns {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -0.6rem;
-    margin-right: -0.6rem;
-  }
-  .logo-row {
-    margin-top: -0.6rem;
-  }
-  .footer-urls {
-    font-size: 15px;
-    text-align: left;
-  }
-  .socials-container {
-    margin-left: 20%;
-    margin-right: 20%;
-    display: flex;
-    text-align: center;
-    /* border-bottom: 1px solid rgba(255,255,255,0.3); */
-  }
-  .light-text {
-    opacity: 0.5;
-    margin-bottom: 0;
-  }
-</style>
