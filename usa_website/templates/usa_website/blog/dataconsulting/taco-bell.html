@@ -1,0 +1,28 @@
+
+{% extends "blog/dataconsulting/dc_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<style>
+	figure img {
+		display: block;
+		margin: 0 auto;
+		width: 50%;
+		text-align: center;
+	}
+	figcaption {
+		text-align: center;
+	}
+</style>
+<div class="container-fluid" >
+	<h3 class="title toc-ignore">Taco Bell</h3>
+	<h4><span style="color: #D5518D" id="author">PM:</span><span style="color: #3E95D7" id="name"> Elliot Stahnke</span></h4>
+  <p>
+		<ul>
+			<li>Predicted the demand for each product to optimize food preparation process</li>
+			<li>Created time series models from sales data on all products at 6000+ stores</li>
+			<li>Developed algorithms to predict sales of new promotional items</li>
+		</ul>
+  </p>
+</div>
+{% endblock %}
