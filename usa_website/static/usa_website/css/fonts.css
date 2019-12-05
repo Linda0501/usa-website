@@ -8,13 +8,18 @@
 
 @font-face {
     font-family: 'Avenir Next';
-    src: url("../fonts/AvenirNext-Medium.ttf");
+    src: url("../fonts/AvenirNext-Reg.otf");
 }
 
 
 @font-face {
     font-family: 'Tiempos';
     src: url("../fonts/iemposText-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Avenir Next Light";
+    src: url("../fonts/avenir-light.ttf");
 }
 
 /*
