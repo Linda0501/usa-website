@@ -1,0 +1,178 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title>Winning the Major League Baseball World Series</title>
+<head>
+ <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <style>
+  	@font-face {
+    font-family: 'Tiempos';
+    src: url("../fonts/TiemposText-Regular.ttf");
+	}
+
+  </style>
+</head>
+
+<div class="Blog_Nav">
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Introduction</a></li>
+    <li><a href="#Section2">Data Analysis</a></li>
+    <li><a href="#Section3">Visualizations</a></li>
+    <li><a href="#Section4">Conclusion</a></li>
+    <li><a href="#Section5">References</a></li>
+  </ol>
+</div>
+
+<h1>Winning the Major League Baseball World Series</h1>
+<hh2>
+	<img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+    <span style="color: gray" id="author">By </span>
+    <span style="color: gray" id="name">Joyce Zheng</span>
+    <span style="color: gray" id="date">- Apr 27, 2019</span>
+  </h3>
+<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/spring_2019/winning-the-mlb-world-series/titlePic.jpg' %}" style="margin:auto"></img><br><br>
+<div id="Section1">
+<br>
+
+<div id="Introduction">
+  <h3>Introduction</h3>
+    <p>
+      In this research project, I will study how certain variables may be associated with a Major League Baseball
+	  team’s shot at winning the World Series. Variables that will be studied include attendance numbers, opening day
+	  payroll, and the number of all-star players. Simple linear regression in Python will be utilized to analyze
+	  these potential associations. I chose this project because of personal interest in baseball. It is fascinating
+	  how each game plays out so differently from the next due to many different variables that affect how a game turns
+	  out. Analyzers have traditionally focused on variables such as the number of wins and who the starting pitcher is
+	  to determine the shot at which a team has at getting to the World Series. I will branch out a bit and look at
+	  some unconventional variables that are arguably just as important.
+    </p>
+</div>
+
+<div id="DataAnalysis">
+  <h3>Data Analysis</h3>
+    <p>
+      I found all my datasets through a quick Google search. It took me to a large database on Kaggle with lots of
+	  information that I was looking for. I selected datasets for three variables: starting salaries, number of all-stars
+	  per MLB team, and home game attendance. I chose starting salaries because how much a team decides to spend in a
+	  given season depends on how well they predict they will do; ‘better’ teams tend to spend more on luxury players
+	  while ‘inferior’ teams decide to not splurge on players. The All-Star Game that takes place in the middle of the
+	  season features players from all teams. These players are the top players in their respective positions. Fans vote
+	  on who is selected based off of performance. I chose home game attendance because more popular teams tend to have
+	  more fans and home game turnout. This may be due to how good a team is playing in a given season. Before any data
+	  analysis was conducted, I analyzed all the datasets and did some data cleaning. I had to select for only a particular
+	  year’s data (2016), as the datasets went back to 1985. I did not have to do any further data cleaning after that.
+	  Kaggle made things easier for me. Finding win percentages for each MLB team in 2016 was a bit difficult. I could not
+	  find a public dataset on Kaggle to use, so I had to go to a credible website and manually input those values into a
+	  dataframe. After I cleaned the data, I created bar graphs to visualize the spread of data that I was working with.
+	  I then performed linear regression and analyzed the associations. It was a bit difficult writing code to clean the
+	  datasets and conduct linear regression. I had to learn how to use the library as I progressed through the project.
+	  It was definitely a very insightful process.
+    </p>
+</div>
+
+<div id="Visualizations">
+  <h3>Visualizations</h3>
+    <p>
+      I generated bar graphs to visualize the spread of data for each of the variables. These visualizations enabled me to
+	  gain a better sense of the data that I was working with. I then performed simple linear regression to analyze potential
+	  associations between win percentages and each of the respective variables.
+    </p>
+
+	<img src="{% static 'usa_website/images/blog/rp/spring_2019/winning-the-mlb-world-series/chart1.png' %}" style="margin:auto"></img><br><br>
+	<p>
+	This bar graph displays the probability of winning the World Series (pre-season predictions).
+	There is a tail of data on the right.
+	</p>
+
+	<img src="{% static 'usa_website/images/blog/rp/spring_2019/winning-the-mlb-world-series/chart2.png' %}" style="margin:auto"></img><br><br>
+	<p>
+	This bar graph displays the starting salaries for MLB teams.
+	There is a slow decline in amount spent as one looks from left to right.
+	</p>
+
+	<img src="{% static 'usa_website/images/blog/rp/spring_2019/winning-the-mlb-world-series/chart3.png' %}" style="margin:auto"></img><br><br>
+	<p>
+	This is a bar graph of the number of all-star players for each MLB team.
+	It is more common for teams to send less representatives to the All-Star game than to send multiple.
+	In this given year, the Chicago Cubs was the exception, sending 5 players to the mid-summer classic.
+	</p>
+
+	<img src="{% static 'usa_website/images/blog/rp/spring_2019/winning-the-mlb-world-series/chart4.png' %}" style="margin:auto"></img><br><br>
+	<p>
+	This is a bar graph of home game attendance for MLB teams.
+	There is a gradual decline in attendance numbers among the teams.
+	</p>
+
+	<img src="{% static 'usa_website/images/blog/rp/spring_2019/winning-the-mlb-world-series/chart5.png' %}" style="margin:auto"></img><br><br>
+
+	<img src="{% static 'usa_website/images/blog/rp/spring_2019/winning-the-mlb-world-series/chart6.png' %}" style="margin:auto"></img><br><br>
+	<p>
+	The correlation coefficient is approximately 0.48.
+	This means that there is a positive association between
+	win percentages and salaries.
+	However, this association is not terribly strong.
+	About 23% of variability of win percentages is explained by the
+	team salaries at the beginning of the season.
+	Based off these observations, utilizing a different method to
+	analyze associations may work out better and be more accurate.
+	</p>
+
+	<img src="{% static 'usa_website/images/blog/rp/spring_2019/winning-the-mlb-world-series/chart7.png' %}" style="margin:auto"></img><br><br>
+
+	<img src="{% static 'usa_website/images/blog/rp/spring_2019/winning-the-mlb-world-series/chart8.png' %}" style="margin:auto"></img><br><br>
+	<p>
+	The correlation coefficient is approximately 0.57.
+	This indicates a positive association between win percentages and the number of All-Stars on a MLB team.
+	This association is not very strong. Approximately 32% of variability of win percentages can be explained
+	by the number of All-Stars on each MLB team. This variability is higher than that for win percentages & salaries.
+	</p>
+
+	<img src="{% static 'usa_website/images/blog/rp/spring_2019/winning-the-mlb-world-series/chart9.png' %}" style="margin:auto"></img><br><br>
+
+	<img src="{% static 'usa_website/images/blog/rp/spring_2019/winning-the-mlb-world-series/chart10.png' %}" style="margin:auto"></img><br><br>
+	<p>
+	The correlation coefficient for this model is 0.54.
+	This is higher than the correlation coefficient for salaries & win percentages,
+	but lower than the correlation coefficient for number of all-stars & win percentages.
+	Approximately 29% of variability in win percentages can be explained by the attendance numbers for each MLB team.
+	This is a fair variability value.
+	</p>
+</div>
+
+<div id="Conclusion">
+  <h3>Conclusion</h3>
+    <p>
+      All the linear regression models that I generated and analyzed pointed towards a positive association between the variable
+	  and the probability of a team winning the MLB World Series. However, none of these models had high correlation coefficients,
+	  so utilizing another model to analyze the data would probably be more effective. The models only slightly convinced me that
+	  attendance numbers, opening day payroll/salary, and the number of all-star players influence the win percentage of MLB
+	  teams. Despite not being able to come to any strong conclusions, this research project was very rewarding. I have gained
+	  greater insight into baseball and its unpredictable nature.
+
+    </p>
+</div>
+
+<div id="References">
+  <h3>References</h3>
+    <p>
+      	Barry, Daniel, and J. A. Hartigan. “Choice Models for Predicting Divisional Winners in Major League Baseball.” Journal of the
+	  	American Statistical Association, vol. 88, no. 423, 1993, pp. 766-774.
+    </p>
+
+	<p>
+		Boice, Jay, and Nate Silver. “2016 MLB Predictions.” FiveThiryEight, ESPN Internet Ventures,
+		https://projects.fivethirtyeight.com/2016-mlb-predictions/.
+	</p>
+
+	<p>
+		Lahman, Sean. “The Lahman Baseball Database.” SeanLahman, SeanLahman.com, 31 March 2018,
+		http://www.seanlahman.com/files/database/readme2017.txt.
+	</p>
+</div>
+
+{% endblock %}

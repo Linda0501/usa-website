@@ -1,0 +1,177 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title>Project Title</title>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<!--
+<style>
+  table, th, td{
+    border: 1px solid black;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+  }
+</style>
+-->
+
+<div class=Blog_Nav>
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Introduction</a></li>
+    <li><a href="#Section2">Data Analysis</a></li>
+    <li><a href="#Section3">Visualizations</a></li>
+    <li><a href="#Section4">Conclusion</a></li>
+    <li><a href="#Section5">Works Cited</a></li>
+  </ol>
+</div>
+<h1>Predicting Horse Races</h1>
+<h2>
+    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+    <span style="color: gray" id="author">By </span>
+    <span style="color: gray" id="name">Irene Wang</span>
+    <span style="color: gray" id="date">- Apr 27, 2019</span>
+  </h2>
+<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/titlePic.jpg' %}" style="margin:auto"></img><br><br>
+<div id="Section1">
+<div id="Section1">
+  <h3>Introduction</h3>
+    <p>
+    In this research paper, I was predicting the outcome of horse races. I used R in this project to do all of my data cleaning, exploration, and visualization. I chose to do research on predicting the outcomes of horse races because horse racing has always been very close to my heart. I grew up near a horse racing track, and my parents would often take my sister and I to the races to try our luck. We never had a strategy to place our bets, so we never won more than three dollars. I want to see if there is a way to predict the winners of horse races so that we can maximize our bets.
+    </p>
+    <!-- This is how you add an image! style="margin:auto" centers the image. -->
+
+    <!--img src="{% static 'predicting-horse-races/Picture1.png' %" style = "margin:auto"></img><br><br> -->
+</div>
+
+<div id="Section2">
+  <h3>Data Analysis</h3>
+    <p>
+      I found my datasets on Kaggle, and so my process of cleaning was not too difficult. The Kaggle dataset was already had no missing values and all the units were consistent to begin with, and the units were consistent among all of the data tables. I had to merge the data tables forms_data, runners_data, and market_data together so that I had all the information I needed to predict the winners. The dataset forms_data contained information about the racehorses themselves, runners_data contained information on the trainers and riders, and market_data contained information about the markets in which the horses belonged to. Each row in the combined dataset contained information about the performances of each horse.
+    </p>
+    <p>My first step was to split the dataset into training and test datasets. I did that by splitting the data into two parts: the first 6000 entries belonged to the training set, and the rest belonged to the test set. I then did the same transformations on the test and training sets. I wanted to find the proportion won by trainer-venues and riders, and use feature selection to select which factors affect the performance of the horses most. I chose trainer-venue because the quality of a horse’s trainer can have an effect on how well the horse performs in the sense that a trainer that knows his horse well knows the best way to train it to maximize its performance (Ely, E R, et al). A good venue also has an effect on the horse’s performance, not just based on how well the venue is maintained but also based on how familiar the horse is with that particular track. Riders also have an effect on the way a horse performs, not just in the sense that a lighter rider means that the horse is carrying less weight, but also in the sense that a rider that can pose well and is well connected with his horse knows how to read the horse’s body language and motivate it to run faster (Kluger). I will only describe my process for trainer-venues in this paper because I used the same strategies and picked the same features for the riders. Then I found the percentage win ratio for each trainer-value (and rider), and used visualizations to find which features have an effect on the percentage win ratios, and used those features to perform Gaussian Naive Bayes analysis. The features I chose were: class_level_id', 'overall_wins', 'overall_places', 'days_since_last_run', 'trainer_id', 'rider_id', 'handicap_weight', 'form_rating_one', 'form_rating_two', 'class_stronger_places', and 'trainer_venue_win_ratio'. I decided to use Gaussian Naive Bayes because each pairwise horse’s performance is independent since they were often competing in different races anyway. This makes the assumption that the horses were pairwise independent reasonable. These are my precision-recall values:
+</p>
+<table style="border: 1px solid black; margin-left:auto; margin-right:auto; text-align: center;">
+  <tr style="border: 1px solid black;">
+    <th></th>
+    <th>precision</th>
+    <th>recall</th>
+    <th>f1</th>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>0</td>
+    <td>0.95447481</td>
+    <td>0.95447481</td>
+    <td>0.95447481</td>
+  </tr>
+  <tr style="border: 1px solid black;">
+    <td>1</td>
+    <td>0.07395498</td>
+    <td>0.07395498</td>
+    <td>0.07395498</td>
+  </tr>
+</table>
+</div>
+
+<div id="Section3">
+  <h3>Visualizations</h3>
+    <p>
+      I picked these visualizations because there seemed to be some kind of association between them and the win ratios in the trainer-venue and the riders. I picked them because there was a distinct pattern between the features and the win ratios. These visualizations told me which features to select.
+    </p>
+    <br>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/Picture1.png' %}" style="margin:auto"></img>
+    <br>
+    <br>
+    <p>
+      This graph shows the association between handicap weight and trainer-venue win ratio. As we can see from the graph, heavier handicap weights have a smaller trainer-venue win ratio as shown by the right tail. This makes sense because if a horse has to carry a lot of weight, it would have to use a lot of energy just to maintain that weight that it cannot use on running faster. It was surprising that there were small win ratios on the left side of the distribution. This could be because horses who use a smaller handicap weight are weaker in general than the ones who carry more weight, and as a result did not have much capacity to run very fast to begin with.
+    </p>
+    <br>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/Picture2.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      This graph shows the relationship between days since last run and trainer-venue win ratio. As we can see from the graph, the large right tail indicates that a horse that had not run for around a month have increasingly small win ratios. On average, the days since last run that maximizes the trainer-venue win ratio is around 15-20 days.
+    </p>
+    <br>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/Picture3.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      This graph shows the relationship between the horse’s class and the trainer-venue win ratio. The class level ID of 1 indicates that the horse is in the same class as other horses, 2 indicates that the horse is up in class, and 3 indicates that the horse was down in class. It makes sense that a horse would perform best when it is against other horses in its same class because the rider would pay extra attention to the horse to make it run faster. If the horse was down a class from the other horses, then it already was not really at the level as the other horses since it is competing with horses that are better than it is. If it is up a class, it also makes sense that the win ratio would be less because the only way for horses compete with other horses that are at a lower class than they are is if they get old or injured. Either way their physical status would not be as robust.
+    </p>
+    <br>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/Picture4.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      This graph shows the relationship between track starts and the trainer-venue win ratio. As we can see from the large right tail, the more frequent track starts is related to a smaller win ratio.
+    </p>
+    <p>
+      Horses also are rated on their form. Form refers to how well the horse is running and the effectiveness in which the riders are positioned on top of their horses. They are rated on their forms twice, and the two numbers are stored in form_rating_one, and form_rating_two. A higher rating refers to better form.
+    </p>
+    <br>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/Picture5.png' %}" style="margin:auto"></img>
+    <br>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/Picture6.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      From both of these graphs, we can see that the horses with the best forms have the best win ratio. There is an outlier in the form = 0 bin of this histogram.
+    </p>
+    <br>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/Picture7.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      This graph shows the association between handicap weight and rider win ratio. As we can see from the graph, heavier handicap weights have a smaller rider win ratio as shown by the right tail. This makes sense because if a horse has to carry a lot of weight, it would have to use a lot of energy just to maintain that weight that it cannot use on running faster. It was surprising that there were small win ratios on the left side of the distribution. This could be because horses who use a smaller handicap weight are weaker in general than the ones who carry more weight, and as a result did not have much capacity to run very fast to begin with.
+    </p>
+    <br>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/Picture8.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      This graph shows the relationship between days since last run and rider win ratio. As we can see from the graph, the large right tail indicates that a horse that had not run for around a month have increasingly small win ratios. On average, the days since last run that maximizes the  rider win ratio is around 15-20 days.
+    </p>
+    <br>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/Picture9.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      This graph shows the relationship between the horse’s class and the rider win ratio. The class level ID of 1 indicates that the horse is in the same class as other horses, 2 indicates that the horse is up in class, and 3 indicates that the horse was down in class. It makes sense that a horse would perform best when it is against other horses in its same class because the rider would pay extra attention to the horse to make it run faster. If the horse was down a class from the other horses, then it already was not really at the level as the other horses since it is competing with horses that are better than it is. If it is up a class, it also makes sense that the win ratio would be less because the only way for horses compete with other horses that are at a lower class than they are is if they get old or injured. Either way their physical status would not be as robust.
+    </p>
+    <br>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/Picture10.png' %}" style="margin:auto"></img>
+    <br>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/Picture11.png' %}" style="margin:auto"></img>
+    <br>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/predicting-horse-races/Picture12.png' %}" style="margin:auto"></img>
+    <br>
+    <br>
+    <p>
+      From both of these graphs, we can see that the horses with the best forms have the best win ratio. There is an outlier in the form = 0 bin of this histogram.
+    </p>
+</div>
+
+<div id="Section4">
+  <h3>Conclusion</h3>
+    <p>
+      Some key insights that I found were that class level, overall wins, overall places, days since last run, trainer, rider, handicap weights, and form ratings are all things we need to take into consideration when placing bets. But the training accuracy and recall are much higher than the test accuracy. This means that either my model is not that good or that horses are unpredictable. Because of this, I wasn’t able to determine a way to maximize bets.
+    </p>
+</div>
+
+<div id="Section5">
+  <h3>Work Cited</h3>
+    <p>
+      Lukebyrne. “Horses For Courses.” Kaggle, 14 July 2018, <a href="www.kaggle.com/lukebyrne/horses-for-courses">www.kaggle.com/lukebyrne/horses-for-courses.</a>
+    </p>
+    <p>
+      Ely, E R, et al. “The Effect of Exercise Regimens on Racing Performance in National Hunt Racehorses.” Equine Veterinary Journal. Supplement, U.S. National Library of Medicine, Nov. 2010, <a href="www.ncbi.nlm.nih.gov/pubmed/2105907">www.ncbi.nlm.nih.gov/pubmed/21059071.</a>
+    </p>
+    <p>
+      Kluger, Jeffrey. “Secrets of Jockeying: Why Horses Go Fast.” Time, Time Inc., 21 July 2009, <a href="content.time.com/time/health/article/0,8599,1911101,00.html"> content.time.com/time/health/article/0,8599,1911101,00.html.</a>
+    </p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,284 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+<title>Meaning of Probabilities in Social Sciences</title>
+<head>
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<h1>Meaning of Probabilities in Social Sciences</h1>
+<h2>
+  <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+    <span style="color: gray" id="author">By </span>
+    <span style="color: gray" id="name">Yehchan Yoo</span>
+    <span style="color: gray" id="date">- Nov 26, 2018</span>
+  </h2>
+<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/fall_2018/meaning-of-probabilities-in-social-sciences/titlePic.jpg' %}" style="margin:auto"></img><br><br>
+
+<div class=Blog_Nav>
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Introduction</a></li>
+    <li><a href="#Section2">Defining Probability Mathematically</a></li>
+    <li><a href="#Section3">Starting with the Classical</a></li>
+    <li><a href="#Section4">Critical Objections to the Classical</a></li>
+    <li><a href="#Section5">Making Probability Empirical: Frequentist Interpretation</a></li>
+    <li><a href="#Section6">Problems with Frequentist Interpretation</a></li>
+    <li><a href="#Section7">Making Probability Personal: Bayesian Interpretation</a></li>
+    <li><a href="#Section8">Problems with Bayesian Interpretation</a></li>
+    <li><a href="#Section9">Conclusion</a></li>
+  </ol>
+</div>
+<div id="Section1">
+  <h3>Introduction</h3>
+    <p>
+      As a declared Statistics major interested in social sciences, I have been finding that probability is used a lot in social science research.
+      <ul>
+        <li>
+          To study a certain population, social scientists often use probability sampling – a technique in which they select members from a target population through an algorithm in which every member of the population has some calculable probability of being selected.\(^1\)
+        </li>
+        <li>
+          Social scientists make statistical models to make probabilistic predictions for the future -- most notably, those working at FiveThirtyEight, a news website known for forecasting various political elections in the United States.\(^2\) The picture below shows FiveThirtyEight’s probabilistic prediction for the 2016 Presidential Election on the day of the election.\(^3\) 
+        </li>
+        <li>
+          Social scientists also make probabilistic predictions for the future without using statistical models. For instance, in its 2018 report “Cause for concern? The top 10 risks to the global economy”, The Economist Intelligence Unit suggested that there is a very low probability – 0 to 10 percent – that multiple countries will withdraw from the Eurozone in the next two years.\(^4\)
+        </li>
+      </ul>
+    </p>
+    <!-- This is how you add an image! style="margin:auto" centers the image. -->
+    <img src="{% static 'usa_website/images/blog/rp/fall_2018/meaning-of-probabilities-in-social-sciences/image1.jpg' %}" style="margin:auto"></img><br><br>
+    <p>
+      But I often wonder: <b>what do these probabilities fundamentally mean?</b> When we say there is a 0 to 10 percent chance that multiple countries will withdraw from Eurozone in the next two years, how did that probability come to be? When FiveThirtyEight uses complex algorithms to compute the probability of a party winning the House or a court looks at the characteristics of a criminal to calculate the probability of that criminal committing a crime in the future, do these resulting probabilities have any mathematical or statistical significance?
+    </p>
+    <p>
+      I was inspired to ask this question after attending an event sponsored by the Statistics Undergraduate Student Association in my first semester at the University of California, Berkeley. In the event, statistics professor <a href="https://statistics.berkeley.edu/people/philip-stark">Philip Stark</a> discussed the meanings behind the numbers we see in models like FiveThirtyEight’s, questioning the utility of these numbers.
+    </p>
+    <p>
+      In my quest to explore the meaning behind probability values, and perhaps to also inform my social science-oriented and statistics-oriented friends about the meaning of probabilities they might use on a daily basis, I decided to conduct personal research on prominent probability interpretations and write this research article on these interpretations in relation to social science research.
+    </p>
+    <p>
+      With my ramblings out of the way, let us head straight into the world of probability interpretations!
+    </p>
+    <p>
+      Before starting, I want to note that:
+      <ul>
+        <li>Codes in this article will be in R since I personally find R to be prevalent among those who do statistical calculations for social science research. That said, you do not have to be fluent in R to read this article.</li>
+      </ul>
+    </p>
+  </div>
+
+<div id="Section2">
+  <h3>Defining Probability Mathematically</h3>
+    <p>
+      Andrey Nikolayevich Kolmogorov (1903-1987) was a Soviet mathematician who conducted prominent research on various fields of mathematics, such as set theory, harmonic analysis, and number theory.\(^5\)
+    </p>
+    <p>But his most famous achievements come from his research in probability theory, and one of his major achievements in probability theory involved <b>mathematically defining how probability values should be.</b></p>
+    <p>Let \(E\) represent the set of all possible outcomes that can occur from an event X, and let \(X_i\) represent one of these possible outcomes. Let \(P(X_i)\) represent the probability of outcome \(X_i\) occurring for any \(X_i \in E\).</p>
+    <p>Kolmogorov’s axioms state that:</p>
+    <ol>
+      <li>\[0 < P(X_i) < 1, \forall X_i \in E\]</li>
+      <li>\[P(X_i)+P(X_i)=1,∀ X_i ∈ E\] where \(X_i\) is the complement of outcome \(X_i\)</li>
+      <li>Let S be a subset of E consisting of some mutually exclusive outcomes of event X. Then
+          \[P(⋃{X_m \in S} Xm)= \sum_{X_m∈S}P(X_m)\]</li>
+    </ol>
+    <p>In everyday language, these axioms state that:</p>
+    <ol>
+      <li><b>All probability values are between 0 and 1.</b></li>
+      <li><b>The probability of an outcome happening for an event or of the outcome not happening for the event – that is, the probability of an event – is 1.</b></li>
+      <li><b>The probability of occurrence of one of several mutually exclusive outcomes – outcomes of an event that cannot occur at the same time as another – is the sum of the probabilities of these outcomes occurring by themselves.\(^{6,7}\)</b></li>
+    </ol>
+    <p>For instance, the probability of rolling a 1 or a number other than 1 from tossing a six-sided die -- that is, the probability of getting any outcome from tossing the die -- is 1.</p>
+    <p>These axioms are crucial when dealing with probability values mathematically.</p>
+    <b>But these axioms do not explain what the fundamental nature of these probability values is.</b>
+    <p>For instance, it can be seen from Kolmogorov’s axioms that the probability of rolling a 1 or a 2 is between 0 and 1, is 1 minus the probability of not rolling a 1 or a 2, and is the sum of the probability of rolling a 1 and the probability of rolling a 2. But how would we obtain this probability value? What is the meaning behind this probability value?</p>
+    <p>One might be tempted to say (assuming the die is fair) the probability of rolling a 1 or a 2 is \(\frac{1}{3}\). But how would we know that this probability is \(\frac{1}{3}\)? Can we be sure that this probability is \(\frac{1}{3}\)</p>
+    <p>This is where probability interpretations come in to attempt to resolve this issue.</p>
+  </div>
+
+<div id="Section3">
+  <h3>Starting with the Classical</h3>
+    <p>
+      When we initially learn about probability, we often see \(P(X)\) defined as \(frac{m}{n}\), where:
+      <ul>
+        <li>m = the number of desired possible outcomes</li>
+        <li>n = = the number of all possible outcomes with all possible outcomes being equally likely\(^7\)</li>
+      </ul>
+    </p>
+    <p>This idea of probability comes from a probability interpretation named the classical interpretation of probability.</p>
+    <p>For instance, if you threw a fair six-sided die, you have a 1/6 chance of rolling a 1, since</p>
+    <p>\[P(Picking 0.5)= \frac{\text{Number of possible outcomes in which 0.5 is picked}}{\text{Number of possible outcomes}}=\frac{1}{\infty}=0\]</p>
+    <p>However, the probability of picking a real number between 0.2 and 0.3 would be 0.1, as</p>
+    <p>\[P(\text{Picking a number between 0.2 and 0.3}) = \frac{\text{Number of chunks in which a desired number is picked}}{\text{Number of chunks of width 0.1 in [0,1): [0,0.1),[0.1,0.2),...,[0.9,1)}}  = 0.1\] </p>
+  </div>
+
+<div id="Section4">
+  <h3>Critical Objections to the Classical</h3>
+    <p>
+        A major problem with this interpretation of probability is that <b>there can be multiple ways of “reducing all the events of the same kind to a certain number of cases equally possible” for a given situation.</b> Bertrand’s paradox helps demonstrate this problem\(^{12}\): (The applet was made by me. If the applet below does not work, go to this <a href="https://www.geogebra.org/m/knm5erhz">link</a>.)
+    </p>
+    <p>A simpler example would be a situation in which a factory is making cubes with random real side lengths between 0 and 1 foot (with all possible side length values being equally likely). What would be the probability that a randomly selected cube from the factory has a side length between 0 and 1/2 feet? (Define X to be the event in which the side length of a randomly selected cube from the factory is between 0 and 1/2 feet.)
+    </p>
+    <ul>
+      <li>Looking at the side length, \[P(X)=\frac{\text{Length of the range of desired side lengths}}{\text{Length of the range of all possible side lengths}}= \frac{1/2 feet - 0 feet}{1 foot - 0 feet}=frac{1}{2}\]</li>
+      <li>Looking at the surface area, \[P(X)= \frac{(1/2)^2 feet - 0 feet}{1 foot - 0 feet}= \frac{1}{4}\]</li>
+      <li>Looking at the volume\(^8\), \[P(X) = \frac{1}{8}\]</li>
+    </ul>
+    <p>These situations demonstrate that one can end up with multiple different possible values for an unknown probability from using the principle of indifference under the classical interpretation of probability.</p>
+    <p><b>It is also controversial whether it is justified to derive probability values from ignorance using the principle of indifference</b>. It can be argued that the principle provides a reasonable path to dealing with the unknowns, but it can also be argued that it is also reasonable to assign ranges of possible values to probabilities of uncertain events (e.g. saying that the chance an event will happen in a certain way is between 0.4 and 0.6, not exactly 0.5) or to just not assign any values to such probabilities due to a lack of evidence on what the values of these probabilities can be.\(^8\) </p>
+</div>
+
+<div id="Section5">
+  <h3>Making Probability Empirical: Frequentist Interpretation</h3>
+    <p>
+        Such problems with the classical interpretation of probability led to the rise of two major interpretations of probability. One of these interpretations is the <i>frequentist interpretation</i>.
+    </p>
+    <p>The frequentist interpretation of probability states that</p>
+    <p>\[ \text{Probability of the desired outcome for an event} = \displaystyle{\lim_{n \to \infty}} mn\]</p>
+    <p>where</p>
+    <ul>
+      <li>n = the number of times the event occurs</li>         
+      <li>m = the number of event occurrences that lead to the desired outcome.\(^7\)</li>
+    </ul>
+    <p>For instance, assume if we flip a fair coin. By the frequentist interpretation of probability, the chance of ending up with a head is equal to the proportion of the coin flips that result in heads after flipping the coin an infinite number of times.</p>
+    <script src="https://gist.github.com/listar2000/5baaa6fb8046269fcf4920726cec6cb4.js"></script>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2018/meaning-of-probabilities-in-social-sciences/image2.png' %}" style="margin:auto"></img><br><br>
+    <p>Notice how the proportion of tosses that end up heads converges to around 0.5 as the number of tosses increases.</p>
+    <p>As \[\displaystyle{\lim_{n \to \infty}} \frac{m}{n}=0.5\] (where n = the number of tosses and m = the number of tosses that result in heads), the probability of getting head from a fair coin toss is 0.5 under the frequentist interpretation of probability.</p>    
+    <p><b>The frequentist interpretation does not require the use of the principle of indifference</b> since the probability of the desired outcome for an event is only obtained through an empirical simulation of that event under this interpretation rather than by dividing the event into individual possible outcomes.</p>
+    <p>Since the frequentist interpretation adds a sense of empiricism to the idea of probability, many of the scientific methods used in social science research today are based on this interpretation of probability.\(^7\)</p>
+    <p>Most notably, using a large simple random sample to make statistical inferences about a population is based on the frequentist interpretation of probability. So is any type of probability sampling. Probability sampling works in estimating population variables without having to consult the entirety of the population itself since a repeated collection of large samples from a population through a proper random sampling technique shows that it is very likely to get a sample with a sample variable that is close to the corresponding population variable.\(^13\)</p>
+    <p>The frequentist interpretation of probability is what lends to statistical basis to <i>positivist methodologies of social sciences</i>, which involve the use of quantitative methods such as experiments and surveying to study human society.\(^{14}\) Positivist methodologies use random sampling – a methodology based on frequentist interpretation of probability – to make statistical inferences about a targeted population.\(^{15}\)</p>
+  </div>
+
+<div id="Section6">
+  <h3>Problems with Frequentist Interpretation</h3>
+    <p>
+        The frequentist interpretation is not perfect, though, both in a statistical and a social science context.
+    </p>
+    <p>From a statistical context, while the frequentist interpretation resolves the issue of using ignorance to derive probability values by imposing an empirical definition on probability, <b>the frequentist interpretation does not provide a satisfactory resolution to Bertrand’s Paradox or similar probabilistic paradoxes.</b></p>
+    <p>If one is asked to find the probability of a randomly generated chord of a unit circle having a length greater than \(sqrt{3}\) as in <a href="https://www.geogebra.org/m/knm5erhz">Bertrand’s Paradox</a> under the frequentist interpretation, the probability value can vary depending on how a chord is generated in each iteration.</p>
+    <ul>
+      <li>Randomly generating a chord by randomly selecting the direction of the chord and the distance of the chord from the center would lead to the relative frequency of the desired outcome converging to 1/2 as the number of iterations increases.</li>
+      <li>Randomly generating a chord by randomly picking a point on the circle to be one point of the chord and then randomly picking a second point on the chord (by rotating the first point around the center by a random angle between 0 and 360 degrees) would lead to the relative frequency of the desired outcome converging to 1/3 as the number of iterations increases.
+        </li>
+      <li>Randomly generating a chord by randomly picking a point inside the circle to be the midpoint of the chord would lead to the relative frequency of the desired outcome converging to 1/4 as the number of iterations increases.\(^{12}\)</li>
+    </ul>
+    <p>Also, <b>it is physically impossible to run an event an infinite number of times, and it is difficult to see how many times an event has to be run to get a decent approximation for the probability of a certain outcome for the event</b>. Especially since the proportion of iterations of an event that lead to the desired outcome may go up and down as the number of iterations increases, it is difficult to say when the probability value of the desired outcome is accurate enough or not.\(^7\)</p>
+    <p>Because of such limitations, <b>it is impossible to be absolutely sure if a probability is accurate or not under the frequentist interpretation</b>. If a coin is flipped 100 times and all flips lead to heads, it can be that the coin is so unfair as to always flip to heads. It can also be that the coin is fair and all the flips led to heads with a small but nonzero probability of \(\frac{1}{2}^{100}\). Assuming that the coin flips are all independent of one another (i.e. what happens in one coin flip does not affect the probability of flipping a head in another coin flip) and are all random, <b>the probability of flipping a head is constant regardless of what the result of coin flips will be. But it is the result of the coin flips from which we derive our probability values for possible outcomes from a coin flip.</b></p>
+    <p>From the social science perspective, positivist methodologies based on the frequentist interpretation have been criticized for not focusing much on the motives and thoughts behind individual humans’ social actions. Even some positivists like Paul Lazarsfeld – an American sociologist known for introducing survey-based research and statistical procedures for analyzing survey data – acknowledged the existence of limitations to positivist methodologies.</p>
+    <p>Criticisms towards such methodologies led to the rise of antipositivist/interpretivist methodologies of social sciences, which employ qualitative methods such as unplanned interviews and ethnography to study human society and often employ nonprobability sampling.</p>
+    <p>The criticisms also led to the rise of <i>post-positivism</i>, which tried to resolve the problems of positivist methodologies based on the frequentist interpretation of probability by accepting the use of positivist methodologies in social science research while suggesting that the knowledge obtained from these methodologies can be disproven but can never be seen as fully true due to the use of induction in the scientific method.14 Sir Karl Popper – a British philosopher credited for introducing post-positivism – wrote in his The Logic of Scientific Discovery:</p>
+    <i>Now it is far from obvious, from a logical point of view, that we are justified in inferring universal statements from singular ones, no matter how numerous; for any conclusion drawn in this way may always turn out to be false.\(^{16}\)</i>
+    <p>As noted by Popper, in the same way a “universal statement” may not necessarily be correctly made from “singular ones”, we could just accept that any probability estimate obtained from running an event many times may be inaccurate, but may still be accepted as having some truth to it.</p>
+    <p>Last but not least, <b>the frequentist interpretation struggles at finding probabilities for hard-to-replicate or irreplicable events.</b>\(^7\) A specific societal event set at a certain future date especially are not replicable and hence are impossible to predict under the frequentist interpretation of probability; it will be very difficult to imagine replicating the 2016 United States presidential election multiple times, for instance, and see how many of those times Hillary Clinton or Donald Trump wins!</p>
+  </div>
+
+<div id="Section7">
+  <h3>Making Probability Personal: Bayesian Interpretation</h3>
+    <p>
+        In addressing this last problem comes another major interpretation of probability: <i>the subjective interpretation</i>.
+    </p>
+    <p>The <i> subjective interpretation of probability</i> simply states that a probability is a degree of belief. That is, the probability of the desired outcome for an event is the degree of belief that the outcome will occur for that event.\(^7\)</p>
+    <p>As noted at the beginning, The Economic Intelligence Unit suggested that there is there is a very low probability - 0 to 10 percent - that multiple countries will withdraw from the Eurozone in the next two years.\(^4\) This chance given by the Economic Intelligence Unit is a subjective probability based on the subjective interpretation of probability. The probability reflects the organization’s belief in how likely this event is in the next two years based on what the organization sees.
+      </p>
+    <p>This interpretation of probability is also known as the Bayesian interpretation of probability, as it is connected to a school of statistics called Bayesian statistics. Bayesian statistics revolves around Bayes’ Theorem/Law, which states</p>
+    <p>\[P(H|E)=\frac{P(E|H)}{P(E)}P(H)\]
+        where H = hypothesis and E = evidence.\(^{17,18}\)
+    </p>
+    <p><b>Bayesian statistics, along with the Bayesian/subjective interpretation of probability, is used in social sciences for statistical inference and statistical prediction.</b> Bayesian statistics can be used for calculating the chance of hard-to-replicate/irreplicable outcomes – like a candidate winning an election or the stock market going up after a certain period of time – based on past specific events and/or certain present conditions.</p>
+    <p>Law is a place where Bayesian statistics can be applied handily for decision analysis and statistical inference. Let’s say a person accused of committing a crime is on trial and the judge must decide whether the person is guilty and what the optimal sentencing for that person should be.</p>
+    <p>Looking at whether the person is guilty, let G be the case that the person is guilty and ∼G be the case that the person is not guilty. Let \(P(G)\) be the probability that the person is guilty, \(P(∼G)\) be the probability that the person is not guilty.</p>
+    <p>Most importantly, let \[o(G)=P(G)P(∼G)\] be the odd that the person is guilty (so that the person has an o(G) to 1 odds of being guilty) and \[o(G|E)=P(G|E)P(∼G|E)\] be the odd that the person is guilty in light of the evidence.</p>
+    <p>During the court trial, evidence E is raised. The judge may, from his/her beliefs, try to derive her own probabilities that the evidence shows up if the person is guilty \(P(E|G)\) and that the evidence shows up if the person is not guilty \(P(E|∼G)\) throughout the trial.</p>
+    <p>Then, from here, we see</p>
+    <img style="max-width: 40%"" src="{% static 'usa_website/images/blog/rp/fall_2018/meaning-of-probabilities-in-social-sciences/image3.jpg' %}" style="margin:auto"></img><br><br>
+    <p>Lawyers in the trial will likely deal with both \(P(E|G)\) and \(P(E|∼G)\), as the lawyers will argue about how the evidence helps prove or disprove the person’s guilt.</p>
+    <p>If additional pieces of evidence – say, like \(E_2\) – shows up, then likelihood ratio \(\frac{P(E2|G)}{P(E2|∼G)}\) can be multiplied to \(o(G|E)\) to find the odds of the criminal being guilty in light of both E and \(E_2\).</p>
+    pAfter all the possible evidence is collected, the odds of the criminal being guilty in light of all the evidence can be used to determine whether the criminal is guilty or not. The process above shows how Bayesian statistics and Bayesian interpretation of probability can be used for statistical inference.\(^{19}\)
+  </div>
+
+<div id="Section8">
+  <h3>Problems with Bayesian Interpretation</h3>
+  <p>
+    The Bayesian interpretation is not philosophically perfect, however. For one, <b>it can be surprisingly easy for one to create probability values out of his/her beliefs that do not follow Kolmogorov’s axioms</b>. For instance, one could say that the probability of the event that Dow Jones rises tomorrow is 60% and the probability of the complement event that Dow Jones not rising tomorrow is 60%. As these two values add up to 120%, not 100%, Kolmogorov’s second axiom is violated.\(^7\) <b>However, one can account for this problem by making sure his/her probabilities do not violate Kolmogorov’s axioms.</b>
+  </p>
+  <p>Another objection to Bayesian interpretation is that the <b>Bayesian interpretation can lead to multiple different possible conclusions for what the probability value of an outcome should be depending on what belief different people have for the occurrence of the outcome.</b></p>
+  <p><b>However, one can argue against this is neither a solid argument nor a huge problem.</b></p>
+  <p>First of all, the objection implies that two people with the same knowledge of an event should come up with the same probability value for an outcome of that event. However, it both is hard to define and is impractical to see any two people having the exact same knowledge about an event. Also, if the implication is true, the probability should be able to be calculated without any reference to a person; unfortunately, there is no truly infallible way to calculate a probability without referring to a person.</p>
+  <p>Second, even if multiple different values are possible for a probability value, a widespread consensus on what that probability value is can help reduce the chaos that may come from varying levels of beliefs.</p>
+  <p>In fact, to an extent, this is how scientific method works; scientists may initially be split on the probability of an outcome occurring for an event but can gain consensus on what the value of that probability should be from gaining a variety of evidence from various methods of research.\(^{20}\)</p>
+  <p>Counterarguments against the objection can also offer a solution to Bertrand’s Paradox (and similar paradoxes) as well. Bertrand’s Paradox might have three different possible solutions, but – if the academic mathematics and statistics communities came to a consensus that the answer to the paradox is most believably 1/2 – the answer to Bertrand’s Paradox can be perceived as 1/2.</p>
+  <p>It must be noted, though, that scientists may not necessarily easily come to a consensus on what the value of a probability is in some circumstances. For instance, when FiveThirtyEight asked nuclear security experts (belonging to social sciences) about what the probability of deployment of a nuclear bomb on a civilian target will be in the ten years after 2017, the experts’ answers varied widely – ranging from “I’m uncomfortable trying to put a number on that” to less than 1% to 20-25%.\(^{21}\) In such cases, the subjective interpretation of probability may lead to confusion over how likely an outcome might be.</p>
+  <p><b>There is also the question of whether humans are reliable in calculating probabilities for certain events based on their own beliefs.</b></p>
+  <p>I once had a faculty coffee chat that I had with <a href="https://statistics.berkeley.edu/people/lisa-goldberg">Professor Lisa Goldberg</a> from the University of California, Berkeley’s Statistics Department with other students from the university’s Statistics Undergraduate Student Association. Pondering over the philosophy of probability, I asked her if subjective probabilities are meaningful probabilities or not.</p>
+  <p>To this question, Professor Goldberg said yes and noted that humans need and have evolved to use subjective probabilities in their everyday lives. According to her, humans likely evolved to use the concept of subjective probabilities to help describe the uncertainty they faced in their lives and subjective probabilities still remain a crucial tool of measurement of uncertainty in human societies.</b></p>
+  <p>The professor does have a point, in my view. <b>Probabilities – including subjective probabilities – are a human invention, and subjective probabilities are such a prominent tool in describing the present and predicting the future among humans that it is hard to dismiss subjective probabilities as unreliable figures that humans are not meant to use.</b></p>
+  <p><b>However, it is also difficult to say that humans evolved to reliably interpret probability values</b>, especially as recent studies revealed how humans can think irrationally in probabilistic situations.</p>
+  <p>Notably, psychologist Daniel Kahneman – who won Nobel Prize for Economics for merging psychology with economic research – worked with Amos Tversky to study how humans perceive probability.</p>
+  <p>During their research, they once asked their subjects to choose between the following two prospects:</p>
+  <ol type="A">
+    <li>100% probability of losing $3,000</li>
+    <li>80% probability of losing $4,000 with the remaining 20% probability being of losing nothing</li>
+  </ol>
+  <p>Prospect A has an expected loss of 3000×100%=3000 dollars, while Prospect B has an expected loss of 4000×80%+0×20%=3200 dollars.</p>
+  <p>As Prospect B has a higher expected loss, one might think a rational person would choose Prospect A. However, 92% of the subjects chose Prospect B over Prospect A.</p>
+  <p>The result from this part of the research, along with results from other parts of the research, revealed that people tend to be risk-happy when choosing between a greater loss that is very likely and a smaller loss that is certain, even making decisions that are not necessarily rational by expected value.\(^{22}\)</p>
+  <p>In essence, subjective probabilities are such a prominent human-made tool of measuring uncertainty that the use of these probabilities in human societies cannot be just dismissed. But humans are not necessarily rational in their use of probability (as seen in Kahneman and Tversky’s study). So remains the question of how much we should put faith in using peoples’ degrees of belief to define probability values.</p>
+</div>
+
+<div id="Section9">
+  <h3>Conclusion</h3>
+    <p>
+        It must be noted that there are other interpretations of probability other than axiomatic, classical, frequentist, and Bayesian interpretations of probability. However, these are the most prominent interpretations in the statistics community in my observation, so I only felt the need to discuss these interpretations.
+    </p>
+    <p>Summarizing the article:</p>
+    <ul>
+      <li><i>Kolmogorov’s axioms</i> define probability mathematically.</li>
+      <li><i>Classical interpretation of probability</i> defines the probability of desired outcomes for an event as the number of desired outcomes over the number of all possible outcomes with all possible outcomes being equally likely, but faces the challenge that there may be more than one way of finding the probability of an outcome through this interpretation in certain situations – most notably, Bertrand’s paradox.</li>
+      <li><i>Frequentist interpretation of probability</i> defines the probability of desired outcomes for an event to be the number that the proportion of event occurrences that lead to the desired outcomes reaches as the number of event occurrences increases to infinity. This interpretation of probability sets the fundamentals for the positivist methodologies of social sciences but faces the challenge that it is impossible to run an event an infinite number of times and the methodologies based on this interpretation are limited in figuring out human understanding and intent behind individual human actions.</li>
+      <li><i>Bayesian/subjective interpretation of probability</i> defines probability as personal degree of belief and is part of a school of statistics called the Bayesian statistics. This interpretation of probability is useful in statistical inference and statistical predictions but faces the challenge that humans might be not unified and rational in their derivation of probability values based on their degrees of belief.</li>
+    </ul>
+    <p>What I find fascinating here is that, <b>while probabilities are used to measure uncertainty in the real world, probabilities themselves often have meanings that are unclear or uncertain.</b> This does not mean probabilities should not be used in academic research, including social science research; rather, this means that everyone should think more deeply about what the probability values they encounter both in their everyday lives and in their research actually mean rather than taking these probability values for granted.</p>
+</div>
+
+
+
+<div id="Section10">
+  <h3>Work Used for Research</h3>
+  <p>
+  1.Social Science Research: Principles, Methods, and Practices by Anol Bhattarcharjee, p. 67<br>
+  2.“Forecasting the race for the House” (https://projects.fivethirtyeight.com/2018-midterm-election-forecast/house/?ex_cid=midterms-header), “Forecasting the race for the Senate” (https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate/?ex_cid=midterms-header), “Forecasting the races for governor” (https://projects.fivethirtyeight.com/2018-midterm-election-forecast/governor/?ex_cid=midterms-header) from FiveThirtyEight<br>
+  3.“Who will win the presidency?” (https://projects.fivethirtyeight.com/2016-election-forecast/) from FiveThirtyEight<br>
+  4.“Cause for concern? The top 10 risks to the global economy” from The Economist Intelligence Unit, p. 4<br>
+  5.“Andrey Nikolayevich Kolmogorov” (https://www.britannica.com/biography/Andrey-Nikolayevich-Kolmogorov) from Encyclopedia Britannica<br>
+  6.“Kolmogorov’s Axioms” (http://mathworld.wolfram.com/KolmogorovsAxioms.html) from Wolfram MathWorld<br>
+  7.“What Is Probability?” (https://web.ma.utexas.edu/users/mks/statmistakes/probability.html) from the University of Texas at Austin’s Department of Mathematics<br>
+  8.“Interpretations of Probability” (https://plato.stanford.edu/entries/probability-interpret/) from Stanford Encyclopedia of Philosophy<br>
+  9.A Philosophical Essay on Probabilities (https://books.google.com/books?id=WxoPAAAAIAAJ) by Pierre Simon marquis de Laplace, pages 6-7<br>
+  10.“Principle of Insufficient Reason” (http://mathworld.wolfram.com/PrincipleofInsufficientReason.html) from Wolfram MathWorld<br>
+  11.a webpage ( http://mathcentral.uregina.ca/QQ/database/QQ.02.06/evan1.html) from mathcentral.uregina.ca<br>
+  12.“Bertrand paradox” (https://www.encyclopediaofmath.org/index.php/Bertrand_paradox) from Encyclopedia of Mathematics, “Bertrand’s paradox: Solving the ‘hard problem’” (https://medium.com/quantum-physics/bertrands-paradox-9a6789dcf02e) from Medium, “Bertrand’s Paradox” (http://web.mit.edu/tee/www/bertrand/problem.html) from MIT<br>
+  13.“Empirical Distribution of a Statistic” (https://www.inferentialthinking.com/chapters/10/3/Empirical_Distribution_of_a_Statistic) from Computational and Inferential Thinking<br>
+  14.Social Science Research: Principles, Methods, and Practices by Anol Bhattarcharjee, p. 7-8<br>
+  15.Social Science Research: Principles, Methods, and Practices by Anol Bhattarcharjee, p. 104<br>
+  16.The Logic of Scientific Discovery (https://books.google.com/books/about/The_Logic_of_Scientific_Discovery.html?id=Yq6xeupNStMC) by Karl Raimund Popper, p. 4<br>
+  17.“Bayesian statistics” (http://www.scholarpedia.org/article/Bayesian_statistics) from Scholarpedia<br>
+  18.“Bayes’ Theorem and Conditional Probability” (https://brilliant.org/wiki/bayes-theorem/) from Brilliant<br>
+  19.“The Philosophy of Statistics” (http://www.jstor.org/stable/2681060) by Dennis V. Lindley; published in Journal of the Royal Statistical Society. Series D (The Statistician), Vol. 49, No. 3; p. 316-318<br>
+  20.“The Philosophy of Statistics” (http://www.jstor.org/stable/2681060) by Dennis V. Lindley; published in Journal of the Royal Statistical Society. Series D (The Statistician), Vol. 49, No. 3; p. 302-303<br>
+  21.“We’re Edging Closer to Nuclear War” (https://fivethirtyeight.com/features/were-edging-closer-to-nuclear-war/) from FiveThirtyEight<br>
+  22.“Decision-Making Under Certainty - Advanced Topics” (http://www.econport.org/econport/request?page=man_ru_advanced_prospect) from EconPort<br>
+</p>
+</div>
+
+<br><br><br>
+
+
+<style>
+  b {
+    font-weight: bold;
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title> Speech Patterns and Personality </title>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<h1>Relationship between the Big Five personality traits and speech patterns</h1>
+
+<div class="Blog_Nav">
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Introduction">Introduction</a></li>
+    <li><a href="#Methodology">Methodology</a></li>
+    <li><a href="#Results">Results</a></li>
+    <li><a href="#Conclusion">Conclusion</a></li>
+  </ol>
+</div>
+<br>
+
+<h2>
+    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+    <span style="color: gray" id="author">By </span>
+    <span style="color: gray" id="name">Zoe Liu</span>
+    <span style="color: gray" id="date">- Apr 27, 2019</span>
+  </h3>
+<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/spring_2019/personality/titlePic.png' %}" style="margin:auto"></img><br><br>
+<div id=Introduction>
+  <h3>Introduction </h3>
+  <p>
+      It has long been theorized that writing and speech is reflective of personality, since they are so core to one’s being. Initial research involved stream-of-consciousness writing, which resulted in only a minor correlation between language and personality. However, it was later hypothesized that self-narratives, a retelling of the way one’s personality is shaped by experience, will correlate more strongly with personality because self narratives involve more reflection on identity, and more likely to reveal personality traits. My research focuses on the relationship between personality traits, as defined by the Big Five personality traits of openness, conscientiousness, extraversion, agreeableness, and neuroticism, and speech patterns. 
+  </p>
+  <p>
+      I was first drawn to this topic after reading about how Facebook could predict personality traits based on the pages liked. For instance, if one liked Kesha and Jack Daniels, that person is more likely to be an extravert. I wondered if personality could be predicted by something more personal than Facebook likes, and decided to see for myself. I predict that the use of first person pronouns and filler words like “um”, “uh”, and “like”, will correlate with neuroticism, since neurotic people tend to be more introspective and thus tend to require more deliberation when speaking. I also predict that neuroticism will correlate negatively with extraversion, since neurotic people tend to be more withdrawn from society. In addition, I hypothesize that people with more neurotic tendencies also tend to subconsciously use more negative words.
+  </p>
+</div>
+
+<div id=Methodology>
+  <h3>Methodology</h3>
+  <p>
+    I gathered audio samples of roughly 5 minutes in length from 27 college-aged participants using a voice-to-text transcription app called Otter . The participants also took a 30-question Big Five personality test . The audio samples were drawn by asking participants pre-made questions  about their opinions on various topics and various aspects of their lives. For instance, one question asks “How are your midterms and classes going, and how are you doing in general?” These questions were not designed to be probing in nature, and were instead designed to maximize the length of answers (people tend to have a lot to say about midterms). Participants’ responses to the interview questions and personality tests were kept anonymous with random ID numbers, and no names were kept in the audio transcription. Participants were thoroughly briefed on the conditions of their participation and thoroughly debriefed after they were done. Participants were also given the choice of redacting their data at the end of their participation, though none chose to do so.
+  </p>
+  <p>
+    The results of the audio transcripts were cleaned of typos and parsed to extract relevant words. These words were then compared to the results of the personality test to determine the correlation between the words and personality.
+  </p>
+</div>
+
+<div id=Results>
+  <h3>Results</h3>
+    <h3>Neurotic tendencies vs speech patterns:</h3>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/personality/zoe1.png' %}" style="margin:auto">
+    <p>
+      Although I theorized that neurotic people would tend to use more first person pronouns, my results show nearly no correlation between first person pronoun use and neuroticism. (r-value = 0.035, p-value = 0.863).
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/personality/zoe2.png' %}" style="margin:auto">
+    <p>
+      In addition, there is almost no correlation between the use of unsure words and neuroticism. Here, unsure words are categorized as “um”, “uh”, “i guess”, “huh”, “dunno”, and “don't know”, with a p-value of 0.863 and an r-value of 0.035.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/personality/zoe3.png' %}" style="margin:auto">
+    <p>
+      Similarly, there is almost no correlation between neuroticism and the usage of the word “like”. (r value= 0.125, p-value=0.535). 
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/personality/zoe4.png' %}" style="margin:auto">
+    <p>
+      There is also no or a very small correlation between the polarity, or positivity, of word choice and neuroticism (r-value= 0.191, p-value= 0.340).
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/personality/zoe5.png' %}" style="margin:auto">
+    <p>
+      However, there is a more significant negative correlation between extraversion and neuroticism, as predicted. However, the p-value significance is 0.118, which leaves room for the possibility that this result is due to chance. The r-value is -.308.
+    </p>
+
+    <h3>Significant Results</h3>
+    <p>
+      One of the most significant correlations is between the percentage of first person pronouns per total words to agreeableness (r-value=-0.468, p-value=0.014). It’s interesting to note that the usage of first person pronouns increases as agreeableness decreases. It is possible that less agreeable people tend to be more concerned with themselves.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/personality/zoe6.png' %}" style="margin:auto">   
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/personality/zoe7.png' %}" style="margin:auto">
+    <p>
+      Another more significant finding is the negative correlation between person pronouns and conscientiousness (r-value=-0.376, p-value=0.053). 
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/personality/zoe8.png' %}" style="margin:auto">
+    <p>
+      This finding shows that the number of unsure words increases the less conscientious a person is (rvalue=-0.376, pvalue=0.053). 
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/personality/zoe9.png' %}" style="margin:auto">
+    <p>
+      Another significant correlation is between the percentage of “like”s used in total and the degree of agreeableness. This correlation had a p-value of 0.068 and an r-value of 0.125. However, when parsing through the audio transcripts for “like”s, I didn’t differentiate between the “enjoy” like and the filler word “like”. Thus, it is difficult to ascertain whether more agreeable people tend to insert more “like”s into their everyday speech or if they tend to describe what they enjoy more often.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/personality/zoe10.png' %}" style="margin:auto">
+    <p>
+      Another correlation arises between openness level and use of words like “but”, “except”, “however”, “though”, “without”, “even”, and “only”. The p-value is 0.067 and the r-value is 0.358 . This correlation may be explained by open people tending to be more open-minded, and thus using a lot of exception words like “though” and “however”.
+    </p>
+</div>
+
+<div id=Conclusion>
+  <h3>Conclusion</h3>
+  <p>
+    Overall, it was difficult to attribute most speech patterns and word choices to any personality trait, mostly because the sample size was so small. Many of my findings contradicted the credible findings of many researchers. In particular, the lack of correlation between neuroticism and first person pronouns and filler words is most likely attributed to low sample size, since it has been shown multiple times that the two are moderately correlated.
+  </p>
+  <p>
+    Small text sample is also a problem. Most of the samples are around five minutes long, which doesn’t make for a lot of text to analyze. It is possible that, given more time, many of these trends would prove themselves to be something else entirely.
+  </p>
+  <p>
+    Participant bias is also something to take note of. A majority of the participants were drawn from my immediate friend group. It is likely that they subconsciously changed their speech patterns due to their comfort around me. In two instances, participants used swear words in their dialogue when they would probably have refrained otherwise. This may lead to results that differ from past research conducted on this topic.
+  </p>
+  <p>
+    In conclusion, we can say with moderate confidence that more agreeable people tend to use more first person pronouns. People with higher openness scores tend to use more exception words like “however” and “although”, most likely due to their tendency to have a more open mind. More agreeable people tend to use more “like”s in their speech, either because they are more likely to talk about their preferences or because they use more “like”s as filler words.
+  </p>
+  <p>
+      Even though my sample size was small (n=27) and many of our correlations were moderate, we can say that there is a correlation between speech patterns and personality.
+  </p>
+  <br></br>
+  <a href="https://docs.google.com/document/d/181AoKnY_U3LKKenQ1_aEBPwF90q1YaB0sb3j6gN5R3k/edit">Works Cited</a>
+  <br></br>
+</div>
+
+
+{% endblock %}

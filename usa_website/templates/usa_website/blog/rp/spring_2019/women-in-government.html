@@ -1,0 +1,96 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title>Women In Government</title>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<h1>Women in Government</h1>
+<h2>
+    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+    <span style="color: gray" id="author">By </span>
+    <span style="color: gray" id="name">Chaitali Mandavia</span>
+    <span style="color: gray" id="date">- Apr 27, 2019</span>
+  </h2>
+<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/spring_2019/women-in-government/titlePic.jpg' %}" style="margin:auto"></img><br><br>
+<div class="Blog_Nav">
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Introduction</a></li>
+    <li><a href="#Section2">Data Analysis</a></li>
+    <li><a href="#Section3">Visualizations</a></li>
+    <li><a href="#Section4">Conclusion</a></li>
+    <li><a href="#Section5">References</a></li>
+  </ol>
+</div>  
+
+<div id="Section1">
+  <h3>Introduction</h3>
+    <p>
+      Women all around the world are realizing that they have been deprived of rights and are fighting in order to claim their rights in terms of access to opportunities. One of the opportunities is that of participation in the government and the purpose of my research project is to test whether there exists a statistical relationship between women’s literacy rate and women’s participation in governments worldwide. The project attempts to analyze differences in literacy rates amongst countries. For my project, I used Python, and in order to filter and graph the data, I used the pandas package. I imported matplotlib, numpy, seaborn, scipy.stats and pandas in order to find a linear regression model, plot the data and conduct chi-squared tests. Studies have been done in the past trying to understand the patterns in women’s participation in the government, and it has been shown that women have a comparatively lower participation rate in the government, as compared to men. There also hasn’t been much of significant progress over the past few decades in terms of an increase in the number of women in government. (“Only 24 percent of all national parliamentarians were women as of November 2018, a slow increase from 11.3 percent in 1995.” (UN Women)) I think it is important to address the issue of low participation of women in government, and I try to understand how the issue can be reversed in this project. In this day and age, wherein awareness about equal rights and opportunities for everyone is being raised, this is one of the many key concerns that need to be addressed.  People have realized that women’s participation in government is important so that a country can witness “tangible gains for democracy, including greater responsiveness to citizen needs, increased cooperation across party and ethnic lines, and a more sustainable future.” (Women Deliver)
+    </p>
+</div>
+
+<div id="Section2">
+  <h3>Data Analysis</h3>
+    <p>
+      I collected data containing indicators of women’s participation in government worldwide, such as percent of ministerial positions that are taken by women, percent of the lower house that is filled with women, percent of the upper house that is occupied by women. I did this for all sovereign states and non-sovereign states [the combination of these will from now on be referred to as countries], except a few for which I could not find credible data (Vatican City, Eswatini, East Timor, Canada, Micronesia, Fiji, Liechtenstein, Ireland, Iceland, Grenada, Nauru, North Macedonia, Palestine, Saint Kitts and Nevis, and Tuvalu, data attached for reference). The data was a bit difficult to find because it required a lot of compilation from different sources (UNESCO, OECD, IndexMundi, etc). While cleaning the data, for countries that I did not have all the information for, I decided to put NaN instead of 0 for literacy rate and participation in government because it would otherwise seem like the country has 0% literacy rate or 0% female participation in the government, which could be misleading.
+    </p>
+</div>
+
+<div id="Section3">
+  <h3>Visualizations</h3>
+    <p>
+      I decided to firstly plot countries on a scatter plot to compare women literacy rate vs. participation in the government to see if there is any pattern between the two variables. However, there was no clear pattern between the two. The correlation coefficient is 0.16, which shows that there is no clear linear relationship between the two variables. Also, when one looks at the
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/women-in-government/chart_1.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/women-in-government/chart_2.png' %}" style="margin:auto"></img><br><br>
+    regression line fitted through the data, one can see that there are a lot of values that are far from the regression line, showing it isn’t the best fit. I also noticed an outlier with a very high participation rate with not that high of a literacy rate.  Then, I just made a histogram showing how the literacy percent is spread out and what proportion of countries fall in each bracket. The graph shows that most of the countries have a literacy rate in the upper 80-90%. Furthermore, I made a bar graph showing the average participation of women versus the type of government. Here, I sorted the data according to the type of government and found the average percentage of women in the lower house for each type of government; the results are as follows. Here, a clear difference in women’s participation in the lower house can be seen between absolute monarchies, which have a lower average percentage of women in the lower house, compared to constitutional monarchies or republics. (Classification is done based on table compiled by Wikipedia) I ran a chi-squared test to see if the participation rates are dependent on the type of government, and statistically, they are not dependent. The chi-statistic I found for 2 degrees of freedom was 4.7737, however for a .05 significance test, the cutoff was 5.99. However, there is still some difference which can still be explained. These results are also analyzed later in the paper.
+    <p>
+      Rwanda is the number one country in terms of women in power even though their literacy rate is not as hight that of other countries. As I did more research I found out that the country suffered from unspeakable amounts of violence and a lot of people were massacred in the country. In 1994, Rwanda was left in chaos in the aftermath of the genocide that took lives of 1 million people. After this, the demographics of the country changed and the country had 60 to 70 percent women. And although in the past, the idea of women taking power and working was unheard of, the genocide changed it all and women started to take leadership. In order to get the country back on its feet, the women of the country took initiative and organized support groups for everyone. (NPR) This shows that perhaps it is the situation that causes women to take initiative and take up a position of power, or perhaps it is because of lack of men in the scenario to compete against them for power. Furthermore, it seems as though the type of government does have some impact on how much women participate in the government.  “Republic, a form of government in which a state is ruled by representatives of the citizen body. Modern republics are founded on the idea that sovereignty rests with the people” (Britannica) Republic government has the most women participation which could be because of the system of fair and representative elections that most of the countries with a republic government hold. Also, perhaps because there are relatively limited restrictions upon women in such countries. Absolute monarchy is “a monarchy that is not limited or restrained by laws or a constitution”. (Dictionary.com) Absolute Monarchy would have a limited percentage of women in the government because the public does not have that much power in such cases and that constrains the pool of people that can be elected to the government.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/women-in-government/chart_3.jpg' %}" style="margin:auto"></img><br><br>
+</div>
+
+<div id="Section4">
+  <h3>Conclusion</h3>
+    <p>
+      After research, I found that there is no clear relationship between women’s literacy rate and their participation in the government. It can also be seen that there is also no statistical difference in the participation rates based on government type. However, there could be an underlying reason why there is still this much of a difference in the participation rates. Hopefully, there will be a way to reduce the gap between the percentage of women in the government and percentage of men in the government and hopefully, there will be a more equal, representative and fair system of power in the future.
+    </p>
+</div>
+
+<div id="Section5">
+  <h3>References</h3>
+    <p>
+      “Country Facts Explorer.” <i>IndexMundi</i>, www.indexmundi.com/facts.
+    </p>
+    <p>
+      “Women in Government.” <i>OECD</i>, www.oecd.org/gov/women-in-government.htm.
+    </p>
+    <p>
+      “Facts and Figures: Leadership and Political Participation.” <i>UN Women</i>, www.unwomen.org/en/what-we-do/leadership-and-political-participation/facts-and-figures.
+    </p>
+    <p>
+      Warner, Gregory. “It's The No. 1 Country For Women In Politics - But Not In Daily Life.” <i>NPR</i>, NPR, 29 July 2016, www.npr.org/sections/goatsandsoda/2016/07/29/487360094/invisibilia-no-one-thought-this-all-womans-debate-team-could-crush-it.
+    </p>
+    <p>
+      “How Women Rebuilt Rwanda.” <i>How Women Rebuilt Rwanda - Inclusive Security</i>, www.inclusivesecurity.org/how-women-rebuilt-rwanda/.
+    </p>
+    <p>
+      “Why Women in Politics? – Women Deliver.” <i>Women Deliver</i>, 28 Feb. 2018, womendeliver.org/2018/why-women-in-politics/.
+    </p>
+    <p>
+      “List of Sovereign States and Non-Sovereign Territories in 2019.” <i>Wikipedia</i>, Wikimedia Foundation, 9 Apr. 2019, en.wikipedia.org/wiki/List_of_sovereign_states_and_non-sovereign_territories_in_2019.
+    </p>
+    <p>
+      “Absolute Monarchy.” <i>Dictionary.com</i>, Dictionary.com, www.dictionary.com/browse/absolute-monarchy.
+    </p>
+    <p>
+      Munro, André. “Republic.” <i>Encyclopædia Britannica</i>, Encyclopædia Britannica, Inc., 19 July 2018, www.britannica.com/topic/republic-government.
+    </p>
+</div>
+
+{% endblock %}

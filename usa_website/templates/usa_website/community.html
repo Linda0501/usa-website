@@ -1,0 +1,422 @@
+{% extends "header.html" %}
+{% block content %}
+{% load staticfiles %}
+<style>
+/* carousel */
+.carousel {
+  padding: 20px;
+  perspective: 800px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carousel > * {
+  flex: 0 0 auto;
+}
+.carousel figure {
+  margin: 0;
+  width: 40%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.carousel figure img {
+  width: 100%;
+  height:auto;
+  box-sizing: border-box;
+  padding: 0 0px;
+  cursor:pointer;
+}
+.carousel figure img:not(:first-of-type) {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.carousel nav {
+  display: flex;
+  justify-content: center;
+  margin: 0px 0 0;
+}
+.carousel nav button {
+  flex: 0 0 auto;
+  margin: 0 15px;
+  cursor: pointer;
+  color: #333;
+  background: none;
+  border: 1px solid;
+  border-radius:5px;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  z-index:10;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+/* Newsletters */
+/* Style the Image Used to Trigger the Modal */
+.newsletterImg {
+ border-radius: 5px;
+ cursor: pointer;
+ transition: 0.3s;
+ margin-left: 5px;
+ margin-right:5px;
+}
+
+.newsletterImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+ display: none; /* Hidden by default */
+ position: fixed; /* Stay in place */
+ z-index: 1; /* Sit on top */
+ padding-top: 100px; /* Location of the box */
+ left: 0;
+ top: 0;
+ width: 100%; /* Full width */
+ height: 100%; /* Full height */
+ overflow: auto; /* Enable scroll if needed */
+ background-color: rgb(0,0,0); /* Fallback color */
+ background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+ margin: auto;
+ display: block;
+ width: 80%;
+ max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+ margin: auto;
+ display: block;
+ width: 80%;
+ max-width: 700px;
+ text-align: center;
+ color: #ccc;
+ padding: 10px 0;
+ height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+ animation-name: zoom;
+ animation-duration: .7s;
+}
+
+@keyframes zoom {
+ from {transform:scale(0)}
+ to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+ position: absolute;
+ top: 15px;
+ right: 35px;
+ color: #f1f1f1;
+ font-size: 40px;
+ font-weight: bold;
+ transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+ color: #bbb;
+ text-decoration: none;
+ cursor: pointer;
+}
+
+body{
+  overflow-x: hidden;
+}
+.community-container{
+  margin: 10%;
+  margin-top:5%;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+ .modal-content {
+   width: 100%;
+ }
+}
+
+#photos {
+   /* Prevent vertical gaps */
+   line-height: 0;
+   -webkit-column-count: 5;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    5;
+   -moz-column-gap:      0px;
+   column-count:         5;
+   column-gap:           0px;
+}
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+  /*added*/
+
+}
+
+
+@media (max-width: 1200px) {
+  #photos {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (max-width: 1000px) {
+  #photos {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+
+</style>
+<head>
+  <title>Community</title>
+</head>
+<!--https://www.sitepoint.com/building-3d-rotating-carousel-css-javascript/-->
+<div class = "community-container">
+  <h1 style="text-align:center;">Community</h1>
+  <p style="text-align:center; font-size:18px;">
+    SAAS would like to formally introduce our Community page! We hope that this
+    addition to our site will give you a feel of what we do outside of our committees,
+    and help you get to know our members a little better!
+
+    <!--Member Interviews-->
+    <div class="row" style="justify-content:center">
+      <h2>Meet Our Members!</h2><br>
+    </div>
+    <div class="row" style="justify-content:center;">
+      <div class="container">
+        <div class="carousel" data-gap="20" style="margin:0px;width:100%;">
+          <figure>
+            <img src="{% static 'usa_website/images/community/interviews/spring_2019/megan_zhu_carousel.jpeg' %}" alt="megan_zhu">
+            <img src="{% static 'usa_website/images/community/interviews/spring_2019/rachel_li_carousel.jpeg' %}" alt="rachel_li">
+            <img src="{% static 'usa_website/images/community/interviews/spring_2019/lily_bhattacharjee_carousel.jpeg' %}" alt="lily_bhattacharjee">
+            <img src="{% static 'usa_website/images/community/interviews/spring_2019/irene_wang_carousel.jpeg' %}" alt="irene_wang">
+            <img src="{% static 'usa_website/images/community/interviews/spring_2019/joyce_zheng_carousel.jpeg' %}" alt="joyce_zheng">
+            <img src="{% static 'usa_website/images/community/interviews/spring_2019/megan_zhu_carousel.jpeg' %}" alt="megan_zhu">
+            <img src="{% static 'usa_website/images/community/interviews/spring_2019/rachel_li_carousel.jpeg' %}" alt="rachel_li">
+            <img src="{% static 'usa_website/images/community/interviews/spring_2019/lily_bhattacharjee_carousel.jpeg' %}" alt="lily_bhattacharjee">
+            <img src="{% static 'usa_website/images/community/interviews/spring_2019/irene_wang_carousel.jpeg' %}" alt="irene_wang">
+            <img src="{% static 'usa_website/images/community/interviews/spring_2019/joyce_zheng_carousel.jpeg' %}" alt="joyce_zheng">
+          </figure>
+
+          <nav>
+            <button class="nav prev"><</button>
+            <button class="nav next">></button>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+    <!--Newsletters-->
+  <div class="row" style="justify-content:center">
+    <h2>Check out our past newsletters!</h2><br>
+  </div>
+  <!-- Trigger the Modal -->
+  <div class="image-container row" id="image-container" style="justify-content:center"></div>
+
+  <!-- The Modal -->
+  <div id="myModalNewsletter" class="modal" style="z-index:1000;">
+
+   <!-- The Close Button -->
+   <span class="close">&times;</span>
+
+   <!-- Modal Content (The Image) -->
+   <img class="modal-content" id="modalHolder1">
+
+   <!-- Modal Caption (Image Text) -->
+   <div id="caption"></div>
+  </div>
+</div>
+<!--
+<section id="photos"></section>
+-->
+
+<script>
+//carousel
+window.addEventListener('load', () => {
+    let carousels = document.querySelectorAll('.carousel');
+    var redirects = new Array();
+    redirects[0]="{% url 'megan_zhu_interview' %}";
+    redirects[1]="{% url 'rachel_li_interview' %}";
+    redirects[2]="{% url 'lily_bhattacharjee_interview' %}";
+    redirects[3]="{% url 'irene_wang_interview' %}";
+    redirects[4]="{% url 'joyce_zheng_interview' %}";
+    redirects[5]="{% url 'megan_zhu_interview' %}";
+    redirects[6]="{% url 'rachel_li_interview' %}";
+    redirects[7]="{% url 'lily_bhattacharjee_interview' %}";
+    redirects[8]="{% url 'irene_wang_interview' %}";
+    redirects[9]="{% url 'joyce_zheng_interview' %}";
+    console.log(redirects[1]);
+    carousel(carousels[0], redirects);
+});
+
+function carousel(root, redirects) {
+    var figure = root.querySelector('figure'),
+        nav = root.querySelector('nav'),
+        images = figure.children,
+        n = images.length,
+        gap = root.dataset.gap || 0,
+        bfc = 'bfc' in root.dataset,
+        theta =  2 * Math.PI / n,
+        currImage = 0;
+        linkCounter = 0;
+
+    setupCarousel(n, parseFloat(getComputedStyle(images[0]).width),redirects);
+    window.addEventListener('resize', () => {
+        setupCarousel(n, parseFloat(getComputedStyle(images[0]).width),redirects)
+    });
+
+    setupNavigation();
+
+    function setupCarousel(n, s, redirects) {
+        let apothem = s / (2 * Math.tan(Math.PI / n));
+
+        figure.style.transformOrigin = `50% 50% ${- apothem}px`;
+
+        for (let i = 0; i < n; i++){
+            images[i].style.padding = `${gap}px`;
+            images[i].addEventListener('click',function(){
+              console.log(redirects[i]);
+              window.location.href=redirects[i];
+            });
+        }
+        for (i = 1; i < n; i++) {
+            images[i].style.transformOrigin = `50% 50% ${- apothem}px`;
+            images[i].style.transform = `rotateY(${i * theta}rad)`;
+        }
+        if (bfc) {
+            for (i = 0; i < n; i++) {
+                 //images[i].style.backfaceVisibility = 'hidden';
+                 if (i < 3 ) {
+                 images[i].style.zIndex = "1";
+               } else {
+                  images[i].style.zIndex = "-1";
+               }
+            }
+          }
+
+        rotateCarousel(currImage);
+    }
+
+    function setupNavigation() {
+        nav.addEventListener('click', onClick, true);
+        function onClick(e) {
+            e.stopPropagation();
+            let t = e.target;
+            if (t.tagName.toUpperCase() != 'BUTTON')
+                return;
+            if (t.classList.contains('next')) {
+                currImage++;
+            }
+            else {
+                currImage--;
+            }
+            rotateCarousel(currImage);
+        }
+    }
+
+    function rotateCarousel(imageIndex) {
+        figure.style.transform = `rotateY(${imageIndex * -theta}rad)`;
+    }
+}
+
+//create an array and populate it with images of newsletters
+let createImages = function(){
+  let newsletters = new Array();
+  newsletters[0]="{% static 'usa_website/images/community/newsletter/welcome_back_fall_2019.png' %}"
+  newsletters[1]="{% static 'usa_website/images/community/newsletter/march_2019.png' %}";
+  newsletters[2]="{% static 'usa_website/images/community/newsletter/welcome_back_spring_2019.png' %}";
+  newsletters[3]="{% static 'usa_website/images/community/newsletter/december_2018.png' %}";
+  newsletters[4]="{% static 'usa_website/images/community/newsletter/november_2018.png' %}";
+  displayAllImages(newsletters);
+  }
+function displayAllImages(newsletters) {
+    let i = 0,
+        len = newsletters.length;
+    for (i=0; i < newsletters.length; i++) {
+        let img = new Image();
+        img.src = newsletters[i];
+        img.style.width = '250px';
+        img.style.height = 'auto';
+        img.id = 'myImg' + i;
+        img.className = 'newsletterImg';
+        img.alt = '';
+        console.log(img.src);
+        document.getElementById('image-container').appendChild(img);
+        modal_img(i);
+    };
+};
+
+$(function() {
+    createImages();
+});
+
+// Get the modal
+let modal = document.getElementById('myModalNewsletter');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+let modal_img = function(i){
+  let img = document.getElementById('myImg'+ i);
+  let modalImg = document.getElementById("modalHolder1");
+  let captionText = document.getElementById("caption");
+  img.onclick = function(){
+    let fullSrc= this.src.replace('.png', '_full.png');
+    modal.style.display = "block";
+    modalImg.src = fullSrc;
+    captionText.innerHTML = this.alt;
+  };
+};
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function getRandomSize(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+var allImages = "";
+for (var i = 0; i < 25; i++) {
+  var width = getRandomSize(200, 400);
+  var height =  getRandomSize(200, 400);
+  allImages += '<img src="https://placekitten.com/'+width+'/'+height+'" alt="pretty kitty">';
+}
+$('#photos').append(allImages);
+</script>
+{% endblock %}
