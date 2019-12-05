@@ -1,0 +1,19 @@
+h1 {
+  font-size: 64px;
+  margin: 5px;
+}
+h2 {
+	font-size: 18px;
+	font-style: italic;
+}
+h3 {
+	font-size: 48px;
+}
+.titlePic {
+	width: 100%;
+	z-index: 0;
+}
+.icon {
+	width: 40px;
+	height: 40px;
+}

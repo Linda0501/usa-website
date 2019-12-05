@@ -11,9 +11,19 @@
     src: url("../fonts/AvenirNext-Medium.ttf");
 }
 
+
+@font-face {
+    font-family: 'Tiempos';
+    src: url("../fonts/iemposText-Regular.ttf");
+}
+
 /*
 @font-face {
     font-family: 'Britannic Bold';
     src: url("../fonts/Britannic.ttf");
 }
 */
+@font-face {
+    font-family: 'Tiempos';
+    src: url("../fonts/TiemposText-Regular.ttf");
+}
