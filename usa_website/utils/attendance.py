@@ -2,14 +2,14 @@ import gspread
 
 from oauth2client.service_account import ServiceAccountCredentials
 
-scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
-         "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
-credentials = ServiceAccountCredentials.from_json_keyfile_name("usa-website/src/usa_website/utils/creds.json", scope)
-client = gspread.authorize(credentials)
-sheet = client.open("Member_Points").sheet1
-data = sheet.get_all_records()
+# scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+#          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+# credentials = ServiceAccountCredentials.from_json_keyfile_name("usa-website/src/usa_website/utils/creds.json", scope)
+# client = gspread.authorize(credentials)
+# sheet = client.open("Member_Points").sheet1
+# data = sheet.get_all_records()
 
-sid_col = sheet.find("ID").col
+# sid_col = sheet.find("ID").col
 
 
 def check_sid_exits(sid):  # check in views.py if student id exits
