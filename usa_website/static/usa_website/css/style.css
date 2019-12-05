@@ -467,6 +467,13 @@ h3 {
 #fh5co-header nav {
   padding: 0;
 }
+
+#fh5co-header .dropdown-item{
+  color: #000000;
+  font-size:17px;
+  transform: scale(1.0) !important;
+}
+
 @media screen and (max-width: 768px) {
   #fh5co-header .navbar-nav {
     display: none;
@@ -480,6 +487,7 @@ h3 {
   #fh5co-header .dropdown-item{
     color: #000000;
     font-size:17px;
+    transform: scale(1.0) !important;
   }
 
   #fh5co-header .nav-link{
@@ -511,8 +519,7 @@ h3 {
 }
 
 #fh5co-header nav ul li  .dropdown-menu a:hover{
-
-  margin-top: 17px;
+  margin-top: 0;
   color: #000000
 
 }
