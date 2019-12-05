@@ -6,11 +6,15 @@ from .models import Course, Blog
 from django.views.generic import TemplateView
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
 from .forms import PostForm, AttendanceForm
+<<<<<<< HEAD
+# from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
+=======
 
 from .utils.attendance import *
 
 # from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
 
+>>>>>>> e56e0b5997aceafd3bf71bdb027184051bf1b125
 
 # Create your views here.
 def index(request):
