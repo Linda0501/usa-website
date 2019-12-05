@@ -5,6 +5,9 @@ margin-bottom: 25px;
 .fab:hover {
 color: grey;
 }
+.url:hover {
+color: grey !important;
+}
 .columns {
 display: flex;
 flex-wrap: wrap;
