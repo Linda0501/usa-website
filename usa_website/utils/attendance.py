@@ -1,11 +1,18 @@
 import gspread
+import httplib2
 
 from oauth2client.service_account import ServiceAccountCredentials
 
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
-credentials = ServiceAccountCredentials.from_json_keyfile_name("usa-website/src/usa_website/utils/creds.json", scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name("usa_website/utils/creds.json", scope)
+http = httplib2.Http()
+http = credentials.authorize(http)
+credentials.refresh(http)
 client = gspread.authorize(credentials)
+if credentials.access_token_expired:
+    client.login()
+
 sheet = client.open("Member_Points").sheet1
 data = sheet.get_all_records()
 
