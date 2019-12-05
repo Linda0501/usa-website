@@ -1,5 +1,5 @@
 
-
+ 
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
@@ -16,10 +16,14 @@
     src: url("../fonts/pm/pmsemibold.eot");
 }*/
 @font-face {
-    font-family: 'Avenir Next';
-    src: url("../fonts/AvenirNext-Medium.ttf");
+    font-family: "Avenir Next";
+    src: url("../fonts/AvenirNext-Reg.otf");
 }
 
+@font-face {
+    font-family: "Avenir Next Light";
+    src: url("../fonts/avenir-light.ttf");
+}
 /* =======================================================
 *
 * 	Template Style
@@ -80,7 +84,7 @@ p {
 h1, h2, h3, h4, h5, h6, figure {
   color: #000;
   font-family: "Avenir Next";
-  font-weight: 600;
+  font-weight: 500;
   margin: 0 0 30px 0;
   /*text-transform: uppercase;*/
 }
@@ -467,13 +471,6 @@ h3 {
 #fh5co-header nav {
   padding: 0;
 }
-
-#fh5co-header .dropdown-item{
-  color: #000000;
-  font-size:17px;
-  transform: scale(1.0) !important;
-}
-
 @media screen and (max-width: 768px) {
   #fh5co-header .navbar-nav {
     display: none;
@@ -487,7 +484,6 @@ h3 {
   #fh5co-header .dropdown-item{
     color: #000000;
     font-size:17px;
-    transform: scale(1.0) !important;
   }
 
   #fh5co-header .nav-link{
@@ -519,7 +515,8 @@ h3 {
 }
 
 #fh5co-header nav ul li  .dropdown-menu a:hover{
-  margin-top: 0;
+
+  margin-top: 17px;
   color: #000000
 
 }
@@ -913,14 +910,64 @@ h3 {
   text-decoration: none;
 }
 
-#blog-title {
-  color: #000;
-  font-family: "Britannic Bold", serif;
-  font-weight: 400;
-  font-size: 250%;
-  margin: 0 0 16px 0;
-  text-transform: uppercase;
+/* education.html css formatting, classes specified for education.html*/
+
+#fh5co-blog-section .educationHead {
+    margin-top: 30px;
+    font-size: 110%;
 }
+
+#fh5co-blog-section .CX {
+  font-family: "Avenir Next Light";
+    font-weight: 500;
+    font-size: 350%;
+    margin-top: 30px;
+}
+
+#fh5co-blog-section .item-grid-edu {
+  width: 90%;
+  height: auto;
+  float: left;
+  position: relative;
+  margin-bottom: 70px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: white;
+  border-radius: 25px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  top: 2px;
+}
+
+#fh5co-blog-section .item-grid-edu .v-align {
+  padding: 30px;
+  background-color: #E7F3FB;
+  border-radius: 25px;
+  height: 190px;
+}
+#fh5co-blog-section .item-grid-edu .v-align h3 {
+  font-weight: 550;
+  font-size: 163%;
+}
+#fh5co-blog-section .item-grid-edu .v-align h5 {
+  color: rgba(0, 0, 0, 0.3); 
+  font-size: 125%;
+  position: absolute;
+  bottom: 2;
+}
+
+#fh5co-blog-section .item-grid-edu:hover, #fh5co-blog-section .item-grid-edu:focus {
+  text-decoration: none;
+  -webkit-box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
+  top: -2px;
+}
+/* end of education page*/
+
+/*Rest of the tiles stuff*/
 
 #fh5co-blog-section .item-grid {
   width: 100%;
@@ -963,6 +1010,7 @@ h3 {
   box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
   top: -2px;
 }
+/*ends here*/
 
 .item-block {
   margin-bottom: 7em;
@@ -983,14 +1031,6 @@ h3 {
 }
 .item-block p:last-child {
   margin-bottom: 0;
-}
-
-.fh5co-heading {
-  margin-bottom: 30px;
-}
-.fh5co-heading h2 {
-  margin-bottom: 20px;
-  font-weight: 700;
 }
 
 .googleplus-color {
