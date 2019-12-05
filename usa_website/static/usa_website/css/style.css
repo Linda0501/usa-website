@@ -441,7 +441,6 @@ h3 {
 #fh5co-header {
   width: 100%;
   background-color: black !important;
-  margin: 0;
   position: fixed;
   overflow: visible;
   z-index: 1000;
@@ -476,10 +475,13 @@ h3 {
     background:black;
   }
 }
+
 @media (min-width:760px) and (max-width:978px) {
   #fh5co-header .dropdown-item{
+    color: #000000;
     font-size:17px;
   }
+
   #fh5co-header .nav-link{
     font-size:15px !important;
   }
@@ -508,8 +510,11 @@ h3 {
   transition: 0.2s;
 }
 
-#fh5co-header nav ul li  .dropdown-menu {
+#fh5co-header nav ul li  .dropdown-menu a:hover{
+
   margin-top: 17px;
+  color: #000000
+
 }
 
 #fh5co-header nav ul li .dropdown-menu a {
@@ -532,6 +537,7 @@ h3 {
 
 #fh5co-header .dropdown-toggle::after {
     display:none;
+    color: #000000
 }
 
 /*#fh5co-header nav ul li  a:after {
@@ -751,6 +757,10 @@ h3 {
 #fh5co-services-section, , #fh5co-testimony-section,
 #fh5co-blog-section {
   padding: 3em 0;
+}
+
+#fh5co-blog-section {
+  margin-top: 80px;
 }
 @media screen and (max-width: 768px) {
   #fh5co-services-section, , #fh5co-testimony-section,
