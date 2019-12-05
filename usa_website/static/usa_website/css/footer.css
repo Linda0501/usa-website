@@ -2,6 +2,12 @@
 color: white;
 margin-bottom: 25px;
 }
+.fab:hover {
+color: grey;
+}
+.url:hover {
+color: grey !important;
+}
 .columns {
 display: flex;
 flex-wrap: wrap;
@@ -14,6 +20,7 @@ margin-top: -0.6rem;
 .footer-urls {
 font-size: 15px;
 text-align: left;
+font-family: "Avenir Next";
 }
 .socials-container {
 margin-left: 20%;

@@ -118,7 +118,7 @@ def people(request):
     return HttpResponse(t.render(context))
 
 def people_new(request):
-    t = get_template("people-2.html")
+    t = get_template("people-new.html")
     context = {}
     return HttpResponse(t.render(context))
 
