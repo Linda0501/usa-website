@@ -6,6 +6,46 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     {% load staticfiles %}
     <head>
+
+
+   <style>
+
+    .Blog_Nav {
+
+      height: 80%; 
+      width: 100;
+      position: fixed;
+      z-index: 1;
+      top: 150px;
+      left: 1056px;
+      
+      overflow-x: hidden;
+      padding: 8px 8px 8px 8px;
+    }
+
+    .Blog_Nav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #2196F3;
+      display: block;
+    }
+
+    .Blog_Nav a:hover {
+      color: #064579;
+    }
+
+
+    @media screen and (max-height: 450px) {
+      .Blog_Nav {padding-top: 15px;}
+      .Blog_Nav a {font-size: 18px;}
+    }
+    
+
+
+    
+    </style>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SAAS - Research and Publication</title>

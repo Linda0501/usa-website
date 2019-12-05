@@ -12,6 +12,15 @@
 	<span style="color: gray" id="name">Gautam Mittal, Adnaan Sachidanandan</span>
 	<span style="color: gray" id="date">- Nov 26, 2018</span>
 </h3>
+<div class="Blog_Nav">
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Model Selection, Architecture, and Data</a></li>
+    <li><a href="#Section2">Reddit Analysis</a></li>
+    <li><a href="#Section3">Proposal</a></li>
+  </ol>
+</div>
+
 <img class = "titlePic" src="{% static 'usa_website/images/blog/rp/fall_2018/toxic_social_media/titlePic.jpg' %}" style="margin:auto"></img><br><br>
 <div>
 	<p>
@@ -20,7 +29,7 @@
 </div>
 
 
-<div id="Model Selection, Architecture, and Data">
+<div id="Section1">
 	<h3>Model Selection, Architecture, and Data</h3>
 	<p>
 		There are multiple approaches to quantifying toxicity in text on social media platforms. An intuitive baseline model would be to correlate toxicity with the frequency of obscene words found in the comment threads on social networks. However, the context of the obscenities chosen can greatly affect the overall toxicity of a particular comment. As a result, a more robust model is necessary to effectively quantify toxicity from the context and other textual features such as emoticons and punctuation of comments.
@@ -107,7 +116,7 @@ src = "https://gautam.cc/susa-fa18/interactive/models/lstm/" class = "third_ifra
 </p>
 </div>
 
-<div id="Reddit Analysis">
+<div id="Section2">
 	<h3>Reddit Analysis</h3>
 	<p>
 		With our model, we classified each post in the six labels mentioned above — toxic, severely toxic, obscene, insult, threat, and identity hate — each with a probability (0 meaning least-likely to be that label and 1 meaning most-likely). The basic statistics of the entire comment dataset are presented below:
@@ -171,7 +180,7 @@ src="https://gautam.cc/susa-fa18/interactive/graphs/" class="fourth_iframe">
 </p>
 </div>
 
-<div id="Proposal">
+<div id="Section3">
 	<h3>Proposal</h3>
 	<p>
 		This classification system can have many applications. To start, it can be used to determine which subreddits are ones to avoid, which is especially useful for users who prefer a safer online environment.
