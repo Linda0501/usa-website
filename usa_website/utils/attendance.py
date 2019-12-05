@@ -1,11 +1,20 @@
 import gspread
+import httplib2
 
 from oauth2client.service_account import ServiceAccountCredentials
 
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
-credentials = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
+
+credentials = ServiceAccountCredentials.from_json_keyfile_name("usa-website/src/usa_website/utils/creds.json", scope)
+http = httplib2.Http()
+http = credentials.authorize(http)
+credentials.refresh(http)
+
 client = gspread.authorize(credentials)
+if credentials.access_token_expired:
+    client.login()
+
 sheet = client.open("Member_Points").sheet1
 data = sheet.get_all_records()
 print(data)
@@ -34,8 +43,8 @@ def get_events(sid):  # assume valid sid
     sid_points = sheet.row_values(sid_row)[2:-1]
     for i in range(len(events_name)):
         if sid_points[i] != '':
-            if events_name[i] == "Donutbot":
-                attended_events.append(events_name[i] + "*" + sid_points[i])
+            if events_name[i] == "Donutbot" and int(sid_points[i]) > 1:
+                attended_events.append(sid_points[i] + " " + events_name[i] + "s")
             else:
                 attended_events.append(events_name[i])
 

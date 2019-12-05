@@ -32,17 +32,24 @@
 	}
 </style>
 
+<link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
 <div class="container-fluid">
-	<h3>An Introduction to Go, AlphaGo and Quantifying Go Gameplay</h3>
-	<h4><span style="color: #D5518D" id="author">By </span><span style="color: #3E95D7" id="name">Isaac Yiu</span></h4>
+	<h1>An Introduction to Go, AlphaGo and Quantifying Go Gameplay</h1>
+	<h2>
+		<img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+		<span style="color: gray" id="author">By </span>
+		<span style="color: gray" id="name">Isaac Yiu</span>
+		<span style="color: gray" id="date">- Nov 2, 2017</span>
+	</h2>
+	<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/fall_2017/alphago/titlePic.jpeg' %}" style="margin:auto"></img><br><br>
 	<br>
-	<h4>Introduction</h4>
+	<h3>Introduction</h3>
 	<p>Our increasingly data-driven world has sparked a surge of awareness, discussion, and innovation regarding the application of artificial intelligence to all aspects of our daily lives. Google Alphabet’s DeepMind is one of the leading groups in the field, and focused much of its recent efforts on the development of AlphaGo, a super-program designed to beat the game of Go.</p>
 	<p>AlphaGo’s challenge of Go is in many ways reminiscent of IBM’s Deep Blue’s challenge of the game of chess back 1997 – it represents the newfound potential of artificial intelligence, and stands to drastically shape the way we interact with the world for years to come.</p>
 	<p>To date, the machine learning methods behind AlphaGo have already been utilized in the sectors of energy efficiency and public healthcare. At Google, DeepMind’s program reduced data-center cooling costs by 40%. Meanwhile, in public healthcare, DeepMind is collaborating with NHS groups to save lives and streamline systems by adjusting diagnosis and risk-assessment procedures (<i>DeepMind</i>).</p>
 
 	<br>
-	<h4>Context</h4>
+	<h3>Context</h3>
 	<u>The Millenia-Old Game</u><br>
 	<p>Go, one of the oldest board games in the world, originated some 3000-4000 years ago in Ancient China. Shortly after its invention, it spread by politics and commerce to neighboring countries in the Far East, and has since become an integral aspect of tradition and culture in China, Korea, and Japan (“The Ancient Chinese Game of Go”). Over the recent decades, Go has become increasingly popular in the West: in the US, the game is organized and promoted by American Go Association (AGA); in Europe, the European Go Federation (EGF) facilitates collaboration between organizing bodies in over 30 member-countries (“American Go Association” and “About the European Go Federation”).</p>
 	<p>Go is a sequential, two-player strategy game played on a 19x19 board of gridlines, using black and white stones. Each stone is played on an intersection, and, unlike chess, has no special trait – in other words, each stone’s value is determined solely by its position on the Go board.</p>
@@ -60,7 +67,7 @@
 	<p>AlphaGo’s in-game decision-making can be summarized by a “policy” network and a “value” network. The “policy” network predicts the next move to play, reducing the range of initial moves which are evaluated; meanwhile, the “value” network predicts the winning probability of an initial move, so the sub-variations of each selected move do not need to be played out in full (Byford, Hassabis and DeepMind). The move chosen is the one with the highest winning probability. If AlphaGo’s highest winning probability falls below a preset threshold, it automatically forfeits (<i>DeepMind</i>).</p>
 
 	<br>
-	<h4>Overview of Study</h4>
+	<h3>Overview of Study</h3>
 	<u>Aim</u><br>
 	<p>This study approaches the in-game mechanics of Go from two specific angles: firstly, how can tempo and win-rates – key indicators of game mechanics – be measured and compared? How does this compare across Black, who has a first-mover advantage, and White, who has an initial territory advantage? Secondly, how do such predictions and trends, if any, compare across the three categories of AI vs. AI, AI vs. Player, and Player vs. Player?</p>
 	<p>Tempo will be quantified using a simple measure of distance. Given the intrinsic difficulty of quantifying Go gameplay, I will also discuss methodological limitations and further exploration.</p>
@@ -74,14 +81,14 @@
 	<p>Intuitively, if a player has good tempo, they seem to have more control over the outcome of the game. Therefore, tempo would be expected to correlate positively with win-rates, after adjusting for confounding factors like komi. By the nature of the game, first-mover Black is expected to have a higher tempo measure than White. Moreover, if we take tempo to be a measure of the relative responsiveness of the two players to each other’s moves, a relatively higher tempo measure in, say, Black, could correspond to a lower tempo measure in White. Lastly, differences in tempo could reflect playstyle differences between professional human players and artificial intelligence.</p>
 
 	<br>
-	<h4>Methodology</h4>
+	<h3>Methodology</h3>
 	<u>Data Collection</u>
 	<p>To allow for a comparison between the three categories of AlphaGo vs. AlphaGo, AlphaGo vs. Professional, and Professional vs. Player (henceforth AG vs. AG, AG vs. Pro, Pro vs. Pro respectively), I collected four datasets from three independent sources. Google DeepMind released 50 self-play games (AG vs. AG) and 60 games played online by AlphaGo against professional players from around the world (AG vs. Pro). The remaining two datasets were scraped from Go game-record databases which are well-referenced amongst the online Go community: Go4Go’s top listed games as of October 12th (50 games); GoKifu’s top listed professional-level games between September 30th and October 11th (100 games). These two data sets form the “Pro vs. Pro” category.</p>
 	<u>Data Handling</u>
 	<p>All data was processed and analyzed in R using the package “gogamer”. Graphs were created using the package “ggplot2”.</p>
 
 	<br>
-	<h4>Data and Analysis</h4>
+	<h3>Data and Analysis</h3>
 	<u>Win-Rates</u>
 	<center>
 		<table width="100%" border="1px solid black">
@@ -267,7 +274,7 @@
 	<p>Graphing the average Euclidean distance of different colored move pairs against each other by game results in a broad spread of points, irrespective of category. There is no apparent clustering or correlation, and running a linear regression as in the previous section yields a very low <i>R</i><sup>2</sup> &equals; 0.234. Further analysis will be needed to determine correlation details and underlying factors, confounding and otherwise.</p>
 
 	<br>
-	<h4>Conclusion</h4>
+	<h3>Conclusion</h3>
 	<u>Summary</u><br>
 	<p>In "Win-Rates" in the previous section, the data demonstrates that the current rules of Go are adequate for human vs. human games at the professional level, but results in an “unfair” situation for games in which AlphaGo plays itself. Furthermore, "Measuring Tempo by Euclidean Distance" in the previous section reveals a strong positive correlation between the individual tempo of both players within a game, using Euclidean distance between moves as a measure of tempo.</p>
 	<p>Overall, the implications are profound: by win-rate analysis, AlphaGo appears to be better at playing Go than professional-level players around the world, and, contrary to convention and intuition, has a higher winning probability as the second-move player. By taking the first assumption as reasonable and combining it with gameplay analysis in terms of individual tempo and game tempo, we can conclude that humans appear to play a style which is too slow, restricted, and responsive compared to the optimal, or, at least, a more effective method of playing. On a more positive note, some general Go conventions appear to be supported by AlphaGo’s playstyle, e.g. the hypothesis that “light” playing is a good strategy. Lastly, comparisons of responsiveness between Black and White and across matchups show no clear trends, and will require more in-depth exploration.</p>
@@ -277,7 +284,7 @@
 	<p><i>Author’s Note: to be updated. Please contact the author directly for more information (12/1/17).</i></p>
 
 	<br>
-	<h4>Works Cited</h4>
+	<h3>Works Cited</h3>
 	<p>“About the European Go Federation.” European Go Federation, European Go Federation (EGF), 2017, <a href="www.eurogofed.org/about/">www.eurogofed.org/about/</a>.</p>
 	<p>“American Go Association.” American Go Association, American Go Association (AGA), 2017, <a href="www.usgo.org/">www.usgo.org/</a>.</p>
 	<p>Byford, Sam. “Why Google's Go Win Is Such a Big Deal.” The Verge, Vox Media, 9 Mar. 2016, <a href="www.theverge.com/2016/3/9/11185030/google-deepmind-alphago-go-artificial-intelligence-impact">www.theverge.com/2016/3/9/11185030/google-deepmind-alphago-go-artificial-intelligence-impact</a>.</p>
@@ -290,7 +297,7 @@
 	<p>Silver, David, et al. “Mastering the Game of Go with Deep Neural Networks and Tree Search.” Nature, 2016, doi:10.1038/nature16961.</p>
 
 	<br>
-	<h4>Appendix</h4>
+	<h3>Appendix</h3>
 	<u>Data Tables</u><br>
 
 	<center>

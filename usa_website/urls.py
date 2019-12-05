@@ -63,6 +63,7 @@ urlpatterns = [
     url(r'stat-158$', views.stat158, name = "stat158"),
     url(r'stat-159$', views.stat159, name = "stat159"),
     url(r'people$', views.people, name = "people"),
+    url(r'people-new$', views.people_new, name = "people_new"),
     url(r'course-map$', views.courseMap, name = "courseMap"),
     url(r'dataconsulting$', views.dataconsulting, name = "dataconsulting"),
     url(r'education$', views.education, name = "education"),

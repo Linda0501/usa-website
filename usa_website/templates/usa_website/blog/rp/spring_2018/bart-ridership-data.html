@@ -2,6 +2,7 @@
 {% block content %}
 {% load staticfiles %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
 <style>
 	table {
 		border-collapse:collapse;
@@ -14,19 +15,12 @@
 
 	<div class="container-fluid">
 		<h1>Bart Ridership Data</h1>
-		<h3><span style="color: #D5518D" id="author">By </span><span style="color: #3E95D7" id="name">Nicholas Lai</span></h3>
-	</div>
-
-	<div class=Blog_Navigation>
-	  <ol>
-	    <li><a href="#Background">Background</a></li>
-	    <li><a href="#Location">Location</a></li>
-	    <li><a href="#Time">Time</a></li>
-	    <li><a href="#Pandering">Pandering</a></li>
-	    <li><a href="#Oakland-Coliseum">Oakland Coliseum</a></li>
-	    <li><a href="#Conclusion">Conclusion</a></li>
-	    <li><a href="#Sources">Sources</a></li>
-	  </ol>
+		<h2>
+			<img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+			<span style="color: gray" id="author">By </span>
+			<span style="color: gray" id="name">Nicholas Lai</span>
+			<span style="color: gray" id="date">- Nov 5, 2018</span>
+		</h2>
 	</div>
 
 	<div class="figure">

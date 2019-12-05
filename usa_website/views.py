@@ -117,6 +117,11 @@ def people(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def people_new(request):
+    t = get_template("people-new.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 def courseMap(request):
     t = get_template("course-map.html")
     context = {}
@@ -628,7 +633,8 @@ class AttendanceView(TemplateView):
                 args = {'form': form, 'text': text}
                 return render(request, self.template_name, args)
             else:
-                text = "Points Summary for SID - " + form.cleaned_data['post'] +":"
+                #text = "Points Summary for SID - " + form.cleaned_data['post'] +": "
+                text = form.cleaned_data['post']
                 #values = LookupSIDs()
                 #head_list = GetAttendanceHeader(SID)
                 #det_list = GetAttendanceDetails(SID, values)
