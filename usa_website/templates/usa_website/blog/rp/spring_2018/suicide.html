@@ -1,0 +1,257 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title> Is there a statistical relationship between a region’s legalization of euthanasia and that region’s suicide rate?</title>
+<h1>Is there a statistical relationship between a region’s legalization of euthanasia and that region’s suicide rate?</h1>
+  <h3>
+    <span style="color: #D5518D" id="author">By </span>
+    <span style="color: #3E95D7" id="name">Yehchan Yoo</span>
+  </h3>
+  <br />
+
+
+<div class=Blog_Nav>
+  <ol>
+    <li><a href="#mot">Motivation</a></li>
+    <li><a href="#Data">Definition</a></li>
+    <li><a href="#meth">Methodology</a></li>
+    <li><a href="#Results">Results</a></li>
+    <li><a href="#Conclusion">Conclusion</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ol>
+</div>
+<br></br>
+
+<div id="mot">
+  <h3>Motivation</h3>
+    <p>
+       In January 2016, South Korean National Assembly passed a bill that would legalize euthanasia across the country for the terminally ill in February 2018.[1][2] Seeing that euthanasia became legal in my home country only a few months ago, I wanted to do a statistical research project analyzing the social effects of legalization of euthanasia. 
+    </p>
+
+    <p>
+       During my research into euthanasia, I observed that acts of euthanasia were often discussed together with acts of suicide, since the acts of euthanasia and suicide both tend to involve death by choice of the individual, not by accidents, sickness, or natural causes. So, I began to wonder if there exists any connection between the legal status of euthanasia and the suicide rate in a region.
+    </p>
+
+    <p>
+       I hypothesized that legalization of euthanasia in a region would be associated with a lower suicide rate in that region, since euthanasia could provide a path for many people to end their lives without having to resort to suicidal methods.
+    </p>
+</div>
+
+<div id="Data">
+  <h3>Definition</h3>
+    <p>
+       <b><i>Euthanasia: </i></b> An act administered by someone to kill a patient for the patient’s own benefit
+    </p>
+    <p>
+       <b><i>Voluntary euthanasia: </i></b> An act of euthanasia administered to a patient by the patient’s request
+    </p>
+    <p>
+       <b><i>Nonvoluntary euthanasia: </i></b> An act of euthanasia administered to an unconscious patient
+    </p>
+    <p>
+       <b><i>Active euthanasia: </i></b> An act of euthanasia administered deliberately by someone to a patient (ex.: death by injection)
+    </p>
+    <p>
+       <b><i>Passive euthanasia: </i></b> An act of euthanasia accomplished through exclusion (ex.: ending life support)
+    </p>    
+</div>
+
+<br></br>
+<div id="meth">
+  <h3>Methodology</h3>
+  <h4>Background</h4>
+    <p>
+    For the project, I looked at two countries -- Mexico and the Netherlands.
+    </p>
+    <p>
+    Mexico has a federal political system with the federal constitution granting the governments of states and the Federal District (i.e. Mexico City) many political powers.[6] As a result, it is possible for different areas of Mexico to have different sets of local laws on controversial issues like euthanasia. 
+    </p>
+    <p>
+    Passive euthanasia, voluntary and nonvoluntary, became legal for terminally ill in Mexico City in early 2008[7], in Aguascalientes in the middle of 2009[8], and in Michoacan in late 2009[9]. Euthanasia, however, has not been legalized in rest of Mexico. Such disparity in legal status of euthanasia within Mexico sets up an excellent stage for natural experiment, allowing for comparison of changes in raw suicide rate between areas where euthanasia is legal and areas where euthanasia is still not legal before and after legalization of euthanasia in some areas of Mexico.
+    </p>
+    <p>
+    The Netherlands is a constitutional monarchy with a parliamentary -- not federal -- political system[10]. So, the Netherlands has a much more centralized political system than Mexico, making it much more difficult for different areas of Netherlands to have different sets of local laws on controversial issues like euthanasia. As a result, it is difficult to conduct a natural experiment on the Netherlands based on regional disparities in legal status of euthanasia.
+    </p>
+    <p>
+    However, the Netherlands has a long and rich history with the issue of euthanasia. Debate on legalization of euthanasia began in the Netherlands with the Postma Case in 1973, involving a physician who euthanized his sick mother; the debate continued in subsequent decades with the Dutch Supreme Court eventually deciding on its first euthanasia case (named the Schoonheim Case) in 1984. Eventually, active and passive forms of voluntary euthanasia became legal in the Netherlands in 2002. The Netherlands’ long history with euthanasia makes the Netherlands an excellent subject nation for this research project.[11]
+    </p>
+    <p>
+    Hoping to use statistical comparison to look at the statistical relationship between euthanasia legalization and raw suicide rate in the Netherlands, I decided to compare the Netherlands to Norway. End-of-life decisions, including euthanasia, remain illegal in Norway as of 2014[12]; combining this with the fact that Norway and the Netherlands are geographically close to each other and have parliamentary democratic political systems under constitutional monarchies[10][13], statistical comparison between Norway’s and the Netherland’s raw suicide rates makes for a potentially excellent way to conduct a natural experiment on the effect of euthanasia legalization on suicide rate.
+    </p>
+
+    <h4>Procedure: Computational Explanation</h4>
+    <p>
+    <b><i>For Mexico, </i></b>I collected information on the population sizes of and the numbers of suicides in the Federal District and all the Mexican states in 2005 and in 2010 from Instituto Nacional de Estadística y Geografía, a Mexican government agency; the information was put in an Excel spreadsheet, which was then converted to a csv file. After importing the csv file into a Jupyter notebook file, for each Mexican region (Mexican states and the Federal District) for each year, I used Python within the notebook to divide the number of suicides by the population size and multiplied the resulting number by 100,000 to get the raw suicide rate for that region for that year. Afterwards, for each region, I used Python to calculate the percent change in raw suicide rate from 2005 to 2010 by dividing the absolute change in raw suicide rate from 2005 to 2010 by the raw suicide rate in 2005 and multiplying the resulting number by 100. Then, I used Python to calculate the average percent change in raw suicide rate among the Federal District and the states that legalized euthanasia between 2005 and 2010 and among states that did not legalize euthanasia in the same time period.
+    </p>
+    <p> 
+    Afterwards, within the Jupyter notebook file, I created an array of the raw suicide rates for the Federal District and the Mexican states. I also created an array of 3 “Yes”’s and 29 “No”’s to represent the two states and the Federal District that legalized euthanasia along with the 29 states that did not. After creating an empty array called simulated_differences, I created a Python for-loop to do ten thousand repetitions of the following:
+    </p>
+    <p>
+      1.  The thirty-two “Yes”’s and “No”’s were shuffled by putting the array into a table as a column and then obtaining a sample of thirty-two table rows from the thirty-two rows of the newly formed table without replacement.
+      <br>
+      2.  A table with columns “Euthanasia legal?” and “Percent change in raw suicide rate” was created. The “Euthanasia legal?” column contained the shuffled array of “Yes”’s and “No”’s. The “Percent change in raw suicide rate” column contained the array of the raw suicide rates of the Federal District and the Mexican states.
+      <br>
+      3.  The difference in average percent change in raw suicide rate (euthanasia-legal minus euthanasia-illegal) was calculated between rows with “Yes” in the “Euthanasia Legal?” column and rows with “No” in the “Euthanasia Legal?” column.
+      <br>
+      4.  This calculated difference was appended to simulated_differences.
+      After all the repetitions were done, then I used Python to calculate the percentile of the observed difference in average percent change in raw suicide between regions that legalized euthanasia and regions that did not within the simulated_differences array (euthanasia-legal minus euthanasia-illegal) within the values in simulated_differences.
+    </p>
+
+    <p>
+    <b><i>For the Netherlands, </i></b>I collected information on the population sizes of and the numbers of suicides in the Netherlands from 1950 to 2016 from StatLine, a website run by the Netherland's governmental statistics institution Centraal Bureau voor de Statistiek. I obtained such information in csv files directly from StatLine; the csv files were subsequently imported and cleaned in a separate Jupyter notebook file using Python. Then, for each year, I used Python to divide the number of suicides by the population size and multiplied the resulting number by 100,000 to get the raw suicide rate for the Netherlands for that year.
+    </p>
+    <p>
+    Then, I collected information on the population size of and the number of suicides in Norway from 1969 to 2012 from Statistics Norway. I obtained such information in xls files directly from Statistics Norway; the information in these files were then rearranged in a different xls file, which was subsequently converted to csv file in Microsoft Excel. The csv file was then imported to the Jupyter notebook file. Then, for each year, I used Python to divide the number of suicides by the population size and multiplied the resulting number by 100,000 to get the raw suicide rate for Norway for that year.
+    </p>
+    <p>
+    From here, I created a table containing the absolute changes in difference in raw suicide rate between Norway and the Netherlands (Norway - the Netherlands) from year to year from 1969-1970 to 2011-2012. Then, I used Python to perform a paired t-test on the absolute changes in the table in the following time periods:
+    - After the Postma case of 1973
+      - From 1973-1974 to 1977-1978
+      - From 1973-1974 to 1982-1983
+    - After the Schoonheim case of 1984
+      - From 1984-1985 to 1988-1989
+      - From 1984-1985 to 1993-1994
+    - After the official legalization of euthanasia in the Netherlands in 2002
+      - From 2002-2003 to 2006-2007
+      - From 2002-2003 to 2011-2012
+    </p>
+    <h4>Procedure: Statistical Explanation</h4>
+    <p>
+    The statistical method used with Mexico is called A/B Testing, and the testing was done with the following hypotheses:
+    <br>
+    - Null hypothesis: Distribution of percent changes in raw suicide rates from 2005 to 2010 in Mexican states that did not legalize euthanasia in the same time period is similar to that in the Federal District and the Mexican states that did legalize euthanasia in the same time period.
+    - Alternative hypothesis: Percent changes in raw suicide rates from 2005 to 2010 tend to be greater in Mexican states that did not legalize euthanasia than in the Federal District and the Mexican states that did.
+    <br>
+    The percentile value obtained at the end of the Mexico-related part of the procedure was the P-value for the A/B Testing.
+    </p>
+    <p>
+    The statistical technique used with the Netherlands (and Norway) is called difference-in-differences, and the technique was used to take a look at disparities in yearly changes in raw suicide rate between the Netherlands and Norway after occurrence of significant legal events in the Netherlands in regards to euthanasia. For each year-to-year interval, the difference-in-difference value in raw suicide rate between the Netherlands and Norway was calculated in the manner shown in the table below: 
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/suicide/yc1.png'%}" style="margin:auto">
+    <br>
+    <p>
+      After collecting difference-in-difference values for certain year-to-year intervals after the occurrences of significant legal events in the Netherlands in regards to euthanasia, a paired t-test was performed on those difference-in-difference values for each of these events under the following hypotheses:
+      <br>
+      <b>Null hypothesis: </b>The true mean yearly difference-in-difference in the years after the event is equal to 0.
+      <b>Alternative hypothesis: </b>The true mean yearly difference-in-difference in the years after the event is greater than 0 (meaning that Norway experienced higher changes in raw suicide rate than the Netherlands after the event).
+    </p>
+</div>
+
+<div id="Results">
+  <h3>Results</h3>
+    <h4>Mexico</h4>
+    <p>
+      Between the eight countries included in the dataset, there is variance in the average polling error. I took the absolute value of the mean absolute and mean relative errors for all elections in each country and compared them in a bar graph.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/suicide/yc2.png' %}" style="margin:auto">
+    <br>
+    <p>
+      From 2005 to 2010, the average percent change in raw suicide rate among Mexican states that did not legalize euthanasia was about 36% (or, to be exact, 35.9693654892%), while the average percent change in raw suicide rate among the Federal District and the Mexican states that did legalize euthanasia was about 18% (or, to be exact, 17.8113851197%). In essence, the raw suicide rates in euthanasia-illegal states increased by twice on average as much as those in euthanasia-legal regions did on average from 2005 to 2010.
+    </p>
+    <p>
+      However, when the A/B testing was done, with the observed difference being around -18% (or, to be exact, 17.8113851197% - 35.9693654892% = -18.1579803695%), the percentile of the observed difference in the simulated difference values would have been 48.33%, making the P-value 48.33%. As a result, under commonly used P-value cutoffs (5%, 10%, 20%, etc.), I would have failed to reject the null hypothesis that distribution of percent changes in raw suicide rates from 2005 to 2010 in Mexican states that did not legalize euthanasia in the same time period is similar to that in the Federal District and the Mexican states that did legalize euthanasia in the same time period.
+    </p>
+
+    <h4>The Netherlands</h4>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/suicide/yc3.png' %}" style="margin:auto">
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/suicide/yc4.png' %}" style="margin:auto">
+    <br>
+    <p>
+      Looking at Figure 2, it seems that disparity in raw suicide rate between Norway and the Netherlands -- initially close to zero  -- began increasing after the Postma case with Norway ending up with a higher raw suicide rate than the Netherlands several years after the case. The disparity in raw suicide rate seemed to continue increasing for a few years after the Schoonheim case, though the disparity seemingly began to decrease at the beginning of the 1990s. The disparity then seemed to stay constant after the mid-1990s, even after the official legalization of euthanasia in the Netherlands, until the disparity disappeared in the early 2010s. 
+    </p>
+    <p>
+      Figure 2, hence, suggests that the Postma case perhaps had a lasting impact on the raw suicide rate of the Netherlands, but the Schoonheim case only had a brief such impact and the legalization of euthanasia did not have much impact on the raw suicide rate of the Netherlands.
+    </p>
+    <p>
+      Looking at Figure 3, P-values from the paired T-tests seemed to be low for 5-year ranges of time intervals after the events (1973-1974 to 1977-1978, 1984-1985 to 1988-1989, 2002-2003 to 2011-2012) with all these P-values being less than 15%. However, except for range 1973-1974 to 1982-1983, P-values from 10-year ranges of time intervals after the events (1984-1985 to 1993-1994, 2002-2003 to 2011-2012) seemed to be very high with the P-values being greater than 50%. Also, P-values for time interval ranges after the Schoonheim case (~13%, ~52%) were generally greater than those for time interval ranges after the earlier Postma case (~9.1%, ~8.5%). Similarly, P-values for time interval ranges after the legalization of euthanasia (~14%, ~67%) were generally greater than those for time interval ranges after the earlier Postma case (~9.1%, ~8.5%).
+    </p>
+    <p>
+      Hence, Figure 3, like Figure 2, suggests that the Postma case perhaps had both strong short-term and long-term negative impacts on the raw suicide rate of the Netherlands. However, Figure 3 also suggests that the Schoonheim case and the legalization of euthanasia perhaps only had a short-term negative impact and even a long-term positive impact on the raw suicide rate of the Netherlands. Figure 3 also suggests that the short-term negative impact was perhaps lower for later events than for earlier events.
+    </p>
+    <br></br>
+</div>
+
+<div id="Conclusion">
+  <h3>Conclusion</h3>
+    <p>
+      Data from Mexico indicate that the legalization of passive euthanasia in certain Mexican regions likely is unrelated to the Mexican regions’ raw suicide rates in the short run. Data from the Netherlands (and Norway) indicate that, while major events towards the legalization of active and passive euthanasia may have had a decreasing short-run impact on the raw suicide rate of the Netherlands, such effect -- if present -- likely became diluted over time. 
+    </p>
+    <p>
+      Statistical analysis done in this project is admittedly not perfect, since there may be confounding factors (such as differences in economic structure) other than the legal status of euthanasia that may account for the disparity in changes in raw suicide rates among different Mexican regions and between the Netherlands and Norway. Nonetheless, I wish that my research study will inspire more research on statistical relationship between the legal status of euthanasia and suicide rate.
+    </p>
+    <p>
+      <i>Thanks to Alex Chan, Arun Ramamurthy, Brian Yao, Isaac Pariser, and Winne Luo for providing assistance for my research project.</i>
+    </p>
+</div>
+
+<div id="sources">
+  <h3>Sources</h3>
+  <h4>Data Sources</h4>
+    <p>
+      Numbers of Suicides in Mexican Regions in 2005: 
+      <a href="http://www.beta.inegi.org.mx/app/biblioteca/ficha.html?upc=702825006528">http://www.beta.inegi.org.mx/app/biblioteca/ficha.html?upc=702825006528 </a>
+      <br>
+      Numbers of Suicides in Mexican Regions in 2010:
+      <a href="http://www.beta.inegi.org.mx/app/biblioteca/ficha.html?upc=702825003397">http://www.beta.inegi.org.mx/app/biblioteca/ficha.html?upc=702825003397</a>
+      <br>
+      Population Sizes of Mexican Regions:
+      <a href="http://www.beta.inegi.org.mx/app/indicadores/?ind=1002000001##divFV6200240300#D1002000001">http://www.beta.inegi.org.mx/app/indicadores/?ind=1002000001##divFV6200240300#D1002000001</a>
+      <br>
+      Number of Suicides in the Netherlands:
+      <a href="https://opendata.cbs.nl/statline/#/CBS/en/dataset/7022eng/table?ts=1520830509740">https://opendata.cbs.nl/statline/#/CBS/en/dataset/7022eng/table?ts=1520830509740</a>
+      <br>
+      Population Size of the Netherlands:
+      <a href="https://opendata.cbs.nl/statline/#/CBS/en/dataset/37296eng/table?ts=1520832149072 ">https://opendata.cbs.nl/statline/#/CBS/en/dataset/37296eng/table?ts=1520832149072</a>
+      <br>
+      Number of Suicides in Norway:
+      <a href="https://www.ssb.no/en/statbank/table/08877/?rxid=4bbb8427-270b-4247-befe-4e820b6e11a6"> https://www.ssb.no/en/statbank/table/08877/?rxid=4bbb8427-270b-4247-befe-4e820b6e11a6</a>
+      <br>
+      Population Size of Norway:
+      <a href="https://www.ssb.no/en/statbank/table/06913/?rxid=a187f18e-0398-4ba2-99bd-fe885cbcb898"> https://www.ssb.no/en/statbank/table/06913/?rxid=a187f18e-0398-4ba2-99bd-fe885cbcb898 </a>
+    </p>
+    <h4>Endnote Sources</h4>
+    <p>
+      [1]
+      <a href="https://www.straitstimes.com/asia/east-asia/new-law-enables-south-koreans-to-die-well">https://www.straitstimes.com/asia/east-asia/new-law-enables-south-koreans-to-die-well</a>
+      <br>
+      [2]
+      <a href="http://m.news.naver.com/read.nhn?sid1=102&oid=008&aid=0003914483&mode=LSD ">http://m.news.naver.com/read.nhn?sid1=102&oid=008&aid=0003914483&mode=LSD </a>
+      <br>
+      [3]
+      <a href="http://search.ebscohost.com/login.aspx?direct=true&db=rzh&AN=106713123&site=ehost-live">http://search.ebscohost.com/login.aspx?direct=true&db=rzh&AN=106713123&site=ehost-live</a>
+      <br>
+      [4]
+      <a href="https://plato.stanford.edu/entries/euthanasia-voluntary/">https://plato.stanford.edu/entries/euthanasia-voluntary/</a>
+      <br>
+      [5]
+      <a href="http://www.bbc.co.uk/ethics/euthanasia/overview/keywords.shtml">http://www.bbc.co.uk/ethics/euthanasia/overview/keywords.shtml</a>
+      <br>
+      [6]
+      <a href="https://www.britannica.com/place/Mexico/Government-and-society">https://www.britannica.com/place/Mexico/Government-and-society</a>
+      <br>
+      [7]
+      <a href="http://archivo.eluniversal.com.mx/notas/472474.html">http://archivo.eluniversal.com.mx/notas/472474.html</a>
+      <br>
+      [8]
+      <a href="http://www.lja.mx/2009/04/solo-falta-reglamentar-la-voluntad-anticipada-para-aplicarla-ruvalcaba/">http://www.lja.mx/2009/04/solo-falta-reglamentar-la-voluntad-anticipada-para-aplicarla-ruvalcaba/</a>
+      <br>
+      [9]
+      <a href="https://www.eleconomista.com.mx/politica/Senado-aprueba-libertad-anticipada-inmediata-20160421-0014.html">https://www.eleconomista.com.mx/politica/Senado-aprueba-libertad-anticipada-inmediata-20160421-0014.html</a>
+      <br>
+      [10]
+      <a href="https://nimd.org/wp-content/uploads/2015/02/Dutch-Political-System.pdf">https://nimd.org/wp-content/uploads/2015/02/Dutch-Political-System.pdf (pages 9 - 11)</a>
+      <br>
+      [11]
+      <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2733179/ ">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2733179/ </a>
+      <br>
+      [12]
+      <a href="https://www.ncbi.nlm.nih.gov/pubmed/25124467 ">https://www.ncbi.nlm.nih.gov/pubmed/25124467 </a>
+      <br>
+      [13]
+      <a href="https://en.wikipedia.org/wiki/Politics_of_Norway ">https://en.wikipedia.org/wiki/Politics_of_Norway</a>
+    </p>
+
+</div>
+
+{% endblock %}

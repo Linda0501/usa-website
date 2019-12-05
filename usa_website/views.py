@@ -378,6 +378,10 @@ def number_concept(request):
 	context = {}
 	return HttpResponse(t.render(context))
 
+def suicide(request):
+    t = get_template("blog/rp/spring_2018/suicide.html")
+    context = {}
+    return HttpResponse(t.render(context))
 
 
 #####################################
@@ -443,6 +447,11 @@ def machinelearning_and_finance(request):
 
 def identifying_art_styles(request):
     t = get_template("blog/rp/spring_2019/identifying-art-styles.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def eurovision(request):
+    t = get_template("blog/rp/spring_2019/the_musical_chairs_of_eurovision.html")
     context = {}
     return HttpResponse(t.render(context))
 

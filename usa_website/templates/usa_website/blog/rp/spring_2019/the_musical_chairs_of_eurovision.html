@@ -1,0 +1,160 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title>The Musical Chairs of Eurovision</title>
+<head>
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<h1>The Musical Chairs of Eurovision</h1>
+<h2>How culture and geopolitics shape the world’s most-watched non-sporting event</h2>
+<h3>
+    <span style="color: #D5518D" id="author">By </span>
+    <span style="color: #3E95D7" id="name">Nickan Fayyazi</span>
+  </h3>
+
+<div class=Blog_Nav>
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Introduction</a></li>
+    <li><a href="#Section2">Data</a></li>
+    <li><a href="#Section3">Example</a></li>
+    <li><a href="#Section4">Results</a></li>
+    <li><a href="#Section5">Analysis</a></li>
+    <li><a href="#Section6">Conclusion</a></li>
+  </ol>
+</div>
+<br>
+
+<div id="Section1">
+  <h3>Introduction</h3>
+    <p>
+      The Eurovision Song Contest is an annual international song competition that has been held since 1956. Founded as a means of bringing countries and peoples together in a Europe still recovering in the wake of World War II, the inaugural edition involved Belgium, France, West Germany, Italy, Luxembourg, the Netherlands, and Switzerland; and the contest has since expanded to virtually every country in Europe as well as some outside the continent, most notably Israel and Australia.
+    </p>
+    <p>
+      The format of the competition has changed in some respects over the years but has mostly stayed fairly consistent throughout the history of the competition. Each country sends an artist or a group to perform a song, limited to three minutes in length, and the participating countries vote to determine the winner. In the current iteration of the voting system, each country awards points determined by the rankings of the country's selected jury of musical professionals and points determined by the votes of the country's residents watching at home (referred to as televoters). The act ranked first by a country's jury is awarded twelve points by that country, followed by ten, eight, seven, six, and so on for the top ten, with the awarding of points from televoters following likewise.
+    </p>
+    <p>
+      For example, below is the breakdown of televoting points in 2018's final:
+    </p>
+    <!-- This is how you add an image! style="margin:auto" centers the image. -->
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/the_musical_chairs_of_eurovision/introduction_pic.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      In its contemporary form, the contest consists of two semi-finals and a final. The "big five" countries (France, Germany, Spain, Italy, and the United Kingdom) as well as the host country (which is generally the winner of the previous year's contest) are guaranteed entry to the final and thus do not participate in the semi-finals, while the rest of the countries are arranged into the two semi-finals and the top ten countries in each semi-final proceed to the final. The introduction of semi-finals is relatively recent, with one semi-final taking place starting in 2004 and two semi-finals taking place starting in 2008, a solution to the influx of new participants in the 1990s and 2000s following the end of the Cold War (26 countries made their debuts between 1993 and 2008); until 2003, only a single event was held each year.
+    </p>
+    <p>
+      While there is significant year-to-year variation in countries' overall performances, there are notable patterns that exist in the awarding of points; in other words, some countries generally tend to award more points to certain countries than to others. For example, Greece and Cyprus tend to award each other a high number of points. Pairs or groups of countries that tend to award each other more points are referred to as "voting blocs". Reasons for the existence of these blocs can be numerous: geopolitical alliances, cultural similarity, linguistic similarity, and geographic proximity. Furthermore, one-sided relationships can exist in the awarding of televoter points due to significant diaspora populations residing in certain countries. For example, the United Kingdom frequently awards many points to Lithuania, a fact which can be attributed to the estimated 144 thousand Lithuanian immigrants living in the United Kingdom as well as the many descendants of Lithuanian immigrants.
+    </p>
+    <p>
+      Although the existence of voting blocs is well-known in Eurovision circles, and  many of the more prominent blocs are identifiable, only a limited amount of research has been conducted with respect to what specific patterns and blocs are present. The few articles that exist only cover a single year or a few years of votes. The purpose of this research project is to examine these patterns both more broadly and in greater depth and to investigate the underlying reasons behind said patterns.
+    </p>
+</div>
+
+<div id="Section2">
+  <h3>Data</h3>
+    <p>
+      The dataset used for this project was developed by Stephan Okhuijsen and consists of the number of points each country awarded each other country in every edition of Eurovision since 1975. The dataset encompasses 43 contests, 70 shows (due to the presence of semi-finals), 53 countries, and 46,383 lines of data.
+    </p>
+    <p>
+      Below is a map displaying each country's Eurovision debut by decade. All countries shown in the map are included in the dataset.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/the_musical_chairs_of_eurovision/data_pic.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      I made a number of modifications to the original dataset. I removed all televote results, as the differing nature between professional juries and televoters meant that including both results together may obscure results, and the sample size for televote results was too small for it to be examined on its own; instead, I only used jury results. I  removed the number of points a country awarded to itself, as that number is always zero. I also removed pairings of countries that have only met each other fewer than three times, as the small sample sizes of those pairings could lead to outlier results skewing the data.
+    </p>
+    <p>
+      The variable I primarily looked at was the number of points each country gave to each other country. Furthermore, I produced a normalized version of this variable, wherein I divided each number of points by the total number of points the respective receiving country won in that year's contest. For example, in 1975, Belgium awarded France 2 points. In that year's contest, France won a total of 91 points, so Belgium awarded France 2.2% of its points, which is that pair's normalized point count for 1975. Using this additional metric can help control for instances in which, for example, a country gave a high number of points to another country not because of a voting bloc but simply because the latter country performed well overall.
+    </p>
+</div>
+
+<div id="Section3">
+  <h3>Example</h3>
+    <p>
+      To show an example of the results of a particular pair of countries, the pair of Belgium (giver) and France (receiver) can be used.
+    </p>
+    <p>
+      Throughout the contests and shows in which Belgium and France have met, Belgium has awarded France a mean of 2.98 points, or 4.27% normalized. Meanwhile, France received a mean of 2.14 points, or 3.68% normalized, from all other countries in all of its appearances. Belgium gave an average of 2.75 points, or 3.40% normalized, to all other countries. This suggests that France tends to receive an above-average number and proportion of points from Belgium, and Belgium tends to give an above-average number and proportion of points to Belgium.
+    </p>
+    <p>
+      The number of points, both raw and normalized, that Belgium gave France in each contest can be viewed historically:
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/the_musical_chairs_of_eurovision/example_pic.png' %}" style="margin:auto"></img><br><br>
+</div>
+
+<div id="Section4">
+  <h3>Results</h3>
+    <p>
+      Below are the highest-ranking, or “best”, “relationships”, i.e. the pairs of countries that rank the highest in average number of points awarded by the giver to the receiver:
+    </p>
+    <p>
+      Raw points:
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/the_musical_chairs_of_eurovision/first_chart.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Normalized points:
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/the_musical_chairs_of_eurovision/second_chart.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Likewise with the “worst” relationships:
+    </p>
+    <p>
+      Raw points:
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/the_musical_chairs_of_eurovision/third_chart.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Normalized points:
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/the_musical_chairs_of_eurovision/fourth_chart.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Finally, the best and worst relationships with points and normalized points being combined (normalized points having been multiplied by one hundred):
+    </p>
+    <p>
+      Best:
+    </p>
+
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/the_musical_chairs_of_eurovision/fifth_chart.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Worst:
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/the_musical_chairs_of_eurovision/sixth_chart.png' %}" style="margin:auto"></img><br><br>
+</div>
+
+<div id="Section5">
+  <h3>Analysis</h3>
+    <p>
+      The best relationships in the dataset mostly fit the characteristics mentioned in the introduction: geopolitical alliance, cultural similarity, linguistic similarity, and geographic proximity. Specifically taking the top 25 relationships from the combined dataset, excluding those which involve countries that no longer exist (e.g. SFR Yugoslavia):
+    </p>
+    <ul>
+      <li>17 pairs share a land border, 2 share proximity through water, and 4 are separated by a single other country.</li>
+      <li>8 pairs share their primary language, 9 share the linguistic group (e.g. Slavic, Baltic, Romance) of their primary languages, and 4 share a co-official language.</li>
+      <li>13 pairs have been part of the same country in the last century, of which 12 have been part of the same country in the last thirty years. An additional 2 pairs have experienced an attempt at unification in the past century.</li>
+      <li>13 pairs satisfy a criterion from all three preceding categories and 10 satisfy a criterion from two of the preceding three.</li>
+    </ul>
+    <p>
+      The only two pairs that satisfy none of the aforementioned criteria are Malta-Luxembourg and Malta-Slovakia, with Malta being the giver in both cases. Both can be attributed to the high number of normalized points; Malta gave Luxembourg an average of 49% of its points and Slovakia an average of 31% of its points, while when looking at raw points given, those numbers are a mere 6.3 and 5.4, respectively; while still relatively high, they do not come close to ranking among the best relationships when measuring by raw points alone. This is due to the fact that Luxembourg and Slovakia averaged a low number of total points in the contests in which they met Malta.
+    </p>
+    <p>
+      Looking more closely at each of the countries’ meetings, Malta gave Luxembourg 7, 4, 5, 0, 10, and 10 points in 1971, 1972, 1975, 1991, 1992, and 1993, respectively. In the two last cases, Luxembourg received only 10 and 11 points, respectively, in total, meaning that Malta gave the country all or nearly all of its points, and in 1992, Luxembourg itself gave Malta 12 points (Malta received a total of 123). Malta gave Slovakia 12, 8, 0, 0, and 7 points in 1994, 1996, 1998, 2010, and 2012, respectively. In 1994, Malta gave Slovakia nearly all of its 15 points, and Slovakia returned the favor, itself giving Malta a full 12 points; Malta again performed well that year, receiving 97 points in total.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/spring_2019/the_musical_chairs_of_eurovision/ending_pic.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Among for the worst relationships in the dataset, there are far fewer similarities. Of the bottom 25, only 3 clash geopolitically or culturally: Armenia-Azerbaijan, Cyprus-Turkey, and Turkey-Cyprus. The two pairs are both involved in ongoing territorial disputes, and Armenia and Azerbaijan have been at war with each other within the past three decades. The remaining countries lack a distinct, identifiable conflict or other potential factor; most simply have no relation to each other.
+    </p>
+
+</div>
+
+<div id="Section6">
+  <h3>Conclusion</h3>
+    <p>
+      Geographic proximity, linguistic similarity, and shared history are all strongly correlated with relationships in which countries give each other high numbers of points. Only a select few cases that do not satisfy such criteria can be found among the best relationships. Among the weakest relationships, most countries either have active or recent disputes or have little to no cultural relations, while countries with geographic proximity, linguistic similarity, and shared history do not appear among the worst relationships.
+    </p>
+    <p>
+      Among the top 25 relationships, the most common regions featuring voting blocs are the Balkans, the former Soviet Union, the Baltics, and the Iberian peninsula. Among the bottom 25 relationships, most countries have no relative geographic proximity within Europe.
+    </p>
+    <p>
+      The aforementioned inferences indicate that cultural and political similarities contribute to countries’ voting decisions in the Eurovision Song Contest. While the psychology of professional juries cannot be examined using existing data, voting data strongly suggests the presence of such factors driving voting patterns throughout the Contest’s history.
+    </p>
+</div>
+
+{% endblock %}

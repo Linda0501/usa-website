@@ -92,6 +92,7 @@ urlpatterns = [
     url(r'rp/college-vs-nba-success$', views.college_vs_nba_success, name="college_vs_nba_success"),
     url(r'rp/num-concept$', views.number_concept, name="number_concept"),
     url(r'rp/SteinerTreeProblem$', views.SteinerTreeProblem, name="SteinerTreeProblem"),
+    url(r'rp/suicide$', views.suicide, name="suicide"),
 
     #R+P Fall 2018
     url(r'rp/music-moods$', views.music_moods, name="music_moods"),
@@ -108,6 +109,7 @@ urlpatterns = [
     url(r'rp/winning-the-mlb-world-series$', views.winning, name="winning-the-mlb-world-series"),
     url(r'rp/machinelearning_and_finance$', views.machinelearning_and_finance, name="machinelearning_and_finance"),
     url(r'rp/identifying_art_styles$', views.identifying_art_styles, name='identifying_art_styles'),
+    url(r'rp/eurovision$', views.eurovision, name='eurovision'),
 
     #Education
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
