@@ -39,7 +39,6 @@ def check_sid_exists(sid):  # check in views.py if student id exits
         if i == str(sid):
             return True
     return False
-
     """
 
 
@@ -91,7 +90,6 @@ attended_events = []
                 attended_events.append(sid_points[i] + " " + events_name[i] + "s")
             else:
                 attended_events.append(events_name[i])
-
     return attended_events
 """
 
