@@ -7,7 +7,7 @@ scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/au
          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 
 credentials = ServiceAccountCredentials.from_json_keyfile_name("usa-website/src/usa_website/utils/creds.json", scope)
-# usa_website/utils/creds.json
+# usa-website/src/usa_website/utils/creds.json
 
 http = httplib2.Http()
 http = credentials.authorize(http)
