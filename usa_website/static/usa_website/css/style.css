@@ -950,14 +950,16 @@ h3 {
 }
 
 #fh5co-blog-section .item-grid-edu .v-align h3 {
-  font-family: "Avenir Next";
-  font-weight: 500;
+  font-family: "Avenir Next Light";
+  font-weight: 700;
   font-size: 155%;
   padding-bottom:20px;
 }
 
 #fh5co-blog-section .item-grid-edu .v-align h5 {
   color: rgba(0, 0, 0, 0.3); 
+  font-family: "Avenir Next Light";
+  font-weight: 700;
   font-size: 125%;
   position: absolute;
   bottom: 15px;
@@ -1012,11 +1014,15 @@ h3 {
 }
 
 #fh5co-blog-section .item-grid-wd .v-align h3 {
+    font-family: "Avenir Next Light";
+  font-weight: 700;
   font-size: 155%;
   padding-bottom:20px;
 }
 
 #fh5co-blog-section .item-grid-wd .v-align h5 {
+    font-family: "Avenir Next Light";
+  font-weight: 700;
   color: rgba(0, 0, 0, 0.3); 
   font-size: 115%;
   position: absolute;
