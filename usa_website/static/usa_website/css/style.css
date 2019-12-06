@@ -1103,8 +1103,25 @@ h3 {
 
 /*end of rp*/
 
+/*cx has 1 thing*/
+#fh5co-blog-section .cxHead {
+    margin-top: 20px;
+    padding-bottom:50px;
+    font-size: 110%;
+}
 
-/*Rest of the tiles stuff*/
+/*dc*/
+#fh5co-blog-section .dcHead {
+    margin-top: 20px;
+    font-size: 110%;
+}
+
+#fh5co-blog-section .dc-title {
+  font-family: "Avenir Next Light";
+    font-weight: 500;
+    font-size: 350%;
+    margin-top: 35px;
+}
 
 #fh5co-blog-section .item-grid {
   width: 100%;
@@ -1112,17 +1129,17 @@ h3 {
   float: left;
   position: relative;
   margin-bottom: 50px;
-  -webkit-box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.20);
-  -moz-box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.20);
-  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.20);
-  background: #f0eada;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: white;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
   top: 2px;
 }
 #fh5co-blog-section .item-grid .image {
-  height: 240px;
+  height: 150px;
   overflow: hidden;
   background-size: cover;
   background-position: center center;
@@ -1147,7 +1164,7 @@ h3 {
   box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
   top: -2px;
 }
-/*ends here*/
+/*dc styling, just goes by default name now cuz i'm too lazy to change it*/
 
 .item-block {
   margin-bottom: 7em;
