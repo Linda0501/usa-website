@@ -1,22 +1,21 @@
-{% extends "blog/dataconsulting/dc_header.html" %}
+{% extends "blog/rp/rp_header.html" %}
 {% block content %}
 {% load staticfiles %}
 
-<title>Project Title</title>
+<title> UIzard - Automating UI Code</title>
 <head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
   <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+   <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 
 <!-- ADD CAPTION STYLING? -->
 
-<h1>Project Title</h1>
-<h3>
-    <span style="color: #D5518D" id="author">PM: </span>
-    <span style="color: #3E95D7" id="name">Noah Gundotra</span>
-  </h3>
+<h1>UIzard - Automating UI Code</h1>
 
-<div class=Blog_Navigation>
+<div class=Blog_Nav>
   <ol>
     <li><a href="#Abstract">Abstract</a></li>
     <li><a href="#Intro">1 — Intro</a></li>
@@ -29,6 +28,15 @@
   </ol>
 </div>
 <br>
+
+<h2>
+    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+    <span style="color: gray" id="author">By </span>
+    <span style="color: gray" id="name">Noah Gundotra</span>
+    <span style="color: gray" id="date"></span> 
+  </h3>
+
+  <img class = "titlePic" src= "{% static 'usa_website/images/dataconsulting/sp18/computer_brain.jpg' %}" style="margin:auto"></img><br><br>
 
 <p> Adapted from <a href="https://towardsdatascience.com/code2pix-deep-learning-compiler-for-graphical-user-interfaces-1256c346950b">Noah's Medium article!</a></p>
 
