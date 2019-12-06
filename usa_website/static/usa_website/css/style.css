@@ -1,5 +1,5 @@
 
- 
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
@@ -484,6 +484,7 @@ h3 {
   #fh5co-header .dropdown-item{
     color: #000000;
     font-size:17px;
+    transform: scale(1.0);
   }
 
   #fh5co-header .nav-link{
@@ -515,10 +516,9 @@ h3 {
 }
 
 #fh5co-header nav ul li  .dropdown-menu a:hover{
-
-  margin-top: 17px;
+  transform: scale(1.0);
+  margin-top: 0px;
   color: #000000
-
 }
 
 #fh5co-header nav ul li .dropdown-menu a {
