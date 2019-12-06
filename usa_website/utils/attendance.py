@@ -38,7 +38,7 @@ def check_sid_exists(sid):  # check in views.py if student id exits
     for i in sid_lst:
         if i == str(sid):
             return True
-    return False 
+    return False
 
     """
 
