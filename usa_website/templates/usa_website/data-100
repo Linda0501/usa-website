@@ -1,0 +1,51 @@
+{% extends "header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<style>
+	div.main {
+		text-align: center;
+	}
+</style>
+
+<body>
+	<div class="main">
+
+		<h1> Data 100: Principles and Techniques of Data Science </h1>
+
+		<h3> Overview </h3>
+		<p> Combining data, computation, and inferential thinking, data science is redefining how people and organizations solve challenging problems and understand their world. This intermediate level class bridges between Data8 and upper division computer science and statistics courses as well as methods courses in other fields. In this class, we explore key areas of data science including question formulation, data collection and cleaning, visualization, statistical inference, predictive modeling, and decision making.​ Through a strong emphasizes on data centric computing, quantitative critical thinking, and exploratory data analysis this class covers key principles and techniques of data science. These include languages for transforming, querying and analyzing data; algorithms for machine learning methods including regression, classification and clustering; principles behind creating informative data visualizations; statistical concepts of measurement error and prediction; and techniques for scalable data processing. </p>
+		<p> Units: 4 </p>
+		<h5> Prerequisites </h5>
+			<p> Foundations of Data Science: Data 8 </p>
+			<p> Computing: The Structure and Interpretation of Computer Programs, CS61A, Computational Structures in Data Science, CS88, or Introduction to Computer Programming for Scientists and Engineers, ENGIN 7. "</p>
+
+		<h3> Average Difficulty Rating (from SAAS members) </h3>
+		<p> <strong>2</strong> out of <strong>5</strong> <p>
+
+		<h3> Testimonials </h3>
+			<h4> How was your experience in this class?</h4>
+      <i> "Amazing. Thought it would be too much work coming in, but it was very manageable and you get real experience doing data science that is applicable far beyond the classroom"</i>
+			<i> "Average amount of work, but not difficult. I found this to be the easiest upper division CS class, but it could be biased as I took CS 189 with it." </i>
+
+      <h4> How many hours per week did you spend on the class (outside of lecture, discussion, etc.)? </h4>
+      <i> "3" </i>
+
+      <h4> What is this class useful for? </h4>
+      <i> "Pandas, introductory SQL, high level understanding of machine learning topics" </i>
+
+      <h4> When should students take this course? </h4>
+      <i> "Any time" </i>
+
+      <h4> What advice do you have for people taking this class in the future? </h4>
+      <i> "Taking this if you intend to take 189 will feel like 100 is almost a waste - it's good if you don't though, and also good if you need someone to force you to learn Pandas and SQL" </i>
+
+	<!-- <h3> Additional Notes</h3>
+	<p> <!-- Insert additional notes here, like SAAS members' workload, instructors, etc. -- ></p> -->
+
+	</div>
+</body>
+
+
+
+{% endblock %}
