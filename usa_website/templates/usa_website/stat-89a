@@ -11,13 +11,13 @@
 <body>
 	<div class="main">
 
-		<h1> Stat 2 </h1>
+		<h1> Stat 89A </h1>
 
 		<h3> Overview </h3>
-		<p> Population and variables. Standard measures of location, spread and association. Normal approximation. Regression. Probability and sampling. Binomial distribution. Interval estimation. Some standard significance tests. </p>
+		<p> An introduction to linear algebra for data science. The course will cover introductory topics in linear algebra, starting with the basics; discrete probability and how prob- ability can be used to understand high-dimensional vector spaces; matrices and graphs as popular mathematical structures with which to model data (e.g., as models for term-document corpora, high-dimensional regression problems, ranking/classification of web data, adjacency properties of social network data, etc.); and geometric approaches to eigendecompositions, least-squares, principal components analysis, etc. </p>
 		<p> Units: 4 </p>
 		<h5> Prerequisites </h5>
-			<p> None. </p>
+			<p> Foundations of Data Science (COMPSCI C8 / INFO C8 / STAT C8). One year of calculus. </p>
 
 		<!-- <h3> Average Difficulty Rating (from SAAS members) </h3>
 		<p> <strong><!-- Insert avg. rating - -></strong> out of <strong>5</strong> <p>
@@ -30,7 +30,7 @@
       <p><i> <!-- Insert testimonials as quotes -- > </i></p>
 
       <h4> What is this class useful for? </h4>
-      <p><i> <!-- Insert testimonials as quotes - -> </i></p>
+      <p><i> <!-- Insert testimonials as quotes -- > </i></p>
 
       <h4> When should students take this course? </h4>
       <p><i> <!-- Insert testimonials as quotes - -> </i></p>
