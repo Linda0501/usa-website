@@ -2,39 +2,48 @@
 {% block content %}
 {% load staticfiles %}
 
+<style>
+	div.main {
+		text-align: center;
+	}
+</style>
 
-    <div class="fh5co-about">
-        <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-            <h2>Stat 135</h2>
-            <p>A comprehensive survey course in statistical theory and methodology. Topics include descriptive statistics, maximum likelihood estimation, non-parametric methods, introduction to optimality, goodness-of-fit tests, analysis of variance, bootstrap and computer-intensive methods and least squares estimation. The laboratory includes computer-based data-analytic applications to science and engineering.</p>
-        </div>
-    </div>
+<body>
+	<div class="main">
 
-    <div class="fh5co-team">
-        <div class="container">
-            <table class = "table table-hover fh5co-light-grey-section">
-                <thead>
-                    <tr>
-                        <th><strong>Instructor</strong></th>
-                        <th><strong>Type</strong></th>
-                        <th><strong>Semester</strong></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a>Pitters</a></td>
-                        <td><a>Midterm 1</a></td>
-                        <td><a>Fall 2016</a></td>
-                    </tr>
-                    <tr>
-                        <td><a>Pitters</a></td>
-                        <td><a>Midterm 2</a></td>
-                        <td><a>Fall 2016</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+		<h1> Stat 135: Concepts of Statistics </h1>
 
-    {% endblock %}
+		<h3> Overview </h3>
+		<p> A comprehensive survey course in statistical theory and methodology. Topics include descriptive statistics, maximum likelihood estimation, non-parametric methods, introduction to optimality, goodness-of-fit tests, analysis of variance, bootstrap and computer-intensive methods and least squares estimation. The laboratory includes computer-based data-analytic applications to science and engineering. </p>
+		<p> Units: 4 </p>
+		<h5> Prerequisites </h5>
+			<p> STAT 134 or STAT 140; and MATH 54, EL ENG 16A, STAT 89A, MATH 110 or equivalent linear algebra. Strongly recommended corerequisite: STAT 133 </p>
 
+		<h3> Average Difficulty Rating (from SAAS members) </h3>
+		<p> <strong>3</strong> out of <strong>5</strong> <p>
+
+		<h3> Testimonials </h3>
+			<h4> How was your experience in this class?</h4>
+      <i> "I never felt this class was particularly hard, but I couldn't do as well in this class as in 134. " </i>
+
+      <h4> How many hours per week did you spend on the class (outside of lecture, discussion, etc.)? </h4>
+      <i> "6" </i>
+
+      <h4> What is this class useful for? </h4>
+      <i> "Statistics topics that come up again in the 150 series, and topics that are good to know as a statistician." </i>
+
+      <h4> When should students take this course? </h4>
+      <i> "After 134/140" </i>
+
+      <h4> What advice do you have for people taking this class in the future? </h4>
+      <i> "Try to stay focused in the ever-so-dry lectures. They do convey decently what you need to know for the class, so master that and you will do well." </i>
+
+	<!-- <h3> Additional Notes</h3>
+	<p> <!-- Insert additional notes here, like SAAS members' workload, instructors, etc. -- ></p> -->
+
+	</div>
+</body>
+
+
+
+{% endblock %}
