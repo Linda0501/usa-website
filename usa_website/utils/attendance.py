@@ -5,7 +5,6 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 # scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
 #          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
-
 # credentials = ServiceAccountCredentials.from_json_keyfile_name("usa-website/src/usa_website/utils/creds.json", scope)
 # # usa-website/src/usa_website/utils/creds.json
 
@@ -38,7 +37,7 @@ def check_sid_exists(sid):  # check in views.py if student id exits
     for i in sid_lst:
         if i == str(sid):
             return True
-    return False 
+    return False
     """
 
 
