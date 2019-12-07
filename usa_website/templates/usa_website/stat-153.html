@@ -2,40 +2,48 @@
 {% block content %}
 {% load staticfiles %}
 
-    <div class="fh5co-about">
-        <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-            <h2>Stat 153</h2>
-            <p>An introduction to time series analysis in the time domain and frequency domain.
-      Topics will include: Stationarity, autocorrelation functions, autoregressive moving average models,
-      partial autocorrelation functions, forecasting, seasonal ARIMA models, power spectra, discrete Fourier
-      transform, parametric spectral estimation, nonparametric spectral estimation.</p>
-        </div>
-    </div>
+<style>
+	div.main {
+		text-align: center;
+	}
+</style>
 
-    <div class="fh5co-team">
-        <div class="container">
-            <table class = "table table-hover fh5co-light-grey-section">
-                <thead>
-                    <tr>
-                        <th><strong>Instructor</strong></th>
-                        <th><strong>Type</strong></th>
-                        <th><strong>Semester</strong></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a>Nolan</a></td>
-                        <td><a>Midterm 1</a></td>
-                        <td><a>Fall 2016</a></td>
-                    </tr>
-                    <tr>
-                        <td><a>Nolan</a></td>
-                        <td><a>Midterm 2</a></td>
-                        <td><a>Fall 2016</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+<body>
+	<div class="main">
 
-    {% endblock %}
+		<h1> Stat 153: Introduction to Time Series </h1>
+
+		<h3> Overview </h3>
+		<p> An introduction to time series analysis in the time domain and spectral domain. Topics will include: estimation of trends and seasonal effects, autoregressive moving average models, forecasting, indicators, harmonic analysis, spectra. </p>
+		<p> Units: 4 </p>
+		<h5> Prerequisites </h5>
+			<p> 101, 134 or consent of instructor. 133 or 135 recommended </p>
+
+		<!-- <h3> Average Difficulty Rating (from SAAS members) </h3>
+		<p> <strong><!-- Insert avg. rating -- ></strong> out of <strong>5</strong> <p>
+
+		<h3> Testimonials </h3>
+			<h4> How was your experience in this class?</h4>
+      <i> <!-- Insert testimonials as quotes - -> </i>
+
+      <h4> How many hours per week did you spend on the class (outside of lecture, discussion, etc.)? </h4>
+      <i> <!-- Insert testimonials as quotes - -> </i>
+
+      <h4> What is this class useful for? </h4>
+      <i> <!-- Insert testimonials as quotes - -> </i>
+
+      <h4> When should students take this course? </h4>
+      <i> <!-- Insert testimonials as quotes - -> </i>
+
+      <h4> What advice do you have for people taking this class in the future? </h4>
+      <i> <!-- Insert testimonials as quotes -- > </i>
+
+	<h3> Additional Notes</h3>
+	<p> <!-- Insert additional notes here, like SAAS members' workload, instructors, etc. -- ></p> -->
+
+	</div>
+</body>
+
+
+
+{% endblock %}
