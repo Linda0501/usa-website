@@ -26,12 +26,12 @@ $( document ).ready(function() {
             <div class="container">
                 <div class="col-md-12 text-center js-fullheight slider-text">
                     <div class="slider-text-inner">
-                        <h2>Data Consulting Committee</h2>
+                        <h2 style="font-weight: 100;">Data Consulting</h2>
                         <br>
                         <div>
                             <center>
                                 <a href="#fh5co-blog-section">
-                                    <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
+                                    <img alt="Arrow Down Icon" src="{% static 'usa_website/images/arrow_down.png' %}" style="width:75px;">
                                 </a>
                             </center>
                         </div>
@@ -40,27 +40,29 @@ $( document ).ready(function() {
                 </div>
           </div>
             <ul class="slides" style="height:100%;">
-            <li style="background-image: url({% static 'usa_website/images/dataconsulting/featured/banquet_taco_bell1.JPG' %});"></li>
-              <li style="background-image: url({% static 'usa_website/images/dataconsulting/featured/banquet_mtc1.JPG' %});"></li>
-            <li style="background-image: url({% static 'usa_website/images/dataconsulting/featured/grad_students.jpg' %});"></li>
-            <li style="background-image: url({% static 'usa_website/images/dataconsulting/featured/banquet_presentation.JPG' %});"></li>
-            <li style="background-image: url({% static 'usa_website/images/dataconsulting/featured/uizard_team.jpg' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/dataconsulting/featured/banquet_taco_bell1.png' %});"></li>
+              <li style="background-image: url({% static 'usa_website/images/dataconsulting/featured/banquet_mtc1.png' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/dataconsulting/featured/grad_students.png' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/dataconsulting/featured/banquet_presentation.png' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/dataconsulting/featured/uizard_team.png' %});"></li>
             </ul>
         </div>
     </aside>
 
     <div id="fh5co-blog-section">
-        <div class="container">
+
             <div class="row">
-                <div class="col-md-6 offset-md-3 text-center fh5co-heading">
-                    <h2>Data Consulting</h2>
+                <div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3 col-10 offset-1 text-center fh5co-heading dcHead">
                     <p>In the Data Consulting committee, members have the opportunity to analyze real-life data, working with companies, nonprofits, and Berkeley-affiliated organizations to advise policy and make data-driven decisions. Students will learn a variety of machine learning techniques and advanced statistical methods, as well as a suite of visualization tools, all in a professional yet instructive setting.</p>
                     <p>Each semester we work on a diverse slate of projects. From analyzing city traffic data to surveying Cal Undergraduates, our members become experienced data collectors, data mungers, data modelers, data visualizers, and data presenters. We bring skill sets from academia and the workforce to tackle any kind of challenge. More importantly, we come together as a team to learn from each other and collaborate together.</p>
                 </div>
             </div>
-            <div class="row" style=" justify-content:center;">
-                  <h2>This Semester</h2>
+
+        <div class="container">
+            <div class="row">
+                  <h1 class="wd-data" align="left">This Semester</h1>
             </div>
+
             <div class="row" >
                 <div class="col-md-4 col-sm-4">
                   <a href="{% url 'trace_data' %}" class="item-grid">
@@ -103,13 +105,10 @@ $( document ).ready(function() {
                 </div>
               </div>
 
-              <div class="row" >
-
-              </div>
-            <div class="row" style="justify-content:center;">
-                <br /> <br/>
-                  <h2>Past Projects</h2>
+            <div class="row">
+                <h1 class="wd-data" align="left">Past Projects</h1>
             </div>
+
             <div class="row" >
 
               <div class="col-md-4 col-sm-4">

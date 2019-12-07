@@ -15,12 +15,12 @@
             <div class="container">
                 <div class="col-md-12 text-center js-fullheight slider-text">
                     <div class="slider-text-inner">
-                        <h2>Web Development Committee</h2>
+                        <h2 style="font-weight: 100;">Web Development</h2>
                         <br>
                         <div>
                             <center>
                                 <a href="#fh5co-blog-section">
-                                    <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
+                                    <img alt="Arrow Down Icon" src="{% static 'usa_website/images/arrow_down.png' %}" style="width:75px;">
                                 </a>
                             </center>
                         </div>
@@ -29,65 +29,115 @@
                 </div>
           </div>
             <ul class="slides" style="height:100%;">
-            <li style="background-image: url({% static 'usa_website/images/webdev/featured/avalon.jpg' %});"></li>
-            <li style="background-image: url({% static 'usa_website/images/webdev/featured/dragonballz.jpg' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/webdev/featured/avalon.png' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/webdev/featured/dragonballz.png' %});"></li>
             </ul>
         </div>
     </aside>
 
     <div id="fh5co-blog-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3 text-center fh5co-heading">
-                    <h2>Web Development</h2>
-                    <p>The Web Development Committee develops and maintains our club website.
-                      Members have the opportunity to apply current web development
-                      technologies to publicize the club’s projects and research.</p>
+
+        <div class="row">
+                <div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3 col-10 offset-1 text-center fh5co-heading wdHead">
+                    <p>The Web Development Committee develops and maintains our club website. Members have the opportunity to apply current web development technologies to publicize the club’s projects and research in addition to developing data visualization projects to be used by SAAS members and the broader community.</p>
                 </div>
-            </div>
+        </div>
+
+        <div class="container">
+            
 
             <div class="row">
-                <div class="fh5co-heading">
-                    <h2>Check out our projects!</h2>
-                </div>
+
+                <h1 class="wd-data" align="left">Data Visualization Projects</h1>
+
             </div>
+
             <div class="row" >
-                <div class="col-md-4 col-sm-4">
-                    <a href="{% url 'ucpd_crime' %}" class="item-grid">
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">Berkeley UCPD Crime Rates</h3>
-                                <h5 class="date"><span>Allison Xu, Rachel Li, Tiffany Lee</span></h5>
-                                <h5 class="date"><span>Spring 2019</span></h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <a href="{% url 'hallofmemes' %}" class="item-grid">
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">HoM</h3>
-                                <h5 class="date"><span>Rustum and Friends</span></h5>
-                                <h5 class="date"><span>Spring 2019</span></h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <a href="{% url 'housingcrisis' %}" class="item-grid">
-                        <div class="v-align">
+
+                <div class="col-lg-4 col-md-6 col-sm-9">
+                    <a href="{% url 'housingcrisis' %}" class="item-grid-wd">
+                        <div class="v-align" style="background-color:#FBEBF5;">
                             <div class="v-align-middle">
                                 <h3 class="title">Housing Crisis</h3>
-                                <h5 class="date"><span>Abhinav Bhaskar, Kana Mishra, Kazu Kogachi, Suhas Rao</span></h5>
-                                <h5 class="date"><span>Spring 2018</span></h5>
+                                <h5 class="date"><span>Abhinav Bhaskar, Kana Mishra, Kazu Kogachi, Suhas Rao
+                                <br>Spring 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-9">
+                    <a href="{% url 'ucpd_crime' %}" class="item-grid-wd">
+                        <div class="v-align" style="background-color:#FBEBF5;">
+                            <div class="v-align-middle">
+                                <h3 class="title">Berkeley UCPD Crime Rates</h3>
+                                <h5 class="date"><span>Allison Xu, Rachel Li, Tiffany Lee<br>Spring 2019</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-9">
+                    <a href="{% url 'hallofmemes' %}" class="item-grid-wd">
+                        <div class="v-align" style="background-color:#FBEBF5;">
+                            <div class="v-align-middle">
+                                <h3 class="title">HoM</h3>
+                                <h5 class="date"><span>Rustum and Friends</span><br>Spring 2019</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+            
+            <div class="row">
+            <h1 class="wd-data" align="left">Web Development Crash Courses</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-9">
+                    <a href="{% url 'website_tutorial_0' %}" class="item-grid-wd">
+                        <div class="v-align" style="height:100%;">
+                            <div class="v-align-middle">
+                                <h3 class="title" style="font-size:140%;">How to Build Your Own Personal Website Part 0 - An Introduction to Git</h3>
+                                <h5 class="date"><span>Abhinav Bhaskar, Anthony Yu</span><br>June 25, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-9">
+                    <a href="{% url 'website_tutorial_1' %}" class="item-grid-wd">
+                        <div class="v-align" style="height:100%;">
+                            <div class="v-align-middle">
+                                <h3 class="title" style="font-size:140%;">How to Build Your Own Personal Website Part 1 - An Introduction to HTML</h3>
+                                <h5 class="date"><span>Abhinav Bhaskar, Anthony Yu</span><br>August 10, 2018</span></h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-9">
+                    <a href="{% url 'website_tutorial_2' %}" class="item-grid-wd">
+                        <div class="v-align" style="height:100%;">
+                            <div class="v-align-middle">
+                                <h3 class="title" style="font-size:140%;">How to Build Your Own Personal Website Part 2 - An Introduction to CSS</h3>
+                                <h5 class="date"><span>Abhinav Bhaskar</span><br>Sept 22, 2018</span></h5>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
 
+              <div class="col-lg-4 col-md-6 col-sm-9">
+                  <a href="{% url 'website_tutorial_3' %}" class="item-grid-wd">
+                      <div class="v-align" style="height:100%;">
+                          <div class="v-align-middle">
+                              <h3 class="title" style="font-size:140%;">How to Build Your Own Personal Website Part 3 - Advanced CSS</h3>
+                              <h5 class="date"><span>Abhinav Bhaskar</span><br>Sept 22, 2018</span></h5>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+            </div>
         </div>
+
       </div>
+
 
     {% endblock %}
