@@ -6,7 +6,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 
-credentials = ServiceAccountCredentials.from_json_keyfile_name("usa-website/src/usa_website/utils/creds.json", scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
 # usa-website/src/usa_website/utils/creds.json
 
 http = httplib2.Http()
@@ -98,4 +98,4 @@ attended_events = []
 # testing
 #print(check_sid_exists(3034206348))
 #print(get_points(3034206348))
-#print(get_events(3034206348))
+#print(get_events(str(3034206348)))
