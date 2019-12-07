@@ -118,7 +118,7 @@ def people(request):
     return HttpResponse(t.render(context))
 
 def people_new(request):
-    t = get_template("people-2.html")
+    t = get_template("people-new.html")
     context = {}
     return HttpResponse(t.render(context))
 
@@ -638,7 +638,7 @@ class AttendanceView(TemplateView):
                 #values = LookupSIDs()
                 #head_list = GetAttendanceHeader(SID)
                 #det_list = GetAttendanceDetails(SID, values)
-                exists = check_sid_exits(SID);
+                exists = check_sid_exists(SID);
                 if exists:
                     points = get_points(SID)
                     events_lst = get_events(SID)

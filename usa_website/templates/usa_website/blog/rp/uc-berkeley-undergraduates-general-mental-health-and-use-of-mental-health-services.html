@@ -22,19 +22,36 @@
 		<span style="color: gray" id="name">Shengyi Wu</span>
 		<span style="color: gray" id="date">- Nov 2, 2017</span>
 	</h2>
+
+	<div class="Blog_Nav">
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Introduction</a></li>
+    <li><a href="#Section2">Methodology</a></li>
+    <li><a href="#Section3">Results & Discussion</a></li>
+    <li><a href="#Section4">Limitations</a></li>
+    <li><a href="#Section5">Conclusion</a></li>
+  </ol>
+</div>
 	<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/fall_2017/mentalhealth/titlePic.jpg' %}" style="margin:auto"></img><br><br>
 	<br>
+	<div id = "Section1">
 	<h3>Introduction</h3>
 	<p>Throughout my two years in college, more and more students around me say that they are suffering mental health problems such as anxiety, depression, bulimia, and obsessive-compulsive disorder. Indeed, according to the Counseling Center Directors’ Survey in 2014, there is a nationwide agreement that college students are having increasingly severe psychological problems year by year. However, when I asked my friends who suffer mental illness whether they have tried any mental health services on campus, the responses that I got were consistent: no. Through this research, I investigated UC Berkeley undergraduates’ general mental health condition and the use of on campus mental health resources. Using data collected through a questionnaire, I analyzed students’ general mental health and why they don’t use mental health services.</p>
+</div>
+<div id = "Section1">
 
 	<br>
 	<h3>Methodology</h3>
 	<u>Participants</u><br>
 	<p>The sample consists of 221 UC Berkeley undergraduates, with a grade distribution as follows: 19.9% freshmen, 52.5% sophomores, 15.4% juniors, and 12.2% seniors. 69.2% of participants are identified as female, and 30.8% male. In terms of ethnicity, 71.5% were Asian/Pacific Islander, 20.8% White, 5.9% Hispanic or Latino, 0.9% Black or African American, and 0.9% Other.</p>
 
+</div>
+<div id = "Section2">
 	<u>Procedure</u><br>
 	<p>I designed a questionnaire which consisted of 16 questions, divided into three categories. Questions 1 to 4 asked general information, 8 to 11 about stress evaluation, and the last four about the use of mental health resources. The questionnaire is specific to UC Berkeley undergraduates, and was distributed through social media such as Facebook and WeChat, classroom announcements, and club announcements. After finishing collecting responses, I used R and Python to clean the data, and RStudio, Excel, and Tableau to create data visualization.</p>
-
+</div>
+<div id = "Section3">
 	<br>
 	<h3>Results & Discussion</h3>
 	<u>Mental Health Condition</u><br>
@@ -80,14 +97,18 @@
 	<p>Students are more likely to use mental health services if they are effective. Overall, only 17.8% of participants find on-campus mental health services to be very effective or effective and only 19% of them think that the services are adequate. Specific to different types of difficulties, according to Figure 6, mental health services are most effective in solving family problems and intimate relationships. However, these are actually the least popular type of difficulty that UC Berkeley undergraduates suffer. Most people have academic problems and career-related issues. Therefore, the relative ineffectiveness of solving academic problems and career-related issues by on-campus mental health services make people with these questions not willing to try the services. As these two problems have become campus culture issues and there are not enough mental health resources to address these problems, the school and Tang Center should add more services that help students ease academic and career-related issues.</p>
 
 	<br>
+</div>
+<div id = "Section4">
 	<h3>Limitations</h3>
 	<p>The sample size in my study is relatively small compared to the total number of UC Berkeley undergraduates. And, some options in some questions have very low responses, so the results based on these responses may be overstate or understate the problems. Therefore, the result that I got may not represent the situation of all UC Berkeley undergraduates. Also, the distribution of gender, year, and ethnicity in the sample doesn’t resemble that of all UC Berkeley undergraduates and the sample of 33512 students in National College Health Assessment. In my sample, the proportion of Asian students is much higher than the proportion of Asian among UC Berkeley undergraduates. Consequently, the result may not be representative for the whole population. What’s more, the results of survey may change if the survey is conducted at different time period throughout the semester because the stress level and types of difficulty that each student has keeps changing. As a result, the result may not be applicable for all year round.</p>
 
 	<br>
+</div>
+<div id = "Section5">
 	<h3>Conclusion</h3>
 	<p>In conclusion, for UC Berkeley undergraduates, academic work satisfaction has the greatest effect on general life satisfaction and stress levels. Compared to students in other U.S. colleges, the proportion of UC Berkeley undergraduates that experience traumatic difficulties in academics, career-related issues, intimate relationships, other social relationships, and personal health issues is higher than that of general U.S. college students, but lower proportion of UC Berkeley undergraduates suffer mental health disorders. However, due to the low percentage of students who have sought counseling services, there may be students who have mental health disorders but have not been diagnosed.</p>
 	<p>What’s more, UC Berkeley on-campus mental health services are not widely used by undergraduate students. The sociability of students had apparently little effect on the likelihood that they would seek help from those services, and counseling is accepted by those who do not prefer social activities. On the other hand, the relative effectiveness of solving academic problems and career-related issues, which are problems that students are most likely to seek help for, is low. The Tang Center should carry out more effective mental health services specific to these problems and encourage more students to participate in these services. UC Berkeley must pay more attention to the academic and career-related problems that students have and initiate a change in the school culture that normalizes these problems.</p>
-
+</div>
 </div>
 
 {% endblock %}

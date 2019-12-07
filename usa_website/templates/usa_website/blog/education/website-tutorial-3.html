@@ -1,17 +1,25 @@
-{% extends "blog/education/education_header.html" %}
+{% extends "blog/rp/rp_header.html" %}
 {% block content %}
 {% load staticfiles %}
 
 <title>Advanced CSS</title>
-<h2>How To Build Your Own Personal Website </h2>
-  <h3> Part 3: Advanced CSS - UNDER CONSTRUCTION</h3>
-  <h3>
-    <span style="color: #D5518D" id="author">By </span>
-    <span style="color: #3E95D7" id="name">Abhinav Bhaskar</span>
-  </h3>
-  <br />
 
-  <div class=Blog_Navigation>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<h1>How To Build Your Own Personal Website </h1>
+  <h4 style="font-size:200%; margin-top:10px;"> Part 3: Advanced CSS</h4>
+      <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+    <span style="color: gray" id="author">By </span>
+    <span style="color: gray" id="name">Abhinav Bhaskar</span>
+    <span style="color: gray" id="date">- Sept 22, 2018</span>
+  </h2>
+
+
+  <div class=Blog_Nav>
     <ol>
       <li><a href="#Purpose">Purpose</a></li>
       <li><a href="#Other">Step 5: Other Useful Properties</a></li>
@@ -21,7 +29,9 @@
       <li><a href="#Animations">Step 9: Animations</a></li>
     </ol>
   </div>
-  <br>
+
+
+  <img class = "titlePic" src="{% static 'usa_website/images/webdev/tutorials/howtoweb3.jpg' %}" style="margin:auto; margin-bottom:25px;"></img><br><br>
 
   <div id ="Purpose">
     <h3>Purpose</h3>

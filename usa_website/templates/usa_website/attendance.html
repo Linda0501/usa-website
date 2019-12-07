@@ -3,7 +3,8 @@
 {% load staticfiles %}
 <style>
 .AttendanceContainer{
-  margin: 10%;
+  margin-right: 10%;
+  margin-left: 10%;
   margin-top:5%;
   margin-bottom:5%;
 }
@@ -84,96 +85,20 @@ button{
 }
 </style>
 
-
-<head>
-  <title>Attendance</title>
-</head>
-<body>
-<div class = "AttendanceContainer">
+<div class="AttendanceContainer" ">
     <h1 style="text-align:center;">Attendance</h1>
-
-
-    <h2 style="text-align:center; margin-top: 50px;">The Point System</h2>
-
     <p>
       SAAS members can get points by going to events/activities. Each event is worth
       1 point. There is no points threshold or requirement at the end of the semester.
       Instead, points will be considered in the reapplication process for next semester.
     </p>
 
-
-<!--
-    <h2>Point Values and Distribution</h2>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-              <b >Academic Events</b>
-              <ul>
-                <li>Faculty Dinner - 5 points</li>
-                <li>5 Faculty Coffee Chats - 5 points each</li>
-                <li>4 Technical Workshops - 5 points each</li>
-                <li>Participation in SAAS Mentors - 5 per hour of providing/receiving tutoring</li>
-                <li>Research Symposium - 5 points</li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <b >Social Events</b>
-              <ul>
-                <li>8+ Club-wide Socials - 10 points each</li>
-                  <ul>
-                    <li>i.e. Scavenger Hunt,  Bowling, Hiking, Movie Nights, etc.</li>
-                  </ul>
-                <li>8+ DonutBot Hangouts - 10 points each</li>
-                <li>Study Hours - 5 per hour</li>
-              </ul>
-            </div>
-            <div class="col-md-4">
-              <b >Other</b>
-              <ul>
-                <li>Committee Participation - 5 pts per two weeks</li>
-                <li>Tabling/Flyering - 5 points per hour</li>
-                <li>Miscellaneous (TBD - check back for updates!)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
--->
-
- <!--   <h2>Check your points below!*</h2>
+    <h2 style="text-align: center;">Check your points below!*</h2>
       <b>Our <b>IVP committee</b> is in charge of updating and keeping track of points. </b>
       <b>All points are updated as of 11/29. Please contact us at contact@saas.berkeley.edu
-        if you spot any inaccuracies.</b><br><br>
-
-  <form method="POST">
-      {% csrf_token %}
-      {{ form }}
-      <button type="submit" style="display:inline;">Submit</button>
-    </form>
-    <br>
-  <h3 class = "summary">
-    {{ text }}
-  </h3>
-
-Please see AttendanceView in views.py to understand what is going on here
-
-<div style="overflow-x:auto;">
-    <p>Total points:{{ points }}</p>
-  <table>
-      <tr>
-        {% for l in events_lst %}
-        <td>{{l}}</td>
-        {% endfor %}
-      </tr>
-    </table>
-  </div>
-
-
-  <br>
-  <i>  <sup>*</sup>Please note that if you have not come to an event yet OR have not told
-    IVP your SID, we do not have your SID in our database and you will be unable
-    to use this tool. </i>
-  <br></br> -->
-
+        if you spot any inaccuracies. Please note that if you have not come to an event yet OR have not told
+          IVP your SID, we do not have your SID in our database and you will be unable
+          to use this tool. </b><br><br>
 
 </div>
 
@@ -211,12 +136,7 @@ Please see AttendanceView in views.py to understand what is going on here
 
 
   </center>
-
-
-  <br>
-  <p style="text-indent: 200px"> <i>  <sup>*</sup> Please Note that if you have not come to an event yet, we do not have your SID in our database and you will be unable to use this tool </i> </p>
-  <br></br>
-
+<br><br><br>
 </div>
 
 </body>
