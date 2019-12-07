@@ -154,7 +154,7 @@ def education(request):
     return HttpResponse(t.render(context))
 
 def community(request):
-    t = get_template("community.html")
+    t = get_template("community-new.html")
     context = {}
     return HttpResponse(t.render(context))
 
