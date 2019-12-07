@@ -47,6 +47,46 @@ def officehours(request):
     context = {}
     return HttpResponse(html.render({}))
 
+def data8(request):
+    t = get_template("data-8.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def stat2(request):
+    t = get_template("stat-2.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def stat20(request):
+    t = get_template("stat-20.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def stat88(request):
+    t = get_template("stat-88.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def stat89a(request):
+    t = get_template("stat-89a.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def data100(request):
+    t = get_template("data-100.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def data102(request):
+    t = get_template("data-102.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def stat140(request):
+    t = get_template("stat-140.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 def stat133(request):
     t = get_template("stat-133.html")
     context = {}
