@@ -35,6 +35,34 @@
  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
+.stripe1 {
+  top: 0px;
+}
+.stripe2 {
+  top: 20px;
+}
+.blue-stripe {
+  left: 0%;
+  width: 800px;
+  height: 500px;
+  opacity: 0.6;
+  z-index: -2;
+  position: absolute;
+  background-image: linear-gradient(45deg, #E7F3FB 0%, #E7F3FB);
+  transform:skewY(-5deg);
+}
+.purple-stripe {
+  right: 0%;
+  width: 800px;
+  height: 650px;
+  opacity: 0.6;
+  z-index: -2;
+  position: absolute;
+  background-image: linear-gradient(45deg, #FBEBF5 0%, #FBEBF5);
+  transform:skewY(10deg);
+}
+
+​
 /* Modal Content (Image) */
 .modal-content {
  margin: auto;
@@ -253,6 +281,8 @@ h2 {
   <title>Community</title>
 </head>
 <div class="community-container">
+  <div class="blue-stripe stripe1"></div>
+  <div class="purple-stripe stripe2"></div>
   <div class="community-top">
     <div class="top-left">
     <h1>Meet Our Members</h1>

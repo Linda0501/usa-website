@@ -11,26 +11,27 @@
 <body>
 	<div class="main">
 
-		<h1> Stat 2 </h1>
+		<h1> Stat 88 </h1>
 
 		<h3> Overview </h3>
-		<p> Population and variables. Standard measures of location, spread and association. Normal approximation. Regression. Probability and sampling. Binomial distribution. Interval estimation. Some standard significance tests. </p>
-		<p> Units: 4 </p>
+		<p> It is a connector course taken with Data 8. In this connector course we state precisely and prove results discovered while exploring data in Data 8. Topics include: probability, conditioning, and independence; random variables; distributions and joint distributions; expectation, variance, tail bounds; Central Limit Theorem; symmetries in random permutations; prior and posterior distributions; probabilistic models; bias-variance tradeoff; testing hypotheses; correlation and the regression model.</p>
+		<p> Units: 3 </p>
 		<h5> Prerequisites </h5>
-			<p> None. </p>
+			<p> Prerequisite: one semester of calculus at the level of Math 16A, Math 10A, or Math 1A.</p>
+			<p> Corequisite or Prerequisite: Foundations of Data Science (COMPSCI C8 / DATASCI C8 / INFO C8 / STAT C8). </p>
 
 		<!-- <h3> Average Difficulty Rating (from SAAS members) </h3>
 		<p> <strong><!-- Insert avg. rating - -></strong> out of <strong>5</strong> <p>
 
 		<h3> Testimonials </h3>
 			<h4> How was your experience in this class?</h4>
-      <p><i> <!-- Insert testimonials as quotes -- > </i></p>
+      <p><i> <!-- Insert testimonials as quotes - -> </i></p>
 
       <h4> How many hours per week did you spend on the class (outside of lecture, discussion, etc.)? </h4>
       <p><i> <!-- Insert testimonials as quotes -- > </i></p>
 
       <h4> What is this class useful for? </h4>
-      <p><i> <!-- Insert testimonials as quotes - -> </i></p>
+      <p><i> <!-- Insert testimonials as quotes -- > </i></p>
 
       <h4> When should students take this course? </h4>
       <p><i> <!-- Insert testimonials as quotes - -> </i></p>

@@ -38,7 +38,7 @@ def check_sid_exists(sid):  # check in views.py if student id exits
     for i in sid_lst:
         if i == str(sid):
             return True
-    return False
+    return False 
     """
 
 
@@ -72,7 +72,7 @@ def get_events(sid):  # assume valid sid
         for e in events_lst:
             if row[e] != '':
                 if e == "Donutbot":
-                    attended_events.append(row[e] + " Donutbot(s)")
+                    attended_events.append(str(row[e]) + " Donutbot(s)")
                 else:
                     attended_events.append(e)
 
