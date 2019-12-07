@@ -3,26 +3,24 @@ import httplib2
 
 from oauth2client.service_account import ServiceAccountCredentials
 
-scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
-         "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+# scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
+#          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+# credentials = ServiceAccountCredentials.from_json_keyfile_name("usa-website/src/usa_website/utils/creds.json", scope)
+# # usa-website/src/usa_website/utils/creds.json
 
-credentials = ServiceAccountCredentials.from_json_keyfile_name("usa_website/utils/creds.json", scope)
+# http = httplib2.Http()
+# http = credentials.authorize(http)
+# credentials.refresh(http)
 
-# usa-website/src/usa_website/utils/creds.json
+# client = gspread.authorize(credentials)
+# if credentials.access_token_expired:
+#     client.login()
 
-http = httplib2.Http()
-http = credentials.authorize(http)
-credentials.refresh(http)
-
-client = gspread.authorize(credentials)
-if credentials.access_token_expired:
-    client.login()
-
-client = gspread.authorize(credentials)
-sheet = client.open("Member_Points").sheet1
-data = sheet.get_all_records()
-#print(data)
-sid_col = sheet.find("ID").col
+# client = gspread.authorize(credentials)
+# sheet = client.open("Member_Points").sheet1
+# data = sheet.get_all_records()
+# #print(data)
+# sid_col = sheet.find("ID").col
 
 
 def check_sid_exists(sid):  # check in views.py if student id exits
