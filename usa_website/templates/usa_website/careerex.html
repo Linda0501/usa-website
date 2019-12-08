@@ -2,23 +2,22 @@
 {% extends "header.html" %}
 {% block content %}
 {% load staticfiles %}
-<style>
-   #photos {
-      /* Prevent vertical gaps */
-      line-height: 0;
-      -webkit-column-count: 5;
-      -webkit-column-gap:   0px;
-      -moz-column-count:    5;
-      -moz-column-gap:      0px;
-      column-count:         5;
-      column-gap:           0px;
-   }
-   #photos img {
-     /* Just in case there are inline attributes */
-     width: 100% !important;
-     height: auto !important;
-   }
-</style>
+
+#photos {
+   /* Prevent vertical gaps */
+   line-height: 0;
+   -webkit-column-count: 5;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    5;
+   -moz-column-gap:      0px;
+   column-count:         5;
+   column-gap:           0px;
+}
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
 
 <!-- scroll button -->
 <script src="../../static/usa_website/js/scroll-down.js"></script>
@@ -64,7 +63,7 @@
 
         </div>
     </div>
-    <section id="photos" ></section>
+    <section id="photos"></section>
 
 
 <script>
