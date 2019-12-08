@@ -59,10 +59,12 @@ table, th, td {
   font-size: 12px;
 }
 button{
-  background: #268BD2;
-  color:white;
+  background: #E7F3FB;
+  border: 2px solid #E7F3FB;
+  color: black;
   padding: 3px 7px;
-  border-radius: 30px;
+  font-family: "Avenir Next Light";
+  border-radius: 8px;
 }
 /* Idk why IVP formatted it so weirdly, but some text appears white. The following is to change all text in the spreadsheet to black */
 .ritz.waffle.s2{
@@ -108,7 +110,7 @@ button{
     <form method="POST">
       {% csrf_token %}
       {{ form }}
-      <!--<button type="submit" style="display:inline;">Submit</button>-->
+      <button type="submit" style="display:inline;">Submit</button>
     </form>
     <br>
 
