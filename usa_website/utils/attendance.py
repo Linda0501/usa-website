@@ -67,8 +67,7 @@ def get_events(sid):  # assume valid sid
     attended_events = []
     row = get_row(sid)
     if row:
-        events_lst = list(row.keys())
-        events_lst = events_lst[2:-1]
+        events_lst = list(row.keys())[2:-1]
         for e in events_lst:
             if row[e] != '':
                 if e == "Donutbot":
