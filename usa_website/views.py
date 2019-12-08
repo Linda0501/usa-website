@@ -681,8 +681,8 @@ class AttendanceView(TemplateView):
                 exists = check_sid_exists(SID);
                 if exists:
                     points = get_points(SID)
-                    events_lst = get_events(SID)
-                    args = {'form': form, 'text': text, 'points': points, 'events_lst': events_lst}
+                    attended_events = get_events(SID)
+                    args = {'form': form, 'text': text, 'points': points, 'attended_events': attended_events}
                     return render(request, self.template_name, args)
                 else:
                     text = "Your SID does not appear in our records, please check if you have made an error or email " \
