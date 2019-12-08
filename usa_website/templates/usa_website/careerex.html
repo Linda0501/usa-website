@@ -3,6 +3,22 @@
 {% block content %}
 {% load staticfiles %}
 
+#photos {
+   /* Prevent vertical gaps */
+   line-height: 0;
+   -webkit-column-count: 5;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    5;
+   -moz-column-gap:      0px;
+   column-count:         5;
+   column-gap:           0px;
+}
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+
 <!-- scroll button -->
 <script src="../../static/usa_website/js/scroll-down.js"></script>
 <!-- smooth scroll -->
@@ -47,5 +63,19 @@
 
         </div>
     </div>
+    <section id="photos"></section>
 
+
+<script>
+    function getRandomSize(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+var allImages = "";
+for (var i = 0; i < 25; i++) {
+  var width = getRandomSize(200, 400);
+  var height =  getRandomSize(200, 400);
+  allImages += '<img src="https://placedog.net/'+width+'/'+height+'" alt="pretty doggo">';
+}
+$('#photos').append(allImages);
+</script>
     {% endblock %}
