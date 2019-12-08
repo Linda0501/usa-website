@@ -16,10 +16,14 @@
     src: url("../fonts/pm/pmsemibold.eot");
 }*/
 @font-face {
-    font-family: 'Avenir Next';
-    src: url("../fonts/AvenirNext-Medium.ttf");
+    font-family: "Avenir Next";
+    src: url("../fonts/AvenirNext-Reg.otf");
 }
-
+/* FIXME:  */
+@font-face {
+    font-family: "Avenir Next Light";
+    src: url("../fonts/avenir-light.ttf");
+}
 /* =======================================================
 *
 * 	Template Style
@@ -79,8 +83,8 @@ p {
 
 h1, h2, h3, h4, h5, h6, figure {
   color: #000;
-  font-family: "Avenir Next";
-  font-weight: 600;
+  font-family: "Avenir Next Light";
+  font-weight: 500;
   margin: 0 0 30px 0;
   /*text-transform: uppercase;*/
 }
@@ -108,7 +112,7 @@ h3 {
 .infosession-text {
   vertical-align: middle;
   text-align: center;
-  font-family: "Avenir Next", serif;
+  font-family: "Avenir Next Light", serif;
   font-size: 24px;
 }
 
@@ -192,7 +196,7 @@ h3 {
 .btn {
   margin-right: 4px;
   margin-bottom: 4px;
-  font-family: "Avenir Next", serif;
+  font-family: "Avenir Next Light", serif;
   font-size: 16px;
   font-weight: 400;
   -webkit-border-radius: 30px;
@@ -441,8 +445,7 @@ h3 {
 #fh5co-header {
   width: 100%;
   background-color: black !important;
-  margin: 0;
-  position: fixed;
+  /*position: fixed;*/
   overflow: visible;
   z-index: 1000;
 }
@@ -476,10 +479,34 @@ h3 {
     background:black;
   }
 }
+
+#fh5co-offcanvas .dropdown-item:hover{
+  transform: scale(1.0);
+  color: #000;
+}
+
+#fh5co-offcanvas .dropdown-item:active{
+  letter-spacing: 1px;
+  background-color: #fff;
+}
+
+#fh5co-header .dropdown-item:active{
+  color: #000000;
+  background-color: #ededed;
+}
+
 @media (min-width:760px) and (max-width:978px) {
   #fh5co-header .dropdown-item{
+    color: #000000;
     font-size:17px;
+    transform: scale(1.0);
   }
+
+  #fh5co-header .dropdown-item:active{
+    color: #000000;
+    background-color: #ededed;
+  }
+
   #fh5co-header .nav-link{
     font-size:15px !important;
   }
@@ -508,8 +535,10 @@ h3 {
   transition: 0.2s;
 }
 
-#fh5co-header nav ul li  .dropdown-menu {
-  margin-top: 17px;
+#fh5co-header nav ul li  .dropdown-menu a:hover{
+  transform: scale(1.0);
+  margin-top: 0px;
+  color: #000000
 }
 
 #fh5co-header nav ul li .dropdown-menu a {
@@ -532,6 +561,7 @@ h3 {
 
 #fh5co-header .dropdown-toggle::after {
     display:none;
+    color: #000000
 }
 
 /*#fh5co-header nav ul li  a:after {
@@ -896,49 +926,272 @@ h3 {
   text-decoration: none;
 }
 
-#blog-title {
-  color: #000;
-  font-family: "Britannic Bold", serif;
-  font-weight: 400;
-  font-size: 250%;
-  margin: 0 0 16px 0;
-  text-transform: uppercase;
+/* education.html css formatting, classes specified for education.html*/
+
+#fh5co-blog-section .educationHead {
+    margin-top: 30px;
+    font-size: 110%;
 }
 
-#fh5co-blog-section .item-grid {
-  width: 100%;
+#fh5co-blog-section .CX {
+  font-family: "Avenir Next Light";
+    font-weight: 500;
+    font-size: 350%;
+    margin-top: 30px;
+}
+
+#fh5co-blog-section .item-grid-edu {
+  width: 90%;
+  height:90%;
   height: auto;
   float: left;
   position: relative;
-  margin-bottom: 50px;
-  -webkit-box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.20);
-  -moz-box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.20);
-  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.20);
-  background: #f0eada;
+  margin-bottom: 70px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: white;
+  border-radius: 15px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
   top: 2px;
 }
+
+#fh5co-blog-section .item-grid-edu .v-align {
+  padding: 30px;
+  background-color: #E7F3FB;
+  border-radius: 15px;
+  height: 202px;
+}
+
+#fh5co-blog-section .item-grid-edu .v-align h3 {
+  font-family: "Avenir Next Light";
+  font-weight: 700;
+  font-size: 155%;
+  padding-bottom:20px;
+}
+
+#fh5co-blog-section .item-grid-edu .v-align h5 {
+  color: rgba(0, 0, 0, 0.3);
+  font-family: "Avenir Next Light";
+  font-weight: 700;
+  font-size: 125%;
+  position: absolute;
+  bottom: 15px;
+}
+
+#fh5co-blog-section .item-grid-edu:hover, #fh5co-blog-section .item-grid-edu:focus {
+  text-decoration: none;
+  -webkit-box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
+  top: -2px;
+}
+/* end of education page*/
+
+/*Webdev Page*/
+#fh5co-blog-section .wdHead {
+    margin-top: 20px;
+    font-size: 110%;
+}
+
+#fh5co-blog-section .wd-data {
+  font-family: "Avenir Next Light";
+    font-weight: 500;
+    font-size: 300%;
+    margin-top: 35px;
+}
+
+#fh5co-blog-section .item-grid-wd {
+  width: 90%;
+  height:200px;
+  float: left;
+  position: relative;
+  margin-bottom: 70px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: white;
+  border-radius: 15px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  top: 2px;
+}
+
+
+#fh5co-blog-section .item-grid-wd .v-align {
+  padding: 30px;
+  background-color: #E7F3FB;
+  border-radius: 15px;
+  height: 200px;
+}
+
+#fh5co-blog-section .item-grid-wd .v-align h3 {
+    font-family: "Avenir Next Light";
+  font-weight: 700;
+  font-size: 155%;
+  padding-bottom:20px;
+}
+
+#fh5co-blog-section .item-grid-wd .v-align h5 {
+  font-family: "Avenir Next Light";
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 115%;
+  position: absolute;
+  bottom: 15px;
+  margin-right: 5px;
+}
+
+#fh5co-blog-section .item-grid-wd:hover, #fh5co-blog-section .item-grid-wd:focus {
+  text-decoration: none;
+  -webkit-box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
+  top: -2px;
+}
+/*end of wd*/
+
+/*rp*/
+#fh5co-blog-section .rpHead {
+    margin-top: 20px;
+    font-size: 110%;
+}
+
+#fh5co-blog-section .rp-title {
+  font-family: "Avenir Next Light";
+    font-weight: 500;
+    font-size: 350%;
+    margin-top: 35px;
+}
+
+#fh5co-blog-section .item-grid-rp {
+  width: 90%;
+  height:auto;
+  float: left;
+  position: relative;
+  margin-bottom: 70px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: white;
+  border-radius: 15px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  top: 2px;
+}
+
+
+#fh5co-blog-section .item-grid-rp .v-align {
+  padding: 30px;
+  background-color: #E7F3FB;
+  border-radius: 15px;
+  height: 200px;
+}
+
+#fh5co-blog-section .item-grid-rp .v-align h3 {
+  font-family: "Avenir Next Light";
+  font-weight: 700;
+  font-size: 155%;
+  padding-bottom:20px;
+}
+
+#fh5co-blog-section .item-grid-rp .v-align h5 {
+  font-family: "Avenir Next Light";
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 125%;
+  position: absolute;
+  bottom: 15px;
+  margin-right: 5px;
+}
+
+#fh5co-blog-section .item-grid-rp:hover, #fh5co-blog-section .item-grid-rp:focus {
+  text-decoration: none;
+  -webkit-box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
+  top: -2px;
+}
+
+/*end of rp*/
+
+/*cx has 1 thing*/
+#fh5co-blog-section .cxHead {
+    margin-top: 20px;
+    padding-bottom:50px;
+    font-size: 110%;
+}
+
+/*dc*/
+#fh5co-blog-section .dcHead {
+    margin-top: 20px;
+    font-size: 110%;
+}
+
+#fh5co-blog-section .dc-title {
+    font-family: "Avenir Next Light";
+    font-weight: 500;
+    font-size: 350%;
+    margin-top: 35px;
+}
+
+#fh5co-blog-section .item-grid {
+  width: 90%;
+  height: 330px;
+  float: left;
+  position: relative;
+  margin-bottom: 50px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: #E7F3FB;
+  border-radius: 15px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  top: 2px;
+}
+
 #fh5co-blog-section .item-grid .image {
-  height: 240px;
+  height: 200px;
   overflow: hidden;
   background-size: cover;
   background-position: center center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
 }
+
 #fh5co-blog-section .item-grid .v-align {
   padding: 30px;
 }
-#fh5co-blog-section .item-grid .v-align h3 {
+
+#fh5co-blog-section .item-grid .v-align .v-align-middle h3 {
+  font-family: "Avenir Next Light";
   font-weight: 700;
-  font-size: 20px;
+  font-size: 150%;
+  padding-bottom:20px;
+  margin-top:-20px;
 }
+
 #fh5co-blog-section .item-grid .v-align h5 {
+  font-family: "Avenir Next Light";
+  font-weight: 700;
   color: rgba(0, 0, 0, 0.3);
+  font-size: 125%;
+  position: absolute;
+  bottom: 15px;
+  margin-right: 5px;
 }
+
 #fh5co-blog-section .item-grid .v-align p {
   color: gray;
 }
+
 #fh5co-blog-section .item-grid:hover, #fh5co-blog-section .item-grid:focus {
   text-decoration: none;
   -webkit-box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
@@ -946,6 +1199,7 @@ h3 {
   box-shadow: 0px 14px 25px -2px rgba(0, 0, 0, 0.14);
   top: -2px;
 }
+/*dc styling, just goes by default name now cuz i'm too lazy to change it*/
 
 .item-block {
   margin-bottom: 7em;
@@ -966,14 +1220,6 @@ h3 {
 }
 .item-block p:last-child {
   margin-bottom: 0;
-}
-
-.fh5co-heading {
-  margin-bottom: 30px;
-}
-.fh5co-heading h2 {
-  margin-bottom: 20px;
-  font-weight: 700;
 }
 
 .googleplus-color {
@@ -1210,6 +1456,8 @@ h3 {
     display: block;
   }
 }
+
+}
 #fh5co-offcanvas ul {
   padding: 0;
   margin: 0;
@@ -1227,10 +1475,11 @@ h3 {
 }
 
 #fh5co-offcanvas ul li a:hover {
-  color: #268BD2;
+  transform: scale(1.1);
 }
 #fh5co-offcanvas ul li.active a {
-  color: #268BD2;
+  color: #000;
+  background-color: #fff !important;
 }
 #fh5co-offcanvas ul li.cta {
   margin-left: 0;

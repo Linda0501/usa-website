@@ -7,6 +7,8 @@
 <script src="../../static/usa_website/js/scroll-down.js"></script>
 <!-- smooth scroll -->
 
+
+
     <div class="container">
 
     </div>
@@ -16,12 +18,12 @@
             <div class="container">
                 <div class="col-md-12 text-center js-fullheight slider-text">
                     <div class="slider-text-inner">
-                        <h2>Education Committee</h2>
+                        <h2 style="font-weight: 100;">Education</h2>
                         <br>
                         <div>
                             <center>
                                 <a href="#fh5co-blog-section">
-                                    <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png" style="width:75px; height:75px">
+                                    <img alt="Arrow Down Icon" src="{% static 'usa_website/images/arrow_down.png' %}" style="width:75px;">
                                 </a>
                             </center>
                         </div>
@@ -31,119 +33,77 @@
           </div>
 
             <ul class="slides" style="height:100%">
-            <li style="background-image: url({% static 'usa_website/images/education/featured/sp19_banquet.jpg' %});"></li>
-            <li style="background-image: url({% static 'usa_website/images/education/featured/fa18_banquet.JPG' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/education/featured/sp19_banquet.png' %});"></li>
+            <li style="background-image: url({% static 'usa_website/images/education/featured/fa18_banquet.png' %});"></li>
             </ul>
         </div>
     </aside>
 
+
+
     <div id="fh5co-blog-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3 text-center fh5co-heading">
-                    <h2>Education Committee</h2>
+
+        <div class="row">
+                <div class="col-md-6 offset-md-3 col-sm-6 offset-sm-3 col-10 offset-1 text-center fh5co-heading educationHead">
                     <p>The primary purpose of the Education Committee (ED) is to
                       provide a weekly lecture and enriching projects to the
                       Career Exploration Committee. We also host workshops that
                       are open to the entire campus community on topics ranging
                       from Resume Building to PyTorch.</p>
-                    <br />
+                    <br/>
                 </div>
-            </div>
-            <div class="row" style="justify-content:center;">
-              	<h3>Career Exploration Lectures</h3>
-            </div>
-            <div class="row" >
-                <div class="col-md-4 col-sm-4">
-                    <a href="https://github.com/SUSA-org/Fall-2019-Career-Exploration/tree/master/Lectures" class="item-grid">
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">Career Exploration Lectures Fall 2019</h3>
-                                <h5 class="date"><span>Education Committee</span></h5>
-                                <h5 class="date"><span>Fall 2019</span></h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-sm-4">
-                    <a href="https://github.com/SUSA-org/Spring-2019-Career-Exploration" class="item-grid">
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">Career Exploration Lectures Spring 2019</h3>
-                                <h5 class="date"><span>Education Committee</span></h5>
-                                <h5 class="date"><span>Spring 2019</span></h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-sm-4">
-                    <a href="https://github.com/SUSA-org/Fall-2018-Career-Exploration" class="item-grid">
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">Career Exploration Lectures Fall 2018</h3>
-                                <h5 class="date"><span>Education Committee</span></h5>
-                                <h5 class="date"><span>Fall 2018</span></h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="row" style="justify-content:center;">
-            	<h3>Web Development Crash Courses</h3>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-4">
-                    <a href="{% url 'website_tutorial_0' %}" class="item-grid">
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">How to Build Your Own Personal Website Part 0 - An Introduction to Git</h3>
-                                <h5 class="date"><span>Abhinav Bhaskar, Anthony Yu</span></h5>
-                                <h5 class="date"><span>June 25, 2018</span></h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <a href="{% url 'website_tutorial_1' %}" class="item-grid">
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">How to Build Your Own Personal Website Part 1 - An Introduction to HTML</h3>
-                                <h5 class="date"><span>Abhinav Bhaskar, Anthony Yu</span></h5>
-                                <h5 class="date"><span>August 10, 2018</span></h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <a href="{% url 'website_tutorial_2' %}" class="item-grid">
-                        <div class="v-align">
-                            <div class="v-align-middle">
-                                <h3 class="title">How to Build Your Own Personal Website Part 2 - An Introduction to CSS</h3>
-                                <h5 class="date"><span>Abhinav Bhaskar</span></h5>
-                                <h5 class="date"><span>Sept 22, 2018</span></h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 col-sm-4">
-                  <a href="{% url 'website_tutorial_3' %}" class="item-grid">
-                      <div class="v-align">
-                          <div class="v-align-middle">
-                              <h3 class="title">How to Build Your Own Personal Website Part 3 - Advanced CSS</h3>
-                              <h5 class="date"><span>Abhinav Bhaskar</span></h5>
-                              <h5 class="date"><span>Sept 22, 2018</span></h5>
-                          </div>
-                      </div>
-                  </a>
-              </div>
-            </div>
-          </div>
         </div>
 
-    {% endblock %}
+        <div class="container">
+
+        <div class="row">
+            <h1 class = "CX" align = "left">Crash Courses</h1>
+        </div>
+
+        <div class="row" >
+            <div class="col-lg-4 col-md-6 col-sm-9">
+                <a href="https://github.com/SUSA-org/Fall-2019-Career-Exploration/tree/master/Lectures" class="item-grid-edu">
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">Career Exploration Lectures Fall 2019</h3>
+
+                            <h5 class="date"><span>Education Committee
+                                <br> Fall 2019</span></h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-9" >
+                <a href="https://github.com/SUSA-org/Spring-2019-Career-Exploration" class="item-grid-edu">
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">Career Exploration Lectures Spring 2019</h3>
+
+                            <h5 class="date"><span>Education Committee
+                            <br> Spring 2019</span></h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-9" >
+                <a href="https://github.com/SUSA-org/Fall-2018-Career-Exploration" class="item-grid-edu">
+                    <div class="v-align">
+                        <div class="v-align-middle">
+                            <h3 class="title">Career Exploration Lectures Fall 2018</h3>
+
+                            <h5 class="date"><span>Education Committee
+                                <br>Fall 2018</span></h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+{% endblock %}

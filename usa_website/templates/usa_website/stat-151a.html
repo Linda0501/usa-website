@@ -2,42 +2,54 @@
 {% block content %}
 {% load staticfiles %}
 
-    <div class="fh5co-about">
-        <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-            <h2>Stat 151A</h2>
-            <p>Linear modeling is the most important tool to solve regression problems where the focus is on
-      understanding the relatioship between a response variable and a bunch of explanatory variables.
-      These problems arise in a very diverse set of applications. In addition to being practically invaluable,
-      linear models also have a rich and beautiful mathematical theory. The main goal of this class is to understand
-      this theory and to learn how to do applied regression analysis via linear models. I will alsospend some
-      time on linear methods for dimension reduction such as principal component analysis</p>
-        </div>
-    </div>
+<style>
+	div.main {
+		text-align: center;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+	}
+	}
+</style>
 
-    <div class="fh5co-team">
-        <div class="container">
-            <table class = "table table-hover fh5co-light-grey-section">
-                <thead>
-                    <tr>
-                        <th><strong>Instructor</strong></th>
-                        <th><strong>Type</strong></th>
-                        <th><strong>Semester</strong></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a>Nolan</a></td>
-                        <td><a>Midterm 1</a></td>
-                        <td><a>Fall 2016</a></td>
-                    </tr>
-                    <tr>
-                        <td><a>Nolan</a></td>
-                        <td><a>Midterm 2</a></td>
-                        <td><a>Fall 2016</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+<body>
+	<div class="main">
 
-    {% endblock %}
+		<h1> Stat 151A: Linear Modelling: Theory and Applications </h1>
+
+		<h3> Overview </h3>
+		<p> A coordinated treatment of linear and generalized linear models and their application. Linear regression, analysis of variance and covariance, random effects, design and analysis of experiments, quality improvement, log-linear models for discrete multivariate data, model selection, robustness, graphical techniques, productive use of computers, in-depth case studies.
+ </p>
+		<p> Units: 4 </p>
+		<h5> Prerequisites </h5>
+			<p> STAT 102 or STAT 135. STAT 133 recommended </p>
+
+		<h3> Average Difficulty Rating (from SAAS members) </h3>
+		<p> <strong>3</strong> out of <strong>5</strong> <p>
+
+		<h3> Testimonials </h3>
+			<h4> How was your experience in this class?</h4>
+      <i> "Horrendously run. The professor was absent for the first four weeks, and seemingly no organization throughout the entire semester. The material is pretty good though." </i>
+
+      <h4> How many hours per week did you spend on the class (outside of lecture, discussion, etc.)? </h4>
+      <i> "4" </i>
+
+      <h4> What is this class useful for? </h4>
+      <i> "Majority of the time is spent on learning all sorts of things to know about linear models, then transfers to GLMs and a little on machine learning topics (penalized regression, decision trees)." </i>
+
+      <h4> When should students take this course? </h4>
+      <i> "After 135, and would be a good 150 series class to start with." </i>
+
+      <!-- <h4> What advice do you have for people taking this class in the future? </h4>
+      <i> <!-- Insert testimonials as quotes - -> </i>
+
+	<h3> Additional Notes</h3>
+	<p> <!-- Insert additional notes here, like SAAS members' workload, instructors, etc. -- ></p> -->
+
+	</div>
+</body>
+
+
+
+{% endblock %}
