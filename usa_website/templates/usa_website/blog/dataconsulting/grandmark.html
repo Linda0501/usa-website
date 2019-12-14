@@ -27,7 +27,7 @@
 	    <span style="color: gray" id="author">PM: </span>
 	    <span style="color: gray" id="name">Ethan Ho</span>
 		<img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
-	    <span style="color: gray" id="author">Consultants </span>
+	    <span style="color: gray" id="author">Consultants: </span>
 	    <span style="color: gray" id="name">Angela Guan, Roland Chin, Saumya Choudhary, Calvin Grewal, Ruhi Doshi, Miranda Dong, Joseph Yu, Sharan Kumar</span>
 	    <span style="color: gray" id="date"></span>
 	  </h3>
@@ -35,11 +35,10 @@
 	  <img class = "titlePic" src="{% static 'usa_website/images/dataconsulting/fa19/grandmark2.jpg' %}" style="margin:auto; margin-bottom:20px;"></img><br><br>
 
 	  <h3>Project Description</h3>
-  <p>
-    <a href="https://www.grandmark.co.za/">Grandmark</a> is a top-down company
-    that is responsible for supplying most of the automotive industry in Southern
-    Africa and Asia. We will create a demand forecasting for all their skews of car
-    parts to improve their inventory management.
-  </p>
+<p> In Fall 2019, SAAS collaborated with <a href="https://www.grandmark.co.za/">Grandmark International</a>, which is an automotive African based logistical network company. Grandmark essentially provides quality and affordable access for insurance companies, panel-beaters and individuals to automotive parts across Africa and Asia. Grandmark is an established company and was founded over 20 years ago, but only recently have they started adopting new technological methods of automating their process, which includes implementing a new software for optimizing their inventory. Due to details I am not legally allowed to fully disclose, this new implementation of software comes with bumps in the road, and herein lies SAAS’s project for the semester. Our task was to essentially validate these optimization practices of this new software and to see if the results of this software were valid and accurate.</p>
+<p>Utilizing the past 5 years of sales and inventory data collected over 12 different branches for thousands of skews of product, our approach was to constructively create a model that would output demand forecasting for an according product so they could compare our model with the new software they were embedding into their system. Due to the sparsity and inconsistency in the data, it made it impossible to utilize conventional time-series and overall traditional demand forecasting methods. Therefore, from scratch we created a VRMA model (Value at risk moving average), we essentially created a basic ensemble method. We combined the fundamentals of value at risk, to estimate risk of demand not being captured depending on the inventory ordered, and a moving average to encapsulate seasonal trends. We then minimized MSE (mean squared error) on a given interval for a given product in order to minimize error of our demand predictions. Moreover, we also implemented “sliding windows” in our VRMA model and tuned for the ideal width for each product in order minimize our loss function and break up our “time-series” data.</p>
+<p>Lastly, we constructed an interactive web dashboard that had various visualization methods and our model embedded so employees in Grandmark could easily interact with our code and inputs of data. The dashboard would take in a specified data set, and contained several buttons to either output a visualization about that data set or output a csv with Q1,Q2,Q3,Q4 inventory predictions for a given item.</p>
+<h3>Presentation</h3>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQnxbC9WkFTd710yBCuMXIbLgzE9Ah00eAqhgGlwsUZ3WSxHKasFsCiN2OxQ62nJbkXurEyTukaC8oI/embed?start=false&loop=true&delayms=15000" frameborder="0" width="100%" height="500" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 </div>
 {% endblock %}
