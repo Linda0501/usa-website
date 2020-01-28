@@ -25,7 +25,7 @@ SECRET_KEY = 'g6o*!49h66xlufne(c*7*$j$c3dy_(!*=4fp9dojt@y8ai16m_'
 DEBUG = True
 
 ALLOWED_HOSTS = ['saas.berkeley.edu', 'saas-berkeley-edu.apphost.ocf.berkeley.edu',
-'saas-berkeley-edu.dev-apphost.ocf.berkeley.edu', "127.0.0.1", "165.22.129.96"]
+'saas-berkeley-edu.dev-apphost.ocf.berkeley.edu', "127.0.0.1"]
 
 #site.addsitedir(''/home/u/ug/ugradsa/usa-website/src/venv/lib/python3.4/site-packages')
 
