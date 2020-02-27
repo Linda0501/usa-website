@@ -1,0 +1,37 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<style>
+	figure img {
+		display: block;
+		margin: 0 auto;
+		width: 50%;
+		text-align: center;
+	}
+	figcaption {
+		text-align: center;
+	}
+</style>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<div class="container-fluid" >
+      <h1>AiLanthus</h1>
+      <h2>Predicting the Validity of Patents</h2>
+	    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+	    <span style="color: gray" id="author">PM: </span>
+	    <span style="color: gray" id="name">Lucas Bandarkar</span>
+	  </h3>
+
+	  <img class = "titlePic" src="{% static 'usa_website/images/dataconsulting/sp20/ailanthus.png' %}" style="margin:auto; margin-bottom:20px;"></img><br><br>
+
+	  <h3>Project Description</h3>
+      <p>AiLanthus is an advanced litigation analytics platform specifically designed for law firms, litigation finance companies, and general counsels. They provide a wide range of analytic services and partner with leading insurance companies to help clients meet legal challenges and grasp claim opportunities. </p>
+        <p>Our job is to improve their model which determines whether or not a patent is valid. This is a natural language processing task and we’ll need their help to understand the legal concepts embedded in the documents. We’ll also be tasked with including visualizations so it’s easy to understand the info. </p>
+</div>
+{% endblock %}

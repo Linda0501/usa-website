@@ -135,6 +135,12 @@ urlpatterns = [
     url(r'education/anatomy-of-a-basic-fullstack$', views.anatomy_of_a_basic_fullstack, name="anatomy_of_a_basic_fullstack"),
     url(r'education/basic-web-architecture$', views.basic_web_architecture, name="basic_web_architecture"),
     #Data Consulting
+    url(r'dataconsulting/uizard-sp20$', views.uizard_sp20, name="uizard_sp20"),
+    url(r'dataconsulting/concha-labs$', views.concha_labs, name="concha_labs"),
+    url(r'dataconsulting/ailanthus$', views.ailanthus, name="ailanthus"),
+    url(r'dataconsulting/pillar-learning$', views.pillar_learning, name="pillar_learning"),
+    url(r'dataconsulting/pinxuan$', views.pinxuan, name="pinxuan"),
+    url(r'dataconsulting/indeed$', views.indeed, name="indeed"),
     url(r'dataconsulting/trace-data$', views.trace_data, name="trace_data"),
     url(r'dataconsulting/data-secrets$', views.data_secrets, name="data_secrets"),
     url(r'dataconsulting/grandmark$', views.grandmark, name="grandmark"),

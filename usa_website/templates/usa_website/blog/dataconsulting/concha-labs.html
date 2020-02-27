@@ -1,0 +1,38 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<style>
+	figure img {
+		display: block;
+		margin: 0 auto;
+		width: 50%;
+		text-align: center;
+	}
+	figcaption {
+		text-align: center;
+	}
+</style>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<div class="container-fluid" >
+	  <h1>Concha Labs</h1>
+	  <h2>A.I. Hearing Loss Diagnosis</h2>
+	  <h2>
+	    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+	    <span style="color: gray" id="author">PM: </span>
+	    <span style="color: gray" id="name">Haoming Guo</span>
+	  </h3>
+
+	  <img class = "titlePic" src="{% static 'usa_website/images/dataconsulting/sp20/concha_labs.png' %}" style="margin:auto; margin-bottom:20px;"></img><br><br>
+
+	  <h3>Project Description</h3>
+        <p>Concha Labs is a startup at Skydeck focused on personalized hearing aids, and we are helping them better estimate their users’ hearing profile. In the past, people have designed tests to estimate a person’s hearing loss curve, but we are building an active learning algorithm that designs such test interactively. Through a series of machine-generated tests, we hope to approximate a user’s real hearing loss curve as much as possible. This project will combine active learning, experiment design, simulations, and possibly deep learning. 
+        </p>
+</div>
+{% endblock %}

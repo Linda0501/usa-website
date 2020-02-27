@@ -1,0 +1,37 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<style>
+	figure img {
+		display: block;
+		margin: 0 auto;
+		width: 50%;
+		text-align: center;
+	}
+	figcaption {
+		text-align: center;
+	}
+</style>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<div class="container-fluid" >
+      <h1>Indeed</h1>
+	  <h2>Job Growth Prediction</h2>
+	    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+	    <span style="color: gray" id="author">PM: </span>
+	    <span style="color: gray" id="name">Amal Bhatnagar</span>
+	  </h3>
+
+	  <img class = "titlePic" src="{% static 'usa_website/images/dataconsulting/sp20/pillar_learning.png' %}" style="margin:auto; margin-bottom:20px;"></img><br><br>
+
+	  <h3>Project Description</h3>
+        <p>Use public dataset (IPUMS) and other datasets of job descriptions to predict trends of the job market. This project will focus on two parts: 1) use regression models on IPUMS data, and 2) scrape Indeed job postings and use NLP models to find the most important words per job description. The former will predict job growth, while the latter will help construct the ideal job description. This project can potentially shape the way Indeed runs its job postings. 
+        </p>
+</div>
+{% endblock %}

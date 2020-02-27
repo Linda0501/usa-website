@@ -321,6 +321,40 @@ def basic_web_architecture(request):
     return HttpResponse(t.render(context))
 
 #####################################
+###### SPRING 2020 DC PROJECTS ######
+#####################################
+
+def uizard_sp20(request):
+    t = get_template("blog/dataconsulting/uizard-sp20.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def concha_labs(request):
+    t = get_template("blog/dataconsulting/concha-labs.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def ailanthus(request):
+    t = get_template("blog/dataconsulting/ailanthus.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def pillar_learning(request):
+    t = get_template("blog/dataconsulting/pillar-learning.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def pinxuan(request):
+    t = get_template("blog/dataconsulting/pinxuan.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def indeed(request):
+    t = get_template("blog/dataconsulting/indeed.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+#####################################
 ###### FALL 2019 DC PROJECTS ######
 #####################################
 
