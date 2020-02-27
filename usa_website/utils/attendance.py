@@ -18,7 +18,7 @@ if credentials.access_token_expired:
     client.login()
 
 client = gspread.authorize(credentials)
-sheet = client.open("Member_Points").sheet1
+sheet = client.open("Sp20_Points_Tracker").sheet1
 data = sheet.get_all_records()
 #print(data)
 sid_col = sheet.find("ID").col
