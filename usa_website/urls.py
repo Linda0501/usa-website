@@ -104,7 +104,7 @@ urlpatterns = [
     url(r'rp/league-of-legends$', views.league_of_legends, name='league_of_legends'),
     url(r'rp/toxic-social-media$', views.toxic_social_media, name='toxic_social_media'),
     url(r'rp/schooling$', views.schooling, name='schooling'),
-    url(r'rp/meaning-of-probabilities-in-social-sciences$', views.meaning_of_probabilities_in_social_sciences, name="meaning-of-probabilities-in-social-sciences"),
+    url(r'rp/meaning-of-probabilities-in-social-sciences$', views.meaning_of_probabilities_in_social_sciences, name="meaning_of_probabilities_in_social_sciences"),
     url(r'rp-fakenews$', views.fakenews, name = "fake_news_rp"),
     
     # SPRING 2018 R&P PROJECTS
