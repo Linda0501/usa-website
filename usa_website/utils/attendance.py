@@ -69,7 +69,7 @@ def get_events(sid):  # assume valid sid
     if row:
         events_lst = list(row.keys())[2:-1]
         for e in events_lst:
-            if row[e] != '' and e != "Name" and e != "Total" and e!= "ID":
+            if row[e] != '' and e != "Name" and e != "Total" and e!= "ID" and e!="Email":
                 if e == "Donutbot":
                     attended_events.append(str(row[e]) + " Donutbot(s)")
                 else:

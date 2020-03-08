@@ -1,0 +1,220 @@
+h1 {
+  font-weight: 300;
+  font-size: 42px !important;
+  letter-spacing: 3px;
+}
+h3 {
+  font-weight: 600 !important;
+}
+body {
+  background-color: #ffffff !important;
+}
+.icon-envelope {
+  margin-right: 20px;
+}
+.slider.closed {
+  /* visible */
+  height: 0px;
+  margin: 0 20% 0 20%;
+  -webkit-transition: height, 0.5s linear;
+  -moz-transition: height, 0.5s linear;
+  -ms-transition: height, 0.5s linear;
+  -o-transition: height, 0.5s linear;
+  transition: height, 0.5s linear;
+}
+.slider.opened {
+  height: 200px;
+  margin: 0 20% 0 20%;
+  -webkit-transition: height, 0.5s linear;
+  -moz-transition: height, 0.5s linear;
+  -ms-transition: height, 0.5s linear;
+  -o-transition: height, 0.5s linear;
+  transition: height, 0.5s linear;
+  overflow-y: auto;
+}
+#slider-holder0,
+#slider-holder1,
+#slider-holder2,
+#slider-holder3,
+#slider-holder4 {
+  overflow: hidden;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+#slider-holder2 {
+  overflow: hidden;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 780px) and (min-width: 601px) {
+  h3 {
+    font-size: 15px !important;
+  }
+}
+@media screen and (max-width: 600px) and (min-width: 400px) {
+  div.fh5co-team {
+    font-size: 12px !important;
+  }
+  h1 {
+    font-size: 36px !important;
+  }
+  h3 {
+    font-size: 12px !important;
+    font-weight: 50 !important;
+  }
+  .container p,
+  b {
+    font-size: 12px !important;
+  }
+  .icon-comment {
+    font-size: 12px;
+  }
+  .container#slider-holder0,
+  #slider-holder1,
+  #slider-holder2,
+  #slider-holder3,
+  #slider-holder4 {
+    margin-top: 30px;
+  }
+  .icon-envelope {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+  .person-overlay p {
+    font-size: calc(
+      1px + (12 - 1) * ((100vw - 100px) / (1600 - 100))
+    ) !important;
+  }
+}
+@media screen and (max-width: 400px) and (min-width: 350px) {
+  div.fh5co-team {
+    font-size: 8px !important;
+  }
+  h1 {
+    font-size: 24px !important;
+  }
+  h3 {
+    font-size: 10px !important;
+    font-weight: 50 !important;
+  }
+  .container p,
+  b {
+    font-size: 10px !important;
+  }
+  .container#slider-holder0,
+  #slider-holder1,
+  #slider-holder2,
+  #slider-holder3,
+  #slider-holder4 {
+    padding-top: 10px;
+  }
+  .icon-comment {
+    font-size: 10px;
+  }
+  .icon-envelope {
+    font-size: 10px;
+    margin-right: 10px;
+  }
+  .person-overlay p {
+    font-size: calc(
+      1px + (12 - 1) * ((100vw - 100px) / (1600 - 100))
+    ) !important;
+  }
+}
+@media screen and (max-width: 350px) {
+  .person-overlay p {
+    font-size: calc(
+      1px + (12 - 1) * ((100vw - 100px) / (1600 - 100))
+    ) !important;
+  }
+  div.fh5co-team {
+    font-size: 6px !important;
+  }
+  h1 {
+    font-size: 24px !important;
+  }
+  h3 {
+    font-size: 9px !important;
+    font-weight: 50 !important;
+  }
+  .container p,
+  b {
+    font-size: 10px !important;
+  }
+  .container#slider-holder0,
+  #slider-holder1,
+  #slider-holder2,
+  #slider-holder3,
+  #slider-holder4 {
+    font-size: 10px !important;
+    padding-top: 10px;
+  }
+  .icon-comment {
+    font-size: 10px;
+  }
+  .icon-envelope {
+    font-size: 10px;
+    margin-right: 10px;
+  }
+}
+
+.icon-comment:hover {
+  cursor: pointer;
+}
+li {
+  cursor: default;
+}
+
+.person-overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.person-overlay p {
+  font-size: calc(1px + (14 - 1) * ((100vw - 100px) / (1600 - 100)));
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.person-overlay a {
+  color: #000;
+  font-size: 150%;
+  margin-left: 22.5%;
+}
+
+.person-overlay a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.person-img {
+  border-radius: 20px;
+}
+
+.person-container:hover .person-overlay {
+  opacity: 1;
+  transition: 0.4s;
+}
+
+.person-container:hover .person-img {
+  opacity: 0.4;
+  transition: 0.4s;
+}
+
+a {
+  color: #000;
+}
