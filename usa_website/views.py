@@ -9,6 +9,8 @@ from .forms import PostForm, AttendanceForm
 
 from .utils.attendance import *
 
+from .utils import attendance
+
 # from .utils.attendance import GetAttendanceHeader, GetAttendanceDetails, LookupSIDs
 
 ##################################
@@ -707,10 +709,10 @@ class AttendanceView(TemplateView):
                 #values = LookupSIDs()
                 #head_list = GetAttendanceHeader(SID)
                 #det_list = GetAttendanceDetails(SID, values)
-                exists = check_sid_exists(SID);
+                exists = attendance.check_sid_exists(SID);
                 if exists:
-                    points = get_points(SID)
-                    attended_events = get_events(SID)
+                    points = attendance.get_points(SID)
+                    attended_events = attendance.get_events(SID)
                     args = {'form': form, 'text': text, 'points': points, 'attended_events': attended_events}
                     return render(request, self.template_name, args)
                 else:
