@@ -1,12 +1,21 @@
 import gspread
 import httplib2
+import os
 
 from oauth2client.service_account import ServiceAccountCredentials
 
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 
-credentials = ServiceAccountCredentials.from_json_keyfile_name("usa-website/src/usa_website/utils/creds.json", scope)
+currentPath = os.getcwd()
+directories = os.listdir(currentPath)
+#print(directories)
+if ("usa_website" in directories):
+    pathToCredsJson = currentPath + "/usa_website/utils/creds.json"
+elif ("usa-website" in directories):
+    pathToCredsJson = currentPath + "/usa-website/src/usa_website/utils/creds.json"
+credentials = ServiceAccountCredentials.from_json_keyfile_name(pathToCredsJson, scope)
+#print("cwd:",os.getcwd())
 # usa-website/src/usa_website/utils/creds.json
 
 http = httplib2.Http()
