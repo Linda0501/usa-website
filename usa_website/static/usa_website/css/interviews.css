@@ -1,0 +1,33 @@
+.interview {
+  margin-top: 30px;
+  font-family: "Cuprum", sans-serif;
+}
+.interviewer {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.interviewee {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.person-img {
+  width: 40%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+#author {
+  color: #d5518d;
+}
+
+#name {
+  color: #3e95d7;
+}
+
+.logo {
+  height: 80px;
+  margin-top: 5px;
+}

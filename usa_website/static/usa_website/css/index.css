@@ -1,0 +1,47 @@
+a.committee-link {
+      text-decoration: none;
+      color: inherit;
+}
+
+.committee-link:hover {
+      font-weight: 500;
+      color: rgb(43, 97, 179) !important;
+      font-size: 26px;
+}
+.stripe1 {
+      margin-top: 220px;
+    }
+    .stripe2 {
+      margin-top: 1350px;
+    }
+    .stripe3 {
+      margin-top: 2550px;
+    }
+    .blue-stripe {
+      width: 800px;
+      height: 400px;
+      opacity: 0.8;
+      z-index: -2;
+      position: absolute;
+      background-image: linear-gradient(45deg, #E7F3FB 0%, #E7F3FB);
+      transform:skewY(5deg);  
+    }
+    .purple-stripe {
+      right: 0%;
+      width: 800px;
+      height: 400px;
+      opacity: 0.8;
+      z-index: -2;
+      position: absolute;
+      background-image: linear-gradient(45deg, #FBEBF5 0%, #FBEBF5);
+      transform:skewY(-5deg);
+    }
+    .index-img {
+      border-radius: 5px;
+    }
+    .committee-row {
+      margin-bottom: 60px;
+    }
+    .h3 {
+      margin-bottom: 0 !important;
+    }
