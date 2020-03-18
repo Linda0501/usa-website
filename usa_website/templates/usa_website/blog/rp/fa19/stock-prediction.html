@@ -8,7 +8,7 @@
   <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
-<h1>Exploring Predictive Models for Stock Prices/h1>
+<h1>Exploring Predictive Models for Stock Prices</h1>
 
 <div class="Blog_Nav">
   <ol>
@@ -231,30 +231,152 @@
 </div>
 
 <div id="Section7">
-  <h3>Section 5</h3>
+  <h3>Model Selection</h3>
     <p>
-      Section 5 text here
+      The univariate model that I have chosen is the ARIMA model. This model is highly recommended by the online community. 
+	  As for the multivariate models, I have chosen Random Forest Regression and Multiple Linear Regression. 
+	  While SVM was recommended in this research paper, my attempts at using SVM proved that it is not an efficient model 
+	  to use. The training time takes too long and given the time and resource (computational power) of my project, 
+	  I did not use SVM for my analyses.
     </p>
 </div>
 
 <div id="Section8">
-  <h3>Section 5</h3>
+  <h3>Model Assessment</h3>
     <p>
-      Section 5 text here
+      I carried out a 80-20 split on the entirety of my data set. The first 80% will be used as my training set and is where 
+	  I will carry out a cross-validation analysis. The last 20% will be used as a test set.
     </p>
+	
+	<h4> Cross Validation </h4>
+	<h5> Set-up </h5>
+	<p>
+	The first phase of model assessment was during the cross validation. Since this is a time-series problem, 
+	I employed the use of a time-series cross validation method instead of the usual K-fold cross-validation. 
+	This is because each data point is not independent of one another, and a sequential train-validation split 
+	must be used.
+    </p>
+	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart6.png' %}" style="margin:auto" /><br><br>
+	<p> Another issue was the basis of comparison. The ARIMA model is more effective for short-term predictions. 
+	This would mean that if the test set in the validation phase was too large, the model will have to make predictions 
+	very far ahead of time, which will be disadvantageous to the ARIMA model. In light of this, I reduced the test sets 
+	to a window of 5 points into the future. For every iteration in the cross-validation phase, the trained model will 
+	only have to predict 5 timesteps into the future.
+	</p>
+	<h5> Results analysis </h5>
+	<p>
+	My cross-validation has 10 splits, resulting in a generation of 10 RMSE values. 
+	I then compared the RMSE values of each of the 3 models.
+	</p>
+	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart7.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart8.png' %}" style="margin:auto" /><br><br>
+	
+	<h4> Test Set </h4>
+	<p>
+	In this section, I look at the model’s performance on the test set. All 3 models are trained on the 80% training set initialized at the start.
+	</p>
+	<p>
+	The ARIMA model is given and advantage because of its nature to be able to only predict short-term. 
+	The ARIMA model is retrained with all possible data before predicting. A better way of explaining this is as follows:
+	</p>
+	<p>
+	Let:
+		<ul>
+			<li>Ya = Open price used as the initial training data (the first 80% of values as initialized)</li>
+			<li>Yb = Test set with data points (y1, y2 … yk).</li>
+		</ul>
+    </p>
+	<p>
+	The ARIMA model is first trained on Ya and then predicts y1. It is then re-initialised and trains on [Ya  + y1] before predicting y2. 
+	This way, the ARIMA model only has to predict one timestep into the future.
+	</p>
+	<h5> Results analysis </h5>
+	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart9.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart10.png' %}" style="margin:auto" /><br><br>
+	<p>
+	The predicted values are plotted as a yellow line and the true values are plotted as the blue line. 
+	Both ARIMA (left-most) and Multiple Linear Regression (right-most) seem to follow quite closely to the trend of the true values.
+	</p>
+	<p>
+	The first observation is that yet again, the multivariate Linear Regression Model outperforms the ARIMA model, having a lower RMSE score of 
+	0.0761 as compared to 0.101.
+	</p>
+	<p>
+	The second observation is that while the models seem to follow the trend of the true value quite closely, it is not accurate enough. 
+	As seen in the predicted values of the ARIMA model in the table below, the true and predicted values differ up to a value of 1 dollar. 
+	It is good that the models managed to generate the right trend. However, more fine-tuning has to be done in order for them to predict 
+	stock prices with precision.
+	</p>
+	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart11.png' %}" style="margin:auto" /><br><br>
+
 </div>
 
 <div id="Section9">
-  <h3>Section 5</h3>
-    <p>
-      Section 5 text here
-    </p>
+  <h3>Conclusion</h3>
+  
+  <h4> Outcome of the project </h4>
+  <p>
+  As mentioned at the start, the project was not aimed to develop a machine learning model that precisely predict stock prices. 
+  Rather, in this project I achieved 3 main things:
+  </p>
+  <p>
+	<ol>
+		<li>Designed a methodology for stock price analysis</li>
+		<li>Compared the effectiveness of different models</li>
+		<li>Proved the potential of technical analysis</li>
+	</ol>
+  </p>
+  <p>
+  This project serves as a comprehensive foreground to stock price analysis. 
+  In order to accurately predict stock prices, a lot more experimentations, 
+  research and analysis have to be done.
+  </p>
+  
+  <h4> Future work </h4>
+  <p>
+  While this project has achieved it’s goal and prove to be successful, it opened up many doors for future work to fully 
+  harness the potential of technical analysis in stock price prediction. Below is a list of work I did not have the time to carry out, 
+  but will be useful in enhancing the analyses done in this project
+  </p>
+  <p>
+	<ol>
+		<li>Hyperparameter tuning</li>
+		<li>Feature engineering: Create or use more features instead of just 4 technical indicators and previous-days prices</li>
+		<li>Fundamental analysis might have strong impacts on longer-term predictions</li>
+	</ol>
+  </p>
 </div>
 
 <div id="Section10">
-  <h3>Section 5</h3>
+  <h3>References</h3>
     <p>
-      Section 5 text here
+	Smola, Alex J., and Bernhard Schölkopf. “A Tutorial on Support Vector Regression.” Statistics and Computing, vol. 14, no. 3, 2004, 
+	pp. 199–222., doi:10.1023/b:stco.0000035301.49549.88.
+    </p>
+	
+	<p>
+	Beyaz, Erhan, et al. “Comparing Technical and Fundamental Indicators in Stock Price Forecasting.” 
+	2018 IEEE 20th International Conference on High Performance Computing and Communications; IEEE 16th 
+	International Conference on Smart City; IEEE 4th International Conference on Data Science and Systems 
+	(HPCC/SmartCity/DSS), 2018, doi:10.1109/hpcc/smartcity/dss.2018.00262.
+    </p>
+	
+	<p>
+	Behl, Smarth, et al. “A Machine Learning Based Stock Trading Framework Using Technical and Economic Analysis.”
+    </p>
+	
+	<p>
+	Shah, Dev, et al. “Stock Market Analysis: A Review and Taxonomy of Prediction Techniques.” 
+	International Journal of Financial Studies, vol. 7, no. 2, 2019, p. 26., doi:10.3390/ijfs7020026.
+    </p>
+	
+	<p>
+	Heo, Junyoung, and Jin Yong Yang. “Stock Price Prediction Based on Financial Statements Using SVM.” 
+	International Journal of Hybrid Information Technology, vol. 9, no. 2, 2016, pp. 57–66., doi:10.14257/ijhit.2016.9.2.05.
+    </p>
+	
+	<p>
+	Shen, Shurong, et al. “Stock Market Forecasting Using Machine Learning Algorithms.”
     </p>
 </div>
 
