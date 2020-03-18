@@ -1,0 +1,132 @@
+{% extends "interviews/interview_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title> Zoe Liu: “the Russian car was signed by Putin himself, so I touched his autograph”</title>
+<h2>Zoe Liu: “the Russian car was signed by Putin himself, so I touched his autograph”</h2>
+  <h3>
+    <span id="author">Interviewed By </span>
+    <span id="name">Justin Le </span>
+    <span id="author">on March 27th, 2019</span>
+  </h3>
+  <br />
+
+<div style="display:flex">
+  <img class="person-img" src="{% static 'usa_website/images/community/interviews/spring_2019/zoe_liu.png' %}" alt="zoe">
+</div>
+<div class="interview">
+  <p class="interviewer">JL: What’s your year and major, and what semester is this for you in SUSA?
+</p>
+  <p class="interviewee">ZL: I’m a second year, first semester in SUSA, and
+    majoring in data science and minoring in CS.</p>
+
+  <p class="interviewer" style="margin-top:30px;">JL: How’s the semester been for you so far?</p>
+  <p class="interviewee">ZL: It’s been pretty good so far, I’ve hit my goal of
+    joining a club with some cool and interesting people, and I’m glad to have
+    made some new friends. Classes wise I’m taking CS170 and CS61C, both of which
+    are challenging and interesting. </p>
+
+  <p class="interviewer">JL: That’s interesting, having a goal be joining a more social club.</p>
+  <p class="interviewee">ZL: Yeah, SUSA is the first club I'm a part of that contains members
+    that have the same interests/career goals as me. Previously, I was in CalSol,
+    the UC Berkeley Solar Car team, and I really enjoyed being a team member and
+    getting to work on the solar car. CalSol had some super cool and intelligent people,
+    but I did feel a little out of my depth since most of the club was EECS or MechE.
+    Although I loved what I was learning (how to make molds, working with polycarbonate
+    and fiberglass, etc.), I felt that I wasn't getting to grow as a data scientist/computer scientist. </p>
+    <p>I'm not trying to bash on CalSol or anything, I truly enjoyed my time there.
+      I actually raced with them over the summer in Nebraska at the Formula Sun Grand
+      Prix (our track race) and won second place with our six-year-old car, and that was
+      a really cool experience. I got to meet a bunch of other solar car teams
+      (the Russian car was signed by Putin himself, so I touched his autograph lmao)
+      and got to bond with my team members.</p>
+
+  <p class="interviewer">JL: Onto SUSA, and R&P; what are you working on?</p>
+  <p class="interviewee">ZL: My research project centers around the relationship
+    between speech patterns and personality, specifically level of neuroticism
+    (negative emotionality). Research has shown that people with more tendency
+    towards neuroticism tend to use more first-person pronouns like I and me.
+    I'm testing to see if that's true, and I'm also just doing a lot of feature
+    engineering to find the features in speech that best predict negative emotionality,
+    like maybe the number of "like"s used, of "uh"s..</p>
+
+  <p class="interviewer">JL: So, kind of like linguistics, with some psychology. </p>
+  <p class="interviewee">ZL: Yep, I was actually drawn to this question due to what
+    I was learning in my Psych 1 class. We learned that Facebook could pretty
+    accurately predict personality traits like extroversion, agreeableness, etc.
+    by looking at the pages you liked. For example, people who liked Kesha and, say,
+    Jack Daniels tended to be more extroverted. I was wondering if I could do the
+    same thing with speech, effectively "data mining" speech patterns to predict for personality.</p>
+
+  <p class="interviewer">JL: How did you decide on the design of the experiment?</p>
+  <p class="interviewee">ZL: Originally, I wanted to look at the relationship
+    between dreams and personality, so I wanted to follow a group of people and
+    have them anonymously document their dreams and send it to me via google forms,
+    but that was way too complicated and had too much variability. I decided it would
+    be cool instead to look at speech vs personality, since it was close enough
+    to what I was interested in, which is basically predictors of personality.
+    I read up on the design of psychology experiments, and drafted my own intro,
+    which I read to everyone before our recorded conversation begins. I drafted
+    questions I would ask, like "how are your midterms going?" etc. etc., which I
+    hoped would get my interviewees talking for a long time (people tend to be
+    passionate about midterms and talk for a while about them) and not be too personal.
+    I tried to follow the ethics of human-based experiments as much as I possibly can,
+    in short. Ethics are really important to me, since they guide good research.
+</p>
+
+  <p class="interviewer">JL:How do you plan on analyzing the data?</p>
+  <p class="interviewee">ZL: I'm planning on conducting sentiment analysis on the
+    words to see if people that tend towards neuroticism tend to use more negative words.
+    I also plan on using feature engineering to look at which features of the text
+    best predict neuroticism, like I mentioned above. It's a lot from what I
+    learned in Data100 (a fantastic class btw, really useful), and some other
+    members of SUSA also recommended tools I could look into to help with analysis. </p>
+
+  <p class="interviewer">JL: You mentioned earlier that you wanted kind of like a
+    close-knit environment in a club and that’s why you really enjoyed being in SUSA
+    now; could you elaborate on your experiences in SUSA?</p>
+  <p class="interviewee">ZL: Our R&P social was a lot of fun. We went to Uji Time
+    after a Saturday meeting and played a board game by Cyanide and Happiness.
+    Kind of like Cards Against Humanity, except in comic form and a lot funnier.
+    Echo won that round by playing some pretty fucked up cards, which was hilarious
+    and surprising, and narrowly beat out Yehchan. Welcome night with Jeopardy was
+    also really fun (I love Jeopardy rip Alex Trebec). Yeah, I just like board games
+    and games in general so I guess it's not surprising that some of my favorite
+    memories from SUSA include them.</p>
+
+  <p class="interviewer">JL: Would you say that most of the people you interact
+    with in SUSA for whatever reasons are people in your committee?</p>
+  <p class="interviewee">ZL: Yep, I guess that's just the nature of it. A lot of
+    the other clubs on campus have a similar trend, where people tend to be closest
+    with others in their committee. I suppose it's unavoidable, given how big SUSA is,
+    and there's not a lot of reason to interact with others outside your committee
+    besides going to socials. One solution is to limit club size, but then you start
+    becoming exclusive, which I understand SUSA actively tries to avoid.</p>
+
+  <p class="interviewer" style="margin-top:30px;">JL: I wasn't going to ask if you
+    didn't bring it up but since you did, how do you feel about SUSA’s structure? </p>
+  <p class="interviewee">ZL: I really like that SUSA has a CX team that focuses on
+    developing their members. A lot of clubs on campus look for "stacked" people,
+    a term I've actually heard being used and bragged about. I don't think SUSA
+    should trade a closer community for a more exclusive and less individual-development-oriented one.
+    Since Cal is such a large campus which already so much inherent competition,
+    we should pride ourselves in having an inclusive environment and helping
+    those struggling to get started in their career. I'm kind of speaking for myself
+    here, since I was totally blind to the CS community before college and had a
+    really hard time getting experience to actually join the clubs on campus I was
+    interested in. I'm really proud of communities like CS/Data Scholars and SUSA that
+    actively develop their members.</p>
+
+  <p class="interviewer">JL: Do you have anything you want to say to people in
+    SUSA who may not have known about you before or R&P or just anything in
+    general to people who are reading this?</p>
+  <p class="interviewee">ZL: It's easy to get caught up in the competitive environment
+    and compare yourself to others in a negative light. Remember that you're young,
+    you're at Berkeley and in a really cool club on campus. Statistically speaking,
+    if you keep the same trajectory you're at right now, you'll do pretty well for
+    yourself in life. So keep working hard, but remember to enjoy your time on
+    campus and make physical and mental health a priority. </p>
+
+<i>The website version of this interview was mildly edited for length and clarity by Rachel Li</i>
+<br><br>
+{% endblock %}

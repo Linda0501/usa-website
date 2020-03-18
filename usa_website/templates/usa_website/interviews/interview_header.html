@@ -13,14 +13,11 @@
     <meta name="description" content="SAAS is here to provide Berkeley undergraduates interested in Statistics with resources and a statistics-driven community" />
     <meta name="keywords" content="statistics, data science, berkeley, SAAS, undergraduate" />
     <meta name="author" content="FreeHTML5.co" />
+    <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/interviews.css' %}" />
 
     <!--CUPRUM specific font for interviews-->
     <link href="https://fonts.googleapis.com/css?family=Cuprum&display=swap" rel="stylesheet">
-    <style>
-      .interview{
-        font-family: 'Cuprum', sans-serif;
-      }
-    </style>
+
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content=""/>
     <meta property="og:image" content=""/>
@@ -98,14 +95,7 @@
 
     <div class="container">
         <div id="header-bar">
-            <center>
-            <table>
-                <tr>
-                    <td><a href="/"><img src="/static/usa_website/images/logos/logo.png" style="height:80px;vertical-align:middle;margin-top:5px;"></img></a></td>
-                    <td valign="bottom"><a href="{% url 'community' %}" id="blog-link"><span id="blog-title">Member Interviews</span></a></td>
-                </tr>
-            </table>
-            </center>
+            <a href="/"><img src="/static/usa_website/images/logos/logo.png" style="height:80px; margin-top:5px;"></img></a><a href="{% url 'community' %}" id="blog-link" style="color: black; margin-left: 10px;">Member Interviews</a>
         </div>
         <br><br>
 
