@@ -1,0 +1,217 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title>Exploring Predictive Models for Stock Prices</title>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<h1>Exploring Predictive Models for Stock Prices/h1>
+
+<div class="Blog_Nav">
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Overview</a></li>
+    <li><a href="#Section2">Introduction</a></li>
+    <li><a href="#Section3">Objective</a></li>
+    <li><a href="#Section4">Methodology</a></li>
+    <li><a href="#Section5">Feature Selection</a></li>
+	<li><a href="#Section6">Target Selection</a></li>
+	<li><a href="#Section7">Model Selection</a></li>
+	<li><a href="#Section8">Model Assessment</a></li>
+	<li><a href="#Section9">Conclusion</a></li>
+	<li><a href="#Section10">References</a></li>
+  </ol>
+</div>
+<br>
+
+<h2>
+    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+    <span style="color: gray" id="author">By </span>
+    <span style="color: gray" id="name">Shane Lim</span>
+    <span style="color: gray" id="date">- November 2019</span>
+  </h2>
+<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/spring_2019/personality/titlePic.png' %}" style="margin:auto" /><br><br>
+
+<br>
+
+<div id="Section1">
+  <h3>Overview</h3>
+    <p>
+    1. Feature Selection
+		<ul>
+			<li>Generate technical indicators that will be used as input variables for my model</li>
+		</ul>
+    </p>
+    
+	<p>
+	2. Target selection
+		<ul>
+			<li>Due to the unpredictability of stock price movements, 
+			it may or may not be easy to predict percentage changes in stock prices. 
+			Feature-target correlation will have to be analysed to determine that.</li>
+		</ul>
+    </p>
+	
+	<p>
+	3. Model Selection
+		<ul>
+			<li>Choosing which univariate model to use</li>
+			<li>Choosing which multivariate models to use</li>
+			
+		</ul>
+    </p>
+	
+	<p>
+	4. Model assessment
+		<ul>
+			<li>Train the models and use them to predict results</li>
+			<li>Compare results across all models (RMSE values)</li>
+			
+		</ul>
+    </p>
+	
+	<p>
+	5. Conclusion
+		<ul>
+			<li>Outcome and insights generated from this project</li>
+			<li>Future work</li>
+			
+		</ul>
+    </p>
+
+    <!-- This is how you add an image! style="margin:auto" centers the image. -->
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/capsim/round7_high.png' %}" style="margin:auto" /><br><br>
+</div>
+
+<div id="Section2">
+  <h3>Introduction</h3>
+    <p>
+      In stock price prediction, there are 2 schools of thought: the Effecient Market Hypothesis(EMH) and Adapative Market Hypothesis (AMH). 
+	  AMH states that stock prices are predictable and can be profited from. In this project, I want to explore the possibility of that.
+    </p>
+	
+	<p>
+      There are many factors that affect the price movements of stocks. However, it is a difficult feat to identify all of them. 
+	  Moreover, it is impossible to encapsulate all these factors in a model as the problem size will be too huge for computation. 
+	  Thus, in this project I will focus on a few technical indicators as features for my machine learning models.
+    </p>
+</div>
+
+<div id="Section3">
+  <h3>Objective</h3>
+    <p>
+      The ultimate aim of this project is not to predict stock prices accurately as that is virtually impossible given my level of expertise. 
+	  Rather, I will be comparing various methods and models to predict stock prices, and identify what makes them successful or unsuccessful. 
+	  In my attempt to predict percentage change in stock prices, I will be looking at 2 broad categories of models: univariate and multivariate. 
+	  The univariate model will serve as a benchmark for my project. Ultimately, I hope to be able to design a multivariate model that works better 
+	  than the univariate model. In doing so, I will have successfully utilise the various technical indicators, and also develop a simple framework 
+	  that can be used to predict changes in stock prices more accurately.
+    </p>
+</div>
+
+<div id="Section4">
+  <h3>Methodology</h3>
+    <p>
+      Due to the complexity and uncertainty of this problem, I have redesigned the methodology multiple times. After much contemplation, 
+	  I have broken down my methodology into the following steps
+    </p>
+	
+	<p>
+    1. Feature Selection
+		<ul>
+			<li>Generate technical indicators that will be used as input variables for my model</li>
+		</ul>
+    </p>
+    
+	<p>
+	2. Target selection
+		<ul>
+			<li>Due to the unpredictability of stock price movements, 
+			it may or may not be easy to predict percentage changes in stock prices. 
+			Feature-target correlation will have to be analysed to determine that.</li>
+		</ul>
+    </p>
+	
+	<p>
+	3. Model Selection
+		<ul>
+			<li>Choosing which univariate model to use</li>
+			<li>Choosing which multivariate models to use</li>
+			
+		</ul>
+    </p>
+	
+	<p>
+	4. Model assessment
+		<ul>
+			<li>Train the models and use them to predict results</li>
+			<li>Compare results across all models (RMSE values)</li>
+			
+		</ul>
+    </p>
+	
+	<p>
+	5. Conclusion
+		<ul>
+			<li>Outcome and insights generated from this project</li>
+			<li>Future work</li>
+			
+		</ul>
+    </p>
+</div>
+
+<div id="Section5">
+  <h3>Feature Selection</h3>
+    <p>There are 4 major categories of technical indicators: Volatility, Trend, Momentum, Volume</p>
+	
+	<p>Due to time constraints, I was unable to select the best amongst the many different indicators 
+	that are commonly used. However, I decided to use at least 1 indicator from each category for my model. 
+	This is to ensure that my project covers the minimum breath or scope of technical indicators.</p>
+	
+	<p>Aside from these technical indicators, other possible features would include the percentage 
+	change in price 1,2 and 3 days ago, as these intuitively seem to carry information of what 
+	tomorrow’s percentage change in price would be.</p>
+	
+	<p>Fundamental indicators was removed from the scope of the project. This is because it is 
+	difficult to identify strong fundamental indicators, especially for short-term price predictions.</p>
+</div>
+
+<div id="Section6">
+  <h3>Target Selection</h3>
+    <p>After consulting seniors, setting percentage change in stock prices as a target variable/ dependent variable 
+	seemed logical because afterall, traders are more interested in the percentage change in stock prices rather 
+	than its absolute value when traders trade stocks.</p>
+</div>
+
+<div id="Section7">
+  <h3>Section 5</h3>
+    <p>
+      Section 5 text here
+    </p>
+</div>
+
+<div id="Section8">
+  <h3>Section 5</h3>
+    <p>
+      Section 5 text here
+    </p>
+</div>
+
+<div id="Section9">
+  <h3>Section 5</h3>
+    <p>
+      Section 5 text here
+    </p>
+</div>
+
+<div id="Section10">
+  <h3>Section 5</h3>
+    <p>
+      Section 5 text here
+    </p>
+</div>
+
+{% endblock %}
