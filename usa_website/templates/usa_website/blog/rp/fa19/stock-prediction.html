@@ -184,6 +184,50 @@
     <p>After consulting seniors, setting percentage change in stock prices as a target variable/ dependent variable 
 	seemed logical because afterall, traders are more interested in the percentage change in stock prices rather 
 	than its absolute value when traders trade stocks.</p>
+	
+	<h4> Target Variable – Percentage Change in close price </h4>
+	<p>
+	Let:
+		<ul>
+			<li>T = today’s close price</li>
+			<li>Y = yesterday’s close price</li>
+			<li>Percentage change = (T-Y)/Y</li>
+		</ul>
+    </p>
+	
+	<p>However, when identifying relationships between the features and this target variable, the correlation is weak, 
+	showing a possibility that these features might have negligible influence on the percentage changes in stock prices. 
+	The way to resolve this issue is to either change the features or change the target variable.</p> 
+	
+	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart1.png' %}" style="margin:auto" /><br><br>
+	
+	<h4> Target Variable – Open Price </h4>
+	<p>
+	Unlike percentage change which is a relative value, open price is an absolute value. 
+	The pairplots below show stronger correlations. In particular, the technical Average True Range 
+	seem to have a linear relationship with the open price. The accumulation distribution index seem to 
+	have a polynomial relationship with the open price.
+    </p>
+	
+	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart2.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart3.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart4.png' %}" style="margin:auto" /><br><br>
+	
+	<h4> Comparison </h4>
+	<p>
+	While it seems as though open price is a better target variable to predict as compared to percentage change in price, 
+	this is not conclusive. This is because while the technical indicators might have low correlation with percentage change 
+	in price independently, when used together, they might still have strong correlation with percentage price.
+    </p>
+	<p>
+	On further analyses, this might be possible. Looking at the correlation between technical indicators, we can see that 
+	they have a relatively low correlation. Therefore, this increases the potential that when used together, the technical 
+	indicators can potentially have strong correlation with percentage change in price.
+    </p>
+	
+	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart5.png' %}" style="margin:auto" /><br><br>
+	
+	<p></p>
 </div>
 
 <div id="Section7">
