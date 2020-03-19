@@ -355,6 +355,10 @@ def food_insecurity(request):
 ###### FALL 2019 R&P PROJECTS ######
 #####################################
 
+def fighter_values(request):
+    t = get_template("blog/rp/fa19/the-values-of-a-fighter.html")
+    context = {}
+    return HttpResponse(t.render(context))
 
 def personalized_movie_rating(request):
     t = get_template("blog/rp/fa19/personalized-movie-rating.html")
