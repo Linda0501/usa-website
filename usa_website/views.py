@@ -355,6 +355,12 @@ def food_insecurity(request):
 ###### FALL 2019 R&P PROJECTS ######
 #####################################
 
+
+def personalized_movie_rating(request):
+    t = get_template("blog/rp/fa19/personalized-movie-rating.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 def political_bias_digital_media(request):
     t = get_template("blog/rp/fa19/Fiat-Lux-Illuminating-Political-Bias-in-Digital-Media.html")
     context = {}
