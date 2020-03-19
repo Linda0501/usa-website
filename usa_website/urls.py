@@ -50,7 +50,7 @@ urlpatterns = [
     url(r'attendance', views.AttendanceView.as_view(), name = "attendance"),
     url(r'people$', views.people, name = "people"),
     #url(r'officehours$', views.officehours, name='officehours'),
-    # COURSE PAGES 
+    # COURSE PAGES
     url(r'data-8$', views.data8, name = "data8"),
     url(r'stat-2$', views.stat2, name = "stat2"),
     url(r'stat-20$', views.stat20, name = "stat20"),
@@ -73,7 +73,7 @@ urlpatterns = [
     url(r'stat-158$', views.stat158, name = "stat158"),
     url(r'stat-159$', views.stat159, name = "stat159"),
     url(r'course-map$', views.courseMap, name = "courseMap"),
-    # COMMITTEES 
+    # COMMITTEES
     url(r'dataconsulting$', views.dataconsulting, name = "dataconsulting"),
     url(r'education$', views.education, name = "education"),
     url(r'webdev$', views.webdev, name="webdev"),
@@ -86,8 +86,9 @@ urlpatterns = [
     url(r'march_2019.html$', views.march_2019, name="march-2019"),
     url(r'mtc_map$', views.mtc_map, name="mtc-map"),
     # FALL 2019 R&P PROJECTS
-    
-    
+
+    url(r'rp/the-values-of-a-fighter$', views.fighter_values, name='fighter_values'),
+
     # SPRING 2019 R&P PROJECTS
     url(r'rp/predicting-horse-races$', views.predicting_horse_races, name='predicting_horse_races'),
     url(r'rp/DIJA$', views.DIJA, name='DIJA'),
@@ -97,7 +98,7 @@ urlpatterns = [
     url(r'rp/identifying-art-styles$', views.identifying_art_styles, name='identifying_art_styles'),
     url(r'rp/eurovision$', views.eurovision, name='eurovision'),
     url(r'rp/personality$', views.personality, name='personality'),
-    
+
     # FALL 2018 R&P PROJECTS
     url(r'rp/music-moods$', views.music_moods, name="music_moods"),
     url(r'rp/polls$', views.polls, name="polls"),
@@ -106,7 +107,7 @@ urlpatterns = [
     url(r'rp/schooling$', views.schooling, name='schooling'),
     url(r'rp/meaning-of-probabilities-in-social-sciences$', views.meaning_of_probabilities_in_social_sciences, name="meaning_of_probabilities_in_social_sciences"),
     url(r'rp-fakenews$', views.fakenews, name = "fake_news_rp"),
-    
+
     # SPRING 2018 R&P PROJECTS
     url(r'rp/bart-ridership-data$', views.bart_ridership_data, name="bart_ridership_data"),
     url(r'rp/capsim$', views.capsim, name="capsim"),
@@ -114,7 +115,7 @@ urlpatterns = [
     url(r'rp/num-concept$', views.number_concept, name="number_concept"),
     url(r'rp/SteinerTreeProblem$', views.SteinerTreeProblem, name="SteinerTreeProblem"),
     url(r'rp/suicide$', views.suicide, name="suicide"),
-    
+
     # FALL 2017 R&P PROJECTS
     url(r'rp/a-shallow-dive-into-time-series-analysis-of-local-restaurant-data-using-r$', views.shallow_dive, name="shallow_dive"),
     url(r'rp/a-spatial-investigation-into-heart-disease-mortality-rates-and-youth-tobacco-rates$', views.tobacco_heart_disease, name="tobacco_heart_disease"),
@@ -124,8 +125,8 @@ urlpatterns = [
     url(r'rp/uc-berkeley-undergraduates-general-mental-health-and-use-of-mental-health-services$', views.ucb_ug_mental, name="ucb_ug_mental"),
     url(r'rp/world-happiness-report-eda$', views.world_happiness, name="world_happiness"),
     url(r'rp/yelp-review-and-rating-analysis$', views.yelp_review, name="yelp_review"),
-    
-    # CRASH COURSES 
+
+    # CRASH COURSES
     url(r'education/installing-r-and-rstudio$', views.r0, name="r0"),
     url(r'education/base-r-and-basic-packages$', views.r1, name="r1"),
     url(r'education/preparing-for-data-analysis$', views.r2, name="r2"),
@@ -138,7 +139,7 @@ urlpatterns = [
     url(r'education/website-tutorial-3$', views.website_tutorial_3, name="website_tutorial_3"),
     url(r'education/anatomy-of-a-basic-fullstack$', views.anatomy_of_a_basic_fullstack, name="anatomy_of_a_basic_fullstack"),
     url(r'education/basic-web-architecture$', views.basic_web_architecture, name="basic_web_architecture"),
-    
+
     # SPRING 2020 DC PROJECTS
     url(r'dataconsulting/uizard-sp20$', views.uizard_sp20, name="uizard_sp20"),
     url(r'dataconsulting/concha-labs$', views.concha_labs, name="concha_labs"),
@@ -146,35 +147,35 @@ urlpatterns = [
     url(r'dataconsulting/pillar-learning$', views.pillar_learning, name="pillar_learning"),
     url(r'dataconsulting/pinxuan$', views.pinxuan, name="pinxuan"),
     url(r'dataconsulting/indeed$', views.indeed, name="indeed"),
-    
-    
+
+
     #FALLL 2019 DC PROJECTS
     url(r'dataconsulting/trace-data$', views.trace_data, name="trace_data"),
     url(r'dataconsulting/data-secrets$', views.data_secrets, name="data_secrets"),
     url(r'dataconsulting/grandmark$', views.grandmark, name="grandmark"),
-    
+
     #SPRING 2019 DC PROJECTS
     url(r'dataconsulting/express-scripts$', views.express_scripts, name="express_scripts"),
     url(r'dataconsulting/minted$', views.minted, name="minted"),
-    
-    
+
+
     #FALL 2018 DC PROJECTS
      url(r'dataconsulting/taco-bell$', views.taco_bell, name="taco_bell"),
     url(r'dataconsulting/mtc$', views.mtc, name="mtc"),
-    
-    
+
+
     #SPRING 2018 DC PROJECTS
     url(r'dataconsulting/tutorfly$', views.tutorfly, name="tutorfly"),
     url(r'dataconsulting/facial-emotion-recognition$', views.facial_emotion_recognition, name="facial_emotion_recognition"),
     url(r'dataconsulting/data-for-good-proposal$', views.data_good, name="data_good"),
     url(r'dataconsulting/uizard$', views.uizard, name="uizard"),
-    
-    
+
+
     #FALL 2017 DC PROJECTS
     url(r'dataconsulting/population-modeling$', views.population_modeling, name="population_modeling"),
     url(r'dataconsulting/food-insecurity$', views.food_insecurity, name="food_insecurity"),
-    
-    
+
+
     #MISCELLANEOUS
     url(r'textboxio/textboxio.js', views.textboxio, name = "textboxio"),
     # url(r'^blog/view/(?P<slug>[^\.]+).html', views.view_post, name='view_blog_post'),
@@ -182,7 +183,7 @@ urlpatterns = [
     url(r'population-modeling-webapp/', views.susawebapp, name = "susawebapp"),
     url(r'housingcrisis$', views.housingcrisis, name = "housingcrisis"),
     url(r'housingcrisis/$', views.housingcrisis, name = "housingcrisis"),
-    
+
     #MEME
     url(r'housingcRincess$', views.housingcRincess, name = "housingcRincess"),
     url(r'aDishwasher$', views.aDishwasher, name = "aDishwasher"),
@@ -191,7 +192,7 @@ urlpatterns = [
     # Web Dev - Data Viz Spring 2019??
     url(r'webdev/ucpd-crime$', views.ucpd_crime, name="ucpd_crime"),
     url(r'hallofmemes$', views.hallofmemes, name="hallofmemes"),
-    
+
     #INTERVIEWS
     url(r'interviews/sp19/lily-bhattacharjee-interview$', views.lily_bhattacharjee_interview, name="lily_bhattacharjee_interview"),
     url(r'interviews/sp19/megan-zhu-interview$', views.megan_zhu_interview, name="megan_zhu_interview"),

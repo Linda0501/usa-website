@@ -355,6 +355,11 @@ def food_insecurity(request):
 ###### FALL 2019 R&P PROJECTS ######
 #####################################
 
+def fighter_values(request):
+    t = get_template("blog/rp/fa19/the-values-of-a-fighter.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ### SPRING 2019 R&P PROJECTS ########
 ###################################
@@ -735,4 +740,3 @@ def blog(request):
     #t = get_template("blog/blog.html")
     #context = Context({})
     #return HttpResponse(t.render(context))
-

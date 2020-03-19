@@ -1,0 +1,324 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title>The Values of a Fighter</title>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}"
+  />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<h1>The Values of a Fighter</h1>
+<h3>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/letsrock.png' %}" style="margin:auto"></img><br><br>
+    <span style="color: #D5518D" id="author">By </span>
+    <span style="color: #3E95D7" id="name">Michael Wang</span>
+  </h3>
+
+<div class=Blog_Navigation>
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Introduction</a></li>
+    <li><a href="#Section2">Data Collection - Name, Rank, Character, etc.</a></li>
+    <li><a href="#Section3">Data Collection - Game States</a></li>
+    <li><a href="#Section4">Predicting Matches</a></li>
+    <li><a href="#Section5">Conclusion</a></li>
+  </ol>
+</div>
+<br>
+
+<div id="Section1">
+  <h3>Introduction</h3>
+    <p>
+      This semester I chose to work on a match predictor for the fighting
+      game Guilty Gear Xrd Revelator 2. Among current modern fighting
+      games, Guilty Gear Xrd Rev 2 (shortened to GG in this paper)
+      possesses some of the tightest balance among the characters in the
+      game’s roster. This means every playable fighter is, with slightly
+      varying amounts of difficulty, capable of winning a major tournament. Due
+      to this, GG has become one of the more difficult games to predict
+      match outcomes solely on the characters being played, relying much
+      more on the player piloting that character instead. This predictor
+      aims to remedy this issue by accounting for not just superficial
+      qualities such as the character played and the rank of the player,
+      but also more nuanced gameplay details such as successful neutral
+      interactions, knockdown pressure, and avoidance of the opponent’s
+      offense.
+    </p>
+</div>
+
+<div id="Section2">
+  <h3>Data Collection - Name, Rank, Character, etc.</h3>
+    <p>
+      Like all other data science endeavors, the core of this project
+      lies in the data collection. Fortunately, every night Mikado Arcade
+      in Tokyo, Japan streams high level GG matches for around 2-6 hours,
+      providing plenty of data for this project.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/fireland.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      In order for this project to succeed, I needed to collect two types
+      of data. The first is superficial data such as the character
+      played, the player’s rank, and the player’s name. All relevant
+      information, fortunately, is provided in the loading screen before
+      every match. Most of the work on this had been done in a previous
+      parser, courtesy of Github users nxths and keeponrock.in. To parse
+      out the characters being played, aHash was employed to identify
+      the characters played. Low resolution templates of each character’s
+      face are hashed at the beginning of the program. Then, the area
+      where a character’s face would appear in the match loading screen
+      was continuously scanned, processed, hashed, and compared to the
+      hash value of each template until a match was found. In order to
+      account for slight variances in brightness, quality, and positioning,
+      a small threshold was applied to give the values a little bit of
+      wiggle room. As for a player’s name and rank, Google Vision’s OCR
+      engine easily parsed out the info in the player card, after using
+      OpenCV’s transformation tools to perspective transform the playercard
+      into a bird’s eye view.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/something.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      The next step would be to figure out when each round starts, along
+      with what the score is at that moment. Games of GG played in
+      arcades are first-to-3, indicated by the bulb-like devices below
+      each character’s health bar. In order to find out when each round
+      starts, we look at the timer. Each game starts at 99, so I simply
+      took an image of that 99 and used the same technique used for
+      checking what character was being played: aHash. When a match was
+      found, a new round had started. A similar technique was used for
+      victories. Three bulbs indicate whether or not a player has won
+      that round. If one player has one bulb lit up and the other has
+      two, then the score is 1-2. I saved images of the bulbs in the on
+      and off state, and used aHash once again to tell whether these
+      bulbs were in the on or off state.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/redimagae.png' %}" style="margin:auto"></img><br><br>
+</div>
+
+<div id="Section3">
+  <h3>Data Collection - Game States</h3>
+    <p>
+      The second pieces of relevant data were more nuanced gameplay
+      details. There are essentially three major game states in Guilty
+      Gear: neutral, where no player has an advantage; offensive, where
+      one player is applying pressure on the opponent; and defensive,
+      where one player is trying to mitigate pressure from the opponent.
+      Within each of these game states is a world of nuance, especially
+      in neutral. Professional GG player Machaboo wrote an excellent
+      writeup detailing some of the interactions that occurs in neutral.
+      From this, I will be focusing on attempting to parse out the three
+      major components: oki-waza, ate-waza, and sashi-kaeshi. These, in
+      simpler terms, refer respectively to counter attack, direct
+      attack, and second intention. Counter attacks attempt to hit the
+      opponent while they begin their offense. Direct attacks attempt to
+      hit opponents lying in wait. Second intention is the usage of
+      feints to draw out an opponent’s attack, and then punishing the
+      opponent when their attack fails. These three form GG’s neutral
+      tactical wheel, where oki-waza beats ate-waza, ate-waza beats
+      sashi-kaeshi, and sashi-kaeshi beats ate-waza. One final component
+      to account for is okizeme, or literally, “attack the wake-up”.
+      When a character is knocked down, they cannot act for about ⅓ of a
+      second, allowing the opponent to continue their pressure and
+      forcing the knocked-down player to block, or get hit if unable to
+      block. Some characters have potent okizeme, meaning that the
+      actions they do when the opponent is knocked down are extremely
+      difficult to block, as the opponent must decide between blocking
+      high, low, left, right, or a combination of these.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/fighttres.gif' %}" style="margin:auto"></img><br><br>
+    <p>
+      Character on the left (Jam) performing ate-waza, or a direct attack.
+      Notice how she runs up and punches the opponent while the opponent
+      (Sol) stands there, waiting.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/fightdos.gif' %}" style="margin:auto"></img><br><br>
+    <p>
+      Character on the right (Player 1 Sol) runs forward, attempting to
+      begin his offense. Character on the left (Player 2 Sol) lets loose a
+      sweep, countering the Player 1 Sol’s advance in an act of oki-waza,
+      or counter attack.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/fightuno.gif' %}" style="margin:auto"></img><br><br>
+    <p>
+      Character on the left (Elphelt) dashes forward, initiating offense.
+      Player on the left (Sol) attempts to counter with a sweep, but Elphelt
+      stops just short, making Sol’s sweep miss. Elphelt punishes the recovery
+      of the sweep in an act of sashi-kaeshi.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/pinkfight.gif' %}" style="margin:auto"></img><br><br>
+    <p>
+      Character on the left (Millia) combing the opponent (Sol) until he is knocked
+      down. Sol must block the blue disc while he is rising from the knocked-down
+      state, allowing for Millia to enter okizeme and force Sol to guess whether
+      the next attack is a high attack or a low attack.
+    </p>
+    <p>
+      The issue now lies in how to parse out these game states. This is done by using
+      a repository called DarkFlow, which utilizes YoloV2 to train a model on a
+      character’s keyframes in their animation, as GG has some of the most distinctive
+      animation in modern fighting games. This allows for very recognizable frames
+      for what action is occurring. YoloV2 was selected compared to other RCNN
+      algorithms due to its speed. Dozens of hours of gameplay footage must be parsed
+      through to gain enough data to properly model, and YoloV2 is the fastest of
+      them all. From this, six key components must be parsed out -  when a character:
+      attacks, retreats, advances, is knocked down, blocks, and is hit.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/idkmike.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      The final two proved difficult to parse, as hit sparks and glossy animations
+      tended to obscure the character models and made it difficult for the model to
+      recognize. As a result, the presence of red health signaled a hit, and an
+      increase in the game’s RISC gauge signified a block. This was a simple matter
+      of taking a single pixel-width slice of each health bar, converting this slice
+      from BGR (default color scheme in OpenCV) to HSV, and then finding the proper
+      range of colors that GG uses for red and yellow health.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/whiteband.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Another issue that arose was the massive amount of frames that needed to be
+      accounted for. There are 25 characters in the roster of GG, each with 16
+      different color models, and each character having dozens of different animations
+      to account for (the majority of which coming from the different attacks a
+      character can employ).
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/lotsopeep.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      As for the opponents, they must receive the same treatment. Collecting all of
+      this data by hand would accelerate my already arthritis-risked tendons by a
+      couple decades, so instead I created my own dataset. Using selenium, I scraped
+      the GG wiki Dustloop for their repository of transparent sprites.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/snipa.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      This included every character in their default color doing each attacking move
+      in their arsenal. Unfortunately, this wiki does not contain states such as
+      walking, air-dashing, and standing still. So, I opened my copy of GG, found a
+      Cheat Engine mod for GG that allowed me to manipulate game elements, and got
+      to extracting sprites. I used Cheat Engine to convert the stage background to
+      black and remove the game's HUD, and took screenshots of each character
+      performing separate actions. Then, I used GIMP to remove the black background
+      in order to get transparent sprites for the moves I needed.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/runningman.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Afterwards, I used OpenCV to paste each template on an empty stage background
+      at every (x, y) coordinate that that action could be performed. So, for example,
+      if a character had a move that could only be performed on the ground, I simply
+      pasted the sprite on differing x-coordinates while maintaining a constant
+      y-coordinate.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/fourimage.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      In order to account for the different colors and backgrounds each character
+      could be present with, I used data augmentation. I flipped each image to
+      account for both player 1 and player 2 sides, along with color jittering to
+      emulate the different colors each character sprite could possess, along with
+      different background colors.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/fourcolor.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      Model training has been rough, due to needing to train on upwards to 50+ classes
+      for each character. Time is and continues to be the main bottleneck of this
+      step in data collection. The current model is able to somewhat recognize the
+      character despite being in a different palette, though each model requires
+      significantly more training time in order to be usable. This paper will continue
+      on under the assumption that a working model to parse out character states works.
+      With all of this information at hand, at last we could begin recognizing game
+      states.
+    </p>
+    <p>
+      	From here, a finite state machine was employed to figure out what neutral
+        interaction was occuring. One issue that arose was trying to figure out how
+        to discern between each state. An attack, looking only at the attacker, is
+        graphically identical to a counter attack, as the attacker is simply throwing
+        out a move. The key was to figure out who had begun their offense. To remedy
+        this, the concept of right of way was introduced. In fencing, whenever a
+        person initiates their offense first signaled they had right of way. If a
+        person attacked without right of way, it signaled a counter attack. If they
+        attacked with right of way, it signaled a direct attack. From here, I was
+        able to construct a flow chart in order to discover who has right of way at a
+        given time, and finally, parse out the neutral game state at a given time and
+        how many successful neutral interactions a player makes and receives.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/linemike.png' %}" style="margin:auto"></img><br><br>
+</div>
+
+<div id="Section4">
+  <h3>Predicting Matches</h3>
+    <p>
+      	Finally, in order to predict the winner of a match, I utilize a technique
+        similar to that of Jay Boice’s, from his fivethirtysix article “How Soccer
+        Predictions Work”. The step is threefold: first, we find the expected amount
+        of goals a player is expected to make against the opponent. Then, using these
+        projected scores, they are mapped onto a Poisson model. The two models are
+        then turned into a matrix for all possible match scores, and then the
+        likelihood for each is calculated. From there, Monte Carlo Simulations
+        re run to account for rare cases such as a losing team going on a hot streak
+        in order to get a better representation of a team’s score.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/mikegraph.png' %}" style="margin:auto"></img><br><br>
+    <p>
+      However, a few issues arise when trying to translate Boice’s soccer model
+      into Guilty Gear. For one, the thing that Boice predicts on are the expected
+      number of goals a team makes, which directly tie into a team’s victory. If one
+      team scores more goals than the other, then that team wins. The only other
+      comparable unit in Guilty Gear would be a character’s health and how much
+      damage a player is expected to deal/take. It seems possible to calculate the
+      expected amount of damage a player is expected to take and deal and go from
+      there, but the issue is that Guilty Gear’s comeback factor is far higher than
+      soccer due to its volatility. A player can survive on a pixel and completely
+      turn the tables against their opponent with relative ease. Not only that,
+      certain characters such as Raven and Chipp Zanuff naturally take more damage,
+      whether it be due to a gameplay mechanic unique to them or their increased
+      fragility. Those same characters can also easily defeat opponents without taking
+      any damage themselves, significantly adding to the variance of this model.
+      Also, it just seems a lot more boring doing it like that.
+    </p>
+    <p>
+      Instead, I propose implementing a “risk” rating. After collecting hundreds of
+      hours of data, each player will have an average amount of neutral interactions
+      associated per win and loss. For example, manually collecting information from
+      Millia player Ranger results in an average of 3 direct attacks, 1 counter attack,
+      0.5 feints, and 3 okizeme successes per win, along with receiving, from the
+      opponent, 1 direct attack, 1 counter attack, ¼ feints, and ¼ okizeme successes.
+      We can add these up to emulate something similar to expected goals a team scores
+      in Boice’s model, with the former being each player’s offensive score and the
+      latter being their defensive. The thing to note is that each neutral interaction
+      wants to be as low as possible, implying the player doesn’t need to engage in as
+      many risky actions to secure a victory. In Ranger’s case, he’s expected to need
+      to successfully land 3 direct attacks and 3 okizeme attempts in order to win,
+      which can be difficult against skilled players. This is where each neutral
+      interaction is multiplied by a risk rating from 0 to 2. The goal is to minimize
+      the amount of risk a player must take in order to win. However, each character
+      has strengths and weaknesses in each category. For example, Millia’s speed allows
+      her to make direct attack, counter attack, and feint attempts more safely
+      compared to other characters, meaning these categories will have a lower risk
+      rating multiplied to it (probably around 0.5). Her okizeme is considered one of
+      the stronger in the game, employing potent 50/50 mixups that her opponent must
+      guess between blocking high or low in order to survive, meaning her okizeme
+      attempts will also be multiplied by 0.5 due to their high chances of success.
+      With this in mind, Ranger needing 3 successful direct attacks and 3 successful
+      okizeme attempts does not seem as daunting given Millia’s abilities. The
+      downside is that Millia has extremely low health with poor defensive options,
+      meaning she cannot afford to take many hits from the opponent. Each successful
+      attempt from the opponent is then multiplied by a higher risk rating. Luckily,
+      Ranger seems to be skilled in avoiding the opponent’s attacks, so his at-risk
+      score for being attacked is quite low. From here, we can run Boice’s original
+      model with our new offensive and defensive scores.
+    </p>
+</div>
+
+<div id="Section5">
+  <h3>Conclusion</h3>
+    <p>
+      In the end, this project ended up being one major timesink, one I did not expect
+      to be this deep. Currently, model accuracies are paltry at best, with the best
+      one I have only applying to one character using one color. However, all the
+      pieces are right there. I just need to wait for my Nvidia GTX 1070 to finish this
+      triathalon of model training with the data augmented set, and hopefully be able
+      to collect meaningful data.
+    </p>
+</div>
+
+{% endblock %}
