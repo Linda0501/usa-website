@@ -358,6 +358,11 @@ def food_insecurity(request):
 def political_bias_digital_media(request):
     t = get_template("blog/rp/fa19/Fiat-Lux-Illuminating-Political-Bias-in-Digital-Media.html")
     context = {}
+    return HttpResponse(t.render(context)
+                        
+def yelp(request):
+    t = get_template("blog/rp/fa19/yelp.html")
+    context = {}
     return HttpResponse(t.render(context))
 
 ###################################
@@ -740,4 +745,3 @@ def blog(request):
     #t = get_template("blog/blog.html")
     #context = Context({})
     #return HttpResponse(t.render(context))
-
