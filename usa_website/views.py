@@ -355,6 +355,11 @@ def food_insecurity(request):
 ###### FALL 2019 R&P PROJECTS ######
 #####################################
 
+def yelp(request):
+    t = get_template("blog/rp/fa19/yelp.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ### SPRING 2019 R&P PROJECTS ########
 ###################################
@@ -735,4 +740,3 @@ def blog(request):
     #t = get_template("blog/blog.html")
     #context = Context({})
     #return HttpResponse(t.render(context))
-
