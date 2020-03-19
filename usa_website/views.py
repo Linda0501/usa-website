@@ -360,6 +360,21 @@ def fighter_values(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def personalized_movie_rating(request):
+    t = get_template("blog/rp/fa19/personalized-movie-rating.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def political_bias_digital_media(request):
+    t = get_template("blog/rp/fa19/Fiat-Lux-Illuminating-Political-Bias-in-Digital-Media.html")
+    context = {}
+    return HttpResponse(t.render(context)
+                        
+def yelp(request):
+    t = get_template("blog/rp/fa19/yelp.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ### SPRING 2019 R&P PROJECTS ########
 ###################################

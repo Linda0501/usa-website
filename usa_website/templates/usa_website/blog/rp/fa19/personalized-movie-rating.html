@@ -1,0 +1,166 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title>Personalized Movie Rating</title>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<h1>Personalized Movie Rating</h1>
+
+<div class="Blog_Nav">
+  <ol>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Introdcution</a></li>
+    <li><a href="#Section2">Objective</a></li>
+    <li><a href="#Section3">Data Cleaning and Processing</a></li>
+    <li><a href="#Section4">Small Scale Linear Regression</a></li>
+    <li><a href="#Section5">Small Scale Movie Recommender</a></li>
+    <li><a href="#Section6">Web Scraping</a></li>
+    <li><a href="#Section7">Large Scale Linear Regression</a></li>
+    <li><a href="#Section8">Personalized Movie Rating Algorithm</a></li>
+    <li><a href="#Section9">Conclusion</a></li>
+    <li><a href="#Section10">Bibliography</a></li>
+  </ol>
+</div>
+<br>
+
+<h2>
+    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+    <span style="color: gray" id="author">By </span>
+    <span style="color: gray" id="name">Aadiraj Batlaw</span>
+    <span style="color: gray" id="date">- date</span>
+  </h2>
+<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/spring_2019/personality/titlePic.png' %}" style="margin:auto" /><br><br>
+
+<br>
+
+<!-- <div id="Section1">
+  <h3>Section 1</h3>
+    <p>
+      Section 1 text here
+      This is how you add an image:
+    </p>
+    <p>
+      You can create multiple paragraphs!
+    </p>
+    This is how you add an image! style="margin:auto" centers the image.
+    <img src="{% static 'usa_website/images/blog/rp/spring_2018/capsim/round7_high.png' %}" style="margin:auto" /><br><br>
+</div>
+ -->
+
+<div id="Section1">
+  <h3>Introduction</h3>
+    <p>
+      This semester I decided to do my Research and Publication project on writing an algorithm that would generate a personalized movie rating for each individual user. I decided to pursue this project as I am a big fan of movies and used to make short films myself. Now that I am pursuing an education in statistics and data science, I want to combine the analytical skills I am developing and my passion for film. My dream is to work for a streaming company like Netflix or Disney Plus, so this is my first step towards that.
+    </p>
+</div>
+
+<div id="Section2">
+  <h3>Objective</h3>
+    <p>
+      My objective was first to write the algorithm based on already collected datasets, and then design a website that would allow the user to enter the title of the movie they wish to view, and then it would output their personalized rating metric for them. This rating metric will be a weighted average specific to each user of other common movie rating services (such as Rotten Tomatoes and IMDB). I will refer to this as “public ratings” from now on. Finally, I wanted to develop a quiz for new users on the website that, after filling out, would recommend users new movies to watch.
+
+    </p>
+</div>
+
+<div id="Section3">
+  <h3>Data Cleaning and Processing</h3>
+    <p>
+      In the first part of the project I cleaned and explored my data, implementing the components of the algorithm on a small scale before projecting it onto all my data. The first dataset I had was one that had 13 public ratings per movie, as can be seen below.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/data-cleaning-table.png' %}" style="margin:auto" />
+    <p>However, this dataset only contained movies from 2016 to 2018. Still, I decided to go ahead with this data and see if I could get some good results. </p>
+    <p>The second dataset I used was one that contained 270,000 movies. For each movie, several users had given their own personal review out of 5. This would become my response variable. </p>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/data-cleaning-table-2.png' %}" style="margin:auto" />
+    <p>I then merged these datasets together and dropped unnecessary columns until I achieved a data frame consisting of user ratings for movies out of 5 and the corresponding public rating scores. Quickly, I realized that I lost over 99% of my data on user ratings after joining the datasets. This means I had to either find a larger data set with public rating scores, or otherwise web scrape the rest. In the meantime, I decided to practice some of the steps I had mentioned in my objective paragraph on this smaller scale data frame before replicating them with my complete data frame.</p>
+</div>
+
+<div id="Section4">
+  <h3>Small Scale Linear Regression</h3>
+    <p>
+      I performed linear regression to generate a model that produced a weighted equation of the public rating scores for all movies in the data frame. This is what I would later apply to each individual user. I could not do this, however, until I had a significant amount movie entries for a given user.
+    </p>
+</div>
+
+<div id="Section5">
+  <h3>Small Scale Movie Recommender</h3>
+    <p>
+      Next, I generated a movie recommendation system using a cosine similarity algorithm. The formula below takes takes two data sets and outputs a range of values between -1 and 1. Values of 1 are perfectly similar, whereas values of -1 are completely different. 
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/small-scale-movie-recommender-eqn.png' %}" style="margin:auto" />
+    <p>For my project, I used the same dataset (the one with the 13 public ratings) as my A and B vectors. Using the following function, I ordered my movies by other movies most similar to them. I then select the top three and displayed them as the recommended movie for a given imputed title. </p>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/small-scale-movie-recommender-code.png' %}" style="margin:auto" />
+    <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/small-scale-movie-recommender-output.png' %}" style="margin:auto" />
+</div>
+
+<div id="Section6">
+  <h3>Web Scraping</h3>
+  <p>I could not find another dataset to use, so I turned to web scraping. I did a bit of research and found that the best scraper to use for a dataset of this size was one called Scrapy. So after watching a couple of tutorials on Scrapy, I web scraped the IMDB page of a list of all movies from between 1972 and 2016. For each movie on this page, I had to scrape the title, the IMDB score, and the Metacritic score, which was also provided. The code I used was as follows.</p>
+  <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/web-scraping-code.png' %}" style="margin:auto" />
+  <p>The last part of this code was a little tricky. This part locates the “Next” button at the bottom of the page, then extract the URL corresponding to the following page and redirects the scraper to it. This allows the scraper to go through all the pages and scrap every movie.</p>
+  <p>Next I attempted to scrape Rotten Tomatoes the same way, but unfortunately this did not work due to the irregularity of the Rotten Tomatoes page. I then tried using Beautiful Soup, another (slower) scraper. Again, this is not work. So then I tried using Beautiful Soup along with a Chrome webdriver (which essentially opened a browser on my local computer and manually scraped through the website). This used the following code.</p>
+  <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/web-scraping-code-2.png' %}" style="margin:auto" />
+  <p>This actually did work! Well, almost. This was able to web scrape almost all the data, but it was simply too slow. Eventually, it crashed and I was not able to get all the data. Despite the lack of the Rotten Tomatoes data, I decided to continue with my project, and fortunately my results did not suffer too much from this loss.</p>
+</div>
+
+<div id="Section7">
+  <h3>Large Scale Linear Regression</h3>
+    <p>
+      At this point, I merged the web scraped data of my IMDB and Metacritic scores with my dataset of user ratings to get the data frame on the left. I then grouped this data frame by userId to get the data frame on the right. 
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/large-scale-linear-regression-table.png' %}" style="margin:auto" />
+    <p>
+      Treating each group of userId as its own data frame, I performed a linear regression on each “sub-data frame”, with the public ratings as my explanatory variables and the user rating as my response variable. The code for this is below.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/large-scale-linear-regression-code.png' %}" style="margin:auto" />
+    <p>
+      This was done to see how accurately my personalized movie rating algorithm would be. Based on the high mean squared error, one could argue that the algorithm would be quite poor, but upon further inspection I saw that this algorithm was fairly accurate for the most part, with a few outliers that could be potentially be accounted for using a more developed algorithm.
+    </p>
+</div>
+
+<div id="Section8">
+  <h3>Personalized Movie Rating Algorithm</h3>
+    <p>
+      Finally, I designed my personalized movie rating algorithm. First I put together a list of ten popular movies. Here are the movies chosen and their corresponding public ratings.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/personalized-table-1.png' %}" style="margin:auto" />
+    <p>
+      I then wrote an algorithm that, after a user inputs their own rating out of 5 for each movie in the list, will be able to predict their personalized movie rating score for any movie released between the years 1972 and 2016. The code for doing so is as follows.
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/personalized-func-1.png' %}" style="margin:auto" />
+    <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/personalized-func-2.png' %}" style="margin:auto" />
+    <p>
+      The initialize function “initializes” the user preferences such that for any movie title inputted into the personalized_rating function, the output would be the personalized rating for the initialized user. Here is an example:
+    </p>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/personalized-movie-rating/personalized-output.png' %}" style="margin:auto" />
+    <p>
+      Success!
+    </p>
+</div>
+
+<div id="Section9">
+  <h3>Conclusion</h3>
+    <p>
+      All in all, this project was a success. My main objective was to design an algorithm that would be able to predict user’s personal movie rating for a given movie, and I accomplished exactly that. As a next step, I would find a way to properly scrape the Rotten Tomatoes data. I could do this by developing a better scraper, or alternatively by breaking the scraping process into multiple parts so that the program does not crash again. In addition, I could develop the website I wanted to make, allowing me to present my algorithm in a more visually appealing way. Lastly, I could implement the recommender algorithm I had already performed on a small scale onto the rest of the data. I could actually do this with one copy and paste, but it would be interesting to see if I could use my score generating algorithm to make this recommender algorithm more sophisticated. Overall I am quite happy with the work I have accomplished.
+
+    </p>
+</div>
+
+<div id="Section10">
+  <h3>Bibliography</h3>
+    <p>
+       RDLongoria. “All U.S. Released Movies: 1972-2016.” IMDB, IMDB, 16 Mar. 2013, www.imdb.com/list/ls057823854/?sort=list_order,asc&st_dt=&mode=detail&page=1&ref_=ttls_vm_dtl.
+    </p>
+    <p>
+       “BROWSE ALL DVDS & STREAMING.” Top Movies - Netflix, Amazon, ITunes, DVD | Rotten Tomatoes, www.rottentomatoes.com/browse/dvd-streaming-all/.
+    </p>
+    <p>
+       Rounakbanik. “Movie Recommender Systems.” Kaggle, Kaggle, 6 Nov. 2017, www.kaggle.com/rounakbanik/movie-recommender-systems.
+    </p>
+</div>
+
+
+{% endblock %}
