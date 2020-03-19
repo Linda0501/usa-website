@@ -1,0 +1,164 @@
+{% extends "blog/rp/rp_header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<title>Fiat Lux: Illuminating Political Bias in Digital Media</title>
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'usa_website/css/blogheader.css' %}" 
+  />
+  <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<h1>Fiat Lux: Illuminating Political Bias in Digital Media</h1>
+<h3>
+    <span style="color: #D5518D" id="author">By </span>
+    <span style="color: #3E95D7" id="name">Ritvik Iyer and Kevin Hsu</span>
+  </h3>
+
+<div class=Blog_Navigation>
+  <ul>
+     <!-- FILL IN SECTIONS -->
+    <li><a href="#Section1">Introduction</a></li>
+    <li><a href="#Section2">Data Collection & the Modeling Process</a></li>
+    <li><a href="#Section3">Visualizations & Interpreting our Results</a>
+      <ol>
+        <li><a href="#Model1">Naive Bayes</a></li>
+        <li><a href="#Model2">Random Forest</a></li>
+        <li><a href="#Model3">Logistic Regression</a></li>
+        <li><a href="#Model4">Linear Kernel Support Vector Machine (SVM)</a></li>
+        <li><a href="#Model5">XGBoost</a></li>
+      </ol>
+    </li>
+    <li><a href="#Section4">Conclusion</a></li>
+    <li><a href="#Section5">References</a></li>
+  </ul>
+</div>
+<br>
+
+<div id="Section1">
+  <h3>Introduction</h3>
+    <p>
+      It is no secret that we live in an era of misinformation. In the increasingly digitized world, it is critical to be wary about the news sources from which we consume information. Prominent political figures like US President Donald Trump have brought the term ‘fake news’ to the forefront of public discourse. As such, it is important to be able to identify levels of bias in news outlets. To combat this issue, we propose computational modeling techniques to classify the media outlet which wrote a particular news articles, with the ultimate objective of discerning bias between news outlets. 
+    </p> 
+    <br>
+</div>
+
+<div id="Section2">
+  <h3>Data Collection & the Modeling Process</h3>
+    <p>
+      Our text corpus was the FakeNewsCorpus, a free dataset consisting of over 9 million articles from over 745 domains, catered for deep learning neural network purposes. Before we found this text corpus, we first tried using web scraping to gather data. However, we were unable to go through with this plan, as generalizing the scraper for multiple news sites took was not feasible given our time constraints. Other than convenience, the main benefit of the FakeNewsCorpus was consistency. All articles were scraped in a very similar time window (a couple months in 2018), and having all data be collected by one source helped guarantee that the quality will be similar for all data. On the other hand, the downsides of the FakeNewsCorpus were twofold; first, the outlets chosen by the FakeNewsCorpus were often not reputable or well known. For example, some of these outlets include Daily Kos, Sputnik Review, or Pravda. Second, although the documentation claimed that the data was tagged with relevant info like article topic or common themes. Unfortunately, the vast majority of tags were null. In the end, we found that there were a relatively high number of New York Times and Breitbart articles, so we ended up filtering our dataset down to those two media outlets. To ensure class balance and training efficiency of text classifiers, we conducted a stratified sampling scheme of size 12,000 from our dataset of New York Times and Breitbart articles. 
+    </p>
+    <p>
+      Cleaning the data was relatively straightforward. First, we opted not to use any of the provided tags from the FakeNewsCorpus because of the high prevalence of null values, so we only worked with the article text data itself. In the text, we removed stop words and punctuation, stemmed the words, and used a tf-idf vectorizer to transform each article into a vector. After we had our article vectors, we could begin modeling. 
+    </p>
+    <br>
+</div>
+
+<div id="Section3">
+  <h3>Visualizations & Interpreting our Results</h3>
+  <p>Our problem was a binary classification problem, since our model was tasked with distinguishing between a New York Times and Breitbart article. We tried five classifiers: Naive Bayes, Random Forest, Logistic Regression, Linear Kernel SVM, and XGBoost. 
+  </p>
+
+  <div id="Model1">
+    <h4>Model 1: Naive Bayes</h4>
+    <p>
+      The Naive Bayes classifier relies on Bayes’ rule to predict which outlet an article was from. Naive Bayes is a relatively simplistic model that is often used in text classification, so it served as a baseline for our modeling. We were surprised that Naive Bayes’ performed so well, as the test accuracy was 91.4%. 
+    </p>
+    <p>
+      Shown below is the Naive Bayes’ confusion matrix, which shows the true labels of the articles and the classifier’s predictions. We hope to maximize the diagonal values, which represent true positives and true negatives. 
+    </p>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/Fiat-Lux-Illuminating-Political-Bias-in-Digital-Media/bayes-cm.JPG' %}" style="margin:auto"></img><br><br>
+    <br>
+    <p>
+      Since Naive Bayes’ is also a probabilistic model, which means for a given input article text, the classifier outputs the probability that the article is New York Times/Breitbart instead of just a label. This allows us to plot a receiver operating characteristic curve (ROC curve), which shows how our classifier’s performance changes with respect to the acceptance threshold, or at what percent likelihood we allow a specific label (eg. if our threshold is 60% and our classifier predicts there is a 55% chance the article is New York Times, we would choose Breitbart as our label since we did not meet the threshold. 
+    </p>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/Fiat-Lux-Illuminating-Political-Bias-in-Digital-Media/bayes-roc.JPG' %}" style="margin:auto"></img><br><br>
+    <br>
+    <p>
+      The blue line indicates the performance of a random classifier that naively guesses Breitbart half the time and New York Times the other half. We hope to maximize area between the orange curve and the blue curve; the closer the orange curve is to the left and upper borders, the better the classifier’s performance. 
+    </p>
+  </div>
+
+  <div id="Model2">
+    <h4>Model 2: Random Forest</h4>
+    <p>
+      The random forest classifier relies on the concept of democratically voting on the best label. The classifier trains a prespecified number of decision trees on bootstrapped samples of the data, so that each decision tree is trained on a similar but not identical version of the data. Then, for a given input, each decision tree votes on what label it thinks that input should be. The random forest collects all votes, finds which label has the majority of the votes, and outputs the winner of the vote as the final classification.
+    </p>
+    <p>
+      The test accuracy of the random forest classifier was 94.55%. Shown below is the confusion matrix for the random forest classifier.
+    </p>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/Fiat-Lux-Illuminating-Political-Bias-in-Digital-Media/random-forest-cm.JPG' %}" style="margin:auto"></img><br><br>
+    <br>
+    <p>
+      Note that since a random forest classifier outputs an actual New York Times or Breitbart prediction when passed in a text body, there’s no ROC curve.
+    </p>
+  </div>
+
+  <div id="Model3">
+    <h4>Model 3: Logistic Regression</h4>
+    <p>
+      Logistic regression is another classic model used for classification problems. Similar to first Naive Bayes classifier, logistic regression also produces a chance instead of a label as its output. Logistic regression uses a sigmoid function to generate this probability.
+    </p>
+    <p>
+      The logistic regression classifier had a test accuracy of 96.5%. Shown below are the confusion matrix and ROC curve of the logistic regression classifier. 
+    </p>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/Fiat-Lux-Illuminating-Political-Bias-in-Digital-Media/logistic-cm.JPG' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/Fiat-Lux-Illuminating-Political-Bias-in-Digital-Media/logistic-roc.JPG' %}" style="margin:auto"></img><br><br>
+    <br>
+  </div>
+
+  <div id="Model4">
+    <h4>Model 4: Linear Kernel Support Vector Machine (SVM) </h4>
+    <p>
+      The linear kernel SVM  is a common classification algorithm which attempts to fit a linear hyperplane between data points in a high-dimensional vector space to generate classifications. It aims to maximize the ‘margin’, or distance between the most similar data points between two classes. 
+    </p>
+    <p>
+      The linear kernel support vector machine had a test accuracy of 96.75%. Shown below is the confusion matrix of the linear kernel SVM classifier. 
+    </p>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/Fiat-Lux-Illuminating-Political-Bias-in-Digital-Media/svm-cm.JPG' %}" style="margin:auto"></img><br><br>
+    <br>
+  </div>
+
+  <div id="Model5">
+    <h4>Model 5: XGBoost</h4>
+    <p>
+      The extreme gradient boosting tree is a popular decision tree algorithm that iteratively constructs improved decision trees based on classification error metrics. Regularization is applied to reduce overfitting during the training process. 
+    </p>
+    <p>
+      The XGBoost algorithm had a test accuracy of 94.48%. Shown below is the confusion matrix of the XGBoost classifier.
+    </p>
+    <br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/Fiat-Lux-Illuminating-Political-Bias-in-Digital-Media/xgb-cm.JPG' %}" style="margin:auto"></img><br><br>
+    <br>
+    <p>
+      From all these models, we see a commonality of 90%+ test set accuracy rates. However, each classifier did have a varying ability to classify True Positives vs. True Negatives. For instance, the XGBoost algorithm did the best at minimizing false positives (Breitbart), while the linear kernel SVM did the best at minimizing false negatives (New York Times). In this particular application, we don’t have a particular preference for which category is more ‘important’ to classify correctly, so we penalize false positives and false negatives equally. 
+    </p>
+  </div>
+  <br>
+
+</div>
+
+<div id="Section4">
+  <h3>Conclusion</h3>
+    <p>
+      Overall, with a test accuracy of 96.75% with the linear kernel SVM, we can reliably confirm that it is possible to predict the media outlet which wrote a particular article based solely on text data. Although we report 96.75% as our final test set accuracy, we did rerun our train-test splits multiple times, to the tune of similar results (ie. within 1% test accuracy) for each classifier. Nevertheless, we are aware of possible factors that limit the scope of our conclusions. There are several possible explanations for why we got such remarkable results. First, it could be the case that, by chance, we were able to obtain a sample of the larger dataset which lent itself to easier classification. In other words, there could have been systematic differences between the Breitbart and New York Times articles in our sample which made easier to distinguish rather than a more “average” article from those media outlets. We acknowledge this hypothesis, but note that after the initial testing stages, we tested our best classifiers on several current-day articles (after 12/7/2019) and generally saw high accuracy. We did attempt to control for type of article to ensure that, for example, comparisons between opinion editorials and political articles, would not impact the classification behavior. Finally, we note that our results show evidence of ‘bias’, but not necessarily ‘political bias’. We hope to particularly emphasize political ideology in future studies rather than approach the classification through a bag-of-words approach. Ultimately, we hope that our work serves as a proof-of-concept to show that algorithmic classification of news article authorship is not only possible, but also quite simple to achieve. 
+    </p>
+    <p>
+      Other than just using current-day news articles rather than relying on the FakeNewsCorpus, two potential improvements we could make in the future include expanding the number of outlets that the classifier can choose between, as well as exploring other methods of data extraction such as bigrams, trigrams, and phrases.
+    </p>
+    <br>
+</div>
+
+<div id="Section5">
+  <h3>References</h3>
+    <p>
+      Szpakowski , M. (2019, March 4). FakeNewsCorpus. Retrieved October 10, 2019, from https://github.com/several27/FakeNewsCorpus.
+    </p>
+</div>
+
+{% endblock %}

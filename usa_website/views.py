@@ -355,8 +355,19 @@ def food_insecurity(request):
 ###### FALL 2019 R&P PROJECTS ######
 #####################################
 
-def music_moods(request):
+
+def personalized_movie_rating(request):
     t = get_template("blog/rp/fa19/personalized-movie-rating.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
+def political_bias_digital_media(request):
+    t = get_template("blog/rp/fa19/Fiat-Lux-Illuminating-Political-Bias-in-Digital-Media.html")
+    context = {}
+    return HttpResponse(t.render(context)
+                        
+def yelp(request):
+    t = get_template("blog/rp/fa19/yelp.html")
     context = {}
     return HttpResponse(t.render(context))
 
@@ -740,4 +751,3 @@ def blog(request):
     #t = get_template("blog/blog.html")
     #context = Context({})
     #return HttpResponse(t.render(context))
-
