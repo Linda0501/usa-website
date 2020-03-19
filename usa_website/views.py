@@ -355,6 +355,11 @@ def food_insecurity(request):
 ###### FALL 2019 R&P PROJECTS ######
 #####################################
 
+def music_moods(request):
+    t = get_template("blog/rp/fa19/personalized-movie-rating.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ### SPRING 2019 R&P PROJECTS ########
 ###################################

@@ -86,8 +86,7 @@ urlpatterns = [
     url(r'march_2019.html$', views.march_2019, name="march-2019"),
     url(r'mtc_map$', views.mtc_map, name="mtc-map"),
     # FALL 2019 R&P PROJECTS
-    
-    
+    url(r'rp/personalized-movie-rating$', views.music_moods, name="music_moods"),    
     # SPRING 2019 R&P PROJECTS
     url(r'rp/predicting-horse-races$', views.predicting_horse_races, name='predicting_horse_races'),
     url(r'rp/DIJA$', views.DIJA, name='DIJA'),
