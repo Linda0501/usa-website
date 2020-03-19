@@ -9,26 +9,30 @@
   <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
-<h1>The Values of a Fighter</h1>
-<h3>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/letsrock.png' %}" style="margin:auto"></img><br><br>
-    <span style="color: #D5518D" id="author">By </span>
-    <span style="color: #3E95D7" id="name">Michael Wang</span>
-  </h3>
 
-<div class=Blog_Navigation>
+<h1>The Values of a Fighter</h1>
+
+<div class="Blog_Nav">
   <ol>
-     <!-- FILL IN SECTIONS -->
-    <li><a href="#Section1">Introduction</a></li>
-    <li><a href="#Section2">Data Collection - Name, Rank, Character, etc.</a></li>
-    <li><a href="#Section3">Data Collection - Game States</a></li>
-    <li><a href="#Section4">Predicting Matches</a></li>
-    <li><a href="#Section5">Conclusion</a></li>
+    <li><a href="#Introduction">Introduction</a></li>
+    <li><a href="#Data_Collection1">Data Collection - Name, Rank, Character, etc.</a></li>
+    <li><a href="#Data_Collection2">Data Collection - Game States</a></li>
+    <li><a href="#Prediction">Predicting Matches</a></li>
+    <li><a href="#Conclusion">Conclusion</a></li>
   </ol>
 </div>
 <br>
 
-<div id="Section1">
+<h2>
+    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'>
+    <span style="color: gray" id="author">By </span>
+    <span style="color: gray" id="name">Michael Wang</span>
+    <span style="color: gray" id="date">- Fall 2019</span>
+</h2>
+
+<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/letsrock.png' %}" style="margin:auto"><br><br>
+
+<div id="Introduction">
   <h3>Introduction</h3>
     <p>
       This semester I chose to work on a match predictor for the fighting
@@ -48,7 +52,7 @@
     </p>
 </div>
 
-<div id="Section2">
+<div id="Data_Collection1">
   <h3>Data Collection - Name, Rank, Character, etc.</h3>
     <p>
       Like all other data science endeavors, the core of this project
@@ -56,7 +60,7 @@
       in Tokyo, Japan streams high level GG matches for around 2-6 hours,
       providing plenty of data for this project.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/fireland.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/fireland.png' %}" style="margin:auto"><br><br>
     <p>
       In order for this project to succeed, I needed to collect two types
       of data. The first is superficial data such as the character
@@ -77,7 +81,7 @@
       OpenCV’s transformation tools to perspective transform the playercard
       into a bird’s eye view.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/something.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/something.png' %}" style="margin:auto"><br><br>
     <p>
       The next step would be to figure out when each round starts, along
       with what the score is at that moment. Games of GG played in
@@ -93,14 +97,13 @@
       and off state, and used aHash once again to tell whether these
       bulbs were in the on or off state.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/redimagae.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/redimagae.png' %}" style="margin:auto"><br><br>
 </div>
 
-<div id="Section3">
+<div id="Data_Collection2">
   <h3>Data Collection - Game States</h3>
     <p>
-      The second pieces of relevant data were more nuanced gameplay
-      details. There are essentially three major game states in Guilty
+      The second pieces of relevant data were more nuanced gameplay details. There are essentially three major game states in Guilty
       Gear: neutral, where no player has an advantage; offensive, where
       one player is applying pressure on the opponent; and defensive,
       where one player is trying to mitigate pressure from the opponent.
@@ -126,27 +129,27 @@
       difficult to block, as the opponent must decide between blocking
       high, low, left, right, or a combination of these.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/fighttres.gif' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/fighttres.gif' %}" style="margin:auto"><br><br>
     <p>
       Character on the left (Jam) performing ate-waza, or a direct attack.
       Notice how she runs up and punches the opponent while the opponent
       (Sol) stands there, waiting.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/fightdos.gif' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/fightdos.gif' %}" style="margin:auto"><br><br>
     <p>
       Character on the right (Player 1 Sol) runs forward, attempting to
       begin his offense. Character on the left (Player 2 Sol) lets loose a
       sweep, countering the Player 1 Sol’s advance in an act of oki-waza,
       or counter attack.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/fightuno.gif' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/fightuno.gif' %}" style="margin:auto"><br><br>
     <p>
       Character on the left (Elphelt) dashes forward, initiating offense.
       Player on the left (Sol) attempts to counter with a sweep, but Elphelt
       stops just short, making Sol’s sweep miss. Elphelt punishes the recovery
       of the sweep in an act of sashi-kaeshi.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/pinkfight.gif' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/pinkfight.gif' %}" style="margin:auto"><br><br>
     <p>
       Character on the left (Millia) combing the opponent (Sol) until he is knocked
       down. Sol must block the blue disc while he is rising from the knocked-down
@@ -164,7 +167,7 @@
       them all. From this, six key components must be parsed out -  when a character:
       attacks, retreats, advances, is knocked down, blocks, and is hit.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/idkmike.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/idkmike.png' %}" style="margin:auto"><br><br>
     <p>
       The final two proved difficult to parse, as hit sparks and glossy animations
       tended to obscure the character models and made it difficult for the model to
@@ -174,7 +177,7 @@
       from BGR (default color scheme in OpenCV) to HSV, and then finding the proper
       range of colors that GG uses for red and yellow health.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/whiteband.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/whiteband.png' %}" style="margin:auto"><br><br>
     <p>
       Another issue that arose was the massive amount of frames that needed to be
       accounted for. There are 25 characters in the roster of GG, each with 16
@@ -182,14 +185,14 @@
       to account for (the majority of which coming from the different attacks a
       character can employ).
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/lotsopeep.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/lotsopeep.png' %}" style="margin:auto"><br><br>
     <p>
       As for the opponents, they must receive the same treatment. Collecting all of
       this data by hand would accelerate my already arthritis-risked tendons by a
       couple decades, so instead I created my own dataset. Using selenium, I scraped
       the GG wiki Dustloop for their repository of transparent sprites.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/snipa.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/snipa.png' %}" style="margin:auto"><br><br>
     <p>
       This included every character in their default color doing each attacking move
       in their arsenal. Unfortunately, this wiki does not contain states such as
@@ -200,7 +203,7 @@
       performing separate actions. Then, I used GIMP to remove the black background
       in order to get transparent sprites for the moves I needed.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/runningman.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/runningman.png' %}" style="margin:auto"><br><br>
     <p>
       Afterwards, I used OpenCV to paste each template on an empty stage background
       at every (x, y) coordinate that that action could be performed. So, for example,
@@ -208,7 +211,7 @@
       pasted the sprite on differing x-coordinates while maintaining a constant
       y-coordinate.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/fourimage.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/fourimage.png' %}" style="margin:auto"><br><br>
     <p>
       In order to account for the different colors and backgrounds each character
       could be present with, I used data augmentation. I flipped each image to
@@ -216,7 +219,7 @@
       emulate the different colors each character sprite could possess, along with
       different background colors.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/fourcolor.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/fourcolor.png' %}" style="margin:auto"><br><br>
     <p>
       Model training has been rough, due to needing to train on upwards to 50+ classes
       for each character. Time is and continues to be the main bottleneck of this
@@ -241,10 +244,10 @@
         given time, and finally, parse out the neutral game state at a given time and
         how many successful neutral interactions a player makes and receives.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/linemike.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/linemike.png' %}" style="margin:auto"><br><br>
 </div>
 
-<div id="Section4">
+<div id="Prediction">
   <h3>Predicting Matches</h3>
     <p>
       	Finally, in order to predict the winner of a match, I utilize a technique
@@ -257,7 +260,7 @@
         re run to account for rare cases such as a losing team going on a hot streak
         in order to get a better representation of a team’s score.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/the-values-of-a-fighter/mikegraph.png' %}" style="margin:auto"></img><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/the-values-of-a-fighter/mikegraph.png' %}" style="margin:auto"><br><br>
     <p>
       However, a few issues arise when trying to translate Boice’s soccer model
       into Guilty Gear. For one, the thing that Boice predicts on are the expected
@@ -309,7 +312,7 @@
     </p>
 </div>
 
-<div id="Section5">
+<div id="Conclusion">
   <h3>Conclusion</h3>
     <p>
       In the end, this project ended up being one major timesink, one I did not expect

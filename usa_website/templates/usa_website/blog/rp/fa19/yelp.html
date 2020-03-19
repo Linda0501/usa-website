@@ -13,36 +13,34 @@
 <div class="Blog_Nav">
   <ol>
      <!-- FILL IN SECTIONS -->
-    <li><a href="#Section1">Motivation</a></li>
-    <li><a href="#Section2">Objectives</a></li>
-    <li><a href="#Section3">Dataset and Data Cleaning</a></li>
-    <li><a href="#Section4">Analysis</a></li>
-    <li><a href="#Section5">Conclusion and Future Work</a></li>
-    <li><a href="#Section6">References</a></li>
+    <li><a href="#Motivation">Motivation</a></li>
+    <li><a href="#Objectives">Objectives</a></li>
+    <li><a href="#Data_Cleaning">Dataset and Data Cleaning</a></li>
+    <li><a href="#Analysis">Analysis</a></li>
+    <li><a href="#Conclusion">Conclusion and Future Work</a></li>
+    <li><a href="#References">References</a></li>
   </ol>
 </div>
 <br>
 
 <h2>
-    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'></img>
+    <img class = "icon" src="/static/usa_website/images/logos/logo_square.png" style='vertical-align: middle'>
     <span style="color: gray" id="author">By </span>
     <span style="color: gray" id="name">Aishani Sil</span>
-    <span style="color: gray" id="date">Fall 2019</span>
+    <span style="color: gray" id="date">- Fall 2019</span>
   </h2>
-<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/spring_2019/personality/titlePic.png' %}" style="margin:auto" /><br><br>
+<!--<img class = "titlePic" src="{% static 'usa_website/images/blog/rp/spring_2019/personality/titlePic.png' %}" style="margin:auto" /><br><br>-->
 
 <br>
 
-<div id="Section1">
+<div id="Motivation">
   <h3>Motivation</h3>
     <p>
       Yelp is a valuable resource for food enthusiasts and businesses alike; a bank of restaurant ratings can aid other Yelp users make decisions about their own restaurant choices and boost a restaurant’s popularity by encouraging others to try the place out. To capitalize on my favorite useless past-time of reading bad Amazon reviews, I chose to investigate what conclusions I could draw about a review given the text of the review through using multiclass logistic regression and sentiment analysis.
     </p>
-    <!-- This is how you add an image! style="margin:auto" centers the image. -->
-    <img src="{% static 'usa_website/images/blog/rp/spring_2018/capsim/round7_high.png' %}" style="margin:auto" /><br><br>
 </div>
 
-<div id="Section2">
+<div id="Objectives">
   <h3>Objectives</h3>
     <p>
       My initial goals in this project were as follows:
@@ -55,45 +53,45 @@
     <p>The first two ideas would allow me to determine how successfully I could associate the review to a more quantitative measure of it (specifically, the star rating). My third goal, which is going further into aspect-based sentiment analysis, was motivated by a desire to see how the factors that I personally value when judging a restaurant compare to others’. As someone with a lot of dietary restrictions, I definitely appreciate when restaurants are able to accommodate these needs and that would greatly benefit my own impression of the restaurant, so I was curious to see what are common factors that people use to decide the quality of a restaurant. When I was looking through my dataset, I saw a lot of mentions of child-friendliness and vegan options, for example, so I wanted to find out how I could investigate these trends. Gaining insight in these specific ideas would help me get an overall idea of how indicative the text in Yelp reviews are of the rating as a whole. I did change these goals a bit as I progressed through my project— keeping in mind factors like technical feasibility within time constraints— but was still able to make some valuable conclusions about my data.</p>
 </div>
 
-<div id="Section3">
+<div id="Data_Cleaning">
   <h3>Dataset and Data Cleaning</h3>
     <p>
       I used the official Yelp dataset which offers a vast collection of Yelp reviews, each entry providing information such as the user ID, business ID, date, the rating out of five stars, and the text in the review. I primarily used the last two columns for my data analysis.
 Initially, I attempted to use the JSON files that were originally provided; however, I was unable to make this work so opted to instead make use of a Kaggle dataset that contained the same data in a csv format. As I got my data from Kaggle, I fortunately didn’t have to deal with too much preliminary data cleaning (such as dealing with missing values, etc); my main focus during this stage was to transform my data from text that was intended for other customers to read, to data that I can meaningfully train a model on. As I was very unfamiliar with data cleaning for text data, I took some help from various internet sources to find functions that would aid my process— all of the sites I used are credited at the end. I began by removing punctuation and removing stop words (such as “a”, “the”) because these elements of the text have extremely low predictive power and do not contribute to the overall sentiment of the text, which I was aiming to analyze in the end. I used the following function to remove stopwords, and applied it to all my text.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/yelp/code.png' %}" style="margin:auto" /><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/yelp/code.png' %}" style="margin:auto" /><br><br>
     <p>After removing stopwords, I also stemmed all the words in my text. Stemming essentially reduces a word to its root (ie. “walking” and “walked” would both reduce to their stemmed version, “walk”) to further increase the simplicity of my data. I did this additional step because in the future, in an effort to convert my data to a numerical format to perform logistic regression, I would take an inventory of all the different words that appeared in my dataset. Thus, I wanted to stem my words to be able to create a more accurate representation of the words and the frequencies at which they are present in my data. I used SnowballStemmer from the nltk package to do this, as shown below. </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/yelp/stemmer_code.png' %}" style="margin:auto" /><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/yelp/stemmer_code.png' %}" style="margin:auto" /><br><br>
     <p>After all my data cleaning was done, this is a sample of what my final dataset looked like. Here below, one can see the “text” column, and clearly the reviews have been reduced to their essential components. It’s interesting to note that while a lot of words have been removed and shorted, a brief glance through the entries still allows one to visually differentiate between some positive and negative reviews.</p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/yelp/text.png' %}" style="margin:auto" /><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/yelp/text.png' %}" style="margin:auto" /><br><br>
 </div>
 
 
-<div id="Section4">
+<div id="Analysis">
   <h3>Analysis</h3>
     <p>
       Now that my data was clean, it was time to begin my analysis. I decided to focus primarily on the second goal of my project outlined at the beginning, because it would offer me a greater amount of insight than simply comparing the general sentiments of all the data. I chose to use multiclass linear regression as my model, with the five classes being the star ratings. I realized soon enough that in order to train my model on my data, I had to convert my text data into a numerical format. This part of my project gave me the most difficulty, as I was not experienced with the process and ran into some issues finding an effective method to vectorize my data. My approach was to use a bag-of-words model, which aims to extract certain features from text (such as word frequencies) and represent those features in a manner that one can train a model upon. After some experimentation, I used sklearn’s CountVectorizer to accomplish this, but I was still having difficulty training my model on my vectorized data. Given time constraints, I wasn’t quite able to make this work so to circumvent this obstacle, I let each Yelp review’s text be represented by the sum of the vector that CountVectorizer provided me with.
     </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/yelp/line99.png' %}" style="margin:auto" /><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/yelp/line99.png' %}" style="margin:auto" /><br><br>
     <p>This sum, in fact, is indicative of absolutely nothing; after splitting my data into training/test sets and finally being able to run logistic regression, my final accuracy was an astounding 14%. From analyzing the results, for three out of the five classes, my accuracy was about as good as random chance, and the final value was dragged down by the fact that I ended up with 0% accuracy for 2 and 3 star ratings. </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/yelp/sklearn.png' %}" style="margin:auto" /><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/yelp/sklearn.png' %}" style="margin:auto" /><br><br>
     <p>After that, I searched for a different way to represent my text column, and discovered VADER. This tool, fully known as Valence Aware Dictionary and sEntiment Reasoner, is used especially for sentiment analysis on social media sources; I decided it would be worth a try for my own project. Essentially, when one uses SentimentIntensityAnalyzer, inputting a piece of text gives a dictionary of scores (positive, neutral, and negative) that represent the text. To train my model, I decided to use these metrics to create my own score, as shown below. </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/yelp/sentiment.png' %}" style="margin:auto" /><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/yelp/sentiment.png' %}" style="margin:auto" /><br><br>
     <p>My method was evidently quite simple; I subtracted the “negative” score from the “positive” score to begin with. After I ran logistic regression on this new score, I reached an improved accuracy of overall 36%. </p>
-    <img src="{% static 'usa_website/images/blog/rp/fall_2019/yelp/classification_table.png' %}" style="margin:auto" /><br><br>
+    <img src="{% static 'usa_website/images/blog/rp/fa19/yelp/classification_table.png' %}" style="margin:auto" /><br><br>
     <p>As seen above, my accuracy for especially the 1 and 4 star ratings did significantly improve, indicating that using the sentiment scores provided by VADER was a somewhat more accurate way of representing my text data than the previous methods I had tried (although some further research on my part about how to properly implement the bag-of-words approach would most likely have led to better results with those as well). The accuracy for the 1 star ratings being the highest is a curious observation; it seems that those reviews that corresponded to the very low ratings had a more distinctly polar sentiment than very high rated reviews (1 star reviews likely might have had more negative sentiment than 5 star reviews had positive). Delving deeper into this idea could potentially provide more insight on customers’ tendencies while writing these reviews— are people more ready to express their feelings about a product/service when those feelings are negative? </p>
 
 
 </div>
 
-<div id="Section5">
+<div id="Conclusion">
   <h3>Conclusion and Future Work</h3>
     <p>
       This semester, I set out to determine how good of a predictor written Yelp reviews are of their corresponding star rating by training a multiclass logistic regression model. My final model had an accuracy of 36%, and it was much more successful in being able to correctly predict 1 star ratings than other classes; it’s a good start but definitely has room for improvement. As I progress with this project, my goals are to understand why the predictions for the mediocre ratings (2 and 3 stars) was especially inaccurate. I hypothesize that it is due to my very simplistic use of the positive, negative, and neutral scores that VADER assigned to each text entry. Taking advantage of the neutral score would perhaps have allowed me to get more accurate results. Additionally, I would love to delve into aspect-based sentiment analysis to answer one of my initial questions about what factors of a restaurant affect ratings the most. A peer pointed me toward the technique of topic modeling, and this is definitely something I will be looking into in the future with this project.
     </p>
 </div>
 
-<div id="Section6">
+<div id="References">
   <h3>References</h3>
     <p>
       GeeksforGeeks. “Python: Sentiment Analysis Using VADER.” GeeksforGeeks, 23 Jan. 2019, www.geeksforgeeks.org/python-sentiment-analysis-using-vader/.
