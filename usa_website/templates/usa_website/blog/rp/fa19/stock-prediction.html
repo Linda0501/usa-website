@@ -197,7 +197,7 @@
 	showing a possibility that these features might have negligible influence on the percentage changes in stock prices. 
 	The way to resolve this issue is to either change the features or change the target variable.</p> 
 	
-	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart1.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fa19/stock-predction/chart1.png' %}" style="margin:auto" /><br><br>
 	
 	<h4> Target Variable – Open Price </h4>
 	<p>
@@ -207,9 +207,9 @@
 	have a polynomial relationship with the open price.
     </p>
 	
-	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart2.png' %}" style="margin:auto" /><br><br>
-	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart3.png' %}" style="margin:auto" /><br><br>
-	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart4.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fa19/stock-predction/chart2.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fa19/stock-predction/chart3.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fa19/stock-predction/chart4.png' %}" style="margin:auto" /><br><br>
 	
 	<h4> Comparison </h4>
 	<p>
@@ -223,7 +223,7 @@
 	indicators can potentially have strong correlation with percentage change in price.
     </p>
 	
-	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart5.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fa19/stock-predction/chart5.png' %}" style="margin:auto" /><br><br>
 	
 	<p></p>
 </div>
@@ -254,7 +254,7 @@
 	This is because each data point is not independent of one another, and a sequential train-validation split 
 	must be used.
     </p>
-	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart6.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fa19/stock-predction/chart6.png' %}" style="margin:auto" /><br><br>
 	<p> Another issue was the basis of comparison. The ARIMA model is more effective for short-term predictions. 
 	This would mean that if the test set in the validation phase was too large, the model will have to make predictions 
 	very far ahead of time, which will be disadvantageous to the ARIMA model. In light of this, I reduced the test sets 
@@ -266,8 +266,8 @@
 	My cross-validation has 10 splits, resulting in a generation of 10 RMSE values. 
 	I then compared the RMSE values of each of the 3 models.
 	</p>
-	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart7.png' %}" style="margin:auto" /><br><br>
-	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart8.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fa19/stock-predction/chart7.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fa19/stock-predction/chart8.png' %}" style="margin:auto" /><br><br>
 	
 	<h4> Test Set </h4>
 	<p>
@@ -289,8 +289,8 @@
 	This way, the ARIMA model only has to predict one timestep into the future.
 	</p>
 	<h5> Results analysis </h5>
-	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart9.png' %}" style="margin:auto" /><br><br>
-	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart10.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fa19/stock-predction/chart9.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fa19/stock-predction/chart10.png' %}" style="margin:auto" /><br><br>
 	<p>
 	The predicted values are plotted as a yellow line and the true values are plotted as the blue line. 
 	Both ARIMA (left-most) and Multiple Linear Regression (right-most) seem to follow quite closely to the trend of the true values.
@@ -305,7 +305,7 @@
 	It is good that the models managed to generate the right trend. However, more fine-tuning has to be done in order for them to predict 
 	stock prices with precision.
 	</p>
-	<img src="{% static 'usa_website/images/blog/rp/fall_2019/stock-predction/chart11.png' %}" style="margin:auto" /><br><br>
+	<img src="{% static 'usa_website/images/blog/rp/fa19/stock-predction/chart11.png' %}" style="margin:auto" /><br><br>
 
 </div>
 
