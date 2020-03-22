@@ -375,6 +375,11 @@ def yelp(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def stock_prediction(request):
+    t = get_template("blog/rp/fa19/stock-prediction.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ### SPRING 2019 R&P PROJECTS ########
 ###################################
