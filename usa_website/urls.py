@@ -91,6 +91,7 @@ urlpatterns = [
     url(r'political-bias-digital-media',views.political_bias_digital_media, name="political_bias_digital_media"),
     url(r'rp/yelp$', views.yelp, name='yelp'),
     url(r'rp/stock-prediction$', views.stock_prediction, name="stock_prediction"),
+    url(r'rp/arima$', views.arima, name="arima"),
     # SPRING 2019 R&P PROJECTS
     url(r'rp/predicting-horse-races$', views.predicting_horse_races, name='predicting_horse_races'),
     url(r'rp/DIJA$', views.DIJA, name='DIJA'),

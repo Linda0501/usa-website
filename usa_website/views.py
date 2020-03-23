@@ -380,6 +380,11 @@ def stock_prediction(request):
     context = {}
     return HttpResponse(t.render(context))
 
+def arima(request):
+    t = get_template("blog/rp/fa19/ARIMA.html")
+    context = {}
+    return HttpResponse(t.render(context))
+
 ###################################
 ### SPRING 2019 R&P PROJECTS ########
 ###################################
